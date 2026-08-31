@@ -1,0 +1,62 @@
+{
+  "report_id": "mast-aquarium-2026-08",
+  "title": "MaST Center aquarium, marine review, August 2026",
+  "schema_version": 1,
+  "generated_at": "2026-08-31T19:28:36+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "youtube",
+      "camera": "mast_center_aquarium",
+      "label": "MaST Center Aquarium",
+      "kind": "underwater_camera",
+      "location": {
+        "lat": 47.35,
+        "lon": -122.32,
+        "precision": "approximate"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "yolo-fish",
+      "model_version": "v1",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "mast-video-wide-20260820"
+  ],
+  "window": {
+    "start_utc": null,
+    "end_utc": null,
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 0,
+    "assets_bytes": 0,
+    "assets_deduplicated": 0,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "youtube/mast_center_aquarium",
+      "holder": "Highline College, MaST Center Aquarium",
+      "terms": "YouTube Standard Licence; all rights reserved by the channel owner",
+      "terms_url": "https://www.youtube.com/static?template=terms",
+      "source_url": "https://www.youtube.com/@highlinemastcenteraquarium/live",
+      "attribution": "MaST Center Aquarium, Highline College",
+      "attribution_url": "https://mast.highline.edu/",
+      "derivatives_license": null,
+      "commercial_use": "unknown",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "redaction_allowances": []
+}
