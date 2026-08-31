@@ -1,0 +1,55 @@
+Licensing for this repository
+=============================
+
+This repository publishes detection reports built from wildlife media feeds that
+belong to other people. One licence does not fit all of it, so there are three
+answers rather than one.
+
+
+1. Original material
+--------------------
+
+Prose, methodology, charts of our own results, and the structure of the reports
+are licensed:
+
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+
+Attribution: Cascadia Listening Post, https://github.com/rain-Brian/wildlife-detections
+
+
+2. Individual reports
+---------------------
+
+A report built from a feed whose licence imposes terms carries those terms
+instead, and it carries the most restrictive obligation of any feed that
+contributed to it.
+
+The effective licence for each report is recorded in that report's `report.json`
+under `license`, and shown on the report page itself. It is computed from the
+upstream rights rather than chosen, so read it there and not here.
+
+In particular: any report built from Orcasound hydrophone audio is licensed
+**CC BY-NC-SA 4.0**, because Orcasound licenses its material under
+Attribution-NonCommercial-ShareAlike 4.0 and share-alike carries into derived
+work. Such a report may not be used commercially without permission from
+Orcasound (info@orcasound.net).
+
+
+3. Site code
+------------
+
+The small amount of HTML, CSS and JavaScript shipped with the reports is licensed
+under the MIT Licence. See LICENSE-CODE.
+
+
+4. Upstream media
+-----------------
+
+Frames, clips, audio and spectrograms are derived from feeds that remain the
+property of their owners. Each report credits its sources, and NOTICE lists them
+for the site as a whole. NOTICE is generated from the feed registry and is not
+edited by hand.
+
+Nothing here grants any right in the underlying feeds. If you want to reuse the
+source media rather than our reports, go to the source.

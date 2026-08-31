@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cascadia Listening Post</title>
+<meta name="description" content="Wildlife detection from continuously monitored public feeds in the Salish Sea and at Mount Rainier.">
+<meta property="og:title" content="Cascadia Listening Post">
+<meta property="og:description" content="Wildlife detection from continuously monitored public feeds in the Salish Sea and at Mount Rainier.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rain-Brian.github.io/wildlife-detections/">
+<style>
+:root {
+  color-scheme: light;
+  --surface-0: #f6f7f6; --surface-1: #fcfcfb; --line: #e3e4e1;
+  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7d7c77;
+  --accent: #0d6b78;
+  --warn-bg: #fff8e8; --warn-line: #f0e0bd; --warn-ink: #6f5a28;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #121211; --surface-1: #1a1a19; --line: #34342f;
+    --text-primary: #ffffff; --text-secondary: #c3c2b7; --text-muted: #97968c;
+    --accent: #5bbcc9;
+    --warn-bg: #2a2415; --warn-line: #4d4327; --warn-ink: #e0cf9f;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-0: #121211; --surface-1: #1a1a19; --line: #34342f;
+  --text-primary: #ffffff; --text-secondary: #c3c2b7; --text-muted: #97968c;
+  --accent: #5bbcc9;
+  --warn-bg: #2a2415; --warn-line: #4d4327; --warn-ink: #e0cf9f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--surface-0); color: var(--text-primary);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 940px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+header { border-bottom: 1px solid var(--line); padding-bottom: 1.75rem; margin-bottom: 2rem; }
+h1 { margin: 0 0 .4rem; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -.02em; }
+.tagline { margin: 0; color: var(--text-secondary); max-width: 60ch; }
+h2 { font-size: 1.15rem; margin: 2.5rem 0 1rem; }
+p, li { max-width: 70ch; }
+.cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card {
+  background: var(--surface-1); border: 1px solid var(--line);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+}
+.card h3 { margin: 0 0 .75rem; font-size: 1.05rem; }
+a { color: var(--accent); }
+dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem .9rem; margin: 0; font-size: .9rem; }
+dt { color: var(--text-muted); }
+dd { margin: 0; }
+.caveat {
+  margin: .9rem 0 0; padding: .6rem .75rem; font-size: .85rem;
+  background: var(--warn-bg); border: 1px solid var(--warn-line);
+  color: var(--warn-ink); border-radius: 6px;
+}
+.reading { background: var(--surface-1); border: 1px solid var(--line);
+  border-radius: 10px; padding: 1.25rem 1.5rem; }
+.reading li { margin-bottom: .6rem; }
+footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+  color: var(--text-muted); font-size: .87rem; }
+.empty { color: var(--text-muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Cascadia Listening Post</h1>
+  <p class="tagline">Wildlife detection from continuously monitored public feeds in the Salish Sea and at Mount Rainier.</p>
+</header>
+
+<h2>Reports</h2>
+<div class="cards">
+      <article class="card">
+        <h3><a href="reports/hydrophones-2026-08/">Salish Sea hydrophones, August 2026</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>Orcasound Bush Point, Orcasound North San Juan Channel, Orcasound Lab, Haro Strait</dd>
+          <dt>Coverage</dt><dd>coverage not recorded</dd>
+          <dt>Published</dt><dd>2026-08-31</dd>
+          <dt>Licence</dt><dd>CC-BY-NC-SA-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://www.orcasound.net" rel="noopener">Orcasound</a></dd>
+        </dl>
+        <p class="caveat">Binary call-presence detector. It does not identify pod, individual, or call type.</p>
+      </article>
+</div>
+
+<h2>How to read these</h2>
+<div class="reading">
+<ul>
+  <li><strong>Every card is a model detection, not a confirmed sighting</strong>, unless it
+      says a person reviewed it. The reports show their false positives rather than hiding
+      them, because a page that only shows successes cannot be judged.</li>
+  <li><strong>Every label is shown only above its own measured error rate, at its own
+      site.</strong> Floors are measured per hydrophone, never pooled across them.</li>
+  <li><strong>No detections is not no animals.</strong> Each report states its hours of
+      usable signal. A quiet day and an unrecorded day look identical on a count.</li>
+</ul>
+<p>Full method, including how false-positive floors are measured and why locations are
+   published only at approximate precision, is in
+   <a href="METHODS.md">METHODS.md</a>.</p>
+</div>
+
+<footer>
+  <p>Feeds belong to their operators and are used under their own terms; see
+     <a href="NOTICE">NOTICE</a>. Licensing varies per report and is recorded in each
+     report's <code>report.json</code>; see <a href="LICENSE">LICENSE</a>.</p>
+  <p>A personal research project by Brian Rain. Not a Microsoft product, and not affiliated
+     with or endorsed by the Microsoft AI for Good Lab, Orcasound, or the National Park
+     Service.</p>
+  <p>&copy; 2026 Brian Rain. Generated 2026-08-31.</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+title: "Cascadia Listening Post"
+message: >-
+  If you refer to a detection report from this site, please cite the specific
+  report rather than the site as a whole. Each report carries its own run
+  identifiers, model versions and effective licence in its report.json.
+type: dataset
+abstract: >-
+  Wildlife detection reports produced from continuously monitored public media
+  feeds in the Salish Sea and at Mount Rainier National Park. Hydrophone audio is
+  analysed for killer whale call presence and ecotype consistency; webcam and
+  underwater video is analysed for animal presence. Each report publishes the
+  evidence alongside the detection, states the false-positive floor measured at
+  that site for that label, and reports hours of usable signal so that absence of
+  detections can be distinguished from absence of recording.
+authors:
+  - family-names: Rain
+    given-names: Brian
+repository-code: "https://github.com/rain-Brian/wildlife-detections"
+url: "https://rain-Brian.github.io/wildlife-detections/"
+license: CC-BY-4.0
+license-url: "https://github.com/rain-Brian/wildlife-detections/blob/main/LICENSE"
+keywords:
+  - bioacoustics
+  - passive acoustic monitoring
+  - killer whale
+  - Southern Resident
+  - Salish Sea
+  - camera trap
+  - wildlife detection
+  - machine learning
+references:
+  - type: data
+    title: "Orcasound hydrophone network"
+    abstract: >-
+      Hydrophone audio used under CC BY-NC-SA 4.0. Reports derived from this
+      audio are licensed CC BY-NC-SA 4.0 rather than CC BY 4.0.
+    url: "https://www.orcasound.net"
+    license: CC-BY-NC-SA-4.0
+    authors:
+      - name: "Orcasound"
+  - type: data
+    title: "Mount Rainier National Park webcams"
+    abstract: >-
+      Webcam imagery, a United States Government work in the public domain.
+    url: "https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm"
+    authors:
+      - name: "National Park Service, Mount Rainier National Park"
