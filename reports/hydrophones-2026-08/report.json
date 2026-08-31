@@ -2,7 +2,7 @@
   "report_id": "hydrophones-2026-08",
   "title": "Salish Sea hydrophones, August 2026",
   "schema_version": 1,
-  "generated_at": "2026-08-31T18:26:22+00:00",
+  "generated_at": "2026-08-31T18:49:12+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -55,20 +55,30 @@
   ],
   "floors": [],
   "runs": [
-    "srkw-3day-20260826",
-    "orcahello-backfill-20260818"
+    "orcahello-backfill-20260818",
+    "orcahello-backfill-20260820",
+    "orcahello-backfill-lab-20260820",
+    "srkw-3day-20260826"
   ],
   "window": {
-    "start_utc": null,
-    "end_utc": null,
-    "usable_hours": null
+    "start_utc": "2026-08-06",
+    "end_utc": "2026-08-26",
+    "usable_hours": 1062.5
   },
   "counts": {
     "assets_bundled": 0,
     "assets_bytes": 0,
     "assets_deduplicated": 0,
     "assets_missing": 0,
-    "assets_dropped_for_budget": 0
+    "assets_dropped_for_budget": 0,
+    "windows_analysed": 127499,
+    "windows_by_camera": {
+      "bush_point": 50600,
+      "north_sjc": 49651,
+      "orcasound_lab": 27248
+    },
+    "days_covered": 18,
+    "source_paths_unparsable": 0
   },
   "rights": [
     {
