@@ -52,7 +52,10 @@
     "windows_by_camera": {},
     "days_covered": 0,
     "source_paths_unparsable": 0,
-    "reviewable": false
+    "reviewable": false,
+    "featured_west_animal_candidates": 12,
+    "sunrise_reviewed_animals": 0,
+    "sunrise_model_triggers_retained_as_context": 12
   },
   "rights": [
     {
@@ -80,5 +83,8 @@
       "verified_on": "2026-08-31"
     }
   ],
-  "redaction_allowances": []
+  "redaction_allowances": [],
+  "review": {
+    "display_decision": "Featured gallery prioritizes reviewed-interest evidence. Sunrise Mountain model triggers are retained as false-positive context and counted as zero reviewed animals."
+  }
 }

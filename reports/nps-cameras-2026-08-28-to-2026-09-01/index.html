@@ -37,28 +37,21 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 <body><main>
 <header>
   <h1>NPS Cameras</h1>
-  <p class="lede">Scene-filtered MegaDetector results for active NPS fixed cameras from 2026-08-28 through 2026-09-01. The gallery shows detections that survived fixed-camera suppression, sorted by model confidence. These are model candidates for review, not species identifications.</p>
+  <p class="lede">Scene-filtered MegaDetector results for active NPS fixed cameras from 2026-08-28 through 2026-09-01. The page now leads with review-interest evidence instead of raw model confidence: Sunrise Mountain produced model triggers, but none were reviewed as animals; West produced the only animal candidates worth showing first.</p>
   <div class="metrics">
-    <div class="metric"><b>39</b><span>scene-filtered candidates</span></div>
-    <div class="metric"><b>12</b><span>shown first as high-confidence evidence</span></div>
+    <div class="metric"><b>27</b><span>West scene-filtered candidates</span></div>
+    <div class="metric"><b>0</b><span>Sunrise animals after review</span></div>
     <div class="metric"><b>4</b><span>completed data-bearing camera-days</span></div>
     <div class="metric"><b>6</b><span>camera-days with no frames in lake</span></div>
   </div>
 </header>
 <section>
-  <h2>High-Confidence Evidence</h2>
+  <h2>Review Triage</h2>
+  <div class="note"><p><strong>Sunrise Mountain:</strong> reviewed as no animal evidence for this batch. The model triggers are retained below as false-positive context, not featured detections.</p><p><strong>West:</strong> animal candidates are shown first because they are the only NPS items in this window that remain interesting after scene review. Vehicle candidates are retained below but no longer lead the page.</p></div>
+</section>
+<section>
+  <h2>Featured Animal Evidence</h2>
   <div class="grid">
-      <article class="card">
-        <a href="assets/96e68c70-west_20260828T190805Z_497_914.jpg"><img src="assets/96e68c70-west_20260828T190805Z_497_914.jpg" alt="Detection crop from west_20260828T190805Z.jpg"></a>
-        <div class="body">
-          <h3>NPS West</h3>
-          <p><strong>0.903</strong> vehicle candidate</p>
-          <p>20260828 190805 UTC</p>
-          <p><code>west_20260828T190805Z.jpg</code></p>
-          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
-          
-        </div>
-      </article>
       <article class="card">
         <a href="assets/2b9337ec-west_20260828T032351Z_710_961.jpg"><img src="assets/2b9337ec-west_20260828T032351Z_710_961.jpg" alt="Detection crop from west_20260828T032351Z.jpg"></a>
         <div class="body">
@@ -67,17 +60,6 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
           <p>20260828 032351 UTC</p>
           <p><code>west_20260828T032351Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
-          
-        </div>
-      </article>
-      <article class="card">
-        <a href="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg"><img src="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg" alt="Detection crop from sunrise_mountain_20260829T014612Z.jpg"></a>
-        <div class="body">
-          <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.577</strong> animal candidate</p>
-          <p>20260829 014612 UTC</p>
-          <p><code>sunrise_mountain_20260829T014612Z.jpg</code></p>
-          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
           
         </div>
       </article>
@@ -104,28 +86,6 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         </div>
       </article>
       <article class="card">
-        <a href="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg"><img src="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg" alt="Detection crop from sunrise_mountain_20260829T145856Z.jpg"></a>
-        <div class="body">
-          <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.538</strong> animal candidate</p>
-          <p>20260829 145856 UTC</p>
-          <p><code>sunrise_mountain_20260829T145856Z.jpg</code></p>
-          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
-          
-        </div>
-      </article>
-      <article class="card">
-        <a href="assets/a914b0fc-west_20260829T002912Z_217_374.jpg"><img src="assets/a914b0fc-west_20260829T002912Z_217_374.jpg" alt="Detection crop from west_20260829T002912Z.jpg"></a>
-        <div class="body">
-          <h3>NPS West</h3>
-          <p><strong>0.513</strong> vehicle candidate</p>
-          <p>20260829 002912 UTC</p>
-          <p><code>west_20260829T002912Z.jpg</code></p>
-          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
-          
-        </div>
-      </article>
-      <article class="card">
         <a href="assets/5f482d9f-west_20260828T222838Z_629_767.jpg"><img src="assets/5f482d9f-west_20260828T222838Z_629_767.jpg" alt="Detection crop from west_20260828T222838Z.jpg"></a>
         <div class="body">
           <h3>NPS West</h3>
@@ -144,17 +104,6 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
           <p>20260828 233934 UTC</p>
           <p><code>west_20260828T233934Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
-          
-        </div>
-      </article>
-      <article class="card">
-        <a href="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg"><img src="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg" alt="Detection crop from sunrise_mountain_20260829T003719Z.jpg"></a>
-        <div class="body">
-          <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.496</strong> animal candidate</p>
-          <p>20260829 003719 UTC</p>
-          <p><code>sunrise_mountain_20260829T003719Z.jpg</code></p>
-          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
           
         </div>
       </article>
@@ -179,10 +128,65 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
           
         </div>
+      </article>
+      <article class="card">
+        <a href="assets/9acb5c62-west_20260828T222435Z_749_938.jpg"><img src="assets/9acb5c62-west_20260828T222435Z_749_938.jpg" alt="Detection crop from west_20260828T222435Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.469</strong> animal candidate</p>
+          <p>20260828 222435 UTC</p>
+          <p><code>west_20260828T222435Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/8b57c21e-west_20260828T223040Z_733_652.jpg"><img src="assets/8b57c21e-west_20260828T223040Z_733_652.jpg" alt="Detection crop from west_20260828T223040Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.416</strong> animal candidate</p>
+          <p>20260828 223040 UTC</p>
+          <p><code>west_20260828T223040Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/d1458155-west_20260829T135309Z_329_731.jpg"><img src="assets/d1458155-west_20260829T135309Z_329_731.jpg" alt="Detection crop from west_20260829T135309Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.392</strong> animal candidate</p>
+          <p>20260829 135309 UTC</p>
+          <p><code>west_20260829T135309Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/b66dc576-west_20260829T025100Z_653_725.jpg"><img src="assets/b66dc576-west_20260829T025100Z_653_725.jpg" alt="Detection crop from west_20260829T025100Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.373</strong> animal candidate</p>
+          <p>20260829 025100 UTC</p>
+          <p><code>west_20260829T025100Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/d918f1bb-west_20260828T184952Z_842_924.jpg"><img src="assets/d918f1bb-west_20260828T184952Z_842_924.jpg" alt="Detection crop from west_20260828T184952Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.349</strong> animal candidate</p>
+          <p>20260828 184952 UTC</p>
+          <p><code>west_20260828T184952Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
       </article></div>
 </section>
 <section>
-  <h2>All Scene-Filtered Candidates</h2>
+  <h2>Model Candidates And Review Context</h2>
   <div class="grid">
       <article class="card">
         <a href="assets/96e68c70-west_20260828T190805Z_497_914.jpg"><img src="assets/96e68c70-west_20260828T190805Z_497_914.jpg" alt="Detection crop from west_20260828T190805Z.jpg"></a>
@@ -210,7 +214,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg"><img src="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg" alt="Detection crop from sunrise_mountain_20260829T014612Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.577</strong> animal candidate</p>
+          <p><strong>0.577</strong> reviewed non-animal model trigger</p>
           <p>20260829 014612 UTC</p>
           <p><code>sunrise_mountain_20260829T014612Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -243,7 +247,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg"><img src="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg" alt="Detection crop from sunrise_mountain_20260829T145856Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.538</strong> animal candidate</p>
+          <p><strong>0.538</strong> reviewed non-animal model trigger</p>
           <p>20260829 145856 UTC</p>
           <p><code>sunrise_mountain_20260829T145856Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -287,7 +291,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg"><img src="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg" alt="Detection crop from sunrise_mountain_20260829T003719Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.496</strong> animal candidate</p>
+          <p><strong>0.496</strong> reviewed non-animal model trigger</p>
           <p>20260829 003719 UTC</p>
           <p><code>sunrise_mountain_20260829T003719Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -331,7 +335,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/22ceaae7-sunrise_mountain_20260829T031818Z_387_685.jpg"><img src="assets/22ceaae7-sunrise_mountain_20260829T031818Z_387_685.jpg" alt="Detection crop from sunrise_mountain_20260829T031818Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.437</strong> animal candidate</p>
+          <p><strong>0.437</strong> reviewed non-animal model trigger</p>
           <p>20260829 031818 UTC</p>
           <p><code>sunrise_mountain_20260829T031818Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -353,7 +357,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/54a81401-sunrise_mountain_20260829T010240Z_988_409.jpg"><img src="assets/54a81401-sunrise_mountain_20260829T010240Z_988_409.jpg" alt="Detection crop from sunrise_mountain_20260829T010240Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.399</strong> animal candidate</p>
+          <p><strong>0.399</strong> reviewed non-animal model trigger</p>
           <p>20260829 010240 UTC</p>
           <p><code>sunrise_mountain_20260829T010240Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -364,7 +368,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/e7e8009c-sunrise_mountain_20260829T152212Z_1272_333.jpg"><img src="assets/e7e8009c-sunrise_mountain_20260829T152212Z_1272_333.jpg" alt="Detection crop from sunrise_mountain_20260829T152212Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.395</strong> animal candidate</p>
+          <p><strong>0.395</strong> reviewed non-animal model trigger</p>
           <p>20260829 152212 UTC</p>
           <p><code>sunrise_mountain_20260829T152212Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -441,7 +445,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/df7a490d-sunrise_mountain_20260829T010139Z_1206_389.jpg"><img src="assets/df7a490d-sunrise_mountain_20260829T010139Z_1206_389.jpg" alt="Detection crop from sunrise_mountain_20260829T010139Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.301</strong> animal candidate</p>
+          <p><strong>0.301</strong> reviewed non-animal model trigger</p>
           <p>20260829 010139 UTC</p>
           <p><code>sunrise_mountain_20260829T010139Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -452,7 +456,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/ea55c984-sunrise_mountain_20260829T130239Z_1441_207.jpg"><img src="assets/ea55c984-sunrise_mountain_20260829T130239Z_1441_207.jpg" alt="Detection crop from sunrise_mountain_20260829T130239Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.301</strong> person candidate</p>
+          <p><strong>0.301</strong> reviewed non-animal model trigger</p>
           <p>20260829 130239 UTC</p>
           <p><code>sunrise_mountain_20260829T130239Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -529,7 +533,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/775ad778-sunrise_mountain_20260829T004224Z_1382_266.jpg"><img src="assets/775ad778-sunrise_mountain_20260829T004224Z_1382_266.jpg" alt="Detection crop from sunrise_mountain_20260829T004224Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.251</strong> animal candidate</p>
+          <p><strong>0.251</strong> reviewed non-animal model trigger</p>
           <p>20260829 004224 UTC</p>
           <p><code>sunrise_mountain_20260829T004224Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -540,7 +544,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/dd7fc552-sunrise_mountain_20260829T013605Z_406_452.jpg"><img src="assets/dd7fc552-sunrise_mountain_20260829T013605Z_406_452.jpg" alt="Detection crop from sunrise_mountain_20260829T013605Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.248</strong> animal candidate</p>
+          <p><strong>0.248</strong> reviewed non-animal model trigger</p>
           <p>20260829 013605 UTC</p>
           <p><code>sunrise_mountain_20260829T013605Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -573,7 +577,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/f80de894-sunrise_mountain_20260828T235747Z_987_408.jpg"><img src="assets/f80de894-sunrise_mountain_20260828T235747Z_987_408.jpg" alt="Detection crop from sunrise_mountain_20260828T235747Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.221</strong> animal candidate</p>
+          <p><strong>0.221</strong> reviewed non-animal model trigger</p>
           <p>20260828 235747 UTC</p>
           <p><code>sunrise_mountain_20260828T235747Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry01-sunrise_mountain-20260828</code></p>
@@ -606,7 +610,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
         <a href="assets/69d98b10-sunrise_mountain_20260829T135411Z_893_353.jpg"><img src="assets/69d98b10-sunrise_mountain_20260829T135411Z_893_353.jpg" alt="Detection crop from sunrise_mountain_20260829T135411Z.jpg"></a>
         <div class="body">
           <h3>NPS Sunrise Mountain</h3>
-          <p><strong>0.202</strong> animal candidate</p>
+          <p><strong>0.202</strong> reviewed non-animal model trigger</p>
           <p>20260829 135411 UTC</p>
           <p><code>sunrise_mountain_20260829T135411Z.jpg</code></p>
           <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
@@ -621,7 +625,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 <section>
   <h2>Coverage</h2>
   <p class="note">No-data days are explicit lake gaps, not biological absence. The original dependency failures on two camera-days were rerun successfully and are marked as superseded below.</p>
-  <table><thead><tr><th>Camera</th><th>Day</th><th>Scene-filtered candidates</th></tr></thead><tbody><tr><td>NPS Sunrise Mountain</td><td>2026-08-28</td><td>1</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-29</td><td>11</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-30</td><td>0</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-31</td><td>0</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-09-01</td><td>0</td></tr><tr><td>NPS West</td><td>2026-08-28</td><td>16</td></tr><tr><td>NPS West</td><td>2026-08-29</td><td>11</td></tr><tr><td>NPS West</td><td>2026-08-30</td><td>0</td></tr><tr><td>NPS West</td><td>2026-08-31</td><td>0</td></tr><tr><td>NPS West</td><td>2026-09-01</td><td>0</td></tr></tbody></table>
+  <table><thead><tr><th>Camera</th><th>Day</th><th>Model candidates</th></tr></thead><tbody><tr><td>NPS Sunrise Mountain</td><td>2026-08-28</td><td>1 model trigger; 0 reviewed animals</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-29</td><td>11 model triggers; 0 reviewed animals</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-30</td><td>0</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-31</td><td>0</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-09-01</td><td>0</td></tr><tr><td>NPS West</td><td>2026-08-28</td><td>16</td></tr><tr><td>NPS West</td><td>2026-08-29</td><td>11</td></tr><tr><td>NPS West</td><td>2026-08-30</td><td>0</td></tr><tr><td>NPS West</td><td>2026-08-31</td><td>0</td></tr><tr><td>NPS West</td><td>2026-09-01</td><td>0</td></tr></tbody></table>
 </section>
 <section>
   <h2>Status Ledger</h2>
