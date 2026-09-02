@@ -37,13 +37,46 @@
     "usable_hours": null
   },
   "counts": {
-    "assets_bundled": 0,
-    "assets_bytes": 0,
+    "assets_bundled": 3,
+    "assets_bytes": 2701565,
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
-    "reviewable": false
+    "reviewable": true,
+    "captured_segments_aug28_aug31": 5015
   },
+  "assets": [
+    {
+      "path": "assets/mast_center_aquarium_20260827T143843.mp4",
+      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=27/mast_center_aquarium_20260827T143843.ts",
+      "duration_seconds": 24.066,
+      "streams": [
+        "video",
+        "audio"
+      ],
+      "review_note": "Last confirmed usable spot-check sample before the transition bound."
+    },
+    {
+      "path": "assets/mast_center_aquarium_20260828T123220.mp4",
+      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=28/mast_center_aquarium_20260828T123220.ts",
+      "duration_seconds": 60.003,
+      "streams": [
+        "video",
+        "audio"
+      ],
+      "review_note": "First Friday batch sample checked; view already water-blocked."
+    },
+    {
+      "path": "assets/mast_center_aquarium_20260828T183638.mp4",
+      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=28/mast_center_aquarium_20260828T183638.ts",
+      "duration_seconds": 60.001,
+      "streams": [
+        "video",
+        "audio"
+      ],
+      "review_note": "Later Aug. 28 batch sample confirming the blocked-camera condition persisted."
+    }
+  ],
   "rights": [
     {
       "feed": "youtube/mast_center_aquarium",
