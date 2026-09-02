@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunrise Mountain, August 2026</title>
+<meta name="description" content="Reviewed MegaDetector evidence from the NPS Sunrise Mountain camera during August 2026.">
+<style>
+:root {
+  color-scheme: light;
+  --ink:#1d252c; --muted:#5b6770; --line:#d7dee2; --panel:#f6f8f8;
+  --accent:#0c6b58; --soft:#edf5f2; --warn:#fff7e8; --warn-line:#efd9aa;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:#fff; }
+main { max-width:1180px; margin:0 auto; padding:32px 18px 56px; }
+header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:24px; }
+a { color:var(--accent); }
+h1 { font-size:clamp(2rem, 4vw, 3.2rem); line-height:1.04; margin:0 0 12px; letter-spacing:0; }
+h2 { margin:34px 0 12px; font-size:1.35rem; }
+h3 { margin:0 0 8px; font-size:1.05rem; }
+p { line-height:1.55; }
+.lede { font-size:1.08rem; max-width:900px; color:#26323a; }
+.metrics { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; margin:22px 0; }
+.metric { background:var(--soft); border:1px solid #cfe2dc; padding:14px; border-radius:8px; }
+.metric b { display:block; font-size:1.55rem; }
+.metric span { color:var(--muted); font-size:.92rem; }
+.note { background:var(--panel); border-left:4px solid var(--accent); padding:12px 14px; max-width:920px; }
+.warn { background:var(--warn); border:1px solid var(--warn-line); border-radius:8px; padding:12px 14px; max-width:920px; }
+.hero { display:grid; grid-template-columns:minmax(0, 1.45fr) minmax(280px, .8fr); gap:18px; align-items:start; margin-top:18px; }
+.hero img, .asset img { width:100%; display:block; border:1px solid var(--line); border-radius:8px; background:#e8ecef; }
+.panel { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fff; }
+.panel p { margin:.35rem 0; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; }
+.asset { border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
+.body { padding:12px; }
+.muted { color:var(--muted); }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:.94rem; }
+th, td { text-align:left; border-bottom:1px solid var(--line); padding:9px 8px; vertical-align:top; }
+th { background:var(--panel); font-weight:650; }
+code { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.88em; }
+@media (max-width:820px) {
+  .metrics { grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .hero { grid-template-columns:1fr; }
+  main { padding:22px 14px 40px; }
+}
+</style>
+</head>
+<body><main>
+<header>
+  <p><a href="../../">Cascadia Listening Post</a></p>
+  <h1>Sunrise Mountain, August 2026</h1>
+  <p class="lede">Reviewed MegaDetector results for the NPS Sunrise Mountain fixed camera across August 2026. This page leads with the strongest human-reviewed wildlife evidence found in the August pass: a clear deer on 2026-08-25. It also documents why the raw high-confidence list is not the same thing as a wildlife list.</p>
+  <div class="metrics">
+    <div class="metric"><b>29,581</b><span>source frames in August lake partitions</span></div>
+    <div class="metric"><b>18,497</b><span>usable non-dark frames analyzed</span></div>
+    <div class="metric"><b>347</b><span>model candidates after filtering</span></div>
+    <div class="metric"><b>1</b><span>clear wildlife feature in first review pass</span></div>
+  </div>
+</header>
+
+<section>
+  <h2>Featured Evidence</h2>
+  <div class="hero">
+    <a href="assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg"><img src="assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg" alt="Annotated full frame showing a deer detected at Sunrise Mountain on 2026-08-25T02:16:26Z"></a>
+    <div class="panel">
+      <h3>Deer, visually reviewed</h3>
+      <p><strong>Timestamp:</strong> 2026-08-25T02:16:26Z</p>
+      <p><strong>Model:</strong> MegaDetector V6 MIT, animal confidence 0.820</p>
+      <p><strong>Source frame:</strong> <code>sunrise_mountain_20260825T021626Z.jpg</code></p>
+      <p class="muted">The model surfaced the frame; the deer label is based on visual review of the full-frame context.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Frame Context</h2>
+  <div class="grid">
+    <article class="asset">
+      <a href="assets/sunrise_mountain_20260825_deer_sequence.jpg"><img src="assets/sunrise_mountain_20260825_deer_sequence.jpg" alt="Neighboring Sunrise Mountain frames around the deer detection on 2026-08-25"></a>
+      <div class="body">
+        <h3>Neighboring Frames</h3>
+        <p>The reviewed sequence spans 2026-08-25T02:10:22Z through 2026-08-25T02:22:31Z. The animal is clearly visible in the 02:16:26Z frame; nearby frames are mostly empty.</p>
+      </div>
+    </article>
+    <article class="asset">
+      <a href="assets/sunrise_mountain_20260825T021626Z_fullframe.jpg"><img src="assets/sunrise_mountain_20260825T021626Z_fullframe.jpg" alt="Original full frame from Sunrise Mountain at 2026-08-25T02:16:26Z"></a>
+      <div class="body">
+        <h3>Original Full Frame</h3>
+        <p>Unannotated source frame retained beside the boxed review image so the detection can be judged in context.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Review Summary</h2>
+  <div class="note">
+    <p>The August backfill changed the Sunrise picture. The previous 2026-08-28 to 2026-09-01 page was dominated by weak foggy meadow-edge candidates. The full-month scan found better evidence, especially the 2026-08-25 deer.</p>
+    <p>Many top-confidence animal boxes in the full-month run were people, maintenance activity, or hikers near the camera. Those images are not included in this wildlife gallery. They are counted as part of the model review workload and should inform the next round of filtering.</p>
+  </div>
+  <div class="warn">
+    <p><strong>Bear status:</strong> a bear is not featured here. The first visual triage pass confirmed the deer and rejected several high-confidence people/maintenance false positives. The remaining candidates still need deeper human review before making any bear claim.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Coverage</h2>
+  <table>
+    <thead><tr><th>Period</th><th>Observed lake coverage</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>2026-08-01 to 2026-08-05</td><td>0 frames</td><td>No Sunrise Mountain frames present in the lake.</td></tr>
+      <tr><td>2026-08-06 to 2026-08-29</td><td>29,581 frames</td><td>Data-bearing days analyzed with MegaDetector; several days are partial captures.</td></tr>
+      <tr><td>2026-08-30 to 2026-08-31</td><td>0 frames</td><td>No Sunrise Mountain frames present in the lake.</td></tr>
+    </tbody>
+  </table>
+  <table>
+    <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Raw MegaDetector detections</td><td>9,956</td></tr>
+      <tr><td>Filtered review candidates</td><td>347</td></tr>
+      <tr><td>Dark or unusable frames</td><td>11,084</td></tr>
+      <tr><td>Completed source-day runs</td><td>24</td></tr>
+      <tr><td>Failed source-day runs</td><td>0</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Method Notes</h2>
+  <p>MegaDetector was run as a fixed-camera scene-filtering step. It detects candidate animal/person/vehicle boxes; it does not identify species. Species wording on this page is limited to visual review of the displayed evidence. Public display is intentionally conservative: people and maintenance frames are withheld from the wildlife gallery even when the detector scored them highly.</p>
+  <p>Rights: Sunrise Mountain webcam imagery is credited to National Park Service, Mount Rainier National Park. See <a href="report.json">report.json</a> for machine-readable metadata.</p>
+</section>
+
+</main></body>
+</html>
