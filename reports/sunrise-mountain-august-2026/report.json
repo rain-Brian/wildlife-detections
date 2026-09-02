@@ -2,7 +2,7 @@
   "report_id": "sunrise-mountain-august-2026",
   "title": "Sunrise Mountain, August 2026",
   "schema_version": 1,
-  "generated_at": "2026-09-02T00:00:00-07:00",
+  "generated_at": "2026-09-02T09:20:00-07:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -63,8 +63,8 @@
     "filtered_review_candidates": 347,
     "completed_data_bearing_camera_days": 24,
     "failed_camera_days": 0,
-    "featured_reviewed_wildlife": 1,
-    "assets_bundled": 3
+    "featured_reviewed_wildlife": 2,
+    "assets_bundled": 6
   },
   "coverage_gaps": [
     {
@@ -79,6 +79,15 @@
     }
   ],
   "featured_evidence": [
+    {
+      "label": "Black bears, visually reviewed",
+      "timestamp_utc": "2026-08-21T19:02:59Z",
+      "source_frame": "sunrise_mountain_20260821T190259Z.jpg",
+      "model_confidence": null,
+      "asset": "assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg",
+      "review_basis": "Visual review of source-window frames after uploaded clips pointed to the 2026-08-21T19:03-19:04Z interval.",
+      "pipeline_note": "The current fixed-camera filter did not preserve this event correctly in the initial public candidate set."
+    },
     {
       "label": "Deer, visually reviewed",
       "timestamp_utc": "2026-08-25T02:16:26Z",
@@ -104,7 +113,7 @@
   ],
   "redaction_allowances": [],
   "review": {
-    "display_decision": "Public gallery includes only the visually reviewed deer and supporting context. High-confidence people, maintenance, and hiker false positives are withheld from the wildlife gallery.",
-    "bear_status": "No bear is featured. Remaining candidates need deeper human review before making any bear claim."
+    "display_decision": "Public gallery includes visually reviewed bear and deer evidence plus supporting context. High-confidence people, maintenance, and hiker false positives are withheld from the wildlife gallery.",
+    "bear_status": "A visually reviewed black bear pair is featured from 2026-08-21T19:02:59Z."
   }
 }

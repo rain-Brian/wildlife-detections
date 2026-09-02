@@ -50,18 +50,26 @@ code { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fon
 <header>
   <p><a href="../../">Cascadia Listening Post</a></p>
   <h1>Sunrise Mountain, August 2026</h1>
-  <p class="lede">Reviewed MegaDetector results for the NPS Sunrise Mountain fixed camera across August 2026. This page leads with the strongest human-reviewed wildlife evidence found in the August pass: a clear deer on 2026-08-25. It also documents why the raw high-confidence list is not the same thing as a wildlife list.</p>
+  <p class="lede">Reviewed MegaDetector results for the NPS Sunrise Mountain fixed camera across August 2026. This page leads with the strongest human-reviewed wildlife evidence found in the August pass: a black bear pair on 2026-08-21 and a clear deer on 2026-08-25. It also documents why the raw high-confidence list is not the same thing as a wildlife list.</p>
   <div class="metrics">
     <div class="metric"><b>29,581</b><span>source frames in August lake partitions</span></div>
     <div class="metric"><b>18,497</b><span>usable non-dark frames analyzed</span></div>
     <div class="metric"><b>347</b><span>model candidates after filtering</span></div>
-    <div class="metric"><b>1</b><span>clear wildlife feature in first review pass</span></div>
+    <div class="metric"><b>2</b><span>clear wildlife events featured after review</span></div>
   </div>
 </header>
 
 <section>
   <h2>Featured Evidence</h2>
   <div class="hero">
+    <a href="assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg"><img src="assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg" alt="Annotated full frame showing two black bears at Sunrise Mountain on 2026-08-21T19:02:59Z"></a>
+    <div class="panel">
+      <h3>Black bears, visually reviewed</h3>
+      <p><strong>Timestamp:</strong> 2026-08-21T19:02:59Z</p>
+      <p><strong>Evidence:</strong> larger bear and smaller bear visible together in the lower meadow.</p>
+      <p><strong>Source frame:</strong> <code>sunrise_mountain_20260821T190259Z.jpg</code></p>
+      <p class="muted">This event was recovered from the source-window review after uploaded clips pointed to the 19:03-19:04 GMT window. The current fixed-camera filter did not preserve it correctly as a public candidate.</p>
+    </div>
     <a href="assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg"><img src="assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg" alt="Annotated full frame showing a deer detected at Sunrise Mountain on 2026-08-25T02:16:26Z"></a>
     <div class="panel">
       <h3>Deer, visually reviewed</h3>
@@ -76,6 +84,20 @@ code { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fon
 <section>
   <h2>Frame Context</h2>
   <div class="grid">
+    <article class="asset">
+      <a href="assets/sunrise_mountain_20260821_bear_sequence.jpg"><img src="assets/sunrise_mountain_20260821_bear_sequence.jpg" alt="Neighboring Sunrise Mountain frames around the bear event on 2026-08-21"></a>
+      <div class="body">
+        <h3>Bear Event Context</h3>
+        <p>The reviewed sequence spans 2026-08-21T19:00:57Z through 2026-08-21T19:09:03Z at the lake's sampled cadence. The two bears are clearest in the 19:02:59Z source frame.</p>
+      </div>
+    </article>
+    <article class="asset">
+      <a href="assets/sunrise_mountain_20260821T190259Z_bears_fullframe.jpg"><img src="assets/sunrise_mountain_20260821T190259Z_bears_fullframe.jpg" alt="Original full frame from Sunrise Mountain at 2026-08-21T19:02:59Z"></a>
+      <div class="body">
+        <h3>Bear Original Full Frame</h3>
+        <p>Unannotated source frame retained beside the boxed review image so the bear event can be judged in context.</p>
+      </div>
+    </article>
     <article class="asset">
       <a href="assets/sunrise_mountain_20260825_deer_sequence.jpg"><img src="assets/sunrise_mountain_20260825_deer_sequence.jpg" alt="Neighboring Sunrise Mountain frames around the deer detection on 2026-08-25"></a>
       <div class="body">
@@ -96,11 +118,11 @@ code { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fon
 <section>
   <h2>Review Summary</h2>
   <div class="note">
-    <p>The August backfill changed the Sunrise picture. The previous 2026-08-28 to 2026-09-01 page was dominated by weak foggy meadow-edge candidates. The full-month scan found better evidence, especially the 2026-08-25 deer.</p>
+    <p>The August backfill changed the Sunrise picture. The previous 2026-08-28 to 2026-09-01 page was dominated by weak foggy meadow-edge candidates. The full-month review found better evidence, especially the 2026-08-21 bears and the 2026-08-25 deer.</p>
     <p>Many top-confidence animal boxes in the full-month run were people, maintenance activity, or hikers near the camera. Those images are not included in this wildlife gallery. They are counted as part of the model review workload and should inform the next round of filtering.</p>
   </div>
   <div class="warn">
-    <p><strong>Bear status:</strong> a bear is not featured here. The first visual triage pass confirmed the deer and rejected several high-confidence people/maintenance false positives. The remaining candidates still need deeper human review before making any bear claim.</p>
+    <p><strong>Pipeline note:</strong> the bear event exposed a filtering bug. The visible animals were not correctly promoted by the current fixed-camera candidate filter, while unrelated recurring edge boxes were suppressed as static. Automation should retain source-window evidence around uploaded or detected events before final curation.</p>
   </div>
 </section>
 
@@ -128,7 +150,7 @@ code { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fon
 
 <section>
   <h2>Method Notes</h2>
-  <p>MegaDetector was run as a fixed-camera scene-filtering step. It detects candidate animal/person/vehicle boxes; it does not identify species. Species wording on this page is limited to visual review of the displayed evidence. Public display is intentionally conservative: people and maintenance frames are withheld from the wildlife gallery even when the detector scored them highly.</p>
+  <p>MegaDetector was run as a fixed-camera scene-filtering step. It detects candidate animal/person/vehicle boxes; it does not identify species. Species wording on this page is limited to visual review of the displayed evidence. Public display is intentionally conservative: people and maintenance frames are withheld from the wildlife gallery even when the detector scored them highly. The 2026-08-21 bear event was added after source-window review showed that the fixed-camera filter had hidden it from the initial public candidate set.</p>
   <p>Rights: Sunrise Mountain webcam imagery is credited to National Park Service, Mount Rainier National Park. See <a href="report.json">report.json</a> for machine-readable metadata.</p>
 </section>
 
