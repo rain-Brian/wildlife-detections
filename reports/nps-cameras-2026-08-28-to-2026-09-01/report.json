@@ -43,8 +43,8 @@
     "usable_hours": null
   },
   "counts": {
-    "assets_bundled": 39,
-    "assets_bytes": 850181,
+    "assets_bundled": 45,
+    "assets_bytes": 3255471,
     "assets_deduplicated": 63,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
@@ -53,9 +53,9 @@
     "days_covered": 0,
     "source_paths_unparsable": 0,
     "reviewable": false,
+    "featured_sunrise_large_mammal_candidates": 6,
     "featured_west_animal_candidates": 12,
-    "sunrise_reviewed_animals": 0,
-    "sunrise_model_triggers_retained_as_context": 12
+    "sunrise_model_candidates": 12
   },
   "rights": [
     {
@@ -85,6 +85,6 @@
   ],
   "redaction_allowances": [],
   "review": {
-    "display_decision": "Featured gallery prioritizes reviewed-interest evidence. Sunrise Mountain model triggers are retained as false-positive context and counted as zero reviewed animals."
+    "display_decision": "Featured gallery prioritizes reviewed-interest evidence. Sunrise Mountain meadow-edge candidates are featured as possible large mammals, including bear-like silhouettes, but species remains unconfirmed pending human review."
   }
 }
