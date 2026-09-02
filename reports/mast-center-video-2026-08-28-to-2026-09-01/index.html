@@ -19,6 +19,12 @@ table { width:100%; border-collapse:collapse; font-size:.94rem; }
 th,td { text-align:left; border-bottom:1px solid var(--line); padding:8px 10px; vertical-align:top; }
 th { background:var(--soft); }
 .warn { border-left:4px solid var(--warn); padding:12px 14px; background:#fff8e8; }
+.evidence-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin:18px 0 24px; }
+.clip { border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
+.clip video { display:block; width:100%; aspect-ratio:16 / 9; background:#111; }
+.clip div { padding:11px 12px 13px; }
+.clip h3 { margin:0 0 4px; font-size:1rem; }
+.clip p { margin:0; font-size:.92rem; }
 code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; }
 </style>
 <body>
@@ -29,14 +35,28 @@ code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em;
 <main>
 <p>This page records why the MaST Center video detector batch was stopped before publication: the camera continued streaming, but water on or inside the camera blocked the aquarium view before the Friday batch window.</p>
 <div class="stats">
-<div class="stat"><b>5,018</b>captured batch segments, Aug 28-31</div>
+<div class="stat"><b>5,015</b>captured batch segments, Aug 28-31</div>
 <div class="stat"><b>0</b>published detection runs</div>
 <div class="stat"><b>20260827T143843</b>last confirmed usable sample</div>
 <div class="stat"><b>20260828T123220</b>first confirmed blocked sample</div>
 </div>
 <div class="warn"><p><strong>Interpretation:</strong> the correct public result is a source-quality gap, not a no-detection result. Missing or water-blocked visibility must not be counted as biological absence.</p></div>
 <h2>Evidence</h2>
-<table><thead><tr><th>Partition</th><th>Segments</th><th>First item</th><th>Last item</th><th>Quality note</th></tr></thead><tbody><tr><td>2026-08-27 spot-check context</td><td>811</td><td>mast_center_aquarium_20260827T000023</td><td>mast_center_aquarium_20260827T143843</td><td>Last sampled clip was visually usable; late frames showed aquarium scene and fish.</td></tr><tr><td>2026-08-28 batch start day</td><td>689</td><td>mast_center_aquarium_20260828T123220</td><td>mast_center_aquarium_20260828T235948</td><td>First sampled clip at 12:32 PDT was already water-blocked.</td></tr><tr><td>2026-08-29</td><td>1,443</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-30</td><td>1,443</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-31</td><td>1,443</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr></tbody></table>
+<div class="evidence-grid">
+<article class="clip">
+<video controls preload="metadata" src="assets/mast_center_aquarium_20260827T143843.mp4"></video>
+<div><h3>Last Confirmed Usable Sample</h3><p class="quiet"><code>mast_center_aquarium_20260827T143843.ts</code>. About 24 seconds, video plus audio. The aquarium scene is still visible.</p></div>
+</article>
+<article class="clip">
+<video controls preload="metadata" src="assets/mast_center_aquarium_20260828T123220.mp4"></video>
+<div><h3>First Friday Sample Checked</h3><p class="quiet"><code>mast_center_aquarium_20260828T123220.ts</code>. About 60 seconds, video plus audio. The view is already water-blocked.</p></div>
+</article>
+<article class="clip">
+<video controls preload="metadata" src="assets/mast_center_aquarium_20260828T183638.mp4"></video>
+<div><h3>Later Blocked Batch Sample</h3><p class="quiet"><code>mast_center_aquarium_20260828T183638.ts</code>. About 60 seconds, video plus audio. This confirms the blocked-camera state persisted later on Aug. 28.</p></div>
+</article>
+</div>
+<table><thead><tr><th>Partition</th><th>Segments</th><th>First item</th><th>Last item</th><th>Quality note</th></tr></thead><tbody><tr><td>2026-08-27 spot-check context</td><td>811</td><td>mast_center_aquarium_20260827T000023</td><td>mast_center_aquarium_20260827T143843</td><td>Last sampled clip was visually usable; late frames showed aquarium scene and fish.</td></tr><tr><td>2026-08-28 batch start day</td><td>689</td><td>mast_center_aquarium_20260828T123220</td><td>mast_center_aquarium_20260828T235948</td><td>First sampled clip at 12:32 PDT was already water-blocked.</td></tr><tr><td>2026-08-29</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-30</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-31</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr></tbody></table>
 <h2>Transition Bound</h2>
 <p>The last visually usable sampled clip was <code>mast_center_aquarium_20260827T143843</code>, labelled 2026-08-27 14:38 PDT in the video overlay. The first captured Friday clip checked was <code>mast_center_aquarium_20260828T123220</code>, labelled 2026-08-28 12:32 PDT, and was already water-blocked.</p>
 <p>No local laptop clips were found between those two timestamps, so the current bound for the transition is the capture gap between those samples. The blocked condition may have begun any time inside that interval.</p>
