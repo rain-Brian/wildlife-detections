@@ -83,6 +83,52 @@
     "source_paths_unparsable": 0,
     "reviewable": false
   },
+  "featured_findings": [
+    {
+      "title": "Orcasound Lab high-confidence call window",
+      "summary": "A full 30-second OrcaHello-positive source window from Orcasound Lab, suitable for public listening review but not yet an ecotype claim.",
+      "domain": "hydrophone",
+      "taxonomy": "acoustic_call",
+      "review_status": "model candidate",
+      "rank": 0,
+      "source": "Orcasound Lab hydrophone",
+      "evidence": "30-second source-window audio, not the short 9-second review excerpt",
+      "media": {
+        "src": "reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"
+      }
+    }
+  ],
+  "taxonomy": [
+    "hydrophone",
+    "acoustic_call"
+  ],
+  "review_status": "model candidate",
+  "evidence_assets": [
+    {
+      "kind": "audio",
+      "path": "assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3",
+      "duration_seconds": 30.016,
+      "featured": true
+    }
+  ],
+  "media_quality": {
+    "audio": {
+      "featured_requires_full_window": true,
+      "featured_audio_count": 1,
+      "featured_full_window_count": 1,
+      "featured_fallback_clip_count": 0,
+      "fallback_clip_count": 0,
+      "min_featured_duration_seconds": 28
+    }
+  },
+  "model_refresh": {
+    "decision": "needs rerun with current detector/classifier",
+    "reason": "The evidence audio is now full-window, but this batch report does not include ecotype-classifier provenance."
+  },
+  "quality": {
+    "selection_rule": "full 30-second source-window audio can be featured; short review excerpts cannot",
+    "known_issue": "Rerun or post-process with ecotype classification before promoting any population-level claim."
+  },
   "rights": [
     {
       "feed": "orcasound/bush_point",

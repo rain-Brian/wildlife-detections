@@ -50,12 +50,53 @@
     "assets_dropped_for_budget": 0,
     "windows_analysed": 0,
     "windows_by_camera": {},
-    "days_covered": 0,
+    "days_covered": 4,
     "source_paths_unparsable": 0,
     "reviewable": false,
     "featured_sunrise_large_mammal_candidates": 6,
     "featured_west_animal_candidates": 12,
     "sunrise_model_candidates": 12
+  },
+  "featured_findings": [
+    {
+      "title": "Sunrise meadow-edge large-mammal candidates",
+      "summary": "The report leads with possible large mammals at the Sunrise meadow and tree edge, kept as review candidates rather than species-confirmed bear sightings.",
+      "domain": "land",
+      "taxonomy": "terrestrial_mammal",
+      "review_status": "model candidate",
+      "rank": 0,
+      "source": "NPS Sunrise Mountain webcam",
+      "evidence": "annotated stills and bundled crop assets",
+      "media": {
+        "src": "reports/nps-cameras-2026-08-28-to-2026-09-01/assets/sunrise_mountain_20260829T014612Z.annotated.jpg"
+      }
+    }
+  ],
+  "taxonomy": [
+    "land",
+    "terrestrial_mammal"
+  ],
+  "review_status": "model candidate",
+  "evidence_assets": [
+    {
+      "kind": "image",
+      "path": "assets/sunrise_mountain_20260829T014612Z.annotated.jpg",
+      "featured": true
+    }
+  ],
+  "media_quality": {
+    "image": {
+      "annotated_detail_frames": true,
+      "assets_bundled": 45
+    }
+  },
+  "model_refresh": {
+    "decision": "already current and publishable",
+    "reason": "The report was generated from the current MegaDetector NPS batch setup, but species labels remain unconfirmed."
+  },
+  "quality": {
+    "selection_rule": "review-interest evidence leads raw confidence; people and vehicle candidates do not lead the wildlife gallery",
+    "known_issue": "The full August Sunrise page supersedes this shorter batch for confirmed bear and deer evidence."
   },
   "rights": [
     {

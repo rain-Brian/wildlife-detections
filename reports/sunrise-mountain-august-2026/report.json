@@ -55,6 +55,7 @@
     "usable_hours": null
   },
   "counts": {
+    "source_frames": 29581,
     "source_frames_in_august": 29581,
     "source_frames_analyzed": 29581,
     "usable_non_dark_frames": 18497,
@@ -97,6 +98,65 @@
       "review_basis": "Visual review of full-frame context."
     }
   ],
+  "featured_findings": [
+    {
+      "title": "Black bears at Sunrise Mountain",
+      "summary": "A larger bear and smaller bear are visible together in the lower meadow on 2026-08-21 after source-window review.",
+      "domain": "land",
+      "taxonomy": "terrestrial_mammal",
+      "review_status": "human reviewed",
+      "rank": 0,
+      "source": "NPS Sunrise Mountain webcam",
+      "evidence": "annotated full frame plus neighboring frame sequence",
+      "media": {
+        "src": "reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg"
+      }
+    },
+    {
+      "title": "Deer at Sunrise Mountain",
+      "summary": "MegaDetector surfaced the frame; the deer label comes from human review of the full-frame context.",
+      "domain": "land",
+      "taxonomy": "terrestrial_mammal",
+      "review_status": "human reviewed",
+      "rank": 1,
+      "source": "NPS Sunrise Mountain webcam",
+      "evidence": "annotated frame, source frame, and neighboring frame sequence",
+      "media": {
+        "src": "reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg"
+      }
+    }
+  ],
+  "taxonomy": [
+    "land",
+    "terrestrial_mammal"
+  ],
+  "review_status": "human reviewed",
+  "evidence_assets": [
+    {
+      "kind": "image",
+      "path": "assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg",
+      "featured": true
+    },
+    {
+      "kind": "image",
+      "path": "assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg",
+      "featured": true
+    }
+  ],
+  "media_quality": {
+    "image": {
+      "featured_full_frame_context": true,
+      "annotated_detail_frames": true
+    }
+  },
+  "model_refresh": {
+    "decision": "already current and publishable",
+    "reason": "August backfill was rerun with the current MegaDetector fixed-camera setup; species wording is based on human review."
+  },
+  "quality": {
+    "selection_rule": "human-reviewed wildlife evidence outranks raw model confidence",
+    "known_issue": "The bear event exposed a fixed-camera filtering gap and should inform the next automation pass."
+  },
   "rights": [
     {
       "feed": "nps/sunrise_mountain",

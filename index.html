@@ -4,198 +4,357 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cascadia Listening Post</title>
-<meta name="description" content="Wildlife detection from continuously monitored public feeds in the Salish Sea and at Mount Rainier.">
+<meta name="description" content="Evidence-first wildlife detection from public hydrophones, underwater video, and mountain cameras in Cascadia.">
 <meta property="og:title" content="Cascadia Listening Post">
-<meta property="og:description" content="Wildlife detection from continuously monitored public feeds in the Salish Sea and at Mount Rainier.">
+<meta property="og:description" content="Evidence-first wildlife detection from public hydrophones, underwater video, and mountain cameras in Cascadia.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rain-Brian.github.io/wildlife-detections/">
 <style>
 :root {
   color-scheme: light;
-  --surface-0: #f6f7f6; --surface-1: #fcfcfb; --line: #e3e4e1;
-  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7d7c77;
-  --accent: #0d6b78;
-  --warn-bg: #fff8e8; --warn-line: #f0e0bd; --warn-ink: #6f5a28;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --surface-0: #121211; --surface-1: #1a1a19; --line: #34342f;
-    --text-primary: #ffffff; --text-secondary: #c3c2b7; --text-muted: #97968c;
-    --accent: #5bbcc9;
-    --warn-bg: #2a2415; --warn-line: #4d4327; --warn-ink: #e0cf9f;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --surface-0: #121211; --surface-1: #1a1a19; --line: #34342f;
-  --text-primary: #ffffff; --text-secondary: #c3c2b7; --text-muted: #97968c;
-  --accent: #5bbcc9;
-  --warn-bg: #2a2415; --warn-line: #4d4327; --warn-ink: #e0cf9f;
+  --surface-0: #f7f7f4; --surface-1: #ffffff; --surface-2: #eef4f2;
+  --line: #d8ded9; --text-primary: #11130f; --text-secondary: #4e5a55;
+  --text-muted: #7a837e; --accent: #0b6b75; --accent-2: #7a5724;
+  --warn-bg: #fff7e6; --warn-line: #ead6a9; --warn-ink: #6d5524;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--surface-0); color: var(--text-primary);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-.wrap { max-width: 940px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-header { border-bottom: 1px solid var(--line); padding-bottom: 1.75rem; margin-bottom: 2rem; }
-h1 { margin: 0 0 .4rem; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -.02em; }
-.tagline { margin: 0; color: var(--text-secondary); max-width: 60ch; }
-h2 { font-size: 1.15rem; margin: 2.5rem 0 1rem; }
-p, li { max-width: 70ch; }
-.cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-@media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
-.featured { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-bottom: 2rem; }
-@media (min-width: 720px) { .featured { grid-template-columns: repeat(3, 1fr); } }
-.card {
-  background: var(--surface-1); border: 1px solid var(--line);
-  border-radius: 10px; padding: 1.1rem 1.25rem;
-}
-.card h3 { margin: 0 0 .75rem; font-size: 1.05rem; }
-.find { border-left: 4px solid var(--accent); }
-.find p { margin: .35rem 0 0; font-size: .92rem; color: var(--text-secondary); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 34px 20px 54px; }
+header { padding: 10px 0 24px; border-bottom: 1px solid var(--line); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4.2rem); line-height: 1; letter-spacing: 0; }
+.tagline { margin: 0; max-width: 66ch; color: var(--text-secondary); font-size: 1.08rem; }
+h2 { margin: 36px 0 14px; font-size: 1.22rem; }
 a { color: var(--accent); }
-dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem .9rem; margin: 0; font-size: .9rem; }
+.metrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 24px 0 4px; }
+.metric { background: var(--surface-1); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-height: 88px; }
+.metric b { display: block; font-size: 1.7rem; color: var(--accent); }
+.metric span { color: var(--text-secondary); font-size: .88rem; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.controls button {
+  border: 1px solid var(--line); background: var(--surface-1); color: var(--text-primary);
+  border-radius: 999px; padding: 7px 12px; cursor: pointer;
+}
+.controls button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.findings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.finding, .report-card, .reading {
+  background: var(--surface-1); border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+}
+.finding img, .finding video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #111; }
+.finding audio { width: calc(100% - 24px); margin: 14px 12px 0; }
+.finding-body { padding: 13px 14px 15px; }
+.finding h3, .report-card h3 { margin: 6px 0 8px; font-size: 1.05rem; line-height: 1.25; }
+.finding p { margin: 0 0 10px; color: var(--text-secondary); }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tags span {
+  border: 1px solid var(--line); background: var(--surface-2);
+  border-radius: 999px; padding: 2px 7px; font-size: .72rem; color: var(--text-secondary);
+}
+dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0; font-size: .86rem; }
 dt { color: var(--text-muted); }
 dd { margin: 0; }
+.cards { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.report-card { padding: 16px; }
 .caveat {
-  margin: .9rem 0 0; padding: .6rem .75rem; font-size: .85rem;
+  margin: 12px 0 0; padding: 9px 10px; font-size: .84rem;
   background: var(--warn-bg); border: 1px solid var(--warn-line);
   color: var(--warn-ink); border-radius: 6px;
 }
-.reading { background: var(--surface-1); border: 1px solid var(--line);
-  border-radius: 10px; padding: 1.25rem 1.5rem; }
-.reading li { margin-bottom: .6rem; }
-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
-  color: var(--text-muted); font-size: .87rem; }
+.reading { padding: 16px 18px; }
+.reading li { margin-bottom: 8px; max-width: 78ch; }
+footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--text-muted); font-size: .87rem; }
+.hidden { display: none; }
 .empty { color: var(--text-muted); font-style: italic; }
+@media (max-width: 880px) {
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .findings, .cards { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
   <h1>Cascadia Listening Post</h1>
-  <p class="tagline">Wildlife detection from continuously monitored public feeds in the Salish Sea and at Mount Rainier.</p>
+  <p class="tagline">Evidence-first wildlife detection from public hydrophones, underwater video, and mountain cameras in Cascadia.</p>
+  <div class="metrics">
+    <div class="metric"><b>7</b><span>public reports</span></div>
+    <div class="metric"><b>11</b><span>manifest-featured findings</span></div>
+    <div class="metric"><b>5</b><span>human-reviewed findings</span></div>
+    <div class="metric"><b>1,181</b><span>usable hydrophone hours recorded in manifests</span></div>
+    <div class="metric"><b>24</b><span>data-bearing days recorded in manifests</span></div>
+  </div>
 </header>
 
-<h2>Featured Reviewed Finds</h2>
-<div class="featured">
-      <article class="card find">
-        <h3><a href="reports/mast-aquarium-2026-08/">Harbour Seal</a></h3>
-        <p>Human-reviewed MaST aquarium evidence. The model surfaced the clip; the reviewed frame is treated as the sighting evidence.</p>
-      </article>
-      <article class="card find">
-        <h3><a href="reports/mast-aquarium-2026-08/">Ocean Sunfish, <i>Mola</i> sp.</a></h3>
-        <p>Interesting animal evidence that the first-pass label got wrong. Kept because unusual and reviewable beats raw confidence.</p>
-      </article>
-      <article class="card find">
-        <h3><a href="reports/sunrise-mountain-august-2026/">Sunrise Bears And Deer</a></h3>
-        <p>Full-month August review found a black bear pair on 2026-08-21 and a clear deer on 2026-08-25. Raw high-confidence people and maintenance false positives are withheld from the wildlife gallery.</p>
-      </article>
+<h2>Featured Evidence</h2>
+<div class="controls">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="land">Land</button>
+  <button data-filter="underwater video">Underwater video</button>
+  <button data-filter="hydrophone">Hydrophone</button>
+  <button data-filter="human reviewed">Reviewed</button>
+  <button data-filter="classification above site floor">Classification</button>
+  <button data-filter="source quality gap">Quality gap</button>
 </div>
+<div class="findings">
+      <article class="finding" data-domain="land" data-status="human reviewed">
+        <img src="reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg" alt="Black bears at Sunrise Mountain">
+        <div class="finding-body">
+          <div class="tags"><span>land</span><span>human reviewed</span><span>terrestrial_mammal</span></div>
+          <h3><a href="reports/sunrise-mountain-august-2026/">Black bears at Sunrise Mountain</a></h3>
+          <p>A larger bear and smaller bear are visible together in the lower meadow on 2026-08-21 after source-window review.</p>
+          <dl>
+            <dt>Source</dt><dd>NPS Sunrise Mountain webcam</dd>
+            <dt>Evidence</dt><dd>annotated full frame plus neighboring frame sequence</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="underwater video" data-status="human reviewed">
+        <video controls preload="metadata" src="reports/mast-aquarium-2026-08/assets/82a00d46-harbor_seal_real.mp4"></video>
+        <div class="finding-body">
+          <div class="tags"><span>underwater video</span><span>human reviewed</span><span>marine_mammal</span></div>
+          <h3><a href="reports/mast-aquarium-2026-08/">Harbour seal, reviewed</a></h3>
+          <p>Hind flippers are visible in the reviewed frame; this is the confirmed marine mammal example from the run.</p>
+          <dl>
+            <dt>Source</dt><dd>MaST Center Aquarium video bridge</dd>
+            <dt>Evidence</dt><dd>reviewed frame plus high-quality bundled video clip</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="land" data-status="human reviewed">
+        <img src="reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg" alt="Deer at Sunrise Mountain">
+        <div class="finding-body">
+          <div class="tags"><span>land</span><span>human reviewed</span><span>terrestrial_mammal</span></div>
+          <h3><a href="reports/sunrise-mountain-august-2026/">Deer at Sunrise Mountain</a></h3>
+          <p>MegaDetector surfaced the frame; the deer label comes from human review of the full-frame context.</p>
+          <dl>
+            <dt>Source</dt><dd>NPS Sunrise Mountain webcam</dd>
+            <dt>Evidence</dt><dd>annotated frame, source frame, and neighboring frame sequence</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="underwater video" data-status="human reviewed">
+        <video controls preload="metadata" src="reports/mast-aquarium-2026-08/assets/f3aac7af-ocean_sunfish.mp4"></video>
+        <div class="finding-body">
+          <div class="tags"><span>underwater video</span><span>human reviewed</span><span>fish</span></div>
+          <h3><a href="reports/mast-aquarium-2026-08/">Ocean sunfish, Mola sp.</a></h3>
+          <p>A real and unusual animal in Puget Sound. YOLO-Fish called fish with high confidence; the open-vocabulary pass called harbor seal.</p>
+          <dl>
+            <dt>Source</dt><dd>MaST Center Aquarium video bridge</dd>
+            <dt>Evidence</dt><dd>reviewed frame plus high-quality bundled video clip</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="underwater video" data-status="human reviewed">
+        <video controls preload="metadata" src="reports/mast-aquarium-2026-08/assets/de044d69-large_fish.mp4"></video>
+        <div class="finding-body">
+          <div class="tags"><span>underwater video</span><span>human reviewed</span><span>fish</span></div>
+          <h3><a href="reports/mast-aquarium-2026-08/">Large fish, reviewed false marine-mammal label</a></h3>
+          <p>A visible fish with dorsal fin was labeled harbor seal by the open-vocabulary pass.</p>
+          <dl>
+            <dt>Source</dt><dd>MaST Center Aquarium video bridge</dd>
+            <dt>Evidence</dt><dd>reviewed frame plus high-quality bundled video clip</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="hydrophone" data-status="classification above site floor">
+        <audio controls src="reports/hydrophones-2026-08-24-to-2026-08-26/assets/e5ad313e-audio3d4c32133f1a.mp3"></audio>
+        <div class="finding-body">
+          <div class="tags"><span>hydrophone</span><span>classification above site floor</span><span>hydrophone</span><span>orca</span><span>Southern Resident killer whale</span></div>
+          <h3><a href="reports/hydrophones-2026-08-24-to-2026-08-26/">Orcasound Lab SRKW encounter signal</a></h3>
+          <p>A clustered 2026-08-26 Orcasound Lab bout with Southern Resident classifier support and corroborating encounter context.</p>
+          <dl>
+            <dt>Source</dt><dd>Orcasound Lab hydrophone</dd>
+            <dt>Evidence</dt><dd>report evidence</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="hydrophone" data-status="classification above site floor">
+        
+        <div class="finding-body">
+          <div class="tags"><span>hydrophone</span><span>classification above site floor</span><span>acoustic_call</span></div>
+          <h3><a href="reports/hydrophones-2026-08/">North San Juan Channel Bigg&#x27;s encounter signal</a></h3>
+          <p>The August hydrophone analysis found a clustered Bigg&#x27;s-class ecotype signal at North San Juan Channel that survived the site-specific floor and independent-record comparison.</p>
+          <dl>
+            <dt>Source</dt><dd>Orcasound North San Juan Channel hydrophone</dd>
+            <dt>Evidence</dt><dd>ecotype rates, site-specific false-positive floor, daily presence chart, and independent sighting context</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="hydrophone" data-status="model candidate">
+        <audio controls src="reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"></audio>
+        <div class="finding-body">
+          <div class="tags"><span>hydrophone</span><span>model candidate</span><span>acoustic_call</span></div>
+          <h3><a href="reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/">Orcasound Lab high-confidence call window</a></h3>
+          <p>A full 30-second OrcaHello-positive source window from Orcasound Lab, suitable for public listening review but not yet an ecotype claim.</p>
+          <dl>
+            <dt>Source</dt><dd>Orcasound Lab hydrophone</dd>
+            <dt>Evidence</dt><dd>30-second source-window audio, not the short 9-second review excerpt</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="land" data-status="model candidate">
+        <img src="reports/nps-cameras-2026-08-28-to-2026-09-01/assets/sunrise_mountain_20260829T014612Z.annotated.jpg" alt="Sunrise meadow-edge large-mammal candidates">
+        <div class="finding-body">
+          <div class="tags"><span>land</span><span>model candidate</span><span>terrestrial_mammal</span></div>
+          <h3><a href="reports/nps-cameras-2026-08-28-to-2026-09-01/">Sunrise meadow-edge large-mammal candidates</a></h3>
+          <p>The report leads with possible large mammals at the Sunrise meadow and tree edge, kept as review candidates rather than species-confirmed bear sightings.</p>
+          <dl>
+            <dt>Source</dt><dd>NPS Sunrise Mountain webcam</dd>
+            <dt>Evidence</dt><dd>annotated stills and bundled crop assets</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="underwater video" data-status="source quality gap">
+        <video controls preload="metadata" src="reports/mast-center-video-2026-08-28-to-2026-09-01/assets/mast_center_aquarium_20260828T123220.mp4"></video>
+        <div class="finding-body">
+          <div class="tags"><span>underwater video</span><span>source quality gap</span><span>source_quality</span></div>
+          <h3><a href="reports/mast-center-video-2026-08-28-to-2026-09-01/">MaST aquarium source-quality break</a></h3>
+          <p>Captured video from the Friday batch was already water-blocked, so this report treats the window as source-quality evidence rather than absence of fish or marine mammals.</p>
+          <dl>
+            <dt>Source</dt><dd>MaST Center Aquarium video bridge</dd>
+            <dt>Evidence</dt><dd>1080p before/after video spot checks</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="finding" data-domain="hydrophone" data-status="below floor / context only">
+        
+        <div class="finding-body">
+          <div class="tags"><span>hydrophone</span><span>below floor / context only</span><span>source_quality</span></div>
+          <h3><a href="reports/hydrophones-2026-08/">Bush Point 4,816 Hz resonance</a></h3>
+          <p>A persistent resonance explained most Bush Point Southern Resident detections, showing why public pages need floor checks and source-quality context.</p>
+          <dl>
+            <dt>Source</dt><dd>Orcasound Bush Point hydrophone</dd>
+            <dt>Evidence</dt><dd>resonance filter, spectrum chart, and per-node prevalence table</dd>
+          </dl>
+        </div>
+      </article></div>
 
 <h2>Reports</h2>
 <div class="cards">
-      <article class="card">
+      <article class="report-card">
+        <h3><a href="reports/hydrophones-2026-08-24-to-2026-08-26/">Salish Sea hydrophones, 2026-08-24 to 2026-08-26</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>Orcasound Lab, Haro Strait</dd>
+          
+          <dt>Coverage</dt><dd>25,079 windows analysed</dd>
+          <dt>Status</dt><dd>classification above site floor</dd>
+          <dt>Published</dt><dd>2026-09-02</dd>
+          <dt>Licence</dt><dd>CC-BY-NC-SA-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://www.orcasound.net" rel="noopener">Orcasound</a></dd>
+        </dl>
+        <p class="caveat">No caveat recorded for this model. Treat its output as unvalidated.</p>
+      </article>
+      <article class="report-card">
+        <h3><a href="reports/mast-aquarium-2026-08/">MaST Center aquarium, marine review, August 2026</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>MaST Center Aquarium</dd>
+          
+          <dt>Coverage</dt><dd>645 source segments</dd>
+          <dt>Status</dt><dd>human reviewed</dd>
+          <dt>Published</dt><dd>2026-09-02</dd>
+          <dt>Licence</dt><dd>CC-BY-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
+        </dl>
+        <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
+      </article>
+      <article class="report-card">
         <h3><a href="reports/sunrise-mountain-august-2026/">Sunrise Mountain, August 2026</a></h3>
         <dl>
           <dt>Sites</dt><dd>NPS Sunrise Mountain</dd>
-          <dt>Period</dt><dd>2026-08-01 to 2026-08-31</dd>
-          <dt>Coverage</dt><dd>29,581 source frames, 24 data-bearing camera-days</dd>
+          <dt>Period</dt><dd>2026-08-01T00:00:00Z to 2026-09-01T00:00:00Z</dd>
+          <dt>Coverage</dt><dd>29,581 source frames</dd>
+          <dt>Status</dt><dd>human reviewed</dd>
           <dt>Published</dt><dd>2026-09-02</dd>
           <dt>Licence</dt><dd>CC-BY-4.0</dd>
           <dt>Credit</dt><dd><a href="https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm" rel="noopener">National Park Service, Mount Rainier National Park</a></dd>
         </dl>
-        <p class="caveat">MegaDetector surfaced 347 candidates; this page features visually reviewed bear and deer evidence plus supporting context.</p>
+        <p class="caveat">Detects that an animal is present, not which species it is.</p>
       </article>
-      <article class="card">
+      <article class="report-card">
         <h3><a href="reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/">Orcasound hydrophones, 2026-08-28 to 2026-09-01</a></h3>
         <dl>
           <dt>Sites</dt><dd>Orcasound Bush Point, Orcasound North San Juan Channel, Orcasound Lab, Haro Strait</dd>
           <dt>Period</dt><dd>2026-08-28 to 2026-08-29</dd>
-          <dt>Coverage</dt><dd>119 hours of usable signal, 2 days</dd>
+          <dt>Coverage</dt><dd>119 hours usable, 2 days</dd>
+          <dt>Status</dt><dd>model candidate</dd>
           <dt>Published</dt><dd>2026-09-02</dd>
           <dt>Licence</dt><dd>CC-BY-NC-SA-4.0</dd>
           <dt>Credit</dt><dd><a href="https://www.orcasound.net" rel="noopener">Orcasound</a></dd>
         </dl>
         <p class="caveat">Binary call-presence detector. It does not identify pod, individual, or call type.</p>
       </article>
-      <article class="card">
+      <article class="report-card">
         <h3><a href="reports/nps-cameras-2026-08-28-to-2026-09-01/">NPS cameras, 2026-08-28 to 2026-09-01</a></h3>
         <dl>
           <dt>Sites</dt><dd>NPS Sunrise Mountain, NPS West</dd>
           
           <dt>Coverage</dt><dd>coverage not recorded</dd>
+          <dt>Status</dt><dd>model candidate</dd>
           <dt>Published</dt><dd>2026-09-02</dd>
           <dt>Licence</dt><dd>CC-BY-4.0</dd>
           <dt>Credit</dt><dd><a href="https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm" rel="noopener">National Park Service, Mount Rainier National Park</a></dd>
         </dl>
-        <p class="caveat">Detects that an animal may be present, not which species it is. Sunrise Mountain includes possible large-mammal candidates that need human species review.</p>
+        <p class="caveat">Detects that an animal is present, not which species it is.</p>
       </article>
-      <article class="card">
+      <article class="report-card">
         <h3><a href="reports/mast-center-video-2026-08-28-to-2026-09-01/">MaST Center video source quality, 2026-08-28 to 2026-09-01</a></h3>
         <dl>
           <dt>Sites</dt><dd>MaST Center Aquarium</dd>
           
-          <dt>Coverage</dt><dd>coverage not recorded</dd>
+          <dt>Coverage</dt><dd>5,015 source segments</dd>
+          <dt>Status</dt><dd>source quality gap</dd>
           <dt>Published</dt><dd>2026-09-01</dd>
           <dt>Licence</dt><dd>CC-BY-4.0</dd>
           <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
         </dl>
         <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
       </article>
-      <article class="card">
-        <h3><a href="reports/mast-aquarium-2026-08/">MaST Center aquarium, marine review, August 2026</a></h3>
-        <dl>
-          <dt>Sites</dt><dd>MaST Center Aquarium</dd>
-          
-          <dt>Coverage</dt><dd>coverage not recorded</dd>
-          <dt>Published</dt><dd>2026-08-31</dd>
-          <dt>Licence</dt><dd>CC-BY-4.0</dd>
-          <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
-        </dl>
-        <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
-      </article>
-      <article class="card">
+      <article class="report-card">
         <h3><a href="reports/hydrophones-2026-08/">Salish Sea hydrophones, August 2026</a></h3>
         <dl>
           <dt>Sites</dt><dd>Orcasound Bush Point, Orcasound North San Juan Channel, Orcasound Lab, Haro Strait</dd>
           <dt>Period</dt><dd>2026-08-06 to 2026-08-26</dd>
-          <dt>Coverage</dt><dd>1,062 hours of usable signal, 18 days</dd>
+          <dt>Coverage</dt><dd>1,062 hours usable, 18 days</dd>
+          <dt>Status</dt><dd>classification above site floor</dd>
           <dt>Published</dt><dd>2026-08-31</dd>
           <dt>Licence</dt><dd>CC-BY-NC-SA-4.0</dd>
           <dt>Credit</dt><dd><a href="https://www.orcasound.net" rel="noopener">Orcasound</a></dd>
         </dl>
-        <p class="caveat">Binary call-presence detector. It does not identify pod, individual, or call type.</p>
+        <p class="caveat">Binary call-presence detector. It does not identify pod, individual, or call type.</p><p class="caveat">Reports which population a call is more consistent with. It is a comparison, not a determination.</p>
       </article>
 </div>
 
 <h2>How to read these</h2>
 <div class="reading">
 <ul>
-  <li><strong>Every card is a model detection, not a confirmed sighting</strong>, unless it
-      says a person reviewed it. The reports show their false positives rather than hiding
-      them, because a page that only shows successes cannot be judged.</li>
-  <li><strong>Every label is shown only above its own measured error rate, at its own
-      site.</strong> Floors are measured per hydrophone, never pooled across them.</li>
-  <li><strong>No detections is not no animals.</strong> Each report states its hours of
-      usable signal. A quiet day and an unrecorded day look identical on a count.</li>
+  <li><strong>Every card is a model detection, not a confirmed sighting</strong>, unless it says a person reviewed it.</li>
+  <li><strong>Featured hydrophone evidence needs the full 30-second source window.</strong> Short review excerpts can remain counted, but they do not lead public evidence.</li>
+  <li><strong>Every label is shown only above its own measured error rate, at its own site.</strong> Floors are measured per hydrophone, never pooled across them.</li>
+  <li><strong>No detections is not no animals.</strong> Coverage and source-quality gaps are shown because a quiet day and an unrecorded day are not the same thing.</li>
 </ul>
-<p>Full method, including how false-positive floors are measured and why locations are
-   published only at approximate precision, is in
-   <a href="METHODS.md">METHODS.md</a>.</p>
+<p>Full method, including false-positive floors, media rights, and approximate locations, is in <a href="METHODS.md">METHODS.md</a>. Machine-readable site data is in <a href="site-data.json">site-data.json</a>.</p>
 </div>
 
 <footer>
-  <p>Feeds belong to their operators and are used under their own terms; see
-     <a href="NOTICE">NOTICE</a>. Licensing varies per report and is recorded in each
-     report's <code>report.json</code>; see <a href="LICENSE">LICENSE</a>.</p>
-  <p>A personal research project by Brian Rain. Not a Microsoft product, and not affiliated
-     with or endorsed by the Microsoft AI for Good Lab, Orcasound, or the National Park
-     Service.</p>
+  <p>Feeds belong to their operators and are used under their own terms; see <a href="NOTICE">NOTICE</a>. Licensing varies per report and is recorded in each report's <code>report.json</code>; see <a href="LICENSE">LICENSE</a>.</p>
+  <p>A personal research project by Brian Rain. Not a Microsoft product, and not affiliated with or endorsed by the Microsoft AI for Good Lab, Orcasound, the National Park Service, or any feed operator.</p>
   <p>&copy; 2026 Brian Rain. Generated 2026-09-02.</p>
 </footer>
 </div>
+<script>
+const buttons = Array.from(document.querySelectorAll("[data-filter]"));
+const findings = Array.from(document.querySelectorAll(".finding"));
+buttons.forEach(button => button.addEventListener("click", () => {
+  buttons.forEach(item => item.classList.remove("active"));
+  button.classList.add("active");
+  const filter = button.dataset.filter;
+  findings.forEach(card => {
+    const match = filter === "all" || card.dataset.domain === filter || card.dataset.status === filter;
+    card.classList.toggle("hidden", !match);
+  });
+}));
+</script>
 </body>
 </html>

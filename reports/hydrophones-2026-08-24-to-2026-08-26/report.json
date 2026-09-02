@@ -1,0 +1,160 @@
+{
+  "report_id": "hydrophones-2026-08-24-to-2026-08-26",
+  "title": "Salish Sea hydrophones, 2026-08-24 to 2026-08-26",
+  "schema_version": 1,
+  "generated_at": "2026-09-02T18:17:34+00:00",
+  "license": "CC-BY-NC-SA-4.0",
+  "sites": [
+    {
+      "feed": "orcasound",
+      "camera": "orcasound_lab",
+      "label": "Orcasound Lab, Haro Strait",
+      "kind": "hydrophone",
+      "location": {
+        "lat": 48.56,
+        "lon": -123.17,
+        "precision": "approximate",
+        "water": "Haro Strait, west side of San Juan Island"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "orcahello",
+      "model_version": "unspecified",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    },
+    {
+      "model_name": "salish-sea-ecotype-classifier",
+      "model_version": "unspecified",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "srkw-3day-20260826"
+  ],
+  "window": {
+    "start_utc": null,
+    "end_utc": null,
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 2,
+    "assets_bytes": 481050,
+    "assets_deduplicated": 0,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "source_windows": 25079,
+    "detections": 3009,
+    "featured_audio_full_windows": 2,
+    "featured_audio_fallback_clips": 0,
+    "windows_analysed": 25079,
+    "featured_full_window_count": 2,
+    "featured_fallback_clip_count": 0,
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "orcasound/orcasound_lab",
+      "holder": "Orcasound",
+      "terms": "CC BY-NC-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "source_url": "https://live.orcasound.net/listen/orcasound-lab",
+      "attribution": "Orcasound",
+      "attribution_url": "https://www.orcasound.net",
+      "derivatives_license": "CC-BY-NC-SA-4.0",
+      "commercial_use": "permission_required",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [
+    {
+      "id": "orcasound-lab-srkw-encounter-20260826",
+      "title": "Orcasound Lab SRKW encounter signal",
+      "domain": "hydrophone",
+      "taxonomy": [
+        "hydrophone",
+        "orca",
+        "Southern Resident killer whale"
+      ],
+      "review_status": "classification above site floor",
+      "summary": "A clustered 2026-08-26 Orcasound Lab bout with Southern Resident classifier support and corroborating encounter context.",
+      "source": "Orcasound Lab hydrophone",
+      "timestamp": "2026-08-26 local afternoon",
+      "model": "OrcaHello plus Salish Sea ecotype classifier",
+      "confidence": "29 of 30 windows in the local encounter cluster called SRKW above the site floor.",
+      "media": [
+        "assets/e5ad313e-audio3d4c32133f1a.mp3",
+        "assets/ab208b71-audio5e860995f07a.mp3"
+      ],
+      "rank_score": 95
+    }
+  ],
+  "taxonomy": [
+    "hydrophone",
+    "orca",
+    "Southern Resident killer whale"
+  ],
+  "review_status": "classification above site floor",
+  "evidence_assets": [
+    {
+      "kind": "audio",
+      "path": "assets/e5ad313e-audio3d4c32133f1a.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/ab208b71-audio5e860995f07a.mp3",
+      "duration_seconds": 30.016,
+      "quality": "full 30-second source window",
+      "featured": true
+    }
+  ],
+  "media_quality": {
+    "audio": {
+      "featured_requires_full_window": true,
+      "full_window": 2,
+      "fallback_clip": 0,
+      "featured_audio_count": 2,
+      "duration_seconds": [
+        29.994667,
+        30.016
+      ],
+      "featured_full_window_count": 2,
+      "full_window_count": 2,
+      "featured_fallback_clip_count": 0,
+      "fallback_clip_count": 0,
+      "min_featured_duration_seconds": 28
+    },
+    "asset_bytes": 481050
+  },
+  "model_refresh": {
+    "decision": "already current and publishable",
+    "reasons": [
+      "Rebuilt from the current ecotype-classifier sweep with cached 30-second source windows and zero short excerpt fallbacks."
+    ],
+    "run_ids": [
+      "srkw-3day-20260826"
+    ]
+  },
+  "quality": {
+    "public_claim": "Corroborated hydrophone classification evidence, not a final population or behavioral inference.",
+    "does_not_claim": "This does not claim individual whales, pod identity, or abundance.",
+    "gates": [
+      "full-window audio required",
+      "fallback_clip == 0",
+      "site false-positive floors shown",
+      "resonance rejection shown"
+    ]
+  },
+  "redaction_allowances": []
+}

@@ -43,6 +43,7 @@
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
     "reviewable": true,
+    "source_segments": 5015,
     "captured_segments_aug28_aug31": 5015
   },
   "assets": [
@@ -77,6 +78,50 @@
       "review_note": "Later Aug. 28 batch sample confirming the blocked-camera condition persisted."
     }
   ],
+  "featured_findings": [
+    {
+      "title": "MaST aquarium source-quality break",
+      "summary": "Captured video from the Friday batch was already water-blocked, so this report treats the window as source-quality evidence rather than absence of fish or marine mammals.",
+      "domain": "underwater video",
+      "taxonomy": "source_quality",
+      "review_status": "source quality gap",
+      "rank": 0,
+      "source": "MaST Center Aquarium video bridge",
+      "evidence": "1080p before/after video spot checks",
+      "media": {
+        "src": "reports/mast-center-video-2026-08-28-to-2026-09-01/assets/mast_center_aquarium_20260828T123220.mp4"
+      }
+    }
+  ],
+  "taxonomy": [
+    "underwater video",
+    "source_quality"
+  ],
+  "review_status": "source quality gap",
+  "evidence_assets": [
+    {
+      "kind": "video",
+      "path": "assets/mast_center_aquarium_20260828T123220.mp4",
+      "duration_seconds": 60.003,
+      "featured": true
+    }
+  ],
+  "media_quality": {
+    "video": {
+      "featured_width": 1920,
+      "featured_height": 1080,
+      "min_featured_width": 854,
+      "asset_strategy": "bundled GitHub Pages video asset"
+    }
+  },
+  "model_refresh": {
+    "decision": "model-quality context only",
+    "reason": "The batch source was blocked, so rerunning detectors would not create trustworthy biological detections for this window."
+  },
+  "quality": {
+    "selection_rule": "source-quality findings are shown as coverage context, not biological absence",
+    "known_issue": "Future MaST detection pages need high-quality bundled stills and clips before homepage promotion."
+  },
   "rights": [
     {
       "feed": "youtube/mast_center_aquarium",

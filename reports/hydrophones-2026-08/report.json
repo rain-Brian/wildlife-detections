@@ -51,6 +51,14 @@
       "license": null,
       "lineage": null,
       "caveat": null
+    },
+    {
+      "model_name": "ecotype-classifier",
+      "model_version": "Palmer-et-al-2026-derived",
+      "code_commit": null,
+      "license": null,
+      "lineage": "Palmer et al. 2026",
+      "caveat": "Reports which population a call is more consistent with. It is a comparison, not a determination."
     }
   ],
   "floors": [],
@@ -79,6 +87,52 @@
     },
     "days_covered": 18,
     "source_paths_unparsable": 0
+  },
+  "featured_findings": [
+    {
+      "title": "North San Juan Channel Bigg's encounter signal",
+      "summary": "The August hydrophone analysis found a clustered Bigg's-class ecotype signal at North San Juan Channel that survived the site-specific floor and independent-record comparison.",
+      "domain": "hydrophone",
+      "taxonomy": "acoustic_call",
+      "review_status": "classification above site floor",
+      "rank": 0,
+      "source": "Orcasound North San Juan Channel hydrophone",
+      "evidence": "ecotype rates, site-specific false-positive floor, daily presence chart, and independent sighting context"
+    },
+    {
+      "title": "Bush Point 4,816 Hz resonance",
+      "summary": "A persistent resonance explained most Bush Point Southern Resident detections, showing why public pages need floor checks and source-quality context.",
+      "domain": "hydrophone",
+      "taxonomy": "source_quality",
+      "review_status": "below floor / context only",
+      "rank": 1,
+      "source": "Orcasound Bush Point hydrophone",
+      "evidence": "resonance filter, spectrum chart, and per-node prevalence table"
+    }
+  ],
+  "taxonomy": [
+    "hydrophone",
+    "acoustic_call",
+    "source_quality"
+  ],
+  "review_status": "classification above site floor",
+  "evidence_assets": [],
+  "media_quality": {
+    "audio": {
+      "featured_requires_full_window": true,
+      "featured_audio_count": 0,
+      "featured_full_window_count": 0,
+      "featured_fallback_clip_count": 0,
+      "asset_strategy": "needs GitHub Pages audio rebuild before featuring playable clips"
+    }
+  },
+  "model_refresh": {
+    "decision": "needs media-only rebuild",
+    "reason": "The analysis uses ecotype classification and site-specific floors, but no public audio assets are bundled for homepage playback."
+  },
+  "quality": {
+    "selection_rule": "classification must clear its own site-specific false-positive floor before becoming a public finding",
+    "known_issue": "Playable examples should be rebuilt as 30-second source windows before the report leads with audio cards."
   },
   "rights": [
     {

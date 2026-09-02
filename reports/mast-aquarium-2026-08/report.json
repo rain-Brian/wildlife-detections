@@ -2,7 +2,7 @@
   "report_id": "mast-aquarium-2026-08",
   "title": "MaST Center aquarium, marine review, August 2026",
   "schema_version": 1,
-  "generated_at": "2026-08-31T19:28:36+00:00",
+  "generated_at": "2026-09-02T17:19:06+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -29,7 +29,7 @@
   ],
   "floors": [],
   "runs": [
-    "mast-video-wide-20260820"
+    "mast-rebuild"
   ],
   "window": {
     "start_utc": null,
@@ -37,11 +37,14 @@
     "usable_hours": null
   },
   "counts": {
-    "assets_bundled": 0,
-    "assets_bytes": 0,
+    "assets_bundled": 10,
+    "assets_bytes": 1507349,
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
+    "source_segments": 645,
+    "fused_detection_rows": 9061,
+    "human_reviewed_examples": 5,
     "reviewable": false
   },
   "rights": [
@@ -58,5 +61,128 @@
       "verified_on": "2026-08-31"
     }
   ],
+  "featured_findings": [
+    {
+      "title": "Harbour seal, reviewed",
+      "summary": "Hind flippers are visible in the reviewed frame; this is the confirmed marine mammal example from the run.",
+      "domain": "underwater video",
+      "taxonomy": "marine_mammal",
+      "review_status": "human reviewed",
+      "rank": 0,
+      "source": "MaST Center Aquarium video bridge",
+      "evidence": "reviewed frame plus high-quality bundled video clip",
+      "media": {
+        "src": "assets/82a00d46-harbor_seal_real.mp4"
+      }
+    },
+    {
+      "title": "Ocean sunfish, Mola sp.",
+      "summary": "A real and unusual animal in Puget Sound. YOLO-Fish called fish with high confidence; the open-vocabulary pass called harbor seal.",
+      "domain": "underwater video",
+      "taxonomy": "fish",
+      "review_status": "human reviewed",
+      "rank": 1,
+      "source": "MaST Center Aquarium video bridge",
+      "evidence": "reviewed frame plus high-quality bundled video clip",
+      "media": {
+        "src": "assets/f3aac7af-ocean_sunfish.mp4"
+      }
+    },
+    {
+      "title": "Large fish, reviewed false marine-mammal label",
+      "summary": "A visible fish with dorsal fin was labeled harbor seal by the open-vocabulary pass.",
+      "domain": "underwater video",
+      "taxonomy": "fish",
+      "review_status": "human reviewed",
+      "rank": 2,
+      "source": "MaST Center Aquarium video bridge",
+      "evidence": "reviewed frame plus high-quality bundled video clip",
+      "media": {
+        "src": "assets/de044d69-large_fish.mp4"
+      }
+    }
+  ],
+  "taxonomy": [
+    "underwater video",
+    "marine_mammal",
+    "fish"
+  ],
+  "review_status": "human reviewed",
+  "evidence_assets": [
+    {
+      "kind": "video",
+      "path": "assets/82a00d46-harbor_seal_real.mp4",
+      "duration_seconds": 4.9,
+      "featured": true
+    },
+    {
+      "kind": "image",
+      "path": "assets/c5564899-harbor_seal_real.jpg",
+      "featured": true
+    },
+    {
+      "kind": "video",
+      "path": "assets/f3aac7af-ocean_sunfish.mp4",
+      "duration_seconds": 4.967,
+      "featured": true
+    },
+    {
+      "kind": "image",
+      "path": "assets/dea5d727-ocean_sunfish.jpg",
+      "featured": true
+    },
+    {
+      "kind": "video",
+      "path": "assets/de044d69-large_fish.mp4",
+      "duration_seconds": 4.867,
+      "featured": true
+    },
+    {
+      "kind": "image",
+      "path": "assets/e52f0353-large_fish.jpg",
+      "featured": true
+    },
+    {
+      "kind": "video",
+      "path": "assets/acabec1e-turbidity_blur.mp4",
+      "duration_seconds": 4.867,
+      "featured": false
+    },
+    {
+      "kind": "image",
+      "path": "assets/fca30da3-turbidity_blur.jpg",
+      "featured": false
+    },
+    {
+      "kind": "video",
+      "path": "assets/642e57b4-rock_with_barnacles.mp4",
+      "duration_seconds": 5.0,
+      "featured": false
+    },
+    {
+      "kind": "image",
+      "path": "assets/19a94734-rock_with_barnacles.jpg",
+      "featured": false
+    }
+  ],
+  "media_quality": {
+    "video": {
+      "asset_strategy": "bundled GitHub Pages video assets",
+      "featured_width": 1280,
+      "min_featured_width": 1280,
+      "crf": 22
+    },
+    "image": {
+      "reviewed_poster_frames": 5
+    }
+  },
+  "model_refresh": {
+    "decision": "already current and publishable",
+    "reason": "Rebuilt from the local marine review fusion run with high-quality bundled video clips and reviewed evidence frames."
+  },
+  "quality": {
+    "selection_rule": "human-reviewed marine evidence leads the public page; false positives remain as precision context",
+    "known_issue": "Open-vocabulary marine mammal labels remain review candidates unless confirmed by eye."
+  },
   "redaction_allowances": []
 }
