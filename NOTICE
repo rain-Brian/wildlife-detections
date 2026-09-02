@@ -1,6 +1,20 @@
 Upstream media in this repository belongs to the parties below and is
 used under the terms shown. Generated from feeds.json; do not edit.
 
+nps/sunrise_mountain
+  Holder:      National Park Service, Mount Rainier National Park
+  Terms:       US Government work, public domain (17 U.S.C. 105)
+  Terms URL:   https://www.nps.gov/aboutus/disclaimer.htm
+  Source:      https://www.nps.gov/webcams-mora/SunriseMtn.jpg
+  Attribution: National Park Service, Mount Rainier National Park (https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm)
+
+nps/west
+  Holder:      National Park Service, Mount Rainier National Park
+  Terms:       US Government work, public domain (17 U.S.C. 105)
+  Terms URL:   https://www.nps.gov/aboutus/disclaimer.htm
+  Source:      https://www.nps.gov/webcams-mora/west.jpg
+  Attribution: National Park Service, Mount Rainier National Park (https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm)
+
 orcasound/bush_point
   Holder:      Orcasound
   Terms:       CC BY-NC-SA 4.0

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orcasound hydrophones, 2026-08-28 to 2026-09-01</title>
+<style>
+:root { --ink:#17212b; --muted:#5c6873; --line:#d7dee6; --panel:#f4f7f8; --accent:#0b6b5f; }
+* { box-sizing:border-box; } body { margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:white; }
+main { max-width:1080px; margin:0 auto; padding:32px 18px 56px; } header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:24px; }
+h1 { font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 10px; letter-spacing:0; } p { line-height:1.55; }
+.stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:22px 0; } .stat { border:1px solid var(--line); border-radius:8px; padding:14px; background:var(--panel); } .stat b { display:block; font-size:1.5rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:14px; } .card { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fff; }
+.card-head { display:flex; justify-content:space-between; gap:12px; align-items:start; border-bottom:1px solid var(--line); padding-bottom:9px; margin-bottom:10px; } .card h3 { margin:0; font-size:1rem; } .card span { color:var(--accent); font-weight:700; }
+audio { width:100%; margin-top:8px; } .quiet { color:var(--muted); font-size:.92rem; } table { width:100%; border-collapse:collapse; margin-top:12px; } th,td { text-align:left; border-bottom:1px solid var(--line); padding:8px; } th { background:var(--panel); } code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em; }
+@media (max-width:720px) { .stats { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+</style></head><body><main>
+<header><h1>Orcasound Hydrophones</h1>
+<p>OrcaHello detections from active Orcasound nodes. The evidence players now use the full 27-29 second source analysis windows, with the positive 3-second model segments listed below each clip.</p>
+<div class="stats"><div class="stat"><b>14,232</b>audio windows analyzed</div><div class="stat"><b>1,186</b>model-positive source files</div><div class="stat"><b>3,240</b>positive segments</div><div class="stat"><b>14</b>full-window examples shown</div></div></header>
+<section><h2>High-Confidence Evidence</h2><p class="quiet">Selection rule: confidence at least 0.80 using the stronger of whole-window and segment confidence, sorted by confidence, capped at six detections per node and 18 total. These are model detections for review, not confirmed whale calls.</p><div class="grid">
+    <article class="card">
+      <div class="card-head"><h3>1. Orcasound Lab</h3><span>confidence 0.999</span></div>
+      <p><code>Orcasound_Lab_20260828T041322.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>8.0s, confidence 0.999</li><li>14.0s, confidence 0.713</li><li>16.0s, confidence 0.877</li><li>18.0s, confidence 0.823</li><li>20.0s, confidence 0.816</li><li>22.0s, confidence 0.624</li><li>24.0s, confidence 0.700</li></ul>
+      <audio controls preload="metadata" src="assets/a8b501a5-Orcasound_Lab_20260828T041322.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-orcasound_lab-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>2. Orcasound Lab</h3><span>confidence 0.997</span></div>
+      <p><code>Orcasound_Lab_20260828T041820.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>2.0s, confidence 0.912</li><li>4.0s, confidence 0.984</li><li>6.0s, confidence 0.968</li><li>8.0s, confidence 0.997</li><li>12.0s, confidence 0.722</li><li>14.0s, confidence 0.943</li><li>16.0s, confidence 0.981</li><li>18.0s, confidence 0.971</li><li>22.0s, confidence 0.856</li><li>24.0s, confidence 0.860</li><li>26.0s, confidence 0.940</li></ul>
+      <audio controls preload="metadata" src="assets/5a515c2d-Orcasound_Lab_20260828T041820.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-orcasound_lab-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>3. Orcasound Lab</h3><span>confidence 0.997</span></div>
+      <p><code>Orcasound_Lab_20260828T033000.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>2.0s, confidence 0.890</li><li>4.0s, confidence 0.711</li><li>12.0s, confidence 0.997</li><li>16.0s, confidence 0.876</li><li>20.0s, confidence 0.927</li><li>22.0s, confidence 0.524</li><li>24.0s, confidence 0.944</li></ul>
+      <audio controls preload="metadata" src="assets/c11b66b1-Orcasound_Lab_20260828T033000.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-orcasound_lab-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>4. Orcasound Lab</h3><span>confidence 0.995</span></div>
+      <p><code>Orcasound_Lab_20260828T041058.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>0.0s, confidence 0.550</li><li>14.0s, confidence 0.995</li></ul>
+      <audio controls preload="metadata" src="assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-orcasound_lab-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>5. Bush Point</h3><span>confidence 0.995</span></div>
+      <p><code>Bush-Point01_Bush_Point01_1_20260829T141755.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>0.0s, confidence 0.966</li><li>8.0s, confidence 0.663</li><li>10.0s, confidence 0.838</li><li>14.0s, confidence 0.995</li><li>20.0s, confidence 0.615</li></ul>
+      <audio controls preload="metadata" src="assets/cb5abed1-Bush-Point01_Bush_Point01_1_20260829T141755.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-bush_point-20260829</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>6. Bush Point</h3><span>confidence 0.995</span></div>
+      <p><code>Bush-Point01_Bush_Point01_1_20260828T121613.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>2.0s, confidence 0.515</li><li>20.0s, confidence 0.990</li><li>24.0s, confidence 0.995</li></ul>
+      <audio controls preload="metadata" src="assets/54913cab-Bush-Point01_Bush_Point01_1_20260828T121613.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-bush_point-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>7. Bush Point</h3><span>confidence 0.994</span></div>
+      <p><code>Bush-Point01_Bush_Point01_1_20260828T121410.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>0.0s, confidence 0.994</li><li>2.0s, confidence 0.930</li></ul>
+      <audio controls preload="metadata" src="assets/137c7926-Bush-Point01_Bush_Point01_1_20260828T121410.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-bush_point-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>8. Bush Point</h3><span>confidence 0.994</span></div>
+      <p><code>Bush-Point01_Bush_Point01_1_20260828T121340.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>0.0s, confidence 0.994</li><li>20.0s, confidence 0.890</li></ul>
+      <audio controls preload="metadata" src="assets/82a0845c-Bush-Point01_Bush_Point01_1_20260828T121340.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-bush_point-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>9. Bush Point</h3><span>confidence 0.993</span></div>
+      <p><code>Bush-Point01_Bush_Point01_1_20260828T042436.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>4.0s, confidence 0.993</li><li>10.0s, confidence 0.990</li><li>16.0s, confidence 0.857</li><li>22.0s, confidence 0.887</li></ul>
+      <audio controls preload="metadata" src="assets/4c2cf7c8-Bush-Point01_Bush_Point01_1_20260828T042436.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-bush_point-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>10. Bush Point</h3><span>confidence 0.993</span></div>
+      <p><code>Bush-Point01_Bush_Point01_1_20260828T121948.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>4.0s, confidence 0.949</li><li>20.0s, confidence 0.993</li></ul>
+      <audio controls preload="metadata" src="assets/6b9248d4-Bush-Point01_Bush_Point01_1_20260828T121948.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-bush_point-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>11. Orcasound Lab</h3><span>confidence 0.993</span></div>
+      <p><code>Orcasound_Lab_20260828T041800.wav</code></p>
+      <p>Full source window: 19s. Positive model segments:</p>
+      <ul><li>2.0s, confidence 0.670</li><li>4.0s, confidence 0.773</li><li>8.0s, confidence 0.770</li><li>10.0s, confidence 0.980</li><li>12.0s, confidence 0.993</li><li>14.0s, confidence 0.987</li><li>16.0s, confidence 0.935</li></ul>
+      <audio controls preload="metadata" src="assets/8e7227c1-Orcasound_Lab_20260828T041800.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-orcasound_lab-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>12. Orcasound Lab</h3><span>confidence 0.993</span></div>
+      <p><code>Orcasound_Lab_20260828T041129.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>10.0s, confidence 0.624</li><li>16.0s, confidence 0.802</li><li>18.0s, confidence 0.608</li><li>22.0s, confidence 0.945</li><li>24.0s, confidence 0.972</li><li>26.0s, confidence 0.993</li></ul>
+      <audio controls preload="metadata" src="assets/9da41d34-Orcasound_Lab_20260828T041129.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-orcasound_lab-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>13. North San Juan Channel</h3><span>confidence 0.874</span></div>
+      <p><code>North_SJC_20260828T183850.wav</code></p>
+      <p>Full source window: 27s. Positive model segments:</p>
+      <ul><li>0.0s, confidence 0.697</li><li>10.0s, confidence 0.543</li><li>12.0s, confidence 0.762</li><li>16.0s, confidence 0.874</li></ul>
+      <audio controls preload="metadata" src="assets/297a5f56-North_SJC_20260828T183850.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-north_sjc-20260828</code></p>
+    </article>
+    <article class="card">
+      <div class="card-head"><h3>14. North San Juan Channel</h3><span>confidence 0.805</span></div>
+      <p><code>North_SJC_20260829T023511.wav</code></p>
+      <p>Full source window: 29s. Positive model segments:</p>
+      <ul><li>10.0s, confidence 0.805</li></ul>
+      <audio controls preload="metadata" src="assets/980c3ddf-North_SJC_20260829T023511.window.mp3"></audio>
+      <p class="quiet">Run <code>orcahello-srkw-batch-20260901-north_sjc-20260829</code></p>
+    </article></div></section>
+<section><h2>Coverage And Gaps</h2><p>Completed data-bearing node-days were Aug. 28 and Aug. 29 for Bush Point, North San Juan Channel, and Orcasound Lab. Aug. 30 through Sep. 1 had no lake audio for these active feeds during this batch and are reported as source gaps, not acoustic absence.</p></section>
+<section><h2>Model And Limits</h2><p>Model: OrcaHello SRKW detector v1. The classifier marks likely SRKW-style calls in short overlapping segments. Playback here uses the full source window so reviewers can hear surrounding audio and reject false positives.</p></section>
+</main></body></html>
