@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaST Center video source quality, 2026-08-28 to 2026-09-01</title>
+<style>
+:root { color-scheme: light; --ink:#142129; --muted:#5f6f77; --line:#d8e0e3; --soft:#f2f7f6; --accent:#0b6f78; --warn:#9a6400; }
+body { margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif; color:var(--ink); background:white; }
+header { padding:36px max(24px,calc((100vw - 1040px)/2)); background:#eef7f5; border-bottom:1px solid var(--line); }
+main { max-width:1040px; margin:0 auto; padding:28px 24px 50px; }
+h1 { margin:0 0 10px; font-size:clamp(2rem,4vw,3.2rem); line-height:1.08; letter-spacing:0; }
+h2 { margin:34px 0 12px; font-size:1.35rem; }
+p { max-width:78ch; }
+.quiet { color:var(--muted); }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:24px 0; }
+.stat { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fff; }
+.stat b { display:block; font-size:1.8rem; color:var(--accent); }
+table { width:100%; border-collapse:collapse; font-size:.94rem; }
+th,td { text-align:left; border-bottom:1px solid var(--line); padding:8px 10px; vertical-align:top; }
+th { background:var(--soft); }
+.warn { border-left:4px solid var(--warn); padding:12px 14px; background:#fff8e8; }
+code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; }
+</style>
+<body>
+<header>
+<h1>MaST Center Video Source Quality</h1>
+<p class="quiet">Batch window: 2026-08-28 through 2026-09-01. Generated 2026-09-01T23:47:54Z.</p>
+</header>
+<main>
+<p>This page records why the MaST Center video detector batch was stopped before publication: the camera continued streaming, but water on or inside the camera blocked the aquarium view before the Friday batch window.</p>
+<div class="stats">
+<div class="stat"><b>5,018</b>captured batch segments, Aug 28-31</div>
+<div class="stat"><b>0</b>published detection runs</div>
+<div class="stat"><b>20260827T143843</b>last confirmed usable sample</div>
+<div class="stat"><b>20260828T123220</b>first confirmed blocked sample</div>
+</div>
+<div class="warn"><p><strong>Interpretation:</strong> the correct public result is a source-quality gap, not a no-detection result. Missing or water-blocked visibility must not be counted as biological absence.</p></div>
+<h2>Evidence</h2>
+<table><thead><tr><th>Partition</th><th>Segments</th><th>First item</th><th>Last item</th><th>Quality note</th></tr></thead><tbody><tr><td>2026-08-27 spot-check context</td><td>811</td><td>mast_center_aquarium_20260827T000023</td><td>mast_center_aquarium_20260827T143843</td><td>Last sampled clip was visually usable; late frames showed aquarium scene and fish.</td></tr><tr><td>2026-08-28 batch start day</td><td>689</td><td>mast_center_aquarium_20260828T123220</td><td>mast_center_aquarium_20260828T235948</td><td>First sampled clip at 12:32 PDT was already water-blocked.</td></tr><tr><td>2026-08-29</td><td>1,443</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-30</td><td>1,443</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-31</td><td>1,443</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr></tbody></table>
+<h2>Transition Bound</h2>
+<p>The last visually usable sampled clip was <code>mast_center_aquarium_20260827T143843</code>, labelled 2026-08-27 14:38 PDT in the video overlay. The first captured Friday clip checked was <code>mast_center_aquarium_20260828T123220</code>, labelled 2026-08-28 12:32 PDT, and was already water-blocked.</p>
+<p>No local laptop clips were found between those two timestamps, so the current bound for the transition is the capture gap between those samples. The blocked condition may have begun any time inside that interval.</p>
+<h2>Run Decision</h2>
+<p>The YOLO-Fish / marine-review full-fidelity batch was started, then intentionally stopped after the source-quality spot check. Continuing would primarily spend compute on blurred water/overlay artifacts. The saved private handoff keeps the contact sheets and partial logs for audit.</p>
+<h2>Limits</h2>
+<p>This report does not claim that no fish or marine mammals were present during the batch window. It says the camera view was not reliable enough for detection reporting from the captured Friday-to-cutoff video.</p>
+</main>
+</body>
+</html>

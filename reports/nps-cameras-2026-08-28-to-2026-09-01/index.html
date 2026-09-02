@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPS cameras, 2026-08-28 to 2026-09-01</title>
+<style>
+:root { color-scheme: light; --ink:#1d252c; --muted:#5b6770; --line:#d7dee2; --panel:#f6f8f8; --accent:#0c6b58; --soft:#edf5f2; }
+* { box-sizing:border-box; }
+body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:#ffffff; }
+main { max-width:1180px; margin:0 auto; padding:32px 18px 56px; }
+header { border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:24px; }
+h1 { font-size:clamp(2rem, 4vw, 3.2rem); line-height:1.04; margin:0 0 12px; letter-spacing:0; }
+p { line-height:1.55; }
+.lede { font-size:1.08rem; max-width:880px; color:#26323a; }
+.metrics { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; margin:22px 0; }
+.metric { background:var(--soft); border:1px solid #cfe2dc; padding:14px; border-radius:8px; }
+.metric b { display:block; font-size:1.55rem; }
+.metric span { color:var(--muted); font-size:.92rem; }
+h2 { margin:34px 0 12px; font-size:1.35rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(245px, 1fr)); gap:14px; }
+.card { border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
+.card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:#e8ecef; }
+.body { padding:12px; }
+.body h3 { margin:0 0 7px; font-size:1rem; }
+.body p { margin:.25rem 0; font-size:.92rem; }
+.muted { color:var(--muted); }
+.warn { color:#8a4b00; }
+table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:.94rem; }
+th, td { text-align:left; border-bottom:1px solid var(--line); padding:9px 8px; vertical-align:top; }
+th { background:var(--panel); font-weight:650; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.88em; }
+.note { background:var(--panel); border-left:4px solid var(--accent); padding:12px 14px; }
+@media (max-width:760px) { .metrics { grid-template-columns:repeat(2, minmax(0,1fr)); } main { padding:22px 14px 40px; } }
+</style>
+</head>
+<body><main>
+<header>
+  <h1>NPS Cameras</h1>
+  <p class="lede">Scene-filtered MegaDetector results for active NPS fixed cameras from 2026-08-28 through 2026-09-01. The gallery shows detections that survived fixed-camera suppression, sorted by model confidence. These are model candidates for review, not species identifications.</p>
+  <div class="metrics">
+    <div class="metric"><b>39</b><span>scene-filtered candidates</span></div>
+    <div class="metric"><b>12</b><span>shown first as high-confidence evidence</span></div>
+    <div class="metric"><b>4</b><span>completed data-bearing camera-days</span></div>
+    <div class="metric"><b>6</b><span>camera-days with no frames in lake</span></div>
+  </div>
+</header>
+<section>
+  <h2>High-Confidence Evidence</h2>
+  <div class="grid">
+      <article class="card">
+        <a href="assets/96e68c70-west_20260828T190805Z_497_914.jpg"><img src="assets/96e68c70-west_20260828T190805Z_497_914.jpg" alt="Detection crop from west_20260828T190805Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.903</strong> vehicle candidate</p>
+          <p>20260828 190805 UTC</p>
+          <p><code>west_20260828T190805Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/2b9337ec-west_20260828T032351Z_710_961.jpg"><img src="assets/2b9337ec-west_20260828T032351Z_710_961.jpg" alt="Detection crop from west_20260828T032351Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.635</strong> animal candidate</p>
+          <p>20260828 032351 UTC</p>
+          <p><code>west_20260828T032351Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg"><img src="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg" alt="Detection crop from sunrise_mountain_20260829T014612Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.577</strong> animal candidate</p>
+          <p>20260829 014612 UTC</p>
+          <p><code>sunrise_mountain_20260829T014612Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/2d74c5c9-west_20260829T143036Z_848_882.jpg"><img src="assets/2d74c5c9-west_20260829T143036Z_848_882.jpg" alt="Detection crop from west_20260829T143036Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.568</strong> animal candidate</p>
+          <p>20260829 143036 UTC</p>
+          <p><code>west_20260829T143036Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/b5067f46-west_20260829T160038Z_65_874.jpg"><img src="assets/b5067f46-west_20260829T160038Z_65_874.jpg" alt="Detection crop from west_20260829T160038Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.554</strong> animal candidate</p>
+          <p>20260829 160038 UTC</p>
+          <p><code>west_20260829T160038Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg"><img src="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg" alt="Detection crop from sunrise_mountain_20260829T145856Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.538</strong> animal candidate</p>
+          <p>20260829 145856 UTC</p>
+          <p><code>sunrise_mountain_20260829T145856Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/a914b0fc-west_20260829T002912Z_217_374.jpg"><img src="assets/a914b0fc-west_20260829T002912Z_217_374.jpg" alt="Detection crop from west_20260829T002912Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.513</strong> vehicle candidate</p>
+          <p>20260829 002912 UTC</p>
+          <p><code>west_20260829T002912Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/5f482d9f-west_20260828T222838Z_629_767.jpg"><img src="assets/5f482d9f-west_20260828T222838Z_629_767.jpg" alt="Detection crop from west_20260828T222838Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.508</strong> animal candidate</p>
+          <p>20260828 222838 UTC</p>
+          <p><code>west_20260828T222838Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/709b0778-west_20260828T233934Z_794_308.jpg"><img src="assets/709b0778-west_20260828T233934Z_794_308.jpg" alt="Detection crop from west_20260828T233934Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.506</strong> animal candidate</p>
+          <p>20260828 233934 UTC</p>
+          <p><code>west_20260828T233934Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg"><img src="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg" alt="Detection crop from sunrise_mountain_20260829T003719Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.496</strong> animal candidate</p>
+          <p>20260829 003719 UTC</p>
+          <p><code>sunrise_mountain_20260829T003719Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/da5c87c8-west_20260828T214201Z_39_959.jpg"><img src="assets/da5c87c8-west_20260828T214201Z_39_959.jpg" alt="Detection crop from west_20260828T214201Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.484</strong> animal candidate</p>
+          <p>20260828 214201 UTC</p>
+          <p><code>west_20260828T214201Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/fe319523-west_20260829T134302Z_1617_461.jpg"><img src="assets/fe319523-west_20260829T134302Z_1617_461.jpg" alt="Detection crop from west_20260829T134302Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.483</strong> animal candidate</p>
+          <p>20260829 134302 UTC</p>
+          <p><code>west_20260829T134302Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article></div>
+</section>
+<section>
+  <h2>All Scene-Filtered Candidates</h2>
+  <div class="grid">
+      <article class="card">
+        <a href="assets/96e68c70-west_20260828T190805Z_497_914.jpg"><img src="assets/96e68c70-west_20260828T190805Z_497_914.jpg" alt="Detection crop from west_20260828T190805Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.903</strong> vehicle candidate</p>
+          <p>20260828 190805 UTC</p>
+          <p><code>west_20260828T190805Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/2b9337ec-west_20260828T032351Z_710_961.jpg"><img src="assets/2b9337ec-west_20260828T032351Z_710_961.jpg" alt="Detection crop from west_20260828T032351Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.635</strong> animal candidate</p>
+          <p>20260828 032351 UTC</p>
+          <p><code>west_20260828T032351Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg"><img src="assets/2c109ab3-sunrise_mountain_20260829T014612Z_381_509.jpg" alt="Detection crop from sunrise_mountain_20260829T014612Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.577</strong> animal candidate</p>
+          <p>20260829 014612 UTC</p>
+          <p><code>sunrise_mountain_20260829T014612Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/2d74c5c9-west_20260829T143036Z_848_882.jpg"><img src="assets/2d74c5c9-west_20260829T143036Z_848_882.jpg" alt="Detection crop from west_20260829T143036Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.568</strong> animal candidate</p>
+          <p>20260829 143036 UTC</p>
+          <p><code>west_20260829T143036Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/b5067f46-west_20260829T160038Z_65_874.jpg"><img src="assets/b5067f46-west_20260829T160038Z_65_874.jpg" alt="Detection crop from west_20260829T160038Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.554</strong> animal candidate</p>
+          <p>20260829 160038 UTC</p>
+          <p><code>west_20260829T160038Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg"><img src="assets/e660cbb2-sunrise_mountain_20260829T145856Z_1278_332.jpg" alt="Detection crop from sunrise_mountain_20260829T145856Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.538</strong> animal candidate</p>
+          <p>20260829 145856 UTC</p>
+          <p><code>sunrise_mountain_20260829T145856Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/a914b0fc-west_20260829T002912Z_217_374.jpg"><img src="assets/a914b0fc-west_20260829T002912Z_217_374.jpg" alt="Detection crop from west_20260829T002912Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.513</strong> vehicle candidate</p>
+          <p>20260829 002912 UTC</p>
+          <p><code>west_20260829T002912Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/5f482d9f-west_20260828T222838Z_629_767.jpg"><img src="assets/5f482d9f-west_20260828T222838Z_629_767.jpg" alt="Detection crop from west_20260828T222838Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.508</strong> animal candidate</p>
+          <p>20260828 222838 UTC</p>
+          <p><code>west_20260828T222838Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/709b0778-west_20260828T233934Z_794_308.jpg"><img src="assets/709b0778-west_20260828T233934Z_794_308.jpg" alt="Detection crop from west_20260828T233934Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.506</strong> animal candidate</p>
+          <p>20260828 233934 UTC</p>
+          <p><code>west_20260828T233934Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg"><img src="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg" alt="Detection crop from sunrise_mountain_20260829T003719Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.496</strong> animal candidate</p>
+          <p>20260829 003719 UTC</p>
+          <p><code>sunrise_mountain_20260829T003719Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/da5c87c8-west_20260828T214201Z_39_959.jpg"><img src="assets/da5c87c8-west_20260828T214201Z_39_959.jpg" alt="Detection crop from west_20260828T214201Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.484</strong> animal candidate</p>
+          <p>20260828 214201 UTC</p>
+          <p><code>west_20260828T214201Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/fe319523-west_20260829T134302Z_1617_461.jpg"><img src="assets/fe319523-west_20260829T134302Z_1617_461.jpg" alt="Detection crop from west_20260829T134302Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.483</strong> animal candidate</p>
+          <p>20260829 134302 UTC</p>
+          <p><code>west_20260829T134302Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/9acb5c62-west_20260828T222435Z_749_938.jpg"><img src="assets/9acb5c62-west_20260828T222435Z_749_938.jpg" alt="Detection crop from west_20260828T222435Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.469</strong> animal candidate</p>
+          <p>20260828 222435 UTC</p>
+          <p><code>west_20260828T222435Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/22ceaae7-sunrise_mountain_20260829T031818Z_387_685.jpg"><img src="assets/22ceaae7-sunrise_mountain_20260829T031818Z_387_685.jpg" alt="Detection crop from sunrise_mountain_20260829T031818Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.437</strong> animal candidate</p>
+          <p>20260829 031818 UTC</p>
+          <p><code>sunrise_mountain_20260829T031818Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/8b57c21e-west_20260828T223040Z_733_652.jpg"><img src="assets/8b57c21e-west_20260828T223040Z_733_652.jpg" alt="Detection crop from west_20260828T223040Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.416</strong> animal candidate</p>
+          <p>20260828 223040 UTC</p>
+          <p><code>west_20260828T223040Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/54a81401-sunrise_mountain_20260829T010240Z_988_409.jpg"><img src="assets/54a81401-sunrise_mountain_20260829T010240Z_988_409.jpg" alt="Detection crop from sunrise_mountain_20260829T010240Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.399</strong> animal candidate</p>
+          <p>20260829 010240 UTC</p>
+          <p><code>sunrise_mountain_20260829T010240Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/e7e8009c-sunrise_mountain_20260829T152212Z_1272_333.jpg"><img src="assets/e7e8009c-sunrise_mountain_20260829T152212Z_1272_333.jpg" alt="Detection crop from sunrise_mountain_20260829T152212Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.395</strong> animal candidate</p>
+          <p>20260829 152212 UTC</p>
+          <p><code>sunrise_mountain_20260829T152212Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/d1458155-west_20260829T135309Z_329_731.jpg"><img src="assets/d1458155-west_20260829T135309Z_329_731.jpg" alt="Detection crop from west_20260829T135309Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.392</strong> animal candidate</p>
+          <p>20260829 135309 UTC</p>
+          <p><code>west_20260829T135309Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/676d2aaf-west_20260829T013907Z_574_353.jpg"><img src="assets/676d2aaf-west_20260829T013907Z_574_353.jpg" alt="Detection crop from west_20260829T013907Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.375</strong> vehicle candidate</p>
+          <p>20260829 013907 UTC</p>
+          <p><code>west_20260829T013907Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/b66dc576-west_20260829T025100Z_653_725.jpg"><img src="assets/b66dc576-west_20260829T025100Z_653_725.jpg" alt="Detection crop from west_20260829T025100Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.373</strong> animal candidate</p>
+          <p>20260829 025100 UTC</p>
+          <p><code>west_20260829T025100Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/d918f1bb-west_20260828T184952Z_842_924.jpg"><img src="assets/d918f1bb-west_20260828T184952Z_842_924.jpg" alt="Detection crop from west_20260828T184952Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.349</strong> animal candidate</p>
+          <p>20260828 184952 UTC</p>
+          <p><code>west_20260828T184952Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/b62f7186-west_20260829T133458Z_793_657.jpg"><img src="assets/b62f7186-west_20260829T133458Z_793_657.jpg" alt="Detection crop from west_20260829T133458Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.317</strong> animal candidate</p>
+          <p>20260829 133458 UTC</p>
+          <p><code>west_20260829T133458Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/91f03791-west_20260828T220519Z_484_896.jpg"><img src="assets/91f03791-west_20260828T220519Z_484_896.jpg" alt="Detection crop from west_20260828T220519Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.311</strong> animal candidate</p>
+          <p>20260828 220519 UTC</p>
+          <p><code>west_20260828T220519Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/df7a490d-sunrise_mountain_20260829T010139Z_1206_389.jpg"><img src="assets/df7a490d-sunrise_mountain_20260829T010139Z_1206_389.jpg" alt="Detection crop from sunrise_mountain_20260829T010139Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.301</strong> animal candidate</p>
+          <p>20260829 010139 UTC</p>
+          <p><code>sunrise_mountain_20260829T010139Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/ea55c984-sunrise_mountain_20260829T130239Z_1441_207.jpg"><img src="assets/ea55c984-sunrise_mountain_20260829T130239Z_1441_207.jpg" alt="Detection crop from sunrise_mountain_20260829T130239Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.301</strong> person candidate</p>
+          <p>20260829 130239 UTC</p>
+          <p><code>sunrise_mountain_20260829T130239Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/06bd4b5f-west_20260828T233833Z_790_304.jpg"><img src="assets/06bd4b5f-west_20260828T233833Z_790_304.jpg" alt="Detection crop from west_20260828T233833Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.301</strong> animal candidate</p>
+          <p>20260828 233833 UTC</p>
+          <p><code>west_20260828T233833Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/b0420bc1-west_20260828T184650Z_891_904.jpg"><img src="assets/b0420bc1-west_20260828T184650Z_891_904.jpg" alt="Detection crop from west_20260828T184650Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.300</strong> animal candidate</p>
+          <p>20260828 184650 UTC</p>
+          <p><code>west_20260828T184650Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/67f71634-west_20260828T202402Z_796_857.jpg"><img src="assets/67f71634-west_20260828T202402Z_796_857.jpg" alt="Detection crop from west_20260828T202402Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.284</strong> animal candidate</p>
+          <p>20260828 202402 UTC</p>
+          <p><code>west_20260828T202402Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/73a9bd27-west_20260828T223947Z_303_912.jpg"><img src="assets/73a9bd27-west_20260828T223947Z_303_912.jpg" alt="Detection crop from west_20260828T223947Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.282</strong> animal candidate</p>
+          <p>20260828 223947 UTC</p>
+          <p><code>west_20260828T223947Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/47ef449c-west_20260828T210633Z_860_930.jpg"><img src="assets/47ef449c-west_20260828T210633Z_860_930.jpg" alt="Detection crop from west_20260828T210633Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.281</strong> animal candidate</p>
+          <p>20260828 210633 UTC</p>
+          <p><code>west_20260828T210633Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/0c9ea8b7-west_20260829T150057Z_337_881.jpg"><img src="assets/0c9ea8b7-west_20260829T150057Z_337_881.jpg" alt="Detection crop from west_20260829T150057Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.266</strong> animal candidate</p>
+          <p>20260829 150057 UTC</p>
+          <p><code>west_20260829T150057Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/775ad778-sunrise_mountain_20260829T004224Z_1382_266.jpg"><img src="assets/775ad778-sunrise_mountain_20260829T004224Z_1382_266.jpg" alt="Detection crop from sunrise_mountain_20260829T004224Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.251</strong> animal candidate</p>
+          <p>20260829 004224 UTC</p>
+          <p><code>sunrise_mountain_20260829T004224Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/dd7fc552-sunrise_mountain_20260829T013605Z_406_452.jpg"><img src="assets/dd7fc552-sunrise_mountain_20260829T013605Z_406_452.jpg" alt="Detection crop from sunrise_mountain_20260829T013605Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.248</strong> animal candidate</p>
+          <p>20260829 013605 UTC</p>
+          <p><code>sunrise_mountain_20260829T013605Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/01b2f33d-west_20260828T193123Z_854_914.jpg"><img src="assets/01b2f33d-west_20260828T193123Z_854_914.jpg" alt="Detection crop from west_20260828T193123Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.246</strong> animal candidate</p>
+          <p>20260828 193123 UTC</p>
+          <p><code>west_20260828T193123Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/a8bae33f-west_20260829T125937Z_516_689.jpg"><img src="assets/a8bae33f-west_20260829T125937Z_516_689.jpg" alt="Detection crop from west_20260829T125937Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.224</strong> animal candidate</p>
+          <p>20260829 125937 UTC</p>
+          <p><code>west_20260829T125937Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/f80de894-sunrise_mountain_20260828T235747Z_987_408.jpg"><img src="assets/f80de894-sunrise_mountain_20260828T235747Z_987_408.jpg" alt="Detection crop from sunrise_mountain_20260828T235747Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.221</strong> animal candidate</p>
+          <p>20260828 235747 UTC</p>
+          <p><code>sunrise_mountain_20260828T235747Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry01-sunrise_mountain-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/3fb8a18d-west_20260829T135208Z_328_728.jpg"><img src="assets/3fb8a18d-west_20260829T135208Z_328_728.jpg" alt="Detection crop from west_20260829T135208Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.214</strong> animal candidate</p>
+          <p>20260829 135208 UTC</p>
+          <p><code>west_20260829T135208Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/d9352f5e-west_20260828T220519Z_681_760.jpg"><img src="assets/d9352f5e-west_20260828T220519Z_681_760.jpg" alt="Detection crop from west_20260828T220519Z.jpg"></a>
+        <div class="body">
+          <h3>NPS West</h3>
+          <p><strong>0.210</strong> animal candidate</p>
+          <p>20260828 220519 UTC</p>
+          <p><code>west_20260828T220519Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-west-20260828</code></p>
+          
+        </div>
+      </article>
+      <article class="card">
+        <a href="assets/69d98b10-sunrise_mountain_20260829T135411Z_893_353.jpg"><img src="assets/69d98b10-sunrise_mountain_20260829T135411Z_893_353.jpg" alt="Detection crop from sunrise_mountain_20260829T135411Z.jpg"></a>
+        <div class="body">
+          <h3>NPS Sunrise Mountain</h3>
+          <p><strong>0.202</strong> animal candidate</p>
+          <p>20260829 135411 UTC</p>
+          <p><code>sunrise_mountain_20260829T135411Z.jpg</code></p>
+          <p class="muted">Run <code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></p>
+          
+        </div>
+      </article></div>
+</section>
+<section>
+  <h2>Run Summary</h2>
+  <table><thead><tr><th>Run</th><th>Camera</th><th>Window</th><th>Candidates</th><th>Static suppressed</th><th>Above treeline suppressed</th></tr></thead><tbody><tr><td><code>megadetector-nps-batch-20260901-nps-retry01-sunrise_mountain-20260828</code></td><td>NPS Sunrise Mountain</td><td>20260828T000051Z to 20260828T235949Z</td><td>1</td><td>513</td><td>4</td></tr><tr><td><code>megadetector-nps-batch-20260901-nps-retry02-west-20260829</code></td><td>NPS West</td><td>20260829T000049Z to 20260829T161447Z</td><td>11</td><td>135</td><td>5</td></tr><tr><td><code>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</code></td><td>NPS Sunrise Mountain</td><td>20260829T000049Z to 20260829T161448Z</td><td>11</td><td>127</td><td>6</td></tr><tr><td><code>megadetector-nps-batch-20260901-nps-west-20260828</code></td><td>NPS West</td><td>20260828T000024Z to 20260828T235948Z</td><td>16</td><td>259</td><td>2</td></tr></tbody></table>
+</section>
+<section>
+  <h2>Coverage</h2>
+  <p class="note">No-data days are explicit lake gaps, not biological absence. The original dependency failures on two camera-days were rerun successfully and are marked as superseded below.</p>
+  <table><thead><tr><th>Camera</th><th>Day</th><th>Scene-filtered candidates</th></tr></thead><tbody><tr><td>NPS Sunrise Mountain</td><td>2026-08-28</td><td>1</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-29</td><td>11</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-30</td><td>0</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-08-31</td><td>0</td></tr><tr><td>NPS Sunrise Mountain</td><td>2026-09-01</td><td>0</td></tr><tr><td>NPS West</td><td>2026-08-28</td><td>16</td></tr><tr><td>NPS West</td><td>2026-08-29</td><td>11</td></tr><tr><td>NPS West</td><td>2026-08-30</td><td>0</td></tr><tr><td>NPS West</td><td>2026-08-31</td><td>0</td></tr><tr><td>NPS West</td><td>2026-09-01</td><td>0</td></tr></tbody></table>
+</section>
+<section>
+  <h2>Status Ledger</h2>
+  <table><thead><tr><th>Run</th><th>Attempts</th><th>Failures</th><th>Outcome</th></tr></thead><tbody><tr><td>megadetector-nps-batch-20260901-nps-retry01-sunrise_mountain-20260828</td><td>1</td><td>0</td><td>ok</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-retry02-west-20260829</td><td>1</td><td>0</td><td>ok</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260828</td><td>2</td><td>1</td><td>superseded by retry01 ok</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260829</td><td>1</td><td>0</td><td>ok</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260830</td><td>1</td><td>1</td><td>no_data</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260831</td><td>1</td><td>1</td><td>no_data</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-sunrise_mountain-20260901</td><td>1</td><td>1</td><td>no_data</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-west-20260828</td><td>1</td><td>0</td><td>ok</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-west-20260829</td><td>2</td><td>1</td><td>superseded by retry02 ok</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-west-20260830</td><td>1</td><td>1</td><td>no_data</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-west-20260831</td><td>1</td><td>1</td><td>no_data</td></tr>
+<tr><td>megadetector-nps-batch-20260901-nps-west-20260901</td><td>1</td><td>1</td><td>no_data</td></tr></tbody></table>
+</section>
+<section>
+  <h2>Limits</h2>
+  <p>MegaDetector reports broad object categories such as animal, person, and vehicle. The fixed-camera scene filter suppresses recurring boxes, dark frames, and above-treeline boxes, but remaining candidates still need human review before biological interpretation.</p>
+</section>
+</main></body></html>
