@@ -1,0 +1,114 @@
+{
+  "report_id": "daily-orcasound-hydrophones-2026-09-01",
+  "title": "Orcasound hydrophones, 2026-09-01",
+  "schema_version": 1,
+  "generated_at": "2026-09-03T17:43:47+00:00",
+  "license": "CC-BY-NC-SA-4.0",
+  "sites": [
+    {
+      "feed": "orcasound",
+      "camera": "bush_point",
+      "label": "Orcasound Bush Point",
+      "kind": "hydrophone",
+      "location": {
+        "lat": 48.03,
+        "lon": -122.61,
+        "precision": "approximate",
+        "water": "Admiralty Inlet, off Whidbey Island"
+      }
+    },
+    {
+      "feed": "orcasound",
+      "camera": "north_sjc",
+      "label": "Orcasound North San Juan Channel",
+      "kind": "hydrophone",
+      "location": {
+        "lat": 48.62,
+        "lon": -123.09,
+        "water": "north San Juan Channel",
+        "precision": "approximate",
+        "source": "Orcasound publishes no lat/lon for this node and names Reuben Tarte County Park as the nearest public access. These are the park's coordinates, not the hydrophone's; the node sits offshore of it in north San Juan Channel at roughly 11.5 m."
+      }
+    },
+    {
+      "feed": "orcasound",
+      "camera": "orcasound_lab",
+      "label": "Orcasound Lab, Haro Strait",
+      "kind": "hydrophone",
+      "location": {
+        "lat": 48.56,
+        "lon": -123.17,
+        "precision": "approximate",
+        "water": "Haro Strait, west side of San Juan Island"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "orcahello-srkw",
+      "model_version": "OrcaHello",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "orcahello-srkw-orcasound-20260901-bush_point-20260901",
+    "orcahello-srkw-orcasound-20260901-north_sjc-20260901",
+    "orcahello-srkw-orcasound-20260901-orcasound_lab-20260901"
+  ],
+  "window": {
+    "start_utc": "2026-09-01",
+    "end_utc": "2026-09-01",
+    "usable_hours": 0.0
+  },
+  "counts": {
+    "assets_bundled": 0,
+    "assets_bytes": 0,
+    "assets_deduplicated": 0,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "orcasound/bush_point",
+      "holder": "Orcasound",
+      "terms": "CC BY-NC-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "source_url": "https://live.orcasound.net/listen/bush-point",
+      "attribution": "Orcasound",
+      "attribution_url": "https://www.orcasound.net",
+      "derivatives_license": "CC-BY-NC-SA-4.0",
+      "commercial_use": "permission_required",
+      "verified_on": "2026-08-31"
+    },
+    {
+      "feed": "orcasound/north_sjc",
+      "holder": "Orcasound",
+      "terms": "CC BY-NC-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "source_url": "https://live.orcasound.net/listen/north-sjc",
+      "attribution": "Orcasound",
+      "attribution_url": "https://www.orcasound.net",
+      "derivatives_license": "CC-BY-NC-SA-4.0",
+      "commercial_use": "permission_required",
+      "verified_on": "2026-08-31"
+    },
+    {
+      "feed": "orcasound/orcasound_lab",
+      "holder": "Orcasound",
+      "terms": "CC BY-NC-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "source_url": "https://live.orcasound.net/listen/orcasound-lab",
+      "attribution": "Orcasound",
+      "attribution_url": "https://www.orcasound.net",
+      "derivatives_license": "CC-BY-NC-SA-4.0",
+      "commercial_use": "permission_required",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "redaction_allowances": []
+}
