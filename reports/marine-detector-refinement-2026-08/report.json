@@ -2,7 +2,7 @@
   "report_id": "marine-detector-refinement-2026-08",
   "title": "Refining the marine detector on a fixed two hours",
   "schema_version": 1,
-  "generated_at": "2026-09-03T20:13:36+00:00",
+  "generated_at": "2026-09-03T20:29:38+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -133,6 +133,10 @@
     "land"
   ],
   "review_status": "model candidate",
+  "series": {
+    "name": "MaST aquarium, 2026-08-10: three passes",
+    "position": 0
+  },
   "evidence_assets": [],
   "media_quality": {},
   "model_refresh": {},

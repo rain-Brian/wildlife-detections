@@ -2,7 +2,7 @@
   "report_id": "mast-aug10-candidates-pass1-permissive",
   "title": "MaST aquarium, 2026-08-10: pass 1, permissive rules",
   "schema_version": 1,
-  "generated_at": "2026-09-03T20:08:52+00:00",
+  "generated_at": "2026-09-03T20:29:15+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -79,6 +79,10 @@
     "review_queue"
   ],
   "review_status": "model candidate",
+  "series": {
+    "name": "MaST aquarium, 2026-08-10: three passes",
+    "position": 1
+  },
   "evidence_assets": [],
   "media_quality": {},
   "model_refresh": {},
