@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-02T18:18:19+00:00",
+  "generated_at": "2026-09-03T18:44:58+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -8,7 +8,7 @@
   },
   "metrics": {
     "reports": 7,
-    "featured": 11,
+    "featured": 13,
     "reviewed": 5,
     "usable_hours": 1181.1,
     "days_covered": 24
@@ -70,34 +70,47 @@
       }
     },
     {
+      "title": "North San Juan Channel Bigg's encounter signal",
+      "summary": "The August hydrophone analysis found a clustered Bigg's-class ecotype signal at North San Juan Channel that survived the site-specific floor and independent-record comparison. Six full 30-second windows from the 2026-08-15 cluster are now playable.",
+      "domain": "hydrophone",
+      "review_status": "classification above site floor",
+      "report_id": "hydrophones-2026-08",
+      "report_title": "Salish Sea hydrophones, August 2026",
+      "media": {
+        "src": "reports/hydrophones-2026-08/assets/53d7e985-audioace0c20a4149.mp3"
+      }
+    },
+    {
       "title": "Orcasound Lab SRKW encounter signal",
-      "summary": "A clustered 2026-08-26 Orcasound Lab bout with Southern Resident classifier support and corroborating encounter context.",
+      "summary": "A ten-minute Southern Resident bout at Orcasound Lab on 2026-08-26, 21:24 to 21:35 UTC. Fifteen consecutive 30-second windows are published, every one of them classified Southern Resident at 0.99 or above. The window shown here is the densest, with 13 positive segments.",
       "domain": "hydrophone",
       "review_status": "classification above site floor",
       "report_id": "hydrophones-2026-08-24-to-2026-08-26",
       "report_title": "Salish Sea hydrophones, 2026-08-24 to 2026-08-26",
       "media": {
-        "src": "reports/hydrophones-2026-08-24-to-2026-08-26/assets/e5ad313e-audio3d4c32133f1a.mp3"
+        "src": "reports/hydrophones-2026-08-24-to-2026-08-26/assets/4a48e305-audio016f958eac91.mp3"
       }
     },
     {
-      "title": "North San Juan Channel Bigg's encounter signal",
-      "summary": "The August hydrophone analysis found a clustered Bigg's-class ecotype signal at North San Juan Channel that survived the site-specific floor and independent-record comparison.",
+      "title": "First calls of the Orcasound Lab encounter",
+      "summary": "The opening window of the 2026-08-26 encounter at 21:24:44 UTC, three positive segments. The bout builds from here.",
       "domain": "hydrophone",
       "review_status": "classification above site floor",
-      "report_id": "hydrophones-2026-08",
-      "report_title": "Salish Sea hydrophones, August 2026",
-      "media": {}
+      "report_id": "hydrophones-2026-08-24-to-2026-08-26",
+      "report_title": "Salish Sea hydrophones, 2026-08-24 to 2026-08-26",
+      "media": {
+        "src": "reports/hydrophones-2026-08-24-to-2026-08-26/assets/7baa1e62-audioc4ab25acdecc.mp3"
+      }
     },
     {
-      "title": "Orcasound Lab high-confidence call window",
-      "summary": "A full 30-second OrcaHello-positive source window from Orcasound Lab, suitable for public listening review but not yet an ecotype claim.",
+      "title": "Last calls of the Orcasound Lab encounter",
+      "summary": "The closing window at 21:34:45 UTC, ten minutes after the first. Nothing above the site floor follows it that day.",
       "domain": "hydrophone",
-      "review_status": "model candidate",
-      "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-01",
-      "report_title": "Orcasound hydrophones, 2026-08-28 to 2026-09-01",
+      "review_status": "classification above site floor",
+      "report_id": "hydrophones-2026-08-24-to-2026-08-26",
+      "report_title": "Salish Sea hydrophones, 2026-08-24 to 2026-08-26",
       "media": {
-        "src": "reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"
+        "src": "reports/hydrophones-2026-08-24-to-2026-08-26/assets/ec44709f-audiof26ced7b7503.mp3"
       }
     },
     {
@@ -109,6 +122,17 @@
       "report_title": "NPS cameras, 2026-08-28 to 2026-09-01",
       "media": {
         "src": "reports/nps-cameras-2026-08-28-to-2026-09-01/assets/sunrise_mountain_20260829T014612Z.annotated.jpg"
+      }
+    },
+    {
+      "title": "Orcasound Lab high-confidence call window",
+      "summary": "A full 30-second OrcaHello-positive source window from Orcasound Lab, suitable for public listening review but not yet an ecotype claim.",
+      "domain": "hydrophone",
+      "review_status": "model candidate",
+      "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-01",
+      "report_title": "Orcasound hydrophones, 2026-08-28 to 2026-09-01",
+      "media": {
+        "src": "reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"
       }
     },
     {
@@ -134,9 +158,39 @@
   ],
   "reports": [
     {
+      "report_id": "hydrophones-2026-08",
+      "title": "Salish Sea hydrophones, August 2026",
+      "generated_at": "2026-09-03T18:44:54+00:00",
+      "domains": [
+        "hydrophone",
+        "acoustic_call",
+        "source_quality"
+      ],
+      "coverage": "1,062 hours usable, 18 days",
+      "review_status": "classification above site floor",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "v1",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        },
+        {
+          "model_name": "ecotype-classifier",
+          "model_version": "Palmer-et-al-2026-derived",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
       "report_id": "hydrophones-2026-08-24-to-2026-08-26",
       "title": "Salish Sea hydrophones, 2026-08-24 to 2026-08-26",
-      "generated_at": "2026-09-02T18:17:34+00:00",
+      "generated_at": "2026-09-03T18:39:07+00:00",
       "domains": [
         "hydrophone",
         "orca",
@@ -235,7 +289,7 @@
         "land",
         "terrestrial_mammal"
       ],
-      "coverage": "coverage not recorded",
+      "coverage": "4 days covered",
       "review_status": "model candidate",
       "models": [
         {
@@ -266,36 +320,6 @@
           "license": null,
           "lineage": null,
           "caveat": null
-        }
-      ]
-    },
-    {
-      "report_id": "hydrophones-2026-08",
-      "title": "Salish Sea hydrophones, August 2026",
-      "generated_at": "2026-08-31T18:49:12+00:00",
-      "domains": [
-        "hydrophone",
-        "acoustic_call",
-        "source_quality"
-      ],
-      "coverage": "1,062 hours usable, 18 days",
-      "review_status": "classification above site floor",
-      "models": [
-        {
-          "model_name": "orcahello-srkw",
-          "model_version": "v1",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
-        },
-        {
-          "model_name": "ecotype-classifier",
-          "model_version": "Palmer-et-al-2026-derived",
-          "code_commit": null,
-          "license": null,
-          "lineage": "Palmer et al. 2026",
-          "caveat": "Reports which population a call is more consistent with. It is a comparison, not a determination."
         }
       ]
     }

@@ -2,7 +2,7 @@
   "report_id": "hydrophones-2026-08-24-to-2026-08-26",
   "title": "Salish Sea hydrophones, 2026-08-24 to 2026-08-26",
   "schema_version": 1,
-  "generated_at": "2026-09-02T18:17:34+00:00",
+  "generated_at": "2026-09-03T18:39:07+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -46,18 +46,19 @@
     "usable_hours": null
   },
   "counts": {
-    "assets_bundled": 2,
-    "assets_bytes": 481050,
+    "assets_bundled": 15,
+    "assets_bytes": 3607203,
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
     "source_windows": 25079,
     "detections": 3009,
-    "featured_audio_full_windows": 2,
+    "featured_audio_full_windows": 15,
     "featured_audio_fallback_clips": 0,
     "windows_analysed": 25079,
-    "featured_full_window_count": 2,
+    "featured_full_window_count": 15,
     "featured_fallback_clip_count": 0,
+    "encounter_windows_published": 15,
     "reviewable": false
   },
   "rights": [
@@ -85,16 +86,70 @@
         "Southern Resident killer whale"
       ],
       "review_status": "classification above site floor",
-      "summary": "A clustered 2026-08-26 Orcasound Lab bout with Southern Resident classifier support and corroborating encounter context.",
+      "summary": "A ten-minute Southern Resident bout at Orcasound Lab on 2026-08-26, 21:24 to 21:35 UTC. Fifteen consecutive 30-second windows are published, every one of them classified Southern Resident at 0.99 or above. The window shown here is the densest, with 13 positive segments.",
       "source": "Orcasound Lab hydrophone",
-      "timestamp": "2026-08-26 local afternoon",
+      "timestamp": "2026-08-26T21:24:44Z to 2026-08-26T21:34:45Z",
       "model": "OrcaHello plus Salish Sea ecotype classifier",
       "confidence": "29 of 30 windows in the local encounter cluster called SRKW above the site floor.",
       "media": [
+        "assets/4a48e305-audio016f958eac91.mp3",
+        "assets/7baa1e62-audioc4ab25acdecc.mp3",
+        "assets/ce47341d-audiod0d41ef24851.mp3",
+        "assets/9c8017e9-audiodc35ef1bbfd7.mp3",
+        "assets/046c8673-audioa68d8e8d1c95.mp3",
+        "assets/4a307bdf-audio802cc0d1c2bd.mp3",
+        "assets/5cf52594-audioc23c11def7e9.mp3",
+        "assets/2d936331-audio9a8c83f7e219.mp3",
+        "assets/d57fe7b0-audiod91fe13047e5.mp3",
         "assets/e5ad313e-audio3d4c32133f1a.mp3",
-        "assets/ab208b71-audio5e860995f07a.mp3"
+        "assets/96ae2713-audio28bddf821943.mp3",
+        "assets/8fceccb1-audio3eeb8405f563.mp3",
+        "assets/ab208b71-audio5e860995f07a.mp3",
+        "assets/f680cd62-audio4bc9296edc17.mp3",
+        "assets/ec44709f-audiof26ced7b7503.mp3"
       ],
+      "rank": 0,
       "rank_score": 95
+    },
+    {
+      "id": "orcasound-lab-srkw-encounter-20260826-open",
+      "title": "First calls of the Orcasound Lab encounter",
+      "domain": "hydrophone",
+      "taxonomy": [
+        "hydrophone",
+        "orca",
+        "Southern Resident killer whale"
+      ],
+      "review_status": "classification above site floor",
+      "summary": "The opening window of the 2026-08-26 encounter at 21:24:44 UTC, three positive segments. The bout builds from here.",
+      "source": "Orcasound Lab hydrophone",
+      "timestamp": "2026-08-26T21:24:44Z",
+      "model": "OrcaHello plus Salish Sea ecotype classifier",
+      "confidence": "Ecotype 1.00 Southern Resident, OrcaHello 0.97.",
+      "media": [
+        "assets/7baa1e62-audioc4ab25acdecc.mp3"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "orcasound-lab-srkw-encounter-20260826-close",
+      "title": "Last calls of the Orcasound Lab encounter",
+      "domain": "hydrophone",
+      "taxonomy": [
+        "hydrophone",
+        "orca",
+        "Southern Resident killer whale"
+      ],
+      "review_status": "classification above site floor",
+      "summary": "The closing window at 21:34:45 UTC, ten minutes after the first. Nothing above the site floor follows it that day.",
+      "source": "Orcasound Lab hydrophone",
+      "timestamp": "2026-08-26T21:34:45Z",
+      "model": "OrcaHello plus Salish Sea ecotype classifier",
+      "confidence": "Ecotype 1.00 Southern Resident, OrcaHello 0.93.",
+      "media": [
+        "assets/ec44709f-audiof26ced7b7503.mp3"
+      ],
+      "rank": 2
     }
   ],
   "taxonomy": [
@@ -106,7 +161,84 @@
   "evidence_assets": [
     {
       "kind": "audio",
+      "path": "assets/7baa1e62-audioc4ab25acdecc.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/ce47341d-audiod0d41ef24851.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/4a48e305-audio016f958eac91.mp3",
+      "duration_seconds": 30.016,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/9c8017e9-audiodc35ef1bbfd7.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/046c8673-audioa68d8e8d1c95.mp3",
+      "duration_seconds": 30.016,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/4a307bdf-audio802cc0d1c2bd.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/5cf52594-audioc23c11def7e9.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/2d936331-audio9a8c83f7e219.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/d57fe7b0-audiod91fe13047e5.mp3",
+      "duration_seconds": 30.016,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
       "path": "assets/e5ad313e-audio3d4c32133f1a.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/96ae2713-audio28bddf821943.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/8fceccb1-audio3eeb8405f563.mp3",
       "duration_seconds": 29.994667,
       "quality": "full 30-second source window",
       "featured": true
@@ -117,38 +249,43 @@
       "duration_seconds": 30.016,
       "quality": "full 30-second source window",
       "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/f680cd62-audio4bc9296edc17.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/ec44709f-audiof26ced7b7503.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
     }
   ],
   "media_quality": {
     "audio": {
       "featured_requires_full_window": true,
-      "full_window": 2,
-      "fallback_clip": 0,
-      "featured_audio_count": 2,
+      "featured_audio_count": 15,
+      "featured_full_window_count": 15,
+      "full_window_count": 15,
+      "featured_fallback_clip_count": 0,
+      "fallback_clip_count": 0,
+      "min_featured_duration_seconds": 28,
       "duration_seconds": [
         29.994667,
         30.016
-      ],
-      "featured_full_window_count": 2,
-      "full_window_count": 2,
-      "featured_fallback_clip_count": 0,
-      "fallback_clip_count": 0,
-      "min_featured_duration_seconds": 28
+      ]
     },
-    "asset_bytes": 481050
+    "asset_bytes": null
   },
-  "model_refresh": {
-    "decision": "already current and publishable",
-    "reasons": [
-      "Rebuilt from the current ecotype-classifier sweep with cached 30-second source windows and zero short excerpt fallbacks."
-    ],
-    "run_ids": [
-      "srkw-3day-20260826"
-    ]
-  },
+  "model_refresh": {},
   "quality": {
     "public_claim": "Corroborated hydrophone classification evidence, not a final population or behavioral inference.",
     "does_not_claim": "This does not claim individual whales, pod identity, or abundance.",
+    "selection_rule": "Every published window is a full 30-second source window from the one encounter cluster that cleared the Orcasound Lab false-positive floor.",
     "gates": [
       "full-window audio required",
       "fallback_clip == 0",
