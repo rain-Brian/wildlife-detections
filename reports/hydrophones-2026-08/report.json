@@ -2,7 +2,7 @@
   "report_id": "hydrophones-2026-08",
   "title": "Salish Sea hydrophones, August 2026",
   "schema_version": 1,
-  "generated_at": "2026-08-31T18:49:12+00:00",
+  "generated_at": "2026-09-03T18:44:54+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -57,8 +57,8 @@
       "model_version": "Palmer-et-al-2026-derived",
       "code_commit": null,
       "license": null,
-      "lineage": "Palmer et al. 2026",
-      "caveat": "Reports which population a call is more consistent with. It is a comparison, not a determination."
+      "lineage": null,
+      "caveat": null
     }
   ],
   "floors": [],
@@ -74,8 +74,8 @@
     "usable_hours": 1062.5
   },
   "counts": {
-    "assets_bundled": 0,
-    "assets_bytes": 0,
+    "assets_bundled": 12,
+    "assets_bytes": 2885340,
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
@@ -86,53 +86,12 @@
       "orcasound_lab": 27248
     },
     "days_covered": 18,
-    "source_paths_unparsable": 0
-  },
-  "featured_findings": [
-    {
-      "title": "North San Juan Channel Bigg's encounter signal",
-      "summary": "The August hydrophone analysis found a clustered Bigg's-class ecotype signal at North San Juan Channel that survived the site-specific floor and independent-record comparison.",
-      "domain": "hydrophone",
-      "taxonomy": "acoustic_call",
-      "review_status": "classification above site floor",
-      "rank": 0,
-      "source": "Orcasound North San Juan Channel hydrophone",
-      "evidence": "ecotype rates, site-specific false-positive floor, daily presence chart, and independent sighting context"
-    },
-    {
-      "title": "Bush Point 4,816 Hz resonance",
-      "summary": "A persistent resonance explained most Bush Point Southern Resident detections, showing why public pages need floor checks and source-quality context.",
-      "domain": "hydrophone",
-      "taxonomy": "source_quality",
-      "review_status": "below floor / context only",
-      "rank": 1,
-      "source": "Orcasound Bush Point hydrophone",
-      "evidence": "resonance filter, spectrum chart, and per-node prevalence table"
-    }
-  ],
-  "taxonomy": [
-    "hydrophone",
-    "acoustic_call",
-    "source_quality"
-  ],
-  "review_status": "classification above site floor",
-  "evidence_assets": [],
-  "media_quality": {
-    "audio": {
-      "featured_requires_full_window": true,
-      "featured_audio_count": 0,
-      "featured_full_window_count": 0,
-      "featured_fallback_clip_count": 0,
-      "asset_strategy": "needs GitHub Pages audio rebuild before featuring playable clips"
-    }
-  },
-  "model_refresh": {
-    "decision": "needs media-only rebuild",
-    "reason": "The analysis uses ecotype classification and site-specific floors, but no public audio assets are bundled for homepage playback."
-  },
-  "quality": {
-    "selection_rule": "classification must clear its own site-specific false-positive floor before becoming a public finding",
-    "known_issue": "Playable examples should be rebuilt as 30-second source windows before the report leads with audio cards."
+    "source_paths_unparsable": 0,
+    "featured_audio_full_windows": 12,
+    "featured_audio_fallback_clips": 0,
+    "featured_full_window_count": 12,
+    "featured_fallback_clip_count": 0,
+    "reviewable": false
   },
   "rights": [
     {
@@ -172,5 +131,147 @@
       "verified_on": "2026-08-31"
     }
   ],
+  "featured_findings": [
+    {
+      "title": "North San Juan Channel Bigg's encounter signal",
+      "summary": "The August hydrophone analysis found a clustered Bigg's-class ecotype signal at North San Juan Channel that survived the site-specific floor and independent-record comparison. Six full 30-second windows from the 2026-08-15 cluster are now playable.",
+      "domain": "hydrophone",
+      "taxonomy": "acoustic_call",
+      "review_status": "classification above site floor",
+      "rank": 0,
+      "source": "Orcasound North San Juan Channel hydrophone",
+      "evidence": "ecotype rates, site-specific false-positive floor, daily presence chart, and independent sighting context",
+      "media": [
+        "assets/53d7e985-audioace0c20a4149.mp3",
+        "assets/f9dedac3-audio45ef1a71e52a.mp3",
+        "assets/db88ec60-audioa5083a71402c.mp3",
+        "assets/eecead58-audio44541ed1c877.mp3",
+        "assets/bc55b361-audio3a69cc51c854.mp3",
+        "assets/b1034745-audio4919da05ba46.mp3"
+      ]
+    },
+    {
+      "title": "Bush Point 4,816 Hz resonance",
+      "summary": "A persistent resonance explained most Bush Point Southern Resident detections, showing why public pages need floor checks and source-quality context.",
+      "domain": "hydrophone",
+      "taxonomy": "source_quality",
+      "review_status": "below floor / context only",
+      "rank": 1,
+      "source": "Orcasound Bush Point hydrophone",
+      "evidence": "resonance filter, spectrum chart, and per-node prevalence table"
+    }
+  ],
+  "taxonomy": [
+    "hydrophone",
+    "acoustic_call",
+    "source_quality"
+  ],
+  "review_status": "classification above site floor",
+  "evidence_assets": [
+    {
+      "kind": "audio",
+      "path": "assets/ab208b71-audio5e860995f07a.mp3",
+      "duration_seconds": 30.016,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/e5ad313e-audio3d4c32133f1a.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/5cf52594-audioc23c11def7e9.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/ec44709f-audiof26ced7b7503.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/f680cd62-audio4bc9296edc17.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/7baa1e62-audioc4ab25acdecc.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/53d7e985-audioace0c20a4149.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/f9dedac3-audio45ef1a71e52a.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/db88ec60-audioa5083a71402c.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/eecead58-audio44541ed1c877.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/bc55b361-audio3a69cc51c854.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    },
+    {
+      "kind": "audio",
+      "path": "assets/b1034745-audio4919da05ba46.mp3",
+      "duration_seconds": 29.994667,
+      "quality": "full 30-second source window",
+      "featured": true
+    }
+  ],
+  "media_quality": {
+    "audio": {
+      "featured_requires_full_window": true,
+      "featured_audio_count": 12,
+      "featured_full_window_count": 12,
+      "full_window_count": 12,
+      "featured_fallback_clip_count": 0,
+      "fallback_clip_count": 0,
+      "min_featured_duration_seconds": 28,
+      "asset_strategy": "full 30-second source windows bundled as linked MP3 assets"
+    }
+  },
+  "model_refresh": {
+    "decision": "current",
+    "reason": "Audio rebuilt as full 30-second source windows and bundled as linked assets; both featured findings now carry playable evidence."
+  },
+  "quality": {
+    "selection_rule": "classification must clear its own site-specific false-positive floor before becoming a public finding",
+    "public_claim": "Ecotype classification above a per-site false-positive floor, not a population or behavioural inference."
+  },
   "redaction_allowances": []
 }
