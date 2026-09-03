@@ -1,0 +1,1738 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunrise Mountain detection review</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+         background:#f5f7f8; color:#17202a; }
+  header { position:sticky; top:0; z-index:2; background:rgba(255,255,255,.97);
+            border-bottom:1px solid #d7dde4; padding:14px 22px; }
+  main { max-width:1440px; margin:0 auto; padding:22px; }
+  h1 { margin:0 0 4px; font-size:22px; }
+  h2 { margin:26px 0 10px; font-size:17px; }
+  h3 { margin:0 0 6px; color:#536170; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  p { margin:0; color:#657180; }
+  .sub { font-size:13px; }
+  .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:16px 0; }
+  .metric { background:#fff; border:1px solid #d7dde4; border-radius:8px; padding:12px; }
+  .big { font-size:26px; font-weight:600; }
+  .lede { background:#fff; border:1px solid #d7dde4; border-left:4px solid #8250df;
+           border-radius:8px; padding:14px 16px; margin:16px 0; }
+  .lede p { color:#17202a; }
+  .thumbs { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; }
+  figure.det { margin:0; background:#fff; border:1px solid #d7dde4; border-radius:8px; overflow:hidden; }
+  figure.det img { width:100%; height:170px; object-fit:cover; display:block; background:#222; }
+  figcaption { padding:8px 10px; font-size:12px; display:flex; flex-direction:column; gap:3px; }
+  .badge { align-self:flex-start; color:#fff; border-radius:999px; padding:1px 8px; font-size:11px; }
+  .dim { color:#8a94a0; word-break:break-all; }
+  table { border-collapse:collapse; width:100%; background:#fff; border:1px solid #d7dde4;
+           border-radius:8px; overflow:hidden; font-size:13px; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid #eef1f4; }
+  th { color:#536170; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
+  tr.static td { background:#faf7ff; }
+  code { font-size:12px; }
+  .empty { background:#fff; border:1px dashed #c6ced8; border-radius:8px; padding:22px; }
+  details { margin-top:8px; }
+  summary { cursor:pointer; color:#536170; font-size:13px; }
+  @media (prefers-color-scheme: dark) {
+    body { background:#0d1117; color:#e6edf3; }
+    header { background:rgba(13,17,23,.97); border-color:#30363d; }
+    .metric, figure.det, table, .lede, .empty { background:#161b22; border-color:#30363d; }
+    .lede p { color:#e6edf3; }
+    th, td { border-color:#21262d; }
+    tr.static td { background:#1c1428; }
+  }
+</style>
+<style>/* Review layer. Scoped under wr- so it cannot collide with a report's own CSS,
+   and it defines its own colours rather than borrowing the page's tokens,
+   because it is injected into pages built by five different generators. */
+#wr-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  display: flex; gap: .75rem; align-items: center; flex-wrap: wrap;
+  padding: .6rem .9rem;
+  background: #14161a; color: #f2f3f5;
+  border-top: 1px solid #2c2f36;
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 -2px 12px rgba(0,0,0,.28);
+}
+#wr-bar .wr-count { font-variant-numeric: tabular-nums; font-weight: 600; }
+#wr-bar .wr-spacer { flex: 1 1 auto; }
+#wr-bar button, #wr-bar input {
+  font: inherit; border-radius: 6px; border: 1px solid #3a3e47;
+  background: #22262e; color: #f2f3f5; padding: .3rem .6rem;
+}
+#wr-bar button { cursor: pointer; }
+#wr-bar button:hover { background: #2c313a; }
+#wr-bar button:focus-visible, #wr-bar input:focus-visible {
+  outline: 2px solid #5bbcc9; outline-offset: 1px;
+}
+#wr-bar input { width: 11rem; }
+#wr-bar .wr-hint { color: #a7abb4; }
+#wr-bar .wr-msg { color: #8fd7a0; }
+
+body.wr-active { padding-bottom: 4.5rem; }
+
+/* The card being judged. Outline rather than background so it cannot hide a
+   spectrogram or wash out a frame the reader is trying to look at. */
+[data-detection-id].wr-current {
+  outline: 3px solid #5bbcc9; outline-offset: 3px; scroll-margin: 6rem;
+}
+[data-detection-id][data-wr-verdict] { position: relative; }
+[data-detection-id][data-wr-verdict]::after {
+  position: absolute; top: .4rem; right: .4rem; z-index: 2;
+  padding: .1rem .45rem; border-radius: 999px;
+  font: 600 11px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: .02em;
+}
+[data-detection-id][data-wr-verdict="accept"]::after {
+  content: "accepted"; background: #1f6f3f; color: #eafaf0;
+}
+[data-detection-id][data-wr-verdict="reject"]::after {
+  content: "rejected"; background: #8a2f2f; color: #fdeeee;
+}
+[data-detection-id][data-wr-verdict="uncertain"]::after {
+  content: "uncertain"; background: #6f5a28; color: #fff8e8;
+}
+[data-detection-id].wr-hidden { display: none !important; }
+
+#wr-note {
+  position: fixed; z-index: 10000; left: 50%; top: 30%; transform: translateX(-50%);
+  width: min(30rem, 92vw); padding: 1rem;
+  background: #14161a; color: #f2f3f5; border: 1px solid #3a3e47; border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.45);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+#wr-note textarea {
+  width: 100%; min-height: 5rem; margin: .5rem 0; padding: .5rem;
+  background: #22262e; color: inherit; border: 1px solid #3a3e47; border-radius: 6px;
+  font: inherit; resize: vertical;
+}
+@media print { #wr-bar, #wr-note { display: none !important; } }
+</style></head>
+<body>
+<header>
+  <h1>Sunrise Mountain &mdash; detection review</h1>
+  <p class="sub">MegaDetector V6 (MDV6-mit-yolov9-e, MIT weights) &middot; run sunrise-20260822-20260828 &middot;
+     20260822T000050Z to 20260828T201753Z</p>
+</header>
+<main>
+  <div class="metrics"><div class="metric"><h3>Frames</h3><div class="big">9,371</div><p>3,576 dark, 5,795 usable · night/day split found at luma 83</p></div><div class="metric"><h3>Raw detections</h3><div class="big">3,319</div><p>32% of frames had one</p></div><div class="metric"><h3>Suppressed</h3><div class="big">3,306</div><p>3,306 static · 0 dark · 0 sky</p></div><div class="metric"><h3>Candidates</h3><div class="big">13</div><p>0.2% of usable frames</p></div></div>
+
+  <div class="lede">
+    <h3>Read this first</h3>
+    <p>3576 of 9371 frames were too dark to carry information — this camera has no infrared illumination — and were never sent to the model. MegaDetector reported 3319 detections across the 5795 that were. Scene filtering set aside 3306 of them: 3306 were boxes that recur at fixed pixel coordinates on a camera that never moves, 0 fell in frames too dark to carry information, and 0 sat above the treeline where nothing terrestrial appears. 13 survived, across 5795 usable frames.</p>
+  </div>
+
+  <h2>Candidates &mdash; 13</h2>
+  <p class="sub">Survived static-object, dark-frame and above-treeline filtering. These are
+     the only crops worth a classifier's time.</p>
+  <div class="thumbs" style="margin-top:10px">
+        <figure class="det" data-verdict="candidate" data-detection-id="99c001605218b048">
+          <a href="assets/e26aeebb-sunrise_mountain_20260825T021626Z_640_892.jpg"><img loading="lazy" src="assets/e26aeebb-sunrise_mountain_20260825T021626Z_640_892.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.82</strong>
+            <span class="dim">sunrise_mountain_20260825T021626Z.jpg</span>
+            <span class="dim">121&times;152px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="24a40714452e7ff4">
+          <a href="assets/a69072cb-sunrise_mountain_20260826T161935Z_1361_745.jpg"><img loading="lazy" src="assets/a69072cb-sunrise_mountain_20260826T161935Z_1361_745.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.60</strong>
+            <span class="dim">sunrise_mountain_20260826T161935Z.jpg</span>
+            <span class="dim">57&times;169px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="d4034f240eea5d19">
+          <a href="assets/a7ba40ae-sunrise_mountain_20260823T033120Z_1312_728.jpg"><img loading="lazy" src="assets/a7ba40ae-sunrise_mountain_20260823T033120Z_1312_728.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.51</strong>
+            <span class="dim">sunrise_mountain_20260823T033120Z.jpg</span>
+            <span class="dim">156&times;193px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="bd68dfe309aa48bc">
+          <a href="assets/1e41cfdc-sunrise_mountain_20260826T141600Z_1141_519.jpg"><img loading="lazy" src="assets/1e41cfdc-sunrise_mountain_20260826T141600Z_1141_519.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.49</strong>
+            <span class="dim">sunrise_mountain_20260826T141600Z.jpg</span>
+            <span class="dim">73&times;137px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="7e76a3319a90be09">
+          <a href="assets/3ddfccaa-sunrise_mountain_20260823T145046Z_853_313.jpg"><img loading="lazy" src="assets/3ddfccaa-sunrise_mountain_20260823T145046Z_853_313.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.45</strong>
+            <span class="dim">sunrise_mountain_20260823T145046Z.jpg</span>
+            <span class="dim">84&times;396px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="703281dfe5f5f21d">
+          <a href="assets/51f2669f-sunrise_mountain_20260826T142003Z_1149_516.jpg"><img loading="lazy" src="assets/51f2669f-sunrise_mountain_20260826T142003Z_1149_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.41</strong>
+            <span class="dim">sunrise_mountain_20260826T142003Z.jpg</span>
+            <span class="dim">52&times;112px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="f232e564c20bf680">
+          <a href="assets/9de6e3fe-sunrise_mountain_20260825T142705Z_1113_363.jpg"><img loading="lazy" src="assets/9de6e3fe-sunrise_mountain_20260825T142705Z_1113_363.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.39</strong>
+            <span class="dim">sunrise_mountain_20260825T142705Z.jpg</span>
+            <span class="dim">79&times;265px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="0317d193a414d915">
+          <a href="assets/e3cb0b85-sunrise_mountain_20260825T142605Z_1115_361.jpg"><img loading="lazy" src="assets/e3cb0b85-sunrise_mountain_20260825T142605Z_1115_361.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.25</strong>
+            <span class="dim">sunrise_mountain_20260825T142605Z.jpg</span>
+            <span class="dim">77&times;267px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="aa85f0b585c95d10">
+          <a href="assets/1d9db404-sunrise_mountain_20260822T152544Z_762_369.jpg"><img loading="lazy" src="assets/1d9db404-sunrise_mountain_20260822T152544Z_762_369.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.24</strong>
+            <span class="dim">sunrise_mountain_20260822T152544Z.jpg</span>
+            <span class="dim">163&times;167px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="371a09d5b05f3a42">
+          <a href="assets/b79140fe-sunrise_mountain_20260826T145027Z_680_388.jpg"><img loading="lazy" src="assets/b79140fe-sunrise_mountain_20260826T145027Z_680_388.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.21</strong>
+            <span class="dim">sunrise_mountain_20260826T145027Z.jpg</span>
+            <span class="dim">118&times;289px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="0d77d2e98da9ae3b">
+          <a href="assets/26005036-sunrise_mountain_20260824T142334Z_1129_527.jpg"><img loading="lazy" src="assets/26005036-sunrise_mountain_20260824T142334Z_1129_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.21</strong>
+            <span class="dim">sunrise_mountain_20260824T142334Z.jpg</span>
+            <span class="dim">72&times;156px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="03a10d7181597a3e">
+          <a href="assets/a90dc533-sunrise_mountain_20260822T141656Z_1129_486.jpg"><img loading="lazy" src="assets/a90dc533-sunrise_mountain_20260822T141656Z_1129_486.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.21</strong>
+            <span class="dim">sunrise_mountain_20260822T141656Z.jpg</span>
+            <span class="dim">61&times;191px</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="candidate" data-detection-id="9e52ef7ad5f5eea9">
+          <a href="assets/10a38f9a-sunrise_mountain_20260822T164941Z_718_358.jpg"><img loading="lazy" src="assets/10a38f9a-sunrise_mountain_20260822T164941Z_718_358.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.20</strong>
+            <span class="dim">sunrise_mountain_20260822T164941Z.jpg</span>
+            <span class="dim">208&times;187px</span>
+          </figcaption>
+        </figure></div>
+
+  <h2>Recurring locations</h2>
+  <p class="sub">The camera never moves, so a box that keeps landing on the same pixels is
+     scenery. Shaded rows were suppressed.</p>
+  <table style="margin-top:10px">
+    <tr><th>Box (x1,y1,x2,y2)</th><th>Frames</th><th>Detections</th><th>Max conf</th><th>Outcome</th></tr>
+    <tr class="static">
+          <td><code>[1750, 523, 1920, 1039]</code></td>
+          <td>2755</td>
+          <td>2854</td>
+          <td>0.93</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1585, 521, 1918, 1043]</code></td>
+          <td>100</td>
+          <td>100</td>
+          <td>0.71</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[0, 2, 248, 1018]</code></td>
+          <td>50</td>
+          <td>50</td>
+          <td>0.54</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[0, 42, 122, 1019]</code></td>
+          <td>37</td>
+          <td>37</td>
+          <td>0.48</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[275, 556, 448, 695]</code></td>
+          <td>34</td>
+          <td>34</td>
+          <td>0.69</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1751, 0, 1919, 1044]</code></td>
+          <td>28</td>
+          <td>28</td>
+          <td>0.47</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1380, 267, 1628, 630]</code></td>
+          <td>22</td>
+          <td>22</td>
+          <td>0.75</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[374, 0, 697, 680]</code></td>
+          <td>20</td>
+          <td>21</td>
+          <td>0.43</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1214, 734, 1303, 940]</code></td>
+          <td>18</td>
+          <td>18</td>
+          <td>0.84</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[913, 366, 1084, 683]</code></td>
+          <td>12</td>
+          <td>12</td>
+          <td>0.48</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1611, 230, 1881, 605]</code></td>
+          <td>10</td>
+          <td>12</td>
+          <td>0.47</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[436, 342, 683, 697]</code></td>
+          <td>10</td>
+          <td>10</td>
+          <td>0.69</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1858, 605, 1919, 1041]</code></td>
+          <td>9</td>
+          <td>9</td>
+          <td>0.46</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1547, 0, 1918, 1040]</code></td>
+          <td>7</td>
+          <td>7</td>
+          <td>0.70</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1183, 485, 1321, 660]</code></td>
+          <td>7</td>
+          <td>7</td>
+          <td>0.61</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[950, 535, 1064, 682]</code></td>
+          <td>7</td>
+          <td>7</td>
+          <td>0.68</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1895, 533, 1920, 1039]</code></td>
+          <td>6</td>
+          <td>6</td>
+          <td>0.37</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[21, 12, 717, 688]</code></td>
+          <td>6</td>
+          <td>6</td>
+          <td>0.38</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[1110, 162, 1255, 311]</code></td>
+          <td>6</td>
+          <td>6</td>
+          <td>0.63</td>
+          <td>suppressed</td>
+        </tr><tr class="static">
+          <td><code>[913, 366, 995, 684]</code></td>
+          <td>6</td>
+          <td>6</td>
+          <td>0.61</td>
+          <td>suppressed</td>
+        </tr>
+  </table>
+
+  <h2>Suppressed &mdash; 3306</h2>
+  <p class="sub">Kept and labelled rather than dropped, so the cost of the filtering stays
+     auditable and a real animal caught in a suppressed cluster can still be found.</p>
+  <details open>
+    <summary>Show suppressed detections (first 120)</summary>
+    <div class="thumbs" style="margin-top:10px">
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/29ec0cee-sunrise_mountain_20260823T134502Z_1749_531.jpg"><img loading="lazy" src="assets/29ec0cee-sunrise_mountain_20260823T134502Z_1749_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.93</strong>
+            <span class="dim">sunrise_mountain_20260823T134502Z.jpg</span>
+            <span class="dim">171&times;506px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/f5e62ed5-sunrise_mountain_20260828T201451Z_1751_525.jpg"><img loading="lazy" src="assets/f5e62ed5-sunrise_mountain_20260828T201451Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260828T201451Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ac1a3eba-sunrise_mountain_20260823T134301Z_1750_528.jpg"><img loading="lazy" src="assets/ac1a3eba-sunrise_mountain_20260823T134301Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260823T134301Z.jpg</span>
+            <span class="dim">170&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/69138ea3-sunrise_mountain_20260823T021406Z_1752_529.jpg"><img loading="lazy" src="assets/69138ea3-sunrise_mountain_20260823T021406Z_1752_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260823T021406Z.jpg</span>
+            <span class="dim">168&times;512px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/fa3e5bd3-sunrise_mountain_20260823T134200Z_1750_528.jpg"><img loading="lazy" src="assets/fa3e5bd3-sunrise_mountain_20260823T134200Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260823T134200Z.jpg</span>
+            <span class="dim">170&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/5d67fcf2-sunrise_mountain_20260827T012652Z_1752_528.jpg"><img loading="lazy" src="assets/5d67fcf2-sunrise_mountain_20260827T012652Z_1752_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260827T012652Z.jpg</span>
+            <span class="dim">168&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/b7726186-sunrise_mountain_20260823T020903Z_1751_531.jpg"><img loading="lazy" src="assets/b7726186-sunrise_mountain_20260823T020903Z_1751_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260823T020903Z.jpg</span>
+            <span class="dim">169&times;512px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d0c83dc4-sunrise_mountain_20260827T203116Z_1751_533.jpg"><img loading="lazy" src="assets/d0c83dc4-sunrise_mountain_20260827T203116Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260827T203116Z.jpg</span>
+            <span class="dim">169&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/72a578e2-sunrise_mountain_20260827T032918Z_1751_533.jpg"><img loading="lazy" src="assets/72a578e2-sunrise_mountain_20260827T032918Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260827T032918Z.jpg</span>
+            <span class="dim">169&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3e8cf8a1-sunrise_mountain_20260822T214159Z_1752_529.jpg"><img loading="lazy" src="assets/3e8cf8a1-sunrise_mountain_20260822T214159Z_1752_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260822T214159Z.jpg</span>
+            <span class="dim">168&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/f02e55c6-sunrise_mountain_20260823T014548Z_1751_529.jpg"><img loading="lazy" src="assets/f02e55c6-sunrise_mountain_20260823T014548Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T014548Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/86a3a185-sunrise_mountain_20260828T201149Z_1751_524.jpg"><img loading="lazy" src="assets/86a3a185-sunrise_mountain_20260828T201149Z_1751_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260828T201149Z.jpg</span>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/37e8fd6c-sunrise_mountain_20260827T204024Z_1751_528.jpg"><img loading="lazy" src="assets/37e8fd6c-sunrise_mountain_20260827T204024Z_1751_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260827T204024Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/673c4611-sunrise_mountain_20260823T134703Z_1750_524.jpg"><img loading="lazy" src="assets/673c4611-sunrise_mountain_20260823T134703Z_1750_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T134703Z.jpg</span>
+            <span class="dim">170&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/db66c06a-sunrise_mountain_20260823T012535Z_1752_516.jpg"><img loading="lazy" src="assets/db66c06a-sunrise_mountain_20260823T012535Z_1752_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T012535Z.jpg</span>
+            <span class="dim">168&times;527px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/077e6f9e-sunrise_mountain_20260823T014850Z_1751_525.jpg"><img loading="lazy" src="assets/077e6f9e-sunrise_mountain_20260823T014850Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T014850Z.jpg</span>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/5483579e-sunrise_mountain_20260828T201350Z_1751_527.jpg"><img loading="lazy" src="assets/5483579e-sunrise_mountain_20260828T201350Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260828T201350Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/0f5c4382-sunrise_mountain_20260823T012736Z_1751_516.jpg"><img loading="lazy" src="assets/0f5c4382-sunrise_mountain_20260823T012736Z_1751_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T012736Z.jpg</span>
+            <span class="dim">169&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/412f161f-sunrise_mountain_20260827T203721Z_1751_528.jpg"><img loading="lazy" src="assets/412f161f-sunrise_mountain_20260827T203721Z_1751_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203721Z.jpg</span>
+            <span class="dim">169&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/af5ca501-sunrise_mountain_20260827T211449Z_1751_532.jpg"><img loading="lazy" src="assets/af5ca501-sunrise_mountain_20260827T211449Z_1751_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T211449Z.jpg</span>
+            <span class="dim">169&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/bbbceb47-sunrise_mountain_20260828T201552Z_1751_519.jpg"><img loading="lazy" src="assets/bbbceb47-sunrise_mountain_20260828T201552Z_1751_519.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260828T201552Z.jpg</span>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/66c3914d-sunrise_mountain_20260823T014749Z_1751_529.jpg"><img loading="lazy" src="assets/66c3914d-sunrise_mountain_20260823T014749Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T014749Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/975de797-sunrise_mountain_20260823T020058Z_1752_538.jpg"><img loading="lazy" src="assets/975de797-sunrise_mountain_20260823T020058Z_1752_538.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T020058Z.jpg</span>
+            <span class="dim">168&times;504px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/46e7a2f6-sunrise_mountain_20260822T133424Z_1751_529.jpg"><img loading="lazy" src="assets/46e7a2f6-sunrise_mountain_20260822T133424Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260822T133424Z.jpg</span>
+            <span class="dim">169&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/a301eaf1-sunrise_mountain_20260827T203923Z_1751_529.jpg"><img loading="lazy" src="assets/a301eaf1-sunrise_mountain_20260827T203923Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203923Z.jpg</span>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3337fe68-sunrise_mountain_20260828T004219Z_1751_528.jpg"><img loading="lazy" src="assets/3337fe68-sunrise_mountain_20260828T004219Z_1751_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260828T004219Z.jpg</span>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/e87d8bae-sunrise_mountain_20260823T033523Z_1751_537.jpg"><img loading="lazy" src="assets/e87d8bae-sunrise_mountain_20260823T033523Z_1751_537.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T033523Z.jpg</span>
+            <span class="dim">168&times;500px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8cde68fe-sunrise_mountain_20260827T203418Z_1751_530.jpg"><img loading="lazy" src="assets/8cde68fe-sunrise_mountain_20260827T203418Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203418Z.jpg</span>
+            <span class="dim">169&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/965ddcd2-sunrise_mountain_20260823T015857Z_1751_529.jpg"><img loading="lazy" src="assets/965ddcd2-sunrise_mountain_20260823T015857Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T015857Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/81d7661f-sunrise_mountain_20260827T203217Z_1751_530.jpg"><img loading="lazy" src="assets/81d7661f-sunrise_mountain_20260827T203217Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203217Z.jpg</span>
+            <span class="dim">169&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3d404627-sunrise_mountain_20260823T020601Z_1751_526.jpg"><img loading="lazy" src="assets/3d404627-sunrise_mountain_20260823T020601Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T020601Z.jpg</span>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3c853d9b-sunrise_mountain_20260823T024453Z_1751_527.jpg"><img loading="lazy" src="assets/3c853d9b-sunrise_mountain_20260823T024453Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T024453Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/32a0944a-sunrise_mountain_20260828T200947Z_1751_522.jpg"><img loading="lazy" src="assets/32a0944a-sunrise_mountain_20260828T200947Z_1751_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260828T200947Z.jpg</span>
+            <span class="dim">169&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/fc7c9662-sunrise_mountain_20260825T033020Z_1751_530.jpg"><img loading="lazy" src="assets/fc7c9662-sunrise_mountain_20260825T033020Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260825T033020Z.jpg</span>
+            <span class="dim">169&times;507px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ac12e728-sunrise_mountain_20260823T032416Z_1750_532.jpg"><img loading="lazy" src="assets/ac12e728-sunrise_mountain_20260823T032416Z_1750_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T032416Z.jpg</span>
+            <span class="dim">170&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ca6b7cab-sunrise_mountain_20260822T213756Z_1752_524.jpg"><img loading="lazy" src="assets/ca6b7cab-sunrise_mountain_20260822T213756Z_1752_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260822T213756Z.jpg</span>
+            <span class="dim">168&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d417fed6-sunrise_mountain_20260823T014045Z_1751_527.jpg"><img loading="lazy" src="assets/d417fed6-sunrise_mountain_20260823T014045Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T014045Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/27bc9f75-sunrise_mountain_20260823T133758Z_1750_531.jpg"><img loading="lazy" src="assets/27bc9f75-sunrise_mountain_20260823T133758Z_1750_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T133758Z.jpg</span>
+            <span class="dim">170&times;505px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/83b544cd-sunrise_mountain_20260823T010319Z_1752_527.jpg"><img loading="lazy" src="assets/83b544cd-sunrise_mountain_20260823T010319Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T010319Z.jpg</span>
+            <span class="dim">168&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8b4d6636-sunrise_mountain_20260825T233828Z_1752_531.jpg"><img loading="lazy" src="assets/8b4d6636-sunrise_mountain_20260825T233828Z_1752_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260825T233828Z.jpg</span>
+            <span class="dim">168&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/62ed7015-sunrise_mountain_20260828T201753Z_1752_514.jpg"><img loading="lazy" src="assets/62ed7015-sunrise_mountain_20260828T201753Z_1752_514.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260828T201753Z.jpg</span>
+            <span class="dim">168&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/337b1576-sunrise_mountain_20260826T001755Z_1753_526.jpg"><img loading="lazy" src="assets/337b1576-sunrise_mountain_20260826T001755Z_1753_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260826T001755Z.jpg</span>
+            <span class="dim">167&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8685fcf7-sunrise_mountain_20260823T032919Z_1749_534.jpg"><img loading="lazy" src="assets/8685fcf7-sunrise_mountain_20260823T032919Z_1749_534.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T032919Z.jpg</span>
+            <span class="dim">171&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/de4c49f9-sunrise_mountain_20260825T033423Z_1751_527.jpg"><img loading="lazy" src="assets/de4c49f9-sunrise_mountain_20260825T033423Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260825T033423Z.jpg</span>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/a3e07128-sunrise_mountain_20260822T133726Z_1751_530.jpg"><img loading="lazy" src="assets/a3e07128-sunrise_mountain_20260822T133726Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260822T133726Z.jpg</span>
+            <span class="dim">169&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/331286e6-sunrise_mountain_20260823T015253Z_1750_528.jpg"><img loading="lazy" src="assets/331286e6-sunrise_mountain_20260823T015253Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T015253Z.jpg</span>
+            <span class="dim">170&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/89f9a7a7-sunrise_mountain_20260823T022541Z_1751_526.jpg"><img loading="lazy" src="assets/89f9a7a7-sunrise_mountain_20260823T022541Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T022541Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8ef225bf-sunrise_mountain_20260823T021204Z_1752_528.jpg"><img loading="lazy" src="assets/8ef225bf-sunrise_mountain_20260823T021204Z_1752_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T021204Z.jpg</span>
+            <span class="dim">168&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/cfeeb018-sunrise_mountain_20260825T201143Z_1751_533.jpg"><img loading="lazy" src="assets/cfeeb018-sunrise_mountain_20260825T201143Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260825T201143Z.jpg</span>
+            <span class="dim">169&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/165dbee8-sunrise_mountain_20260823T144744Z_1751_512.jpg"><img loading="lazy" src="assets/165dbee8-sunrise_mountain_20260823T144744Z_1751_512.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T144744Z.jpg</span>
+            <span class="dim">169&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/6555c14f-sunrise_mountain_20260827T203822Z_1751_526.jpg"><img loading="lazy" src="assets/6555c14f-sunrise_mountain_20260827T203822Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260827T203822Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/255bb347-sunrise_mountain_20260823T152407Z_1750_530.jpg"><img loading="lazy" src="assets/255bb347-sunrise_mountain_20260823T152407Z_1750_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T152407Z.jpg</span>
+            <span class="dim">170&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/2c0789e4-sunrise_mountain_20260823T012837Z_1751_520.jpg"><img loading="lazy" src="assets/2c0789e4-sunrise_mountain_20260823T012837Z_1751_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T012837Z.jpg</span>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/a4979dd9-sunrise_mountain_20260823T024654Z_1751_524.jpg"><img loading="lazy" src="assets/a4979dd9-sunrise_mountain_20260823T024654Z_1751_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T024654Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/b73db34f-sunrise_mountain_20260827T203620Z_1751_529.jpg"><img loading="lazy" src="assets/b73db34f-sunrise_mountain_20260827T203620Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260827T203620Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d94a915c-sunrise_mountain_20260823T015454Z_1751_525.jpg"><img loading="lazy" src="assets/d94a915c-sunrise_mountain_20260823T015454Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T015454Z.jpg</span>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/7d37ac47-sunrise_mountain_20260823T013340Z_1751_525.jpg"><img loading="lazy" src="assets/7d37ac47-sunrise_mountain_20260823T013340Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T013340Z.jpg</span>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/dc52f561-sunrise_mountain_20260826T002058Z_1753_527.jpg"><img loading="lazy" src="assets/dc52f561-sunrise_mountain_20260826T002058Z_1753_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260826T002058Z.jpg</span>
+            <span class="dim">167&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ca63d110-sunrise_mountain_20260825T233626Z_1752_530.jpg"><img loading="lazy" src="assets/ca63d110-sunrise_mountain_20260825T233626Z_1752_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260825T233626Z.jpg</span>
+            <span class="dim">168&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/52b94275-sunrise_mountain_20260822T204216Z_1751_525.jpg"><img loading="lazy" src="assets/52b94275-sunrise_mountain_20260822T204216Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T204216Z.jpg</span>
+            <span class="dim">169&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/29f563d1-sunrise_mountain_20260823T021708Z_1751_520.jpg"><img loading="lazy" src="assets/29f563d1-sunrise_mountain_20260823T021708Z_1751_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T021708Z.jpg</span>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/de34c825-sunrise_mountain_20260822T205021Z_1752_524.jpg"><img loading="lazy" src="assets/de34c825-sunrise_mountain_20260822T205021Z_1752_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T205021Z.jpg</span>
+            <span class="dim">168&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/945cbb80-sunrise_mountain_20260824T033301Z_1752_531.jpg"><img loading="lazy" src="assets/945cbb80-sunrise_mountain_20260824T033301Z_1752_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260824T033301Z.jpg</span>
+            <span class="dim">168&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/cc2a91b1-sunrise_mountain_20260827T132210Z_1750_535.jpg"><img loading="lazy" src="assets/cc2a91b1-sunrise_mountain_20260827T132210Z_1750_535.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T132210Z.jpg</span>
+            <span class="dim">170&times;498px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d51ab810-sunrise_mountain_20260828T033023Z_1750_536.jpg"><img loading="lazy" src="assets/d51ab810-sunrise_mountain_20260828T033023Z_1750_536.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260828T033023Z.jpg</span>
+            <span class="dim">170&times;505px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/7d8a30d3-sunrise_mountain_20260822T203914Z_1752_520.jpg"><img loading="lazy" src="assets/7d8a30d3-sunrise_mountain_20260822T203914Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T203914Z.jpg</span>
+            <span class="dim">168&times;523px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/a2453fd5-sunrise_mountain_20260823T000440Z_1751_526.jpg"><img loading="lazy" src="assets/a2453fd5-sunrise_mountain_20260823T000440Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T000440Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/732d3d19-sunrise_mountain_20260823T024554Z_1751_522.jpg"><img loading="lazy" src="assets/732d3d19-sunrise_mountain_20260823T024554Z_1751_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T024554Z.jpg</span>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/57020959-sunrise_mountain_20260827T211852Z_1751_531.jpg"><img loading="lazy" src="assets/57020959-sunrise_mountain_20260827T211852Z_1751_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T211852Z.jpg</span>
+            <span class="dim">169&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/698aa4e9-sunrise_mountain_20260822T002811Z_1751_522.jpg"><img loading="lazy" src="assets/698aa4e9-sunrise_mountain_20260822T002811Z_1751_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T002811Z.jpg</span>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/87f4aed3-sunrise_mountain_20260822T002711Z_1750_522.jpg"><img loading="lazy" src="assets/87f4aed3-sunrise_mountain_20260822T002711Z_1750_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T002711Z.jpg</span>
+            <span class="dim">170&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/61794fbc-sunrise_mountain_20260823T012032Z_1751_509.jpg"><img loading="lazy" src="assets/61794fbc-sunrise_mountain_20260823T012032Z_1751_509.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T012032Z.jpg</span>
+            <span class="dim">169&times;532px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/83de14a6-sunrise_mountain_20260823T022642Z_1751_526.jpg"><img loading="lazy" src="assets/83de14a6-sunrise_mountain_20260823T022642Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T022642Z.jpg</span>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/722e0d65-sunrise_mountain_20260826T001957Z_1751_520.jpg"><img loading="lazy" src="assets/722e0d65-sunrise_mountain_20260826T001957Z_1751_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260826T001957Z.jpg</span>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/4619cd99-sunrise_mountain_20260823T021506Z_1752_520.jpg"><img loading="lazy" src="assets/4619cd99-sunrise_mountain_20260823T021506Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T021506Z.jpg</span>
+            <span class="dim">168&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/9e8f6afa-sunrise_mountain_20260825T235439Z_1752_525.jpg"><img loading="lazy" src="assets/9e8f6afa-sunrise_mountain_20260825T235439Z_1752_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260825T235439Z.jpg</span>
+            <span class="dim">168&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/caf10c1c-sunrise_mountain_20260823T022138Z_1752_527.jpg"><img loading="lazy" src="assets/caf10c1c-sunrise_mountain_20260823T022138Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T022138Z.jpg</span>
+            <span class="dim">168&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d2f2e2de-sunrise_mountain_20260827T131404Z_1750_534.jpg"><img loading="lazy" src="assets/d2f2e2de-sunrise_mountain_20260827T131404Z_1750_534.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T131404Z.jpg</span>
+            <span class="dim">170&times;502px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/16347203-sunrise_mountain_20260823T013944Z_1752_532.jpg"><img loading="lazy" src="assets/16347203-sunrise_mountain_20260823T013944Z_1752_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T013944Z.jpg</span>
+            <span class="dim">168&times;512px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3fa3d8d2-sunrise_mountain_20260823T015353Z_1751_526.jpg"><img loading="lazy" src="assets/3fa3d8d2-sunrise_mountain_20260823T015353Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T015353Z.jpg</span>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/06cdc6ad-sunrise_mountain_20260822T213151Z_1752_527.jpg"><img loading="lazy" src="assets/06cdc6ad-sunrise_mountain_20260822T213151Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T213151Z.jpg</span>
+            <span class="dim">168&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3d73224c-sunrise_mountain_20260823T014951Z_1751_525.jpg"><img loading="lazy" src="assets/3d73224c-sunrise_mountain_20260823T014951Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T014951Z.jpg</span>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/5ec29c7b-sunrise_mountain_20260823T020802Z_1752_527.jpg"><img loading="lazy" src="assets/5ec29c7b-sunrise_mountain_20260823T020802Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T020802Z.jpg</span>
+            <span class="dim">168&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/72bdb6ea-sunrise_mountain_20260826T004213Z_1752_520.jpg"><img loading="lazy" src="assets/72bdb6ea-sunrise_mountain_20260826T004213Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260826T004213Z.jpg</span>
+            <span class="dim">168&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/e2534fe8-sunrise_mountain_20260823T011931Z_1751_514.jpg"><img loading="lazy" src="assets/e2534fe8-sunrise_mountain_20260823T011931Z_1751_514.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T011931Z.jpg</span>
+            <span class="dim">169&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/0fd1ca69-sunrise_mountain_20260823T014347Z_1751_531.jpg"><img loading="lazy" src="assets/0fd1ca69-sunrise_mountain_20260823T014347Z_1751_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T014347Z.jpg</span>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/950432cc-sunrise_mountain_20260823T133858Z_1750_526.jpg"><img loading="lazy" src="assets/950432cc-sunrise_mountain_20260823T133858Z_1750_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T133858Z.jpg</span>
+            <span class="dim">170&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/cf91833f-sunrise_mountain_20260823T134603Z_1749_520.jpg"><img loading="lazy" src="assets/cf91833f-sunrise_mountain_20260823T134603Z_1749_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T134603Z.jpg</span>
+            <span class="dim">171&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/99e9b3d2-sunrise_mountain_20260822T215106Z_1752_529.jpg"><img loading="lazy" src="assets/99e9b3d2-sunrise_mountain_20260822T215106Z_1752_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T215106Z.jpg</span>
+            <span class="dim">168&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/c729be69-sunrise_mountain_20260827T203015Z_1751_533.jpg"><img loading="lazy" src="assets/c729be69-sunrise_mountain_20260827T203015Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T203015Z.jpg</span>
+            <span class="dim">169&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d254ecea-sunrise_mountain_20260822T010743Z_1751_524.jpg"><img loading="lazy" src="assets/d254ecea-sunrise_mountain_20260822T010743Z_1751_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T010743Z.jpg</span>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ea6c1bc7-sunrise_mountain_20260823T005715Z_1751_527.jpg"><img loading="lazy" src="assets/ea6c1bc7-sunrise_mountain_20260823T005715Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T005715Z.jpg</span>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/a17b7d41-sunrise_mountain_20260822T224746Z_1752_525.jpg"><img loading="lazy" src="assets/a17b7d41-sunrise_mountain_20260822T224746Z_1752_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T224746Z.jpg</span>
+            <span class="dim">168&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/80cb050e-sunrise_mountain_20260827T011847Z_1752_522.jpg"><img loading="lazy" src="assets/80cb050e-sunrise_mountain_20260827T011847Z_1752_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T011847Z.jpg</span>
+            <span class="dim">168&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/c48dad10-sunrise_mountain_20260827T014404Z_1752_520.jpg"><img loading="lazy" src="assets/c48dad10-sunrise_mountain_20260827T014404Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T014404Z.jpg</span>
+            <span class="dim">168&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/18d9d08d-sunrise_mountain_20260823T022010Z_1751_529.jpg"><img loading="lazy" src="assets/18d9d08d-sunrise_mountain_20260823T022010Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T022010Z.jpg</span>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/1abe06b6-sunrise_mountain_20260823T012434Z_1752_511.jpg"><img loading="lazy" src="assets/1abe06b6-sunrise_mountain_20260823T012434Z_1752_511.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T012434Z.jpg</span>
+            <span class="dim">168&times;533px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/1f9bede1-sunrise_mountain_20260826T001655Z_1753_523.jpg"><img loading="lazy" src="assets/1f9bede1-sunrise_mountain_20260826T001655Z_1753_523.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260826T001655Z.jpg</span>
+            <span class="dim">167&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/88647c07-sunrise_mountain_20260827T220019Z_1750_531.jpg"><img loading="lazy" src="assets/88647c07-sunrise_mountain_20260827T220019Z_1750_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T220019Z.jpg</span>
+            <span class="dim">170&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ae4ccacf-sunrise_mountain_20260822T213655Z_1752_528.jpg"><img loading="lazy" src="assets/ae4ccacf-sunrise_mountain_20260822T213655Z_1752_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T213655Z.jpg</span>
+            <span class="dim">168&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ebe0b0bc-sunrise_mountain_20260826T000043Z_1754_525.jpg"><img loading="lazy" src="assets/ebe0b0bc-sunrise_mountain_20260826T000043Z_1754_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260826T000043Z.jpg</span>
+            <span class="dim">166&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/7b8edeb7-sunrise_mountain_20260827T012551Z_1752_522.jpg"><img loading="lazy" src="assets/7b8edeb7-sunrise_mountain_20260827T012551Z_1752_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T012551Z.jpg</span>
+            <span class="dim">168&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/93d3035b-sunrise_mountain_20260822T204115Z_1751_523.jpg"><img loading="lazy" src="assets/93d3035b-sunrise_mountain_20260822T204115Z_1751_523.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T204115Z.jpg</span>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/3ae76775-sunrise_mountain_20260827T211148Z_1751_532.jpg"><img loading="lazy" src="assets/3ae76775-sunrise_mountain_20260827T211148Z_1751_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T211148Z.jpg</span>
+            <span class="dim">169&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/f655e7d2-sunrise_mountain_20260827T014504Z_1752_522.jpg"><img loading="lazy" src="assets/f655e7d2-sunrise_mountain_20260827T014504Z_1752_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T014504Z.jpg</span>
+            <span class="dim">168&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/ab417ce3-sunrise_mountain_20260823T013038Z_1752_516.jpg"><img loading="lazy" src="assets/ab417ce3-sunrise_mountain_20260823T013038Z_1752_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T013038Z.jpg</span>
+            <span class="dim">168&times;527px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8d7f4313-sunrise_mountain_20260822T125859Z_1749_527.jpg"><img loading="lazy" src="assets/8d7f4313-sunrise_mountain_20260822T125859Z_1749_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T125859Z.jpg</span>
+            <span class="dim">171&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/630b6123-sunrise_mountain_20260822T002912Z_1750_522.jpg"><img loading="lazy" src="assets/630b6123-sunrise_mountain_20260822T002912Z_1750_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T002912Z.jpg</span>
+            <span class="dim">170&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/c127acec-sunrise_mountain_20260827T032414Z_1752_533.jpg"><img loading="lazy" src="assets/c127acec-sunrise_mountain_20260827T032414Z_1752_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T032414Z.jpg</span>
+            <span class="dim">168&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/645ac646-sunrise_mountain_20260822T002610Z_1750_518.jpg"><img loading="lazy" src="assets/645ac646-sunrise_mountain_20260822T002610Z_1750_518.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T002610Z.jpg</span>
+            <span class="dim">170&times;521px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/d77cef2a-sunrise_mountain_20260828T201048Z_1751_517.jpg"><img loading="lazy" src="assets/d77cef2a-sunrise_mountain_20260828T201048Z_1751_517.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260828T201048Z.jpg</span>
+            <span class="dim">169&times;526px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/554d9c41-sunrise_mountain_20260823T001346Z_1752_512.jpg"><img loading="lazy" src="assets/554d9c41-sunrise_mountain_20260823T001346Z_1752_512.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T001346Z.jpg</span>
+            <span class="dim">168&times;530px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/f2dcb184-sunrise_mountain_20260823T010521Z_1752_519.jpg"><img loading="lazy" src="assets/f2dcb184-sunrise_mountain_20260823T010521Z_1752_519.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T010521Z.jpg</span>
+            <span class="dim">168&times;525px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8a433b10-sunrise_mountain_20260823T001447Z_1752_511.jpg"><img loading="lazy" src="assets/8a433b10-sunrise_mountain_20260823T001447Z_1752_511.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260823T001447Z.jpg</span>
+            <span class="dim">168&times;531px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/e5ef9745-sunrise_mountain_20260823T014447Z_1751_522.jpg"><img loading="lazy" src="assets/e5ef9745-sunrise_mountain_20260823T014447Z_1751_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260823T014447Z.jpg</span>
+            <span class="dim">169&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/0b24af46-sunrise_mountain_20260823T013139Z_1751_524.jpg"><img loading="lazy" src="assets/0b24af46-sunrise_mountain_20260823T013139Z_1751_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260823T013139Z.jpg</span>
+            <span class="dim">169&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/e45725f9-sunrise_mountain_20260823T021808Z_1751_518.jpg"><img loading="lazy" src="assets/e45725f9-sunrise_mountain_20260823T021808Z_1751_518.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260823T021808Z.jpg</span>
+            <span class="dim">169&times;525px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/30e1faac-sunrise_mountain_20260823T032617Z_1750_528.jpg"><img loading="lazy" src="assets/30e1faac-sunrise_mountain_20260823T032617Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260823T032617Z.jpg</span>
+            <span class="dim">170&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/9ce20e0f-sunrise_mountain_20260827T015411Z_1752_524.jpg"><img loading="lazy" src="assets/9ce20e0f-sunrise_mountain_20260827T015411Z_1752_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260827T015411Z.jpg</span>
+            <span class="dim">168&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure>
+        <figure class="det" data-verdict="static_object">
+          <a href="assets/8dbac29b-sunrise_mountain_20260823T024352Z_1751_529.jpg"><img loading="lazy" src="assets/8dbac29b-sunrise_mountain_20260823T024352Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260823T024352Z.jpg</span>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div>
+  </details>
+</main>
+<div id="wr-root" data-report-id="sunrise-candidates-2026-08-22-to-2026-08-28" data-schema-version="1"></div><script>/* Review layer, phase 1.
+ *
+ * Verdicts live in this browser and are exported as a file. Nothing is sent
+ * anywhere: the page is a static artifact and stays one.
+ *
+ * Every read and write of localStorage is wrapped, because it throws outright
+ * in a private window, in some embedded viewers, and wherever the reader has
+ * blocked site data. A review tool that white-screens rather than degrading is
+ * worse than no review tool.
+ */
+(function () {
+  "use strict";
+
+  var root = document.getElementById("wr-root");
+  if (!root) return;
+  var REPORT_ID = root.getAttribute("data-report-id") || "unknown";
+  var SCHEMA = parseInt(root.getAttribute("data-schema-version") || "1", 10);
+  var KEY = "wildlife-verdicts:" + REPORT_ID;
+  var NAME_KEY = "wildlife-reviewer";
+
+  var cards = Array.prototype.slice.call(
+    document.querySelectorAll("[data-detection-id]"));
+  if (!cards.length) return;
+
+  var store = { verdicts: {}, notes: {} };
+  var current = 0;
+  var unreviewedOnly = false;
+  var storageWorks = true;
+
+  function load() {
+    try {
+      var raw = window.localStorage.getItem(KEY);
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        store.verdicts = parsed.verdicts || {};
+        store.notes = parsed.notes || {};
+      }
+    } catch (e) { storageWorks = false; }
+  }
+
+  function save() {
+    try {
+      window.localStorage.setItem(KEY, JSON.stringify(store));
+    } catch (e) { storageWorks = false; render(); }
+  }
+
+  function reviewerName() {
+    try { return window.localStorage.getItem(NAME_KEY) || ""; }
+    catch (e) { return ""; }
+  }
+
+  function setReviewerName(v) {
+    try { window.localStorage.setItem(NAME_KEY, v); } catch (e) { /* ignore */ }
+  }
+
+  function idOf(card) { return card.getAttribute("data-detection-id"); }
+
+  function decided() {
+    var n = 0;
+    for (var i = 0; i < cards.length; i++) {
+      if (store.verdicts[idOf(cards[i])]) n++;
+    }
+    return n;
+  }
+
+  function visibleCards() {
+    return cards.filter(function (c) { return !c.classList.contains("wr-hidden"); });
+  }
+
+  function setVerdict(card, verdict) {
+    var id = idOf(card);
+    if (store.verdicts[id] === verdict) {
+      delete store.verdicts[id];
+      card.removeAttribute("data-wr-verdict");
+    } else {
+      store.verdicts[id] = verdict;
+      card.setAttribute("data-wr-verdict", verdict);
+    }
+    save();
+    render();
+    if (store.verdicts[id]) move(1);
+  }
+
+  function move(delta) {
+    var vis = visibleCards();
+    if (!vis.length) return;
+    var here = vis.indexOf(cards[current]);
+    var next = vis[Math.min(Math.max((here < 0 ? 0 : here) + delta, 0), vis.length - 1)];
+    current = cards.indexOf(next);
+    focusCurrent();
+  }
+
+  function focusCurrent() {
+    cards.forEach(function (c) { c.classList.remove("wr-current"); });
+    var card = cards[current];
+    if (!card) return;
+    card.classList.add("wr-current");
+    card.scrollIntoView({ block: "center", behavior: "smooth" });
+    render();
+  }
+
+  function applyFilter() {
+    cards.forEach(function (c) {
+      var hide = unreviewedOnly && store.verdicts[idOf(c)];
+      c.classList.toggle("wr-hidden", !!hide);
+    });
+    if (cards[current] && cards[current].classList.contains("wr-hidden")) move(1);
+  }
+
+  function payload() {
+    var out = [];
+    var now = new Date().toISOString();
+    for (var i = 0; i < cards.length; i++) {
+      var id = idOf(cards[i]);
+      if (!store.verdicts[id]) continue;
+      out.push({
+        detection_id: id,
+        verdict: store.verdicts[id],
+        note: store.notes[id] || "",
+        at: now
+      });
+    }
+    return {
+      schema_version: SCHEMA,
+      report_id: REPORT_ID,
+      reviewer: (document.getElementById("wr-name") || {}).value || "",
+      verdicts: out
+    };
+  }
+
+  function exportVerdicts() {
+    var data = payload();
+    if (!data.verdicts.length) { flash("Nothing to export yet."); return; }
+    var text = JSON.stringify(data, null, 2);
+    var name = "verdicts-" + REPORT_ID +
+      (data.reviewer ? "-" + data.reviewer.replace(/[^\w.-]+/g, "-") : "") + ".json";
+    try {
+      var blob = new Blob([text], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      flash("Exported " + data.verdicts.length + " verdict(s).");
+    } catch (e) {
+      copyFallback(text);
+    }
+  }
+
+  /* Some viewers block a page-initiated download outright and do it silently.
+     Falling back to the clipboard means the reader still gets their work out. */
+  function copyFallback(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { flash("Download blocked; copied to clipboard instead."); },
+        function () { flash("Could not export. Select the page and copy manually."); });
+    } else {
+      flash("Could not export automatically.");
+    }
+  }
+
+  var flashTimer = null;
+  function flash(message) {
+    var el = document.getElementById("wr-msg");
+    if (!el) return;
+    el.textContent = message;
+    if (flashTimer) clearTimeout(flashTimer);
+    flashTimer = setTimeout(function () { el.textContent = ""; }, 4000);
+  }
+
+  function promptNote() {
+    var card = cards[current];
+    if (!card) return;
+    var id = idOf(card);
+    var box = document.createElement("div");
+    box.id = "wr-note";
+    box.innerHTML =
+      '<div>Note for this detection</div>' +
+      '<textarea id="wr-note-text"></textarea>' +
+      '<div style="display:flex;gap:.5rem;justify-content:flex-end">' +
+      '<button id="wr-note-cancel">Cancel</button>' +
+      '<button id="wr-note-save">Save</button></div>';
+    document.body.appendChild(box);
+    var text = document.getElementById("wr-note-text");
+    text.value = store.notes[id] || "";
+    text.focus();
+    function close() { box.remove(); }
+    document.getElementById("wr-note-cancel").onclick = close;
+    document.getElementById("wr-note-save").onclick = function () {
+      var v = text.value.trim();
+      if (v) { store.notes[id] = v; } else { delete store.notes[id]; }
+      save(); close(); render();
+    };
+    box.addEventListener("keydown", function (ev) {
+      ev.stopPropagation();
+      if (ev.key === "Escape") close();
+    });
+  }
+
+  function render() {
+    var el = document.getElementById("wr-progress");
+    if (el) {
+      el.textContent = decided() + " / " + cards.length + " reviewed";
+    }
+    var warn = document.getElementById("wr-storage");
+    if (warn) {
+      warn.textContent = storageWorks ? "" :
+        "This browser is not storing verdicts. Export before you leave the page.";
+    }
+  }
+
+  function buildBar() {
+    var bar = document.createElement("div");
+    bar.id = "wr-bar";
+    bar.innerHTML =
+      '<span class="wr-count" id="wr-progress"></span>' +
+      '<span class="wr-hint">J/K move &middot; A accept &middot; R reject &middot; ' +
+      'U uncertain &middot; N note</span>' +
+      '<span class="wr-spacer"></span>' +
+      '<span class="wr-msg" id="wr-msg"></span>' +
+      '<span class="wr-msg" id="wr-storage" style="color:#f0b8b8"></span>' +
+      '<label class="wr-hint"><input type="checkbox" id="wr-filter" ' +
+      'style="width:auto;margin-right:.35rem">unreviewed only</label>' +
+      '<input id="wr-name" placeholder="your name" aria-label="Reviewer name">' +
+      '<button id="wr-export">Export verdicts</button>';
+    document.body.appendChild(bar);
+    document.body.classList.add("wr-active");
+
+    document.getElementById("wr-export").onclick = exportVerdicts;
+    var name = document.getElementById("wr-name");
+    name.value = reviewerName();
+    name.onchange = function () { setReviewerName(name.value); };
+    document.getElementById("wr-filter").onchange = function (ev) {
+      unreviewedOnly = ev.target.checked;
+      applyFilter();
+    };
+  }
+
+  function restore() {
+    cards.forEach(function (c) {
+      var v = store.verdicts[idOf(c)];
+      if (v) c.setAttribute("data-wr-verdict", v);
+      c.addEventListener("click", function () {
+        current = cards.indexOf(c);
+        focusCurrent();
+      });
+    });
+  }
+
+  document.addEventListener("keydown", function (ev) {
+    if (document.getElementById("wr-note")) return;
+    var t = ev.target;
+    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA")) return;
+    if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    var k = ev.key.toLowerCase();
+    var card = cards[current];
+    if (k === "j") { move(1); ev.preventDefault(); }
+    else if (k === "k") { move(-1); ev.preventDefault(); }
+    else if (k === "a" && card) { setVerdict(card, "accept"); ev.preventDefault(); }
+    else if (k === "r" && card) { setVerdict(card, "reject"); ev.preventDefault(); }
+    else if (k === "u" && card) { setVerdict(card, "uncertain"); ev.preventDefault(); }
+    else if (k === "n" && card) { promptNote(); ev.preventDefault(); }
+  });
+
+  load();
+  buildBar();
+  restore();
+  focusCurrent();
+  render();
+})();
+</script></body>
+</html>

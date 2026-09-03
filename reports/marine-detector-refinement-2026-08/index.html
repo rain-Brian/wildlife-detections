@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refining the marine detector on a fixed two hours</title>
+<style>
+:root { --ink:#16211d; --muted:#5b6863; --line:#d7ded9; --soft:#edf5f2; --ok:#126b57; --warn:#8a5d11; }
+body { margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif; color:var(--ink); background:#f8f8f5; }
+header, main { max-width:1120px; margin:0 auto; padding:28px 20px; }
+h1 { margin:0 0 10px; font-size:clamp(2rem,5vw,3.4rem); line-height:1.03; }
+h2 { margin:30px 0 10px; font-size:1.3rem; }
+p { margin:0 0 12px; max-width:78ch; }
+.lede { color:var(--muted); }
+.metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; margin-top:20px; }
+.metric, .note, .figure { background:white; border:1px solid var(--line); border-radius:8px; }
+.metric { padding:13px; }
+.metric b { display:block; font-size:1.8rem; color:var(--ok); }
+.metric span { color:var(--muted); font-size:.85rem; }
+.note { padding:14px 16px; margin:16px 0; }
+.note.warn { border-left:4px solid var(--warn); }
+.figure { padding:16px; margin:16px 0; }
+table { border-collapse:collapse; width:100%; margin:14px 0; background:white;
+  border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+th, td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); font-size:.93rem; }
+th { background:var(--soft); font-size:.8rem; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); }
+tr:last-child td { border-bottom:none; }
+img.hero { width:100%; border-radius:6px; display:block; }
+figcaption { color:var(--muted); font-size:.86rem; margin-top:8px; }
+footer { max-width:1120px; margin:0 auto; padding:0 20px 40px; color:var(--muted); font-size:.86rem; }
+a { color:var(--ok); }
+</style>
+</head>
+<body>
+<header>
+<h1>Refining the marine detector on a fixed two hours</h1>
+<p class="lede">Three passes over the same footage from the MaST Center Aquarium underwater
+camera, 2026-08-10 19:00 to 20:59 UTC. The input is frozen, so a
+change in how much needs reviewing is a change in the pipeline rather than a change in what
+swam past.</p>
+<div class="metrics">
+  <div class="metric"><b>474</b><span>needed review after pass 1</span></div>
+  <div class="metric"><b>32</b><span>after pass 2, same detections</span></div>
+  <div class="metric"><b>93%</b><span>fewer, from the rules alone</span></div>
+  <div class="metric"><b>0</b><span>species confirmed so far</span></div>
+</div>
+</header>
+<main>
+
+<section class="note">
+<p><strong>Nothing on the linked pages is an identification.</strong> These are queues of
+model output waiting for a person, published so the queue itself can be checked. An
+open-vocabulary label like &ldquo;harbor seal&rdquo; is the prompt the model was asked
+about, not a finding. Where a person has reviewed this footage, four of the five model calls
+they checked were wrong.</p>
+</section>
+
+<h2>What changed, pass by pass</h2>
+<table>
+<thead><tr><th>Pass</th><th>Sampling</th><th>Prompt classes</th>
+<th>Detections</th><th>Needing review</th><th>Clips flagged</th></tr></thead>
+<tbody>
+        <tr>
+          <td><a href="https://rain-Brian.github.io/wildlife-detections/reports/mast-aug10-candidates-pass1-permissive/">Pass 1, permissive rules</a></td>
+          <td>every 5s</td>
+          <td>5</td>
+          <td>2,055</td>
+          <td><b>474</b></td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td><a href="https://rain-Brian.github.io/wildlife-detections/reports/mast-aug10-candidates-pass2-conservative/">Pass 2, tightened decision layer</a></td>
+          <td>reused pass 1</td>
+          <td>unchanged</td>
+          <td>2,055</td>
+          <td><b>32</b></td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td><a href="https://rain-Brian.github.io/wildlife-detections/reports/mast-aug10-candidates-pass3-wide/">Pass 3, wider vocabulary</a></td>
+          <td>every 2s</td>
+          <td>25</td>
+          <td>3,860</td>
+          <td><b>154</b></td>
+          <td>37</td>
+        </tr></tbody>
+</table>
+
+<div class="figure">
+<svg viewBox="0 0 640 200" role="img" width="100%" aria-label="Detections needing review per pass: pass1 474, pass2 32, pass3 154"><line x1="34" y1="166" x2="606" y2="166" stroke="#d7ded9" stroke-width="1"/><rect x="76" y="34" width="107" height="132" fill="#7fa8a0" rx="3"/><text x="129" y="27" text-anchor="middle" font-size="15" font-weight="600" fill="#16211d">474</text><text x="129" y="183" text-anchor="middle" font-size="12" fill="#5b6863">pass1</text><rect x="267" y="157" width="107" height="9" fill="#126b57" rx="3"/><text x="320" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#16211d">32</text><text x="320" y="183" text-anchor="middle" font-size="12" fill="#5b6863">pass2</text><rect x="457" y="123" width="107" height="43" fill="#7fa8a0" rx="3"/><text x="511" y="116" text-anchor="middle" font-size="15" font-weight="600" fill="#16211d">154</text><text x="511" y="183" text-anchor="middle" font-size="12" fill="#5b6863">pass3</text></svg>
+<figcaption>Detections still needing a person, per pass, over identical footage.</figcaption>
+</div>
+
+<h2>Pass 1 to pass 2 is the controlled result</h2>
+<p>The conservative run did not re-run detection. It records
+<code>fusion_only_from</code> pointing at the permissive run and reuses its
+2,055 detections across the identical set of
+86 source clips. The only thing that changed is the decision layer, so the drop
+from 474 to 32 is attributable to the rules and to nothing
+else.</p>
+<p>Same detections, re-fused. The conflict rule was corrected to read overlap, containment and area ratio against one fish rather than as three independent maxima over every overlapping fish, which had let a confident fish box sit under a marine mammal label without contradicting it.</p>
+<p>In clips rather than rows: 45 of 86 needed opening after
+pass 1, and 9 of 86 after pass 2.</p>
+
+<h2>Pass 3 asks a wider question, and pays for it</h2>
+<p>Detection re-run: a frame every 2 seconds instead of 5, and the prompt set widened from 5 classes to 25, adding whale, porpoise, otter, seabird and octopus among others. More of the footage is looked at and more things can be named, so the queue grows again. That is the cost of asking a wider question.</p>
+<p>Pass 3 is <strong>not</strong> a like-for-like comparison with the first two. Sampling
+went from every 5 seconds to every 2, which is why it
+finds 3,860 detections in 106 clips where pass 1 found 2,055 in
+86. A queue of 154 against pass 2&rsquo;s 32
+is a wider net, not a regression in the rules, and reading it as one would be the wrong
+lesson to draw from this page.</p>
+
+<div class="figure">
+<img class="hero" src="assets/e60e3d1f-highest-confidence-seal-call.jpg" alt="Annotated aquarium frame in which a rockfish
+carries a harbour seal label at 0.79 confidence">
+<figcaption>The highest-confidence harbour seal call in pass 3, at
+0.79. It is a rockfish: the dorsal fin, tail and body outline
+are all visible in the frame the model scored. This is what an open-vocabulary label is worth
+before a person looks at it, and it is why these pages lead with the queue rather than the
+confidence ranking.</figcaption>
+</div>
+
+<h2>The same idea on land</h2>
+<p>The Sunrise Mountain camera runs the same shape of problem through a different filter.
+MegaDetector reported 3,319 detections across
+5,795 usable frames; scene filtering set aside
+3,306 of them as boxes that recur at fixed pixel coordinates on a
+camera that never moves. 13 survived. The
+<a href="https://rain-Brian.github.io/wildlife-detections/reports/sunrise-candidates-2026-08-22-to-2026-08-28/">candidate page</a> shows the
+suppressed boxes alongside the survivors, so the filter&rsquo;s working is auditable rather
+than asserted.</p>
+<p>3,576 frames were too dark to carry information and were never sent
+to the model. This camera has no infrared illumination, and the night/day split was measured
+at luma 83 rather than assumed.</p>
+
+<h2>What this page does not show</h2>
+<p>It does not show accuracy. There is no confirmed count to measure against, because the
+review pass that would produce one has not been run on this footage. What it shows is how
+much work the pipeline is handing to a person, and that the number moved for a reason that
+can be pointed at.</p>
+<p>Each linked queue carries a verdict layer: judging a card records the verdict in your own
+browser, and the export button hands back a file. Nothing is sent anywhere. A disagreement
+about a specific detection is the most useful thing anyone can send.</p>
+
+</main>
+<footer>
+<p>Built from the runs themselves; every figure above is read from the run artifacts rather
+than typed. Footage is the MaST Center Aquarium underwater camera, operated by Highline
+College. Sunrise Mountain frames are National Park Service.</p>
+</footer>
+</body>
+</html>

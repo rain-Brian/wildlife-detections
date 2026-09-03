@@ -1,0 +1,145 @@
+{
+  "report_id": "marine-detector-refinement-2026-08",
+  "title": "Refining the marine detector on a fixed two hours",
+  "schema_version": 1,
+  "generated_at": "2026-09-03T20:13:36+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "nps",
+      "camera": "sunrise_mountain",
+      "label": "NPS Sunrise Mountain",
+      "kind": "fixed_camera",
+      "location": null
+    },
+    {
+      "feed": "youtube",
+      "camera": "mast_center_aquarium",
+      "label": "MaST Center Aquarium",
+      "kind": "underwater_camera",
+      "location": {
+        "lat": 47.35,
+        "lon": -122.32,
+        "precision": "approximate"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "yolo-fish",
+      "model_version": "v1",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    },
+    {
+      "model_name": "megadetector-nps",
+      "model_version": "MDV6-mit-yolov9-e",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "aug10-video-7pm-8pm-marine-review-full-20260812",
+    "aug10-video-7pm-8pm-marine-review-conservative-v2-20260812",
+    "mast-video-wide-20260820",
+    "sunrise-20260822-20260828"
+  ],
+  "window": {
+    "start_utc": null,
+    "end_utc": null,
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 1,
+    "assets_bytes": 102048,
+    "assets_deduplicated": 0,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "source_segments": 106,
+    "passes_compared": 3,
+    "pass1_detections": 2055,
+    "pass1_review_queue_rows": 474,
+    "pass2_detections": 2055,
+    "pass2_review_queue_rows": 32,
+    "pass3_detections": 3860,
+    "pass3_review_queue_rows": 154,
+    "rules_only_queue_reduction_percent": 93.2,
+    "pass1_pass2_source_sets_identical": true,
+    "species_confirmed": 0,
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "nps/sunrise_mountain",
+      "holder": "National Park Service, Mount Rainier National Park",
+      "terms": "US Government work, public domain (17 U.S.C. 105)",
+      "terms_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "source_url": "https://www.nps.gov/webcams-mora/SunriseMtn.jpg",
+      "attribution": "National Park Service, Mount Rainier National Park",
+      "attribution_url": "https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm",
+      "derivatives_license": null,
+      "commercial_use": "permitted",
+      "verified_on": "2026-08-31"
+    },
+    {
+      "feed": "youtube/mast_center_aquarium",
+      "holder": "Highline College, MaST Center Aquarium",
+      "terms": "YouTube Standard Licence; all rights reserved by the channel owner",
+      "terms_url": "https://www.youtube.com/static?template=terms",
+      "source_url": "https://www.youtube.com/@highlinemastcenteraquarium/live",
+      "attribution": "MaST Center Aquarium, Highline College",
+      "attribution_url": "https://mast.highline.edu/",
+      "derivatives_license": null,
+      "commercial_use": "unknown",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [
+    {
+      "title": "Tightening the rules cut the review queue 15-fold",
+      "summary": "On 2,055 frozen detections from the same two hours of aquarium footage, correcting one conflict rule took the queue from 474 to 32. No detection changed, so the difference is the decision layer and nothing else.",
+      "domain": "underwater video",
+      "taxonomy": "model_refinement",
+      "review_status": "model candidate",
+      "rank": 0,
+      "source": "MaST Center Aquarium, 2026-08-10",
+      "evidence": "three passes over identical footage, each published as a queue",
+      "media": {
+        "src": "assets/e60e3d1f-highest-confidence-seal-call.jpg"
+      }
+    },
+    {
+      "title": "The most confident harbour seal call is a rockfish",
+      "summary": "The highest-scoring seal candidate in the widest run, at 0.79, has a visible dorsal fin and tail. Open-vocabulary labels are prompts for review, not species.",
+      "domain": "underwater video",
+      "taxonomy": "source_quality",
+      "review_status": "below floor / context only",
+      "rank": 1,
+      "source": "MaST Center Aquarium, 2026-08-10",
+      "evidence": "annotated frame at the confidence the model reported",
+      "media": {
+        "src": "assets/e60e3d1f-highest-confidence-seal-call.jpg"
+      }
+    }
+  ],
+  "taxonomy": [
+    "underwater video",
+    "model_refinement",
+    "land"
+  ],
+  "review_status": "model candidate",
+  "evidence_assets": [],
+  "media_quality": {},
+  "model_refresh": {},
+  "quality": {
+    "public_claim": "A controlled before-and-after on frozen detections: pass 1 to pass 2 changed only the decision layer.",
+    "does_not_claim": "This is not an accuracy measurement. No species is confirmed here, and pass 3 is not like-for-like with passes 1 and 2 because sampling and vocabulary both changed.",
+    "selection_rule": "Every figure is read from the run artifacts, not typed."
+  },
+  "redaction_allowances": []
+}

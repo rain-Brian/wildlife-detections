@@ -1,0 +1,91 @@
+{
+  "report_id": "mast-aug10-candidates-pass1-permissive",
+  "title": "MaST aquarium, 2026-08-10: pass 1, permissive rules",
+  "schema_version": 1,
+  "generated_at": "2026-09-03T20:08:52+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "youtube",
+      "camera": "mast_center_aquarium",
+      "label": "MaST Center Aquarium",
+      "kind": "underwater_camera",
+      "location": {
+        "lat": 47.35,
+        "lon": -122.32,
+        "precision": "approximate"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "yolo-fish",
+      "model_version": "v1",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "aug10-video-7pm-8pm-marine-review-full-20260812"
+  ],
+  "window": {
+    "start_utc": null,
+    "end_utc": null,
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 0,
+    "assets_bytes": 0,
+    "assets_deduplicated": 0,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "source_segments": 86,
+    "fused_detection_rows": 2055,
+    "review_queue_rows": 474,
+    "review_queue_clips": 45,
+    "label_counts": {
+      "seal_candidate": 82,
+      "marine_mammal_candidate": 352,
+      "unknown_large_animal": 40,
+      "fish": 1423,
+      "suppressed_part": 158
+    },
+    "first_pass_interval_seconds": 5.0,
+    "yolo_world_class_count": 5,
+    "rule_profile": "permissive_v1",
+    "reviewable": true
+  },
+  "rights": [
+    {
+      "feed": "youtube/mast_center_aquarium",
+      "holder": "Highline College, MaST Center Aquarium",
+      "terms": "YouTube Standard Licence; all rights reserved by the channel owner",
+      "terms_url": "https://www.youtube.com/static?template=terms",
+      "source_url": "https://www.youtube.com/@highlinemastcenteraquarium/live",
+      "attribution": "MaST Center Aquarium, Highline College",
+      "attribution_url": "https://mast.highline.edu/",
+      "derivatives_license": null,
+      "commercial_use": "unknown",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [],
+  "taxonomy": [
+    "underwater video",
+    "marine_mammal",
+    "review_queue"
+  ],
+  "review_status": "model candidate",
+  "evidence_assets": [],
+  "media_quality": {},
+  "model_refresh": {},
+  "quality": {
+    "public_claim": "Open-vocabulary model candidates awaiting human review, published so the queue can be checked.",
+    "does_not_claim": "No card here is a species identification. A marine mammal label from an open-vocabulary prompt is a question, not a finding.",
+    "selection_rule": "Every clip whose fused detections carried a candidate label the decision layer could not settle."
+  },
+  "redaction_allowances": []
+}
