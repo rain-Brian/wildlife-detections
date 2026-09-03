@@ -2,7 +2,7 @@
   "report_id": "mast-center-video-2026-08-28-to-2026-09-01",
   "title": "MaST Center video source quality, 2026-08-28 to 2026-09-01",
   "schema_version": 1,
-  "generated_at": "2026-09-01T23:47:54+00:00",
+  "generated_at": "2026-09-03T20:43:30+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -42,40 +42,22 @@
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
-    "reviewable": true,
     "source_segments": 5015,
-    "captured_segments_aug28_aug31": 5015
+    "captured_segments_aug28_aug31": 5015,
+    "reviewable": false
   },
-  "assets": [
+  "rights": [
     {
-      "path": "assets/mast_center_aquarium_20260827T143843.mp4",
-      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=27/mast_center_aquarium_20260827T143843.ts",
-      "duration_seconds": 24.066,
-      "streams": [
-        "video",
-        "audio"
-      ],
-      "review_note": "Last confirmed usable spot-check sample before the transition bound."
-    },
-    {
-      "path": "assets/mast_center_aquarium_20260828T123220.mp4",
-      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=28/mast_center_aquarium_20260828T123220.ts",
-      "duration_seconds": 60.003,
-      "streams": [
-        "video",
-        "audio"
-      ],
-      "review_note": "First Friday batch sample checked; view already water-blocked."
-    },
-    {
-      "path": "assets/mast_center_aquarium_20260828T183638.mp4",
-      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=28/mast_center_aquarium_20260828T183638.ts",
-      "duration_seconds": 60.001,
-      "streams": [
-        "video",
-        "audio"
-      ],
-      "review_note": "Later Aug. 28 batch sample confirming the blocked-camera condition persisted."
+      "feed": "youtube/mast_center_aquarium",
+      "holder": "Highline College, MaST Center Aquarium",
+      "terms": "YouTube Standard Licence; all rights reserved by the channel owner",
+      "terms_url": "https://www.youtube.com/static?template=terms",
+      "source_url": "https://www.youtube.com/@highlinemastcenteraquarium/live",
+      "attribution": "MaST Center Aquarium, Highline College",
+      "attribution_url": "https://mast.highline.edu/",
+      "derivatives_license": null,
+      "commercial_use": "unknown",
+      "verified_on": "2026-08-31"
     }
   ],
   "featured_findings": [
@@ -89,7 +71,7 @@
       "source": "MaST Center Aquarium video bridge",
       "evidence": "1080p before/after video spot checks",
       "media": {
-        "src": "reports/mast-center-video-2026-08-28-to-2026-09-01/assets/mast_center_aquarium_20260828T123220.mp4"
+        "src": "assets/d46569fa-mast_center_aquarium_20260828T123220.mp4"
       }
     }
   ],
@@ -98,12 +80,43 @@
     "source_quality"
   ],
   "review_status": "source quality gap",
+  "series": {},
   "evidence_assets": [
     {
       "kind": "video",
-      "path": "assets/mast_center_aquarium_20260828T123220.mp4",
+      "path": "assets/8ad31be4-mast_center_aquarium_20260827T143843.mp4",
+      "duration_seconds": 24.066,
+      "featured": false,
+      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=27/mast_center_aquarium_20260827T143843.ts",
+      "streams": [
+        "video",
+        "audio"
+      ],
+      "review_note": "Last confirmed usable spot-check sample before the transition bound."
+    },
+    {
+      "kind": "video",
+      "path": "assets/d46569fa-mast_center_aquarium_20260828T123220.mp4",
       "duration_seconds": 60.003,
-      "featured": true
+      "featured": true,
+      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=28/mast_center_aquarium_20260828T123220.ts",
+      "streams": [
+        "video",
+        "audio"
+      ],
+      "review_note": "First Friday batch sample checked; view already water-blocked."
+    },
+    {
+      "kind": "video",
+      "path": "assets/00ad2194-mast_center_aquarium_20260828T183638.mp4",
+      "duration_seconds": 60.001,
+      "featured": false,
+      "source_blob": "sent/youtube/mast_center_aquarium/yyyy=2026/mm=08/dd=28/mast_center_aquarium_20260828T183638.ts",
+      "streams": [
+        "video",
+        "audio"
+      ],
+      "review_note": "Later Aug. 28 batch sample confirming the blocked-camera condition persisted."
     }
   ],
   "media_quality": {
@@ -122,19 +135,5 @@
     "selection_rule": "source-quality findings are shown as coverage context, not biological absence",
     "known_issue": "Future MaST detection pages need high-quality bundled stills and clips before homepage promotion."
   },
-  "rights": [
-    {
-      "feed": "youtube/mast_center_aquarium",
-      "holder": "Highline College, MaST Center Aquarium",
-      "terms": "YouTube Standard Licence; all rights reserved by the channel owner",
-      "terms_url": "https://www.youtube.com/static?template=terms",
-      "source_url": "https://www.youtube.com/@highlinemastcenteraquarium/live",
-      "attribution": "MaST Center Aquarium, Highline College",
-      "attribution_url": "https://mast.highline.edu/",
-      "derivatives_license": null,
-      "commercial_use": "unknown",
-      "verified_on": "2026-08-31"
-    }
-  ],
   "redaction_allowances": []
 }
