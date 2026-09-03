@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T20:29:38+00:00",
+  "generated_at": "2026-09-03T20:44:45+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
-    "tagline": "Evidence-first wildlife detection from public hydrophones, underwater video, and mountain cameras in Cascadia."
+    "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
     "reports": 12,
@@ -154,7 +154,7 @@
       "report_id": "mast-center-video-2026-08-28-to-2026-09-01",
       "report_title": "MaST Center video source quality, 2026-08-28 to 2026-09-01",
       "media": {
-        "src": "reports/mast-center-video-2026-08-28-to-2026-09-01/assets/mast_center_aquarium_20260828T123220.mp4"
+        "src": "reports/mast-center-video-2026-08-28-to-2026-09-01/assets/d46569fa-mast_center_aquarium_20260828T123220.mp4"
       }
     },
     {
@@ -445,7 +445,7 @@
     {
       "report_id": "mast-center-video-2026-08-28-to-2026-09-01",
       "title": "MaST Center video source quality, 2026-08-28 to 2026-09-01",
-      "generated_at": "2026-09-01T23:47:54+00:00",
+      "generated_at": "2026-09-03T20:43:30+00:00",
       "domains": [
         "underwater video",
         "source_quality"
