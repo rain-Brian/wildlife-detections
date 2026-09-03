@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T18:44:58+00:00",
+  "generated_at": "2026-09-03T20:29:38+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Evidence-first wildlife detection from public hydrophones, underwater video, and mountain cameras in Cascadia."
   },
   "metrics": {
-    "reports": 7,
-    "featured": 13,
+    "reports": 12,
+    "featured": 15,
     "reviewed": 5,
     "usable_hours": 1181.1,
     "days_covered": 24
@@ -125,6 +125,17 @@
       }
     },
     {
+      "title": "Tightening the rules cut the review queue 15-fold",
+      "summary": "On 2,055 frozen detections from the same two hours of aquarium footage, correcting one conflict rule took the queue from 474 to 32. No detection changed, so the difference is the decision layer and nothing else.",
+      "domain": "underwater video",
+      "review_status": "model candidate",
+      "report_id": "marine-detector-refinement-2026-08",
+      "report_title": "Refining the marine detector on a fixed two hours",
+      "media": {
+        "src": "reports/marine-detector-refinement-2026-08/assets/e60e3d1f-highest-confidence-seal-call.jpg"
+      }
+    },
+    {
       "title": "Orcasound Lab high-confidence call window",
       "summary": "A full 30-second OrcaHello-positive source window from Orcasound Lab, suitable for public listening review but not yet an ecotype claim.",
       "domain": "hydrophone",
@@ -154,9 +165,63 @@
       "report_id": "hydrophones-2026-08",
       "report_title": "Salish Sea hydrophones, August 2026",
       "media": {}
+    },
+    {
+      "title": "The most confident harbour seal call is a rockfish",
+      "summary": "The highest-scoring seal candidate in the widest run, at 0.79, has a visible dorsal fin and tail. Open-vocabulary labels are prompts for review, not species.",
+      "domain": "underwater video",
+      "review_status": "below floor / context only",
+      "report_id": "marine-detector-refinement-2026-08",
+      "report_title": "Refining the marine detector on a fixed two hours",
+      "media": {
+        "src": "reports/marine-detector-refinement-2026-08/assets/e60e3d1f-highest-confidence-seal-call.jpg"
+      }
     }
   ],
   "reports": [
+    {
+      "report_id": "mast-aquarium-2026-08",
+      "title": "MaST Center aquarium, marine review, August 2026",
+      "generated_at": "2026-09-02T17:19:06+00:00",
+      "domains": [
+        "underwater video",
+        "marine_mammal",
+        "fish"
+      ],
+      "coverage": "645 source segments",
+      "review_status": "human reviewed",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "v1",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "sunrise-mountain-august-2026",
+      "title": "Sunrise Mountain, August 2026",
+      "generated_at": "2026-09-02T09:20:00-07:00",
+      "domains": [
+        "land",
+        "terrestrial_mammal"
+      ],
+      "coverage": "29,581 source frames",
+      "review_status": "human reviewed",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MDV6-mit-yolov9-e",
+          "code_commit": null,
+          "license": "MIT",
+          "lineage": "MegaDetector fixed-camera scene filtering",
+          "caveat": "Detects candidate boxes; it does not classify species."
+        }
+      ]
+    },
     {
       "report_id": "hydrophones-2026-08",
       "title": "Salish Sea hydrophones, August 2026",
@@ -218,16 +283,46 @@
       ]
     },
     {
-      "report_id": "mast-aquarium-2026-08",
-      "title": "MaST Center aquarium, marine review, August 2026",
-      "generated_at": "2026-09-02T17:19:06+00:00",
+      "report_id": "marine-detector-refinement-2026-08",
+      "title": "Refining the marine detector on a fixed two hours",
+      "generated_at": "2026-09-03T20:29:38+00:00",
+      "domains": [
+        "underwater video",
+        "model_refinement",
+        "land"
+      ],
+      "coverage": "106 source segments",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "v1",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        },
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MDV6-mit-yolov9-e",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "mast-aug10-candidates-pass1-permissive",
+      "title": "MaST aquarium, 2026-08-10: pass 1, permissive rules",
+      "generated_at": "2026-09-03T20:29:15+00:00",
       "domains": [
         "underwater video",
         "marine_mammal",
-        "fish"
+        "review_queue"
       ],
-      "coverage": "645 source segments",
-      "review_status": "human reviewed",
+      "coverage": "86 source segments",
+      "review_status": "model candidate",
       "models": [
         {
           "model_name": "yolo-fish",
@@ -240,23 +335,68 @@
       ]
     },
     {
-      "report_id": "sunrise-mountain-august-2026",
-      "title": "Sunrise Mountain, August 2026",
-      "generated_at": "2026-09-02T09:20:00-07:00",
+      "report_id": "mast-aug10-candidates-pass2-conservative",
+      "title": "MaST aquarium, 2026-08-10: pass 2, tightened decision layer",
+      "generated_at": "2026-09-03T20:29:15+00:00",
+      "domains": [
+        "underwater video",
+        "marine_mammal",
+        "review_queue"
+      ],
+      "coverage": "86 source segments",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "v1",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "mast-aug10-candidates-pass3-wide",
+      "title": "MaST aquarium, 2026-08-10: pass 3, wider vocabulary",
+      "generated_at": "2026-09-03T20:29:16+00:00",
+      "domains": [
+        "underwater video",
+        "marine_mammal",
+        "review_queue"
+      ],
+      "coverage": "106 source segments",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "v1",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "sunrise-candidates-2026-08-22-to-2026-08-28",
+      "title": "Sunrise Mountain candidates, 2026-08-22 to 2026-08-28",
+      "generated_at": "2026-09-03T20:09:07+00:00",
       "domains": [
         "land",
-        "terrestrial_mammal"
+        "terrestrial_mammal",
+        "review_queue"
       ],
-      "coverage": "29,581 source frames",
-      "review_status": "human reviewed",
+      "coverage": "9,371 source frames",
+      "review_status": "model candidate",
       "models": [
         {
           "model_name": "megadetector-nps",
           "model_version": "MDV6-mit-yolov9-e",
           "code_commit": null,
-          "license": "MIT",
-          "lineage": "MegaDetector fixed-camera scene filtering",
-          "caveat": "Detects candidate boxes; it does not classify species."
+          "license": null,
+          "lineage": null,
+          "caveat": null
         }
       ]
     },

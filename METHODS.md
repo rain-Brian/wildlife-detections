@@ -39,6 +39,26 @@ Floors are **per site**. Pooling them across hydrophones lets a site with heavy 
 a threshold on its own volume and then license claims at a quiet site that never earned one.
 That happened here and was corrected.
 
+## Review queues
+
+Some pages here are not results. They are **queues**: model output published before anyone
+has judged it, so the queue itself can be checked and so changes to the pipeline can be seen
+from outside.
+
+A queue page is marked `model candidate` and says so at the top. Nothing on one is an
+identification. The floors above do not license it, and cannot: the underwater video and
+fixed-camera models have no measured false-positive floor at all. That is precisely why these
+are published as queues rather than as detections. Where a floor exists, a detection clears it
+or is not shown. Where none has been measured, the honest choices are to publish nothing or to
+publish the output plainly labelled as unreviewed, and publishing it is what lets a reader
+disagree with a specific card. Those disagreements are the material a floor is eventually
+built from.
+
+Queue pages carry a verdict layer. Judging a card records it in your own browser and the
+export button hands back a file; nothing is transmitted. A queue is never counted alongside
+reviewed evidence: every finding on the front page carries its status, and the reviewed count
+is separate from the candidate count.
+
 ## Presence is plotted per day
 
 Counts alone cannot distinguish 446 detections spread over eighteen days from 30 in a single
@@ -86,6 +106,7 @@ useful without making them a tracking tool.
 - Ecotype classification is a comparison of consistency, not a determination.
 - Coverage is uneven. Feeds fail and are not always restored quickly.
 - Absence of detections is never evidence of absence of animals.
+- A queue page is unreviewed model output, not a result, and its counts are not findings.
 
 ## Sources
 

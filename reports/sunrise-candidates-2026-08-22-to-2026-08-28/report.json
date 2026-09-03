@@ -1,0 +1,82 @@
+{
+  "report_id": "sunrise-candidates-2026-08-22-to-2026-08-28",
+  "title": "Sunrise Mountain candidates, 2026-08-22 to 2026-08-28",
+  "schema_version": 1,
+  "generated_at": "2026-09-03T20:09:07+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "nps",
+      "camera": "sunrise_mountain",
+      "label": "NPS Sunrise Mountain",
+      "kind": "fixed_camera",
+      "location": null
+    }
+  ],
+  "models": [
+    {
+      "model_name": "megadetector-nps",
+      "model_version": "MDV6-mit-yolov9-e",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "sunrise-20260822-20260828"
+  ],
+  "window": {
+    "start_utc": null,
+    "end_utc": null,
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 133,
+    "assets_bytes": 7772112,
+    "assets_deduplicated": 133,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "source_frames": 9371,
+    "dark_or_unusable_frames": 3576,
+    "usable_non_dark_frames": 5795,
+    "raw_model_detections": 3319,
+    "suppressed_static": 3306,
+    "suppressed_dark": 0,
+    "suppressed_sky": 0,
+    "review_queue_candidates": 13,
+    "dark_threshold_luma": 83.0,
+    "reviewable": true
+  },
+  "rights": [
+    {
+      "feed": "nps/sunrise_mountain",
+      "holder": "National Park Service, Mount Rainier National Park",
+      "terms": "US Government work, public domain (17 U.S.C. 105)",
+      "terms_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "source_url": "https://www.nps.gov/webcams-mora/SunriseMtn.jpg",
+      "attribution": "National Park Service, Mount Rainier National Park",
+      "attribution_url": "https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm",
+      "derivatives_license": null,
+      "commercial_use": "permitted",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [],
+  "taxonomy": [
+    "land",
+    "terrestrial_mammal",
+    "review_queue"
+  ],
+  "review_status": "model candidate",
+  "evidence_assets": [],
+  "media_quality": {},
+  "model_refresh": {},
+  "quality": {
+    "public_claim": "Scene-filtered MegaDetector candidates awaiting human review, published so the suppression can be checked.",
+    "does_not_claim": "MegaDetector finds a box; it does not say what is in it. No card here is a species identification.",
+    "selection_rule": "Every detection that survived fixed-camera scene filtering. The suppressed boxes are shown alongside so the filter's working is auditable."
+  },
+  "redaction_allowances": []
+}

@@ -79,8 +79,8 @@ footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line);
   <h1>Cascadia Listening Post</h1>
   <p class="tagline">Evidence-first wildlife detection from public hydrophones, underwater video, and mountain cameras in Cascadia.</p>
   <div class="metrics">
-    <div class="metric"><b>7</b><span>public reports</span></div>
-    <div class="metric"><b>13</b><span>manifest-featured findings</span></div>
+    <div class="metric"><b>12</b><span>public reports</span></div>
+    <div class="metric"><b>15</b><span>manifest-featured findings</span></div>
     <div class="metric"><b>5</b><span>human-reviewed findings</span></div>
     <div class="metric"><b>1,181</b><span>usable hydrophone hours recorded in manifests</span></div>
     <div class="metric"><b>24</b><span>data-bearing days recorded in manifests</span></div>
@@ -95,7 +95,9 @@ footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line);
   <button data-filter="hydrophone">Hydrophone</button>
   <button data-filter="human reviewed">Reviewed</button>
   <button data-filter="classification above site floor">Classification</button>
+  <button data-filter="model candidate">Model candidate</button>
   <button data-filter="source quality gap">Quality gap</button>
+  <button data-filter="below floor / context only">Context only</button>
 </div>
 <div class="findings">
       <article class="finding" data-domain="land" data-status="human reviewed">
@@ -218,6 +220,18 @@ footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line);
           </dl>
         </div>
       </article>
+      <article class="finding" data-domain="underwater video" data-status="model candidate">
+        <img src="reports/marine-detector-refinement-2026-08/assets/e60e3d1f-highest-confidence-seal-call.jpg" alt="Tightening the rules cut the review queue 15-fold">
+        <div class="finding-body">
+          <div class="tags"><span>underwater video</span><span>model candidate</span><span>model_refinement</span></div>
+          <h3><a href="reports/marine-detector-refinement-2026-08/">Tightening the rules cut the review queue 15-fold</a></h3>
+          <p>On 2,055 frozen detections from the same two hours of aquarium footage, correcting one conflict rule took the queue from 474 to 32. No detection changed, so the difference is the decision layer and nothing else.</p>
+          <dl>
+            <dt>Source</dt><dd>MaST Center Aquarium, 2026-08-10</dd>
+            <dt>Evidence</dt><dd>three passes over identical footage, each published as a queue</dd>
+          </dl>
+        </div>
+      </article>
       <article class="finding" data-domain="hydrophone" data-status="model candidate">
         <audio controls src="reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"></audio>
         <div class="finding-body">
@@ -229,22 +243,36 @@ footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line);
             <dt>Evidence</dt><dd>30-second source-window audio, not the short 9-second review excerpt</dd>
           </dl>
         </div>
-      </article>
-      <article class="finding" data-domain="underwater video" data-status="source quality gap">
-        <video controls preload="metadata" src="reports/mast-center-video-2026-08-28-to-2026-09-01/assets/mast_center_aquarium_20260828T123220.mp4"></video>
-        <div class="finding-body">
-          <div class="tags"><span>underwater video</span><span>source quality gap</span><span>source_quality</span></div>
-          <h3><a href="reports/mast-center-video-2026-08-28-to-2026-09-01/">MaST aquarium source-quality break</a></h3>
-          <p>Captured video from the Friday batch was already water-blocked, so this report treats the window as source-quality evidence rather than absence of fish or marine mammals.</p>
-          <dl>
-            <dt>Source</dt><dd>MaST Center Aquarium video bridge</dd>
-            <dt>Evidence</dt><dd>1080p before/after video spot checks</dd>
-          </dl>
-        </div>
       </article></div>
 
 <h2>Reports</h2>
 <div class="cards">
+      <article class="report-card">
+        <h3><a href="reports/mast-aquarium-2026-08/">MaST Center aquarium, marine review, August 2026</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>MaST Center Aquarium</dd>
+          
+          <dt>Coverage</dt><dd>645 source segments</dd>
+          <dt>Status</dt><dd>human reviewed</dd>
+          <dt>Published</dt><dd>2026-09-02</dd>
+          <dt>Licence</dt><dd>CC-BY-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
+        </dl>
+        <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
+      </article>
+      <article class="report-card">
+        <h3><a href="reports/sunrise-mountain-august-2026/">Sunrise Mountain, August 2026</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>NPS Sunrise Mountain</dd>
+          <dt>Period</dt><dd>2026-08-01T00:00:00Z to 2026-09-01T00:00:00Z</dd>
+          <dt>Coverage</dt><dd>29,581 source frames</dd>
+          <dt>Status</dt><dd>human reviewed</dd>
+          <dt>Published</dt><dd>2026-09-02</dd>
+          <dt>Licence</dt><dd>CC-BY-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm" rel="noopener">National Park Service, Mount Rainier National Park</a></dd>
+        </dl>
+        <p class="caveat">Detects that an animal is present, not which species it is.</p>
+      </article>
       <article class="report-card">
         <h3><a href="reports/hydrophones-2026-08/">Salish Sea hydrophones, August 2026</a></h3>
         <dl>
@@ -272,26 +300,65 @@ footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line);
         <p class="caveat">No caveat recorded for this model. Treat its output as unvalidated.</p>
       </article>
       <article class="report-card">
-        <h3><a href="reports/mast-aquarium-2026-08/">MaST Center aquarium, marine review, August 2026</a></h3>
+        <h3><a href="reports/marine-detector-refinement-2026-08/">Refining the marine detector on a fixed two hours</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>NPS Sunrise Mountain, MaST Center Aquarium</dd>
+          
+          <dt>Coverage</dt><dd>106 source segments</dd>
+          <dt>Status</dt><dd>model candidate</dd>
+          <dt>Published</dt><dd>2026-09-03</dd>
+          <dt>Licence</dt><dd>CC-BY-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm" rel="noopener">National Park Service, Mount Rainier National Park</a>, <a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
+        </dl>
+        <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p><p class="caveat">Detects that an animal is present, not which species it is.</p>
+      </article>
+      <article class="report-card">
+        <h3><a href="reports/mast-aug10-candidates-pass1-permissive/">MaST aquarium, 2026-08-10: pass 1, permissive rules</a></h3>
         <dl>
           <dt>Sites</dt><dd>MaST Center Aquarium</dd>
           
-          <dt>Coverage</dt><dd>645 source segments</dd>
-          <dt>Status</dt><dd>human reviewed</dd>
-          <dt>Published</dt><dd>2026-09-02</dd>
+          <dt>Coverage</dt><dd>86 source segments</dd>
+          <dt>Status</dt><dd>model candidate</dd>
+          <dt>Published</dt><dd>2026-09-03</dd>
           <dt>Licence</dt><dd>CC-BY-4.0</dd>
           <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
         </dl>
         <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
       </article>
       <article class="report-card">
-        <h3><a href="reports/sunrise-mountain-august-2026/">Sunrise Mountain, August 2026</a></h3>
+        <h3><a href="reports/mast-aug10-candidates-pass2-conservative/">MaST aquarium, 2026-08-10: pass 2, tightened decision layer</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>MaST Center Aquarium</dd>
+          
+          <dt>Coverage</dt><dd>86 source segments</dd>
+          <dt>Status</dt><dd>model candidate</dd>
+          <dt>Published</dt><dd>2026-09-03</dd>
+          <dt>Licence</dt><dd>CC-BY-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
+        </dl>
+        <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
+      </article>
+      <article class="report-card">
+        <h3><a href="reports/mast-aug10-candidates-pass3-wide/">MaST aquarium, 2026-08-10: pass 3, wider vocabulary</a></h3>
+        <dl>
+          <dt>Sites</dt><dd>MaST Center Aquarium</dd>
+          
+          <dt>Coverage</dt><dd>106 source segments</dd>
+          <dt>Status</dt><dd>model candidate</dd>
+          <dt>Published</dt><dd>2026-09-03</dd>
+          <dt>Licence</dt><dd>CC-BY-4.0</dd>
+          <dt>Credit</dt><dd><a href="https://mast.highline.edu/" rel="noopener">MaST Center Aquarium, Highline College</a></dd>
+        </dl>
+        <p class="caveat">Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.</p>
+      </article>
+      <article class="report-card">
+        <h3><a href="reports/sunrise-candidates-2026-08-22-to-2026-08-28/">Sunrise Mountain candidates, 2026-08-22 to 2026-08-28</a></h3>
         <dl>
           <dt>Sites</dt><dd>NPS Sunrise Mountain</dd>
-          <dt>Period</dt><dd>2026-08-01T00:00:00Z to 2026-09-01T00:00:00Z</dd>
-          <dt>Coverage</dt><dd>29,581 source frames</dd>
-          <dt>Status</dt><dd>human reviewed</dd>
-          <dt>Published</dt><dd>2026-09-02</dd>
+          
+          <dt>Coverage</dt><dd>9,371 source frames</dd>
+          <dt>Status</dt><dd>model candidate</dd>
+          <dt>Published</dt><dd>2026-09-03</dd>
           <dt>Licence</dt><dd>CC-BY-4.0</dd>
           <dt>Credit</dt><dd><a href="https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm" rel="noopener">National Park Service, Mount Rainier National Park</a></dd>
         </dl>
