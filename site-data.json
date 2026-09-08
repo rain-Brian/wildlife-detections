@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T22:15:35+00:00",
+  "generated_at": "2026-09-08T22:56:23+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -10,7 +10,7 @@
     "reports": 12,
     "featured": 13,
     "reviewed": 5,
-    "usable_hours": 1696.7,
+    "usable_hours": 1487.7,
     "days_covered": 33
   },
   "featured_findings": [
