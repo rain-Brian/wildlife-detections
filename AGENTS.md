@@ -2,9 +2,15 @@
 
 **This repository is generated. Do not edit its contents by hand.**
 
-Everything under `reports/`, plus `index.html`, `sitemap.xml` and `NOTICE`, is written by
-`reports/publish.py` and `reports/index.py` in `wildlife-inference`. A hand edit is
-overwritten by the next publish, silently.
+Everything under `reports/`, plus `index.html`, `assets/`, `sitemap.xml`, `site-data.json`
+and `NOTICE`, is written by `reports/publish.py`, `reports/index.py` and
+`reports/restyle.py` in `wildlife-inference`. A hand edit is overwritten by the next publish,
+silently.
+
+`assets/site.css` is the whole site's stylesheet and `reports/orcasound/`, `reports/nps/` and
+`reports/youtube/` are generated source hub pages, not reports. Those three names are reserved:
+publishing a report under one of them is refused, because staging a report removes its
+destination directory first.
 
 To change a report, change the builder or the run that produced it and publish again. To
 change the index or a credit line, change the generator or the feed registry.
