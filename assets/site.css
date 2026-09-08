@@ -117,6 +117,20 @@ p.note {
    for text that carries selection rules and caveats. */
 .quiet { color: var(--text-secondary); font-size: 13.5px; }
 
+/* The AI disclosure restyle puts on every page. Set apart from the report's own
+   prose by a rule and reduced weight, because it is about how the page was made
+   rather than about what was found. */
+.ai-disclosure {
+  margin: 32px auto 0;
+  max-width: 76ch;
+  padding: 12px 0 24px;
+  border-top: 1px solid var(--line, #d7dee6);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.ai-disclosure a { color: inherit; }
+
 /* ---------- timestamps ---------- */
 /* The canonical detection stamp, emitted by timefmt.stamp_html. Pacific leads
    because the behaviour being recorded is diel; UTC sits underneath because it
