@@ -2,7 +2,7 @@
   "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-02",
   "title": "Orcasound hydrophones, 2026-08-28 to 2026-09-02",
   "schema_version": 1,
-  "generated_at": "2026-09-08T19:28:11+00:00",
+  "generated_at": "2026-09-08T20:52:41+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -51,6 +51,14 @@
       "license": null,
       "lineage": null,
       "caveat": null
+    },
+    {
+      "model_name": "ecotype-classifier",
+      "model_version": "Palmer-et-al-2026-derived",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
     }
   ],
   "floors": [],
@@ -80,8 +88,8 @@
     "usable_hours": 425.2
   },
   "counts": {
-    "assets_bundled": 0,
-    "assets_bytes": 0,
+    "assets_bundled": 12,
+    "assets_bytes": 2288220,
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
@@ -94,6 +102,14 @@
     },
     "days_covered": 6,
     "source_paths_unparsable": 0,
+    "model_positive_windows": 2868,
+    "source_units_with_positive_segment": 4156,
+    "detections_rejected_as_resonance": 1009,
+    "detections_remaining": 3147,
+    "ecotype_srkw_detections": 816,
+    "ecotype_tkw_detections": 19,
+    "positive_definition": "model_positive_windows counts 30s windows with global_prediction==1; source_units_with_positive_segment counts windows holding at least one segment above the local threshold. These differ materially: 2,868 against 4,156.",
+    "contaminant_screening": "4816 Hz resonator scored on every detection with score_resonance.py at the 18 dB threshold and rejected: 1,009 of 4,156 removed, 1,002 of them at Bush Point and one each at the other two nodes.",
     "reviewable": false
   },
   "rights": [
