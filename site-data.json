@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T20:58:14+00:00",
+  "generated_at": "2026-09-08T21:14:26+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -261,6 +261,26 @@
       ]
     },
     {
+      "report_id": "nps-cameras-2026-08-28-to-2026-09-02",
+      "title": "NPS cameras, 2026-08-28 to 2026-09-02",
+      "generated_at": "2026-09-08T21:14:08+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "6 days covered",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MDV6-mit-yolov9-e",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
       "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-02",
       "title": "Orcasound hydrophones, 2026-08-28 to 2026-09-02",
       "generated_at": "2026-09-08T20:52:41+00:00",
@@ -281,26 +301,6 @@
         {
           "model_name": "ecotype-classifier",
           "model_version": "Palmer-et-al-2026-derived",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
-        }
-      ]
-    },
-    {
-      "report_id": "nps-cameras-2026-08-28-to-2026-09-02",
-      "title": "NPS cameras, 2026-08-28 to 2026-09-02",
-      "generated_at": "2026-09-08T17:04:20+00:00",
-      "domains": [
-        "land"
-      ],
-      "coverage": "6 days covered",
-      "review_status": "model candidate",
-      "models": [
-        {
-          "model_name": "megadetector-nps",
-          "model_version": "MDV6-mit-yolov9-e",
           "code_commit": null,
           "license": null,
           "lineage": null,

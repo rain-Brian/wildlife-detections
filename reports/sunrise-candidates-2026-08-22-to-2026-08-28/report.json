@@ -47,7 +47,9 @@
     "suppressed_sky": 0,
     "review_queue_candidates": 13,
     "dark_threshold_luma": 83.0,
-    "reviewable": true
+    "reviewable": true,
+    "positive_definition": "raw_model_detections counts every MegaDetector box before the geometric scene filter, not frames. review_queue_candidates counts the boxes whose verdict survived it as 'candidate'.",
+    "positive_definition_provenance": "verified_from_run"
   },
   "rights": [
     {

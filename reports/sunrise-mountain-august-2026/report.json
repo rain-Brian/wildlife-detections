@@ -65,7 +65,9 @@
     "completed_data_bearing_camera_days": 24,
     "failed_camera_days": 0,
     "featured_reviewed_wildlife": 2,
-    "assets_bundled": 6
+    "assets_bundled": 6,
+    "positive_definition": "raw_model_detections counts every MegaDetector box before the geometric scene filter, not frames. filtered_review_candidates counts the boxes that survived it.",
+    "positive_definition_provenance": "inferred_from_key"
   },
   "coverage_gaps": [
     {
