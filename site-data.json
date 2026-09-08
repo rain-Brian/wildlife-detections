@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T18:56:44+00:00",
+  "generated_at": "2026-09-08T19:28:17+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 13,
+    "reports": 14,
     "featured": 15,
     "reviewed": 5,
-    "usable_hours": 1181.1,
-    "days_covered": 30
+    "usable_hours": 1606.3,
+    "days_covered": 36
   },
   "featured_findings": [
     {
@@ -275,6 +275,26 @@
         {
           "model_name": "salish-sea-ecotype-classifier",
           "model_version": "unspecified",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-02",
+      "title": "Orcasound hydrophones, 2026-08-28 to 2026-09-02",
+      "generated_at": "2026-09-08T19:28:11+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "425 hours usable, 6 days",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "orcahello-srkw-detector-v1",
           "code_commit": null,
           "license": null,
           "lineage": null,
