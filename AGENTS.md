@@ -15,6 +15,20 @@ destination directory first.
 To change a report, change the builder or the run that produced it and publish again. To
 change the index or a credit line, change the generator or the feed registry.
 
+Publishing is four steps in `wildlife-inference`, in this order:
+
+```bash
+python -m reports.publish     --page ... --report-id ... --feed feed/camera --site ../wildlife-detections
+python -m reports.index       --site ../wildlife-detections
+python -m reports.restyle     --site ../wildlife-detections
+python -m reports.verify_site --site ../wildlife-detections
+```
+
+`verify_site` re-runs `index` and `restyle` into a scratch copy and refuses if anything would
+change. That is what catches both a hand edit to this repository and a publish that stopped
+early, which otherwise look identical: a page that is simply out of date. It exits 0 only when
+this repository is what the generators would write right now.
+
 The files that *are* edited by hand: `README.md`, `METHODS.md`, `CONTRIBUTING.md`,
 `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CITATION.cff`, `LICENSE`, `LICENSE-CODE`.
 
