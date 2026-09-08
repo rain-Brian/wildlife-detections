@@ -92,7 +92,9 @@
     },
     "days_covered": 3,
     "source_paths_unparsable": 0,
-    "contaminant_screening": "Bush Point 4816 Hz resonator: rejected. The page reports each node's detections against the audio it recorded and what remains once the 4,816 Hz resonance is rejected; quality.gates records 'resonance rejection shown'. Identified 2026-08-27."
+    "contaminant_screening": "Bush Point 4816 Hz resonator: rejected. The page reports each node's detections against the audio it recorded and what remains once the 4,816 Hz resonance is rejected; quality.gates records 'resonance rejection shown'. Identified 2026-08-27.",
+    "positive_definition": "Not recoverable. This report predates the requirement, its run directories are not on this machine, and the builder that produced it is not in the repository, so which sense of positive the 'detections' figure uses cannot be established. Treat it as a detection count of unstated basis.",
+    "positive_definition_provenance": "not_recoverable"
   },
   "rights": [
     {

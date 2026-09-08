@@ -91,7 +91,13 @@
     "featured_audio_fallback_clips": 0,
     "featured_full_window_count": 12,
     "featured_fallback_clip_count": 0,
-    "reviewable": false
+    "reviewable": false,
+    "detections_with_audio": 12423,
+    "detections_rejected_as_resonance": 4161,
+    "detections_remaining": 8262,
+    "positive_definition": "detections_with_audio counts 30s source windows holding at least one segment above the detector's local threshold. It is not the count of windows the model called positive as a whole, which is smaller.",
+    "positive_definition_provenance": "verified_from_page",
+    "contaminant_screening": "4816 Hz resonator screened: 4,161 of 12,423 detections rejected. The figures are the ones this page already published."
   },
   "rights": [
     {

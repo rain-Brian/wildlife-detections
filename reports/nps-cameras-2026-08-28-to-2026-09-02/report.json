@@ -2,7 +2,7 @@
   "report_id": "nps-cameras-2026-08-28-to-2026-09-02",
   "title": "NPS cameras, 2026-08-28 to 2026-09-02",
   "schema_version": 1,
-  "generated_at": "2026-09-08T17:04:20+00:00",
+  "generated_at": "2026-09-08T21:14:08+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -64,6 +64,10 @@
     },
     "days_covered": 6,
     "source_paths_unparsable": 0,
+    "model_candidates": 139,
+    "positive_segments": 3942,
+    "positive_definition": "a MegaDetector box that survived the geometric scene filter as a candidate, not a frame and not an animal. positive_segments counts every detection row before that filter.",
+    "evidence_waiver": "Coverage and run accounting, not a review queue. This page was built with the run-accounting builder, which renders no crops. The reviewable queue for these two cameras, with images, is sunrise-candidates-2026-08-22-to-2026-08-28. A reviewable queue for this window has not been built.",
     "reviewable": false
   },
   "rights": [

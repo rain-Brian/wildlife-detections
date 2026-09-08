@@ -71,7 +71,9 @@
     "rules_only_queue_reduction_percent": 93.2,
     "pass1_pass2_source_sets_identical": true,
     "species_confirmed": 0,
-    "reviewable": false
+    "reviewable": false,
+    "positive_definition": "passN_detections counts detection rows emitted by the marine fusion layer at each of three threshold settings, over the same 106 source segments. The three are alternatives, not a total.",
+    "positive_definition_provenance": "inferred_from_key"
   },
   "rights": [
     {

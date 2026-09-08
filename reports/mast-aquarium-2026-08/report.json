@@ -45,7 +45,9 @@
     "source_segments": 645,
     "fused_detection_rows": 9061,
     "human_reviewed_examples": 5,
-    "reviewable": false
+    "reviewable": false,
+    "positive_definition": "fused_detection_rows counts detection rows emitted by the marine fusion layer, not source segments and not animals. One segment can produce many rows.",
+    "positive_definition_provenance": "inferred_from_key"
   },
   "rights": [
     {

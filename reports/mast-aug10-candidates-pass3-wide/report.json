@@ -59,7 +59,9 @@
     "first_pass_interval_seconds": 2.0,
     "yolo_world_class_count": 25,
     "rule_profile": "conservative_v2",
-    "reviewable": true
+    "reviewable": true,
+    "positive_definition": "fused_detection_rows counts detection rows emitted by the marine fusion layer, not source segments and not animals. One segment can produce many rows.",
+    "positive_definition_provenance": "inferred_from_key"
   },
   "rights": [
     {
