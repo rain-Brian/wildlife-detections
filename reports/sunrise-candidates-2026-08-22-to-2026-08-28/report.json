@@ -28,8 +28,8 @@
     "sunrise-20260822-20260828"
   ],
   "window": {
-    "start_utc": null,
-    "end_utc": null,
+    "start_utc": "2026-08-22",
+    "end_utc": "2026-08-28",
     "usable_hours": null
   },
   "counts": {
@@ -49,7 +49,12 @@
     "dark_threshold_luma": 83.0,
     "reviewable": true,
     "positive_definition": "raw_model_detections counts every MegaDetector box before the geometric scene filter, not frames. review_queue_candidates counts the boxes whose verdict survived it as 'candidate'.",
-    "positive_definition_provenance": "verified_from_run"
+    "positive_definition_provenance": "verified_from_run",
+    "windows_by_camera": {
+      "sunrise_mountain": 9371
+    },
+    "days_covered": 7,
+    "source_paths_unparsable": 0
   },
   "rights": [
     {
