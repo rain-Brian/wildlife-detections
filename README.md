@@ -18,6 +18,11 @@ this one exists so the results can be read and shared.
 
 **These pages are generated.** Do not open a pull request against them; see CONTRIBUTING.md.
 
+**These pages are built with AI agents.** The detection models are machine learning
+models, and the pipeline code and page prose are written with AI coding agents under
+human review. Every figure is checkable against the `report.json` beside each report,
+which is the source of truth; see METHODS.md for what that does and does not guarantee.
+
 ## How to read a report
 
 Three things are true of every report here, and they are the difference between reading it

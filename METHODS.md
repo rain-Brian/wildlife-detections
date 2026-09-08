@@ -15,6 +15,32 @@ that records, so a model change cannot cost recording time.
 | Mount Rainier webcams | MegaDetector | Whether an animal, person or vehicle is in a frame |
 | Underwater video | YOLO-Fish with a YOLO-World second pass | Whether a fish or a larger animal is in a frame |
 
+## AI agents in this pipeline
+
+The models in the table above are machine learning models, and most of this document is about
+what their outputs can support. Separately, and worth stating plainly: the code that runs
+them, the code that renders these reports, and the prose on these pages including this
+document are written with AI coding agents, under human direction and reviewed before
+anything is published.
+
+This is disclosed because it changes what a reader should check. A language model can write a
+fluent sentence about a number it did not compute, and the failure mode is a page that reads
+as authoritative while describing something the run never produced.
+
+Three things limit that, and a reader can verify all three:
+
+- **Site-level numbers are built from manifests, never from the pages.** The front page and
+  `site-data.json` are generated from each report's `report.json`. Nothing scrapes a rendered
+  page for a fact, so a claim that exists only in prose cannot become a site-level figure.
+- **The rights and redaction gates are code, not judgement.** A feed whose terms do not permit
+  redistribution is refused at publish time and there is no override flag.
+- **The pipeline carries a test suite**, including regression guards for failures that have
+  already happened here once.
+
+None of that makes the prose correct. It means the figures are checkable against each
+report's `report.json`, and where prose and manifest disagree, the manifest is what the run
+actually produced.
+
 ## What a detection is
 
 A model output. Nothing on these pages is a confirmed identification unless it says a person
@@ -107,6 +133,8 @@ useful without making them a tracking tool.
 - Coverage is uneven. Feeds fail and are not always restored quickly.
 - Absence of detections is never evidence of absence of animals.
 - A queue page is unreviewed model output, not a result, and its counts are not findings.
+- Code and prose here are written with AI agents under human review. Figures are
+  checkable against each report's `report.json`, which is the source of truth.
 
 ## Sources
 
