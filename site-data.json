@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T20:53:49+00:00",
+  "generated_at": "2026-09-08T20:58:14+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 14,
-    "featured": 15,
+    "reports": 12,
+    "featured": 13,
     "reviewed": 5,
-    "usable_hours": 1815.3,
-    "days_covered": 39
+    "usable_hours": 1696.7,
+    "days_covered": 33
   },
   "featured_findings": [
     {
@@ -114,17 +114,6 @@
       }
     },
     {
-      "title": "Sunrise meadow-edge large-mammal candidates",
-      "summary": "The report leads with possible large mammals at the Sunrise meadow and tree edge, kept as review candidates rather than species-confirmed bear sightings.",
-      "domain": "land",
-      "review_status": "model candidate",
-      "report_id": "nps-cameras-2026-08-28-to-2026-09-01",
-      "report_title": "NPS cameras, 2026-08-28 to 2026-09-01",
-      "media": {
-        "src": "reports/nps-cameras-2026-08-28-to-2026-09-01/assets/sunrise_mountain_20260829T014612Z.annotated.jpg"
-      }
-    },
-    {
       "title": "Tightening the rules cut the review queue 15-fold",
       "summary": "On 2,055 frozen detections from the same two hours of aquarium footage, correcting one conflict rule took the queue from 474 to 32. No detection changed, so the difference is the decision layer and nothing else.",
       "domain": "underwater video",
@@ -133,17 +122,6 @@
       "report_title": "Refining the marine detector on a fixed two hours",
       "media": {
         "src": "reports/marine-detector-refinement-2026-08/assets/e60e3d1f-highest-confidence-seal-call.jpg"
-      }
-    },
-    {
-      "title": "Orcasound Lab high-confidence call window",
-      "summary": "A full 30-second OrcaHello-positive source window from Orcasound Lab, suitable for public listening review but not yet an ecotype claim.",
-      "domain": "hydrophone",
-      "review_status": "model candidate",
-      "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-01",
-      "report_title": "Orcasound hydrophones, 2026-08-28 to 2026-09-01",
-      "media": {
-        "src": "reports/orcasound-hydrophones-2026-08-28-to-2026-09-01/assets/3a9e93d2-Orcasound_Lab_20260828T041058.window.mp3"
       }
     },
     {
@@ -436,48 +414,6 @@
         "review_queue"
       ],
       "coverage": "9,371 source frames",
-      "review_status": "model candidate",
-      "models": [
-        {
-          "model_name": "megadetector-nps",
-          "model_version": "MDV6-mit-yolov9-e",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
-        }
-      ]
-    },
-    {
-      "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-01",
-      "title": "Orcasound hydrophones, 2026-08-28 to 2026-09-01",
-      "generated_at": "2026-09-02T03:22:48+00:00",
-      "domains": [
-        "hydrophone",
-        "acoustic_call"
-      ],
-      "coverage": "119 hours usable, 2 days",
-      "review_status": "model candidate",
-      "models": [
-        {
-          "model_name": "orcahello-srkw",
-          "model_version": "orcasound-orcahello-srkw-detector-v1",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
-        }
-      ]
-    },
-    {
-      "report_id": "nps-cameras-2026-08-28-to-2026-09-01",
-      "title": "NPS cameras, 2026-08-28 to 2026-09-01",
-      "generated_at": "2026-09-02T02:57:34+00:00",
-      "domains": [
-        "land",
-        "terrestrial_mammal"
-      ],
-      "coverage": "4 days covered",
       "review_status": "model candidate",
       "models": [
         {
