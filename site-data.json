@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T20:37:11+00:00",
+  "generated_at": "2026-09-08T20:53:49+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -285,7 +285,7 @@
     {
       "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-02",
       "title": "Orcasound hydrophones, 2026-08-28 to 2026-09-02",
-      "generated_at": "2026-09-08T19:28:11+00:00",
+      "generated_at": "2026-09-08T20:52:41+00:00",
       "domains": [
         "hydrophone"
       ],
@@ -295,6 +295,14 @@
         {
           "model_name": "orcahello-srkw",
           "model_version": "orcahello-srkw-detector-v1",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        },
+        {
+          "model_name": "ecotype-classifier",
+          "model_version": "Palmer-et-al-2026-derived",
           "code_commit": null,
           "license": null,
           "lineage": null,
