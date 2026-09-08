@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T20:44:45+00:00",
+  "generated_at": "2026-09-08T17:04:37+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 12,
+    "reports": 13,
     "featured": 15,
     "reviewed": 5,
     "usable_hours": 1181.1,
-    "days_covered": 24
+    "days_covered": 30
   },
   "featured_findings": [
     {
@@ -275,6 +275,26 @@
         {
           "model_name": "salish-sea-ecotype-classifier",
           "model_version": "unspecified",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "nps-cameras-2026-08-28-to-2026-09-02",
+      "title": "NPS cameras, 2026-08-28 to 2026-09-02",
+      "generated_at": "2026-09-08T17:04:20+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "6 days covered",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MDV6-mit-yolov9-e",
           "code_commit": null,
           "license": null,
           "lineage": null,
