@@ -16,6 +16,12 @@ Rendered reports and their media. Nothing else. No model code, no configuration,
 infrastructure detail. The systems that produce these reports live in private repositories;
 this one exists so the results can be read and shared.
 
+**How it is built is documented publicly**, at
+[cascadia-listening-post](https://github.com/rain-Brian/cascadia-listening-post): the
+architecture, the data contracts, the false-positive floor methodology, and instructions for
+rebuilding the pipeline on your own resources. That repository carries no model code either, for
+the same licensing reasons this one does not.
+
 **These pages are generated.** Do not open a pull request against them; see CONTRIBUTING.md.
 
 **These pages are built with AI agents.** The detection models are machine learning
