@@ -2,7 +2,7 @@
   "report_id": "nps-cameras-2026-08-28-to-2026-09-02",
   "title": "NPS cameras, 2026-08-28 to 2026-09-02",
   "schema_version": 1,
-  "generated_at": "2026-09-08T21:14:08+00:00",
+  "generated_at": "2026-09-08T22:12:14+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -24,10 +24,10 @@
     {
       "model_name": "megadetector-nps",
       "model_version": "MDV6-mit-yolov9-e",
-      "code_commit": null,
-      "license": null,
-      "lineage": null,
-      "caveat": null
+      "code_commit": "347a7f3983aecc521a8502c0d9552ca3c1a1f972",
+      "license": "MIT",
+      "lineage": "microsoft/MegaDetector",
+      "caveat": "Detects that an animal is present, not which species it is."
     }
   ],
   "floors": [],
@@ -51,9 +51,9 @@
     "usable_hours": null
   },
   "counts": {
-    "assets_bundled": 0,
-    "assets_bytes": 0,
-    "assets_deduplicated": 0,
+    "assets_bundled": 139,
+    "assets_bytes": 3808839,
+    "assets_deduplicated": 139,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
     "windows_analysed": 0,
@@ -65,9 +65,8 @@
     "days_covered": 6,
     "source_paths_unparsable": 0,
     "model_candidates": 139,
-    "positive_segments": 3942,
-    "positive_definition": "a MegaDetector box that survived the geometric scene filter as a candidate, not a frame and not an animal. positive_segments counts every detection row before that filter.",
-    "evidence_waiver": "Coverage and run accounting, not a review queue. This page was built with the run-accounting builder, which renders no crops. The reviewable queue for these two cameras, with images, is sunrise-candidates-2026-08-22-to-2026-08-28. A reviewable queue for this window has not been built.",
+    "camera_days": 12,
+    "positive_definition": "a MegaDetector box that survived the geometric scene filter as a candidate, not a frame and not an animal",
     "reviewable": false
   },
   "rights": [

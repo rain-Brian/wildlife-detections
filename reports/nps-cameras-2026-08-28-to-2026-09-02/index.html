@@ -1,33 +1,1230 @@
 <!doctype html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NPS cameras, 2026-08-28 to 2026-09-02</title>
 <link rel="stylesheet" href="../../assets/site.css?v=7b4ef487">
+</head>
 <body class="family-report layout-flow">
 <header>
 <h1>NPS cameras, 2026-08-28 to 2026-09-02</h1>
-<p class="quiet">Batch window: 2026-08-28 through 2026-09-02. Generated 2026-09-08T21:12:39Z.</p>
+<p class="quiet">139 candidates across 12 camera-days. Every crop below
+is a MegaDetector box that survived the geometric scene filter. None has been reviewed by a
+person, and no precision has been measured for this detector on these cameras.</p>
 </header>
 <main>
-<p>MegaDetector over every daylight frame from the two Mount Rainier fixed cameras for six days. Frames too dark to carry information are excluded before detection rather than counted as empty, and boxes that recur at fixed pixel coordinates on a camera that never moves are set aside as fixed furniture. The counts below are what survived both.</p>
-<div class="stats">
-<div class="stat"><b>12</b>completed run artifacts</div>
-<div class="stat"><b>16,342</b>source units analyzed</div>
-<div class="stat"><b>139</b>model-positive source units</div>
-<div class="stat"><b>3,942</b>detection rows or positive segments</div>
-</div>
-<h2>Coverage</h2>
-<p class="quiet">Days parsed from completed run artifacts: 2026-08-28, 2026-08-29, 2026-08-30, 2026-08-31, 2026-09-01, 2026-09-02.</p>
-<table><thead><tr><th>Source</th><th>Analyzed units</th></tr></thead><tbody><tr><td>NPS Sunrise Mountain</td><td>8,212</td></tr><tr><td>NPS West</td><td>8,130</td></tr></tbody></table>
-<h2>Run Outcomes</h2>
-<p class="quiet">Shard outcomes: none.</p>
-<table><thead><tr><th>Run</th><th>Outcome</th><th>Attempts</th><th>Exit code</th></tr></thead><tbody><tr><td colspan='4'>No shard status rows were supplied.</td></tr></tbody></table>
-<h2>Completed Runs</h2>
-<table><thead><tr><th>Run</th><th>Analyzed</th><th>Positive units</th><th>Segments or rows</th><th>Max confidence</th><th>Days</th></tr></thead><tbody><tr><td>megadetector-nps-nps-clean-20260903T191542Z-sunrise_mountain-20260828</td><td>1,366</td><td>1</td><td>518</td><td>0.915</td><td>2026-08-28</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-sunrise_mountain-20260829</td><td>1,368</td><td>8</td><td>323</td><td>0.909</td><td>2026-08-29</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-sunrise_mountain-20260830</td><td>1,374</td><td>1</td><td>268</td><td>0.870</td><td>2026-08-30</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-sunrise_mountain-20260831</td><td>1,358</td><td>9</td><td>300</td><td>0.830</td><td>2026-08-31</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-sunrise_mountain-20260901</td><td>1,371</td><td>5</td><td>465</td><td>0.877</td><td>2026-09-01</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-sunrise_mountain-20260902</td><td>1,375</td><td>9</td><td>483</td><td>0.900</td><td>2026-09-02</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-west-20260828</td><td>1,353</td><td>16</td><td>277</td><td>0.903</td><td>2026-08-28</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-west-20260829</td><td>1,352</td><td>27</td><td>283</td><td>0.890</td><td>2026-08-29</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-west-20260830</td><td>1,363</td><td>12</td><td>214</td><td>0.846</td><td>2026-08-30</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-west-20260831</td><td>1,356</td><td>17</td><td>332</td><td>0.877</td><td>2026-08-31</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-west-20260901</td><td>1,359</td><td>11</td><td>265</td><td>0.900</td><td>2026-09-01</td></tr><tr><td>megadetector-nps-nps-clean-20260903T191542Z-west-20260902</td><td>1,347</td><td>23</td><td>214</td><td>0.823</td><td>2026-09-02</td></tr></tbody></table>
-<h2>Gaps And Limits</h2>
-<div class="warn"><ul><li>Capture is continuous across the window at roughly one frame per 63 seconds. The only interruption is a single three minute gap on 2026-08-30 at 11:56 UTC.</li><li>No precision has been measured for MegaDetector on these two cameras. The geometric scene filter that produces these candidates was tuned on a sample of four surviving detections from one camera, and a real animal has already been observed landing in its suppressed pile.</li></ul></div>
-<p class="quiet">These are model outputs for triage and coverage accounting. They are not human-reviewed biological conclusions.</p>
+<p>The night and day split is measured per run rather than fixed, so each section states its
+own. A single figure for the batch would be a number no run found.</p>
+
+  <section class="run">
+    <h3>Sunrise Mountain, 2026-08-28</h3>
+    <p class="quiet">1 candidate from 518 raw detections
+    over 1,366 frames. 521 frames were too dark to carry
+    information, at this run's own measured split of 89.0 luma.
+    513 suppressed as fixed furniture, 4 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/f80de894-sunrise_mountain_20260828T235747Z_987_408.jpg"><img loading="lazy" src="assets/f80de894-sunrise_mountain_20260828T235747Z_987_408.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> animal
+          <span class="dim">2026-08-28 23:57:47 UTC</span>
+          <span class="dim">89&times;226px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>Sunrise Mountain, 2026-08-29</h3>
+    <p class="quiet">8 candidates from 323 raw detections
+    over 1,368 frames. 536 frames were too dark to carry
+    information, at this run's own measured split of 90.0 luma.
+    309 suppressed as fixed furniture, 6 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg"><img loading="lazy" src="assets/29415e5d-sunrise_mountain_20260829T003719Z_1118_359.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.50</strong> animal
+          <span class="dim">2026-08-29 00:37:19 UTC</span>
+          <span class="dim">96&times;211px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/22ceaae7-sunrise_mountain_20260829T031818Z_387_685.jpg"><img loading="lazy" src="assets/22ceaae7-sunrise_mountain_20260829T031818Z_387_685.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.44</strong> animal
+          <span class="dim">2026-08-29 03:18:18 UTC</span>
+          <span class="dim">149&times;121px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/df7a490d-sunrise_mountain_20260829T010139Z_1206_389.jpg"><img loading="lazy" src="assets/df7a490d-sunrise_mountain_20260829T010139Z_1206_389.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> animal
+          <span class="dim">2026-08-29 01:01:39 UTC</span>
+          <span class="dim">77&times;235px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/2ccd0a45-sunrise_mountain_20260829T225025Z_1114_384.jpg"><img loading="lazy" src="assets/2ccd0a45-sunrise_mountain_20260829T225025Z_1114_384.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> animal
+          <span class="dim">2026-08-29 22:50:25 UTC</span>
+          <span class="dim">161&times;246px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f6bcf47d-sunrise_mountain_20260829T230134Z_0_4.jpg"><img loading="lazy" src="assets/f6bcf47d-sunrise_mountain_20260829T230134Z_0_4.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.26</strong> person
+          <span class="dim">2026-08-29 23:01:34 UTC</span>
+          <span class="dim">269&times;1006px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/d9867979-sunrise_mountain_20260829T230839Z_0_2.jpg"><img loading="lazy" src="assets/d9867979-sunrise_mountain_20260829T230839Z_0_2.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> person
+          <span class="dim">2026-08-29 23:08:39 UTC</span>
+          <span class="dim">265&times;1010px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/6933109a-sunrise_mountain_20260829T225528Z_1113_387.jpg"><img loading="lazy" src="assets/6933109a-sunrise_mountain_20260829T225528Z_1113_387.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.24</strong> animal
+          <span class="dim">2026-08-29 22:55:28 UTC</span>
+          <span class="dim">153&times;247px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/69d98b10-sunrise_mountain_20260829T135411Z_893_353.jpg"><img loading="lazy" src="assets/69d98b10-sunrise_mountain_20260829T135411Z_893_353.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.20</strong> animal
+          <span class="dim">2026-08-29 13:54:11 UTC</span>
+          <span class="dim">105&times;265px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>Sunrise Mountain, 2026-08-30</h3>
+    <p class="quiet">1 candidate from 268 raw detections
+    over 1,374 frames. 540 frames were too dark to carry
+    information, at this run's own measured split of 90.0 luma.
+    265 suppressed as fixed furniture, 2 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/b9c4f9ac-sunrise_mountain_20260830T150401Z_679_589.jpg"><img loading="lazy" src="assets/b9c4f9ac-sunrise_mountain_20260830T150401Z_679_589.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> animal
+          <span class="dim">2026-08-30 15:04:01 UTC</span>
+          <span class="dim">36&times;95px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>Sunrise Mountain, 2026-08-31</h3>
+    <p class="quiet">9 candidates from 300 raw detections
+    over 1,358 frames. 528 frames were too dark to carry
+    information, at this run's own measured split of 91.0 luma.
+    288 suppressed as fixed furniture, 3 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/7fbaba22-sunrise_mountain_20260831T140328Z_952_370.jpg"><img loading="lazy" src="assets/7fbaba22-sunrise_mountain_20260831T140328Z_952_370.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.68</strong> animal
+          <span class="dim">2026-08-31 14:03:28 UTC</span>
+          <span class="dim">131&times;299px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/3a280e0d-sunrise_mountain_20260831T225101Z_1276_248.jpg"><img loading="lazy" src="assets/3a280e0d-sunrise_mountain_20260831T225101Z_1276_248.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.56</strong> animal
+          <span class="dim">2026-08-31 22:51:01 UTC</span>
+          <span class="dim">242&times;389px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/fe046171-sunrise_mountain_20260831T224859Z_1275_241.jpg"><img loading="lazy" src="assets/fe046171-sunrise_mountain_20260831T224859Z_1275_241.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.47</strong> animal
+          <span class="dim">2026-08-31 22:48:59 UTC</span>
+          <span class="dim">236&times;395px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/886345ce-sunrise_mountain_20260831T003856Z_0_2.jpg"><img loading="lazy" src="assets/886345ce-sunrise_mountain_20260831T003856Z_0_2.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> person
+          <span class="dim">2026-08-31 00:38:56 UTC</span>
+          <span class="dim">197&times;999px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/cec97ad4-sunrise_mountain_20260831T144601Z_681_366.jpg"><img loading="lazy" src="assets/cec97ad4-sunrise_mountain_20260831T144601Z_681_366.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> person
+          <span class="dim">2026-08-31 14:46:01 UTC</span>
+          <span class="dim">141&times;312px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/016e458a-sunrise_mountain_20260831T140531Z_954_331.jpg"><img loading="lazy" src="assets/016e458a-sunrise_mountain_20260831T140531Z_954_331.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> person
+          <span class="dim">2026-08-31 14:05:31 UTC</span>
+          <span class="dim">125&times;340px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/fe448132-sunrise_mountain_20260831T013036Z_0_3.jpg"><img loading="lazy" src="assets/fe448132-sunrise_mountain_20260831T013036Z_0_3.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> person
+          <span class="dim">2026-08-31 01:30:36 UTC</span>
+          <span class="dim">258&times;1032px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/5c88c883-sunrise_mountain_20260831T124329Z_1284_330.jpg"><img loading="lazy" src="assets/5c88c883-sunrise_mountain_20260831T124329Z_1284_330.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-08-31 12:43:29 UTC</span>
+          <span class="dim">144&times;277px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/48a34079-sunrise_mountain_20260831T144500Z_682_382.jpg"><img loading="lazy" src="assets/48a34079-sunrise_mountain_20260831T144500Z_682_382.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.20</strong> animal
+          <span class="dim">2026-08-31 14:45:00 UTC</span>
+          <span class="dim">140&times;279px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>Sunrise Mountain, 2026-09-01</h3>
+    <p class="quiet">5 candidates from 465 raw detections
+    over 1,371 frames. 545 frames were too dark to carry
+    information, at this run's own measured split of 89.0 luma.
+    458 suppressed as fixed furniture, 2 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/e590fbca-sunrise_mountain_20260901T000457Z_1376_265.jpg"><img loading="lazy" src="assets/e590fbca-sunrise_mountain_20260901T000457Z_1376_265.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.51</strong> animal
+          <span class="dim">2026-09-01 00:04:57 UTC</span>
+          <span class="dim">260&times;372px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/3c49dd01-sunrise_mountain_20260901T000356Z_1383_261.jpg"><img loading="lazy" src="assets/3c49dd01-sunrise_mountain_20260901T000356Z_1383_261.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.51</strong> animal
+          <span class="dim">2026-09-01 00:03:56 UTC</span>
+          <span class="dim">260&times;376px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/4aaf4dd8-sunrise_mountain_20260901T143607Z_916_363.jpg"><img loading="lazy" src="assets/4aaf4dd8-sunrise_mountain_20260901T143607Z_916_363.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.35</strong> animal
+          <span class="dim">2026-09-01 14:36:07 UTC</span>
+          <span class="dim">114&times;325px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/3217b77a-sunrise_mountain_20260901T234442Z_523_602.jpg"><img loading="lazy" src="assets/3217b77a-sunrise_mountain_20260901T234442Z_523_602.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.32</strong> animal
+          <span class="dim">2026-09-01 23:44:42 UTC</span>
+          <span class="dim">99&times;78px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/62ebdde7-sunrise_mountain_20260901T180237Z_683_386.jpg"><img loading="lazy" src="assets/62ebdde7-sunrise_mountain_20260901T180237Z_683_386.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> vehicle
+          <span class="dim">2026-09-01 18:02:37 UTC</span>
+          <span class="dim">52&times;93px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>Sunrise Mountain, 2026-09-02</h3>
+    <p class="quiet">9 candidates from 483 raw detections
+    over 1,375 frames. 565 frames were too dark to carry
+    information, at this run's own measured split of 83.0 luma.
+    471 suppressed as fixed furniture, 3 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/c6dd4322-sunrise_mountain_20260902T201822Z_1728_318.jpg"><img loading="lazy" src="assets/c6dd4322-sunrise_mountain_20260902T201822Z_1728_318.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.50</strong> animal
+          <span class="dim">2026-09-02 20:18:22 UTC</span>
+          <span class="dim">168&times;262px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/747918fc-sunrise_mountain_20260902T030955Z_1017_363.jpg"><img loading="lazy" src="assets/747918fc-sunrise_mountain_20260902T030955Z_1017_363.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.39</strong> animal
+          <span class="dim">2026-09-02 03:09:55 UTC</span>
+          <span class="dim">193&times;347px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/488e35f9-sunrise_mountain_20260902T222859Z_1065_471.jpg"><img loading="lazy" src="assets/488e35f9-sunrise_mountain_20260902T222859Z_1065_471.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.32</strong> animal
+          <span class="dim">2026-09-02 22:28:59 UTC</span>
+          <span class="dim">88&times;173px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f4e753ca-sunrise_mountain_20260902T125357Z_684_331.jpg"><img loading="lazy" src="assets/f4e753ca-sunrise_mountain_20260902T125357Z_684_331.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.29</strong> animal
+          <span class="dim">2026-09-02 12:53:57 UTC</span>
+          <span class="dim">142&times;316px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/164f2597-sunrise_mountain_20260902T212513Z_1306_398.jpg"><img loading="lazy" src="assets/164f2597-sunrise_mountain_20260902T212513Z_1306_398.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.27</strong> animal
+          <span class="dim">2026-09-02 21:25:13 UTC</span>
+          <span class="dim">155&times;158px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/7dcae64a-sunrise_mountain_20260902T200611Z_1610_208.jpg"><img loading="lazy" src="assets/7dcae64a-sunrise_mountain_20260902T200611Z_1610_208.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-09-02 20:06:11 UTC</span>
+          <span class="dim">217&times;393px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/fab0013f-sunrise_mountain_20260902T014058Z_1278_333.jpg"><img loading="lazy" src="assets/fab0013f-sunrise_mountain_20260902T014058Z_1278_333.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.23</strong> animal
+          <span class="dim">2026-09-02 01:40:58 UTC</span>
+          <span class="dim">75&times;143px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/7d774369-sunrise_mountain_20260902T125659Z_681_348.jpg"><img loading="lazy" src="assets/7d774369-sunrise_mountain_20260902T125659Z_681_348.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> animal
+          <span class="dim">2026-09-02 12:56:59 UTC</span>
+          <span class="dim">150&times;304px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/2235c162-sunrise_mountain_20260902T224611Z_682_348.jpg"><img loading="lazy" src="assets/2235c162-sunrise_mountain_20260902T224611Z_682_348.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> vehicle
+          <span class="dim">2026-09-02 22:46:11 UTC</span>
+          <span class="dim">69&times;153px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>West, 2026-08-28</h3>
+    <p class="quiet">16 candidates from 277 raw detections
+    over 1,353 frames. 525 frames were too dark to carry
+    information, at this run's own measured split of 85.0 luma.
+    259 suppressed as fixed furniture, 2 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/96e68c70-west_20260828T190805Z_497_914.jpg"><img loading="lazy" src="assets/96e68c70-west_20260828T190805Z_497_914.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.90</strong> vehicle
+          <span class="dim">2026-08-28 19:08:05 UTC</span>
+          <span class="dim">222&times;128px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/2b9337ec-west_20260828T032351Z_710_961.jpg"><img loading="lazy" src="assets/2b9337ec-west_20260828T032351Z_710_961.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.64</strong> animal
+          <span class="dim">2026-08-28 03:23:51 UTC</span>
+          <span class="dim">48&times;83px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/5f482d9f-west_20260828T222838Z_629_767.jpg"><img loading="lazy" src="assets/5f482d9f-west_20260828T222838Z_629_767.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.51</strong> animal
+          <span class="dim">2026-08-28 22:28:38 UTC</span>
+          <span class="dim">164&times;125px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/709b0778-west_20260828T233934Z_794_308.jpg"><img loading="lazy" src="assets/709b0778-west_20260828T233934Z_794_308.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.51</strong> animal
+          <span class="dim">2026-08-28 23:39:34 UTC</span>
+          <span class="dim">184&times;321px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/da5c87c8-west_20260828T214201Z_39_959.jpg"><img loading="lazy" src="assets/da5c87c8-west_20260828T214201Z_39_959.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.48</strong> animal
+          <span class="dim">2026-08-28 21:42:01 UTC</span>
+          <span class="dim">247&times;85px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/9acb5c62-west_20260828T222435Z_749_938.jpg"><img loading="lazy" src="assets/9acb5c62-west_20260828T222435Z_749_938.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.47</strong> animal
+          <span class="dim">2026-08-28 22:24:35 UTC</span>
+          <span class="dim">66&times;106px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/8b57c21e-west_20260828T223040Z_733_652.jpg"><img loading="lazy" src="assets/8b57c21e-west_20260828T223040Z_733_652.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.42</strong> animal
+          <span class="dim">2026-08-28 22:30:40 UTC</span>
+          <span class="dim">128&times;177px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/d918f1bb-west_20260828T184952Z_842_924.jpg"><img loading="lazy" src="assets/d918f1bb-west_20260828T184952Z_842_924.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.35</strong> animal
+          <span class="dim">2026-08-28 18:49:52 UTC</span>
+          <span class="dim">87&times;120px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/91f03791-west_20260828T220519Z_484_896.jpg"><img loading="lazy" src="assets/91f03791-west_20260828T220519Z_484_896.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.31</strong> animal
+          <span class="dim">2026-08-28 22:05:19 UTC</span>
+          <span class="dim">54&times;117px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/06bd4b5f-west_20260828T233833Z_790_304.jpg"><img loading="lazy" src="assets/06bd4b5f-west_20260828T233833Z_790_304.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> animal
+          <span class="dim">2026-08-28 23:38:33 UTC</span>
+          <span class="dim">188&times;324px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b0420bc1-west_20260828T184650Z_891_904.jpg"><img loading="lazy" src="assets/b0420bc1-west_20260828T184650Z_891_904.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> animal
+          <span class="dim">2026-08-28 18:46:50 UTC</span>
+          <span class="dim">42&times;111px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/67f71634-west_20260828T202402Z_796_857.jpg"><img loading="lazy" src="assets/67f71634-west_20260828T202402Z_796_857.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.28</strong> animal
+          <span class="dim">2026-08-28 20:24:02 UTC</span>
+          <span class="dim">127&times;186px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/73a9bd27-west_20260828T223947Z_303_912.jpg"><img loading="lazy" src="assets/73a9bd27-west_20260828T223947Z_303_912.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.28</strong> animal
+          <span class="dim">2026-08-28 22:39:47 UTC</span>
+          <span class="dim">146&times;107px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/47ef449c-west_20260828T210633Z_860_930.jpg"><img loading="lazy" src="assets/47ef449c-west_20260828T210633Z_860_930.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.28</strong> animal
+          <span class="dim">2026-08-28 21:06:33 UTC</span>
+          <span class="dim">59&times;113px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/01b2f33d-west_20260828T193123Z_854_914.jpg"><img loading="lazy" src="assets/01b2f33d-west_20260828T193123Z_854_914.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-08-28 19:31:23 UTC</span>
+          <span class="dim">51&times;111px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/d9352f5e-west_20260828T220519Z_681_760.jpg"><img loading="lazy" src="assets/d9352f5e-west_20260828T220519Z_681_760.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-08-28 22:05:19 UTC</span>
+          <span class="dim">139&times;112px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>West, 2026-08-29</h3>
+    <p class="quiet">27 candidates from 283 raw detections
+    over 1,352 frames. 538 frames were too dark to carry
+    information, at this run's own measured split of 90.0 luma.
+    251 suppressed as fixed furniture, 5 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/f59cd912-west_20260829T212223Z_347_822.jpg"><img loading="lazy" src="assets/f59cd912-west_20260829T212223Z_347_822.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.79</strong> vehicle
+          <span class="dim">2026-08-29 21:22:23 UTC</span>
+          <span class="dim">244&times;189px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/04639e13-west_20260829T215546Z_307_824.jpg"><img loading="lazy" src="assets/04639e13-west_20260829T215546Z_307_824.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.70</strong> vehicle
+          <span class="dim">2026-08-29 21:55:46 UTC</span>
+          <span class="dim">243&times;193px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/2d74c5c9-west_20260829T143036Z_848_882.jpg"><img loading="lazy" src="assets/2d74c5c9-west_20260829T143036Z_848_882.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.57</strong> animal
+          <span class="dim">2026-08-29 14:30:36 UTC</span>
+          <span class="dim">41&times;148px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b5067f46-west_20260829T160038Z_65_874.jpg"><img loading="lazy" src="assets/b5067f46-west_20260829T160038Z_65_874.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.55</strong> animal
+          <span class="dim">2026-08-29 16:00:38 UTC</span>
+          <span class="dim">184&times;155px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/a914b0fc-west_20260829T002912Z_217_374.jpg"><img loading="lazy" src="assets/a914b0fc-west_20260829T002912Z_217_374.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.51</strong> vehicle
+          <span class="dim">2026-08-29 00:29:12 UTC</span>
+          <span class="dim">238&times;132px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/fe319523-west_20260829T134302Z_1617_461.jpg"><img loading="lazy" src="assets/fe319523-west_20260829T134302Z_1617_461.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.48</strong> animal
+          <span class="dim">2026-08-29 13:43:02 UTC</span>
+          <span class="dim">184&times;234px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/4b44932d-west_20260829T234200Z_113_955.jpg"><img loading="lazy" src="assets/4b44932d-west_20260829T234200Z_113_955.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.45</strong> animal
+          <span class="dim">2026-08-29 23:42:00 UTC</span>
+          <span class="dim">256&times;89px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f115722b-west_20260829T214943Z_826_870.jpg"><img loading="lazy" src="assets/f115722b-west_20260829T214943Z_826_870.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.45</strong> animal
+          <span class="dim">2026-08-29 21:49:43 UTC</span>
+          <span class="dim">45&times;131px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/15faf5c6-west_20260829T205503Z_417_856.jpg"><img loading="lazy" src="assets/15faf5c6-west_20260829T205503Z_417_856.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.43</strong> animal
+          <span class="dim">2026-08-29 20:55:03 UTC</span>
+          <span class="dim">205&times;122px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/894e2449-west_20260829T164810Z_465_755.jpg"><img loading="lazy" src="assets/894e2449-west_20260829T164810Z_465_755.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.40</strong> animal
+          <span class="dim">2026-08-29 16:48:10 UTC</span>
+          <span class="dim">95&times;135px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/d1458155-west_20260829T135309Z_329_731.jpg"><img loading="lazy" src="assets/d1458155-west_20260829T135309Z_329_731.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.39</strong> animal
+          <span class="dim">2026-08-29 13:53:09 UTC</span>
+          <span class="dim">235&times;161px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/676d2aaf-west_20260829T013907Z_574_353.jpg"><img loading="lazy" src="assets/676d2aaf-west_20260829T013907Z_574_353.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.37</strong> vehicle
+          <span class="dim">2026-08-29 01:39:07 UTC</span>
+          <span class="dim">230&times;219px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b66dc576-west_20260829T025100Z_653_725.jpg"><img loading="lazy" src="assets/b66dc576-west_20260829T025100Z_653_725.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.37</strong> animal
+          <span class="dim">2026-08-29 02:51:00 UTC</span>
+          <span class="dim">99&times;89px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/30b530f4-west_20260829T234301Z_1833_869.jpg"><img loading="lazy" src="assets/30b530f4-west_20260829T234301Z_1833_869.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.34</strong> animal
+          <span class="dim">2026-08-29 23:43:01 UTC</span>
+          <span class="dim">87&times;172px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/15d48be1-west_20260829T220754Z_480_822.jpg"><img loading="lazy" src="assets/15d48be1-west_20260829T220754Z_480_822.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.34</strong> vehicle
+          <span class="dim">2026-08-29 22:07:54 UTC</span>
+          <span class="dim">259&times;222px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/a563b2f1-west_20260829T233355Z_761_900.jpg"><img loading="lazy" src="assets/a563b2f1-west_20260829T233355Z_761_900.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.33</strong> animal
+          <span class="dim">2026-08-29 23:33:55 UTC</span>
+          <span class="dim">97&times;143px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b62f7186-west_20260829T133458Z_793_657.jpg"><img loading="lazy" src="assets/b62f7186-west_20260829T133458Z_793_657.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.32</strong> animal
+          <span class="dim">2026-08-29 13:34:58 UTC</span>
+          <span class="dim">167&times;150px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/32439886-west_20260829T170925Z_1835_0.jpg"><img loading="lazy" src="assets/32439886-west_20260829T170925Z_1835_0.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.31</strong> person
+          <span class="dim">2026-08-29 17:09:25 UTC</span>
+          <span class="dim">85&times;980px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/035e332d-west_20260829T221459Z_710_761.jpg"><img loading="lazy" src="assets/035e332d-west_20260829T221459Z_710_761.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> vehicle
+          <span class="dim">2026-08-29 22:14:59 UTC</span>
+          <span class="dim">208&times;164px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/4061de1c-west_20260829T190645Z_422_883.jpg"><img loading="lazy" src="assets/4061de1c-west_20260829T190645Z_422_883.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.27</strong> vehicle
+          <span class="dim">2026-08-29 19:06:45 UTC</span>
+          <span class="dim">304&times;161px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/1607302b-west_20260829T210510Z_478_820.jpg"><img loading="lazy" src="assets/1607302b-west_20260829T210510Z_478_820.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.27</strong> animal
+          <span class="dim">2026-08-29 21:05:10 UTC</span>
+          <span class="dim">80&times;80px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/0c9ea8b7-west_20260829T150057Z_337_881.jpg"><img loading="lazy" src="assets/0c9ea8b7-west_20260829T150057Z_337_881.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.27</strong> animal
+          <span class="dim">2026-08-29 15:00:57 UTC</span>
+          <span class="dim">58&times;96px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/73b1af4f-west_20260829T230638Z_491_816.jpg"><img loading="lazy" src="assets/73b1af4f-west_20260829T230638Z_491_816.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-08-29 23:06:38 UTC</span>
+          <span class="dim">184&times;135px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/a8bae33f-west_20260829T125937Z_516_689.jpg"><img loading="lazy" src="assets/a8bae33f-west_20260829T125937Z_516_689.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> animal
+          <span class="dim">2026-08-29 12:59:37 UTC</span>
+          <span class="dim">127&times;173px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f321b602-west_20260829T224521Z_52_814.jpg"><img loading="lazy" src="assets/f321b602-west_20260829T224521Z_52_814.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> vehicle
+          <span class="dim">2026-08-29 22:45:21 UTC</span>
+          <span class="dim">456&times;230px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/3fb8a18d-west_20260829T135208Z_328_728.jpg"><img loading="lazy" src="assets/3fb8a18d-west_20260829T135208Z_328_728.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-08-29 13:52:08 UTC</span>
+          <span class="dim">225&times;164px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/1606d45f-west_20260829T214036Z_114_920.jpg"><img loading="lazy" src="assets/1606d45f-west_20260829T214036Z_114_920.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-08-29 21:40:36 UTC</span>
+          <span class="dim">346&times;124px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>West, 2026-08-30</h3>
+    <p class="quiet">12 candidates from 214 raw detections
+    over 1,363 frames. 487 frames were too dark to carry
+    information, at this run's own measured split of 87.0 luma.
+    199 suppressed as fixed furniture, 3 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/a79d9207-west_20260830T235535Z_466_835.jpg"><img loading="lazy" src="assets/a79d9207-west_20260830T235535Z_466_835.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.85</strong> animal
+          <span class="dim">2026-08-30 23:55:35 UTC</span>
+          <span class="dim">199&times;130px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/662de7da-west_20260830T132051Z_818_614.jpg"><img loading="lazy" src="assets/662de7da-west_20260830T132051Z_818_614.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.74</strong> animal
+          <span class="dim">2026-08-30 13:20:51 UTC</span>
+          <span class="dim">137&times;161px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/940e32c5-west_20260830T222433Z_184_885.jpg"><img loading="lazy" src="assets/940e32c5-west_20260830T222433Z_184_885.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.57</strong> vehicle
+          <span class="dim">2026-08-30 22:24:33 UTC</span>
+          <span class="dim">291&times;159px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/44eae6b6-west_20260830T012917Z_273_926.jpg"><img loading="lazy" src="assets/44eae6b6-west_20260830T012917Z_273_926.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.57</strong> animal
+          <span class="dim">2026-08-30 01:29:17 UTC</span>
+          <span class="dim">64&times;62px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/41cdcc91-west_20260830T161551Z_917_601.jpg"><img loading="lazy" src="assets/41cdcc91-west_20260830T161551Z_917_601.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.40</strong> animal
+          <span class="dim">2026-08-30 16:15:51 UTC</span>
+          <span class="dim">27&times;43px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/468dbd4e-west_20260830T164813Z_39_991.jpg"><img loading="lazy" src="assets/468dbd4e-west_20260830T164813Z_39_991.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.38</strong> animal
+          <span class="dim">2026-08-30 16:48:13 UTC</span>
+          <span class="dim">207&times;53px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/28be19c8-west_20260830T130038Z_621_687.jpg"><img loading="lazy" src="assets/28be19c8-west_20260830T130038Z_621_687.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.27</strong> animal
+          <span class="dim">2026-08-30 13:00:38 UTC</span>
+          <span class="dim">136&times;143px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/1b1ba892-west_20260830T184035Z_0_17.jpg"><img loading="lazy" src="assets/1b1ba892-west_20260830T184035Z_0_17.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.26</strong> animal
+          <span class="dim">2026-08-30 18:40:35 UTC</span>
+          <span class="dim">146&times;949px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/9eb32e91-west_20260830T001222Z_882_602.jpg"><img loading="lazy" src="assets/9eb32e91-west_20260830T001222Z_882_602.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.24</strong> animal
+          <span class="dim">2026-08-30 00:12:22 UTC</span>
+          <span class="dim">42&times;36px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b3c65fdc-west_20260830T232924Z_704_314.jpg"><img loading="lazy" src="assets/b3c65fdc-west_20260830T232924Z_704_314.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.23</strong> animal
+          <span class="dim">2026-08-30 23:29:24 UTC</span>
+          <span class="dim">129&times;174px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/dee1f9cc-west_20260830T184338Z_565_523.jpg"><img loading="lazy" src="assets/dee1f9cc-west_20260830T184338Z_565_523.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.23</strong> vehicle
+          <span class="dim">2026-08-30 18:43:38 UTC</span>
+          <span class="dim">59&times;99px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/cec60e01-west_20260830T202558Z_0_11.jpg"><img loading="lazy" src="assets/cec60e01-west_20260830T202558Z_0_11.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.20</strong> animal
+          <span class="dim">2026-08-30 20:25:58 UTC</span>
+          <span class="dim">115&times;1000px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>West, 2026-08-31</h3>
+    <p class="quiet">17 candidates from 332 raw detections
+    over 1,356 frames. 367 frames were too dark to carry
+    information, at this run's own measured split of 85.0 luma.
+    305 suppressed as fixed furniture, 10 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/f4065ab6-west_20260831T222843Z_541_873.jpg"><img loading="lazy" src="assets/f4065ab6-west_20260831T222843Z_541_873.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.81</strong> animal
+          <span class="dim">2026-08-31 22:28:43 UTC</span>
+          <span class="dim">210&times;142px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/bb620e5f-west_20260831T181030Z_395_874.jpg"><img loading="lazy" src="assets/bb620e5f-west_20260831T181030Z_395_874.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.74</strong> animal
+          <span class="dim">2026-08-31 18:10:30 UTC</span>
+          <span class="dim">201&times;135px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f7869ff1-west_20260831T173001Z_864_650.jpg"><img loading="lazy" src="assets/f7869ff1-west_20260831T173001Z_864_650.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.54</strong> animal
+          <span class="dim">2026-08-31 17:30:01 UTC</span>
+          <span class="dim">83&times;98px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/8ca00fa2-west_20260831T195447Z_830_887.jpg"><img loading="lazy" src="assets/8ca00fa2-west_20260831T195447Z_830_887.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.46</strong> animal
+          <span class="dim">2026-08-31 19:54:47 UTC</span>
+          <span class="dim">103&times;157px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b54ef8ec-west_20260831T163924Z_656_830.jpg"><img loading="lazy" src="assets/b54ef8ec-west_20260831T163924Z_656_830.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.43</strong> animal
+          <span class="dim">2026-08-31 16:39:24 UTC</span>
+          <span class="dim">197&times;126px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/4cad0684-west_20260831T171349Z_876_832.jpg"><img loading="lazy" src="assets/4cad0684-west_20260831T171349Z_876_832.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.43</strong> animal
+          <span class="dim">2026-08-31 17:13:49 UTC</span>
+          <span class="dim">126&times;142px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/db93b4dd-west_20260831T052633Z_745_641.jpg"><img loading="lazy" src="assets/db93b4dd-west_20260831T052633Z_745_641.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.41</strong> animal
+          <span class="dim">2026-08-31 05:26:33 UTC</span>
+          <span class="dim">143&times;160px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/cf28fc41-west_20260831T005508Z_699_730.jpg"><img loading="lazy" src="assets/cf28fc41-west_20260831T005508Z_699_730.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.40</strong> animal
+          <span class="dim">2026-08-31 00:55:08 UTC</span>
+          <span class="dim">52&times;61px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/7297d63a-west_20260831T205433Z_831_860.jpg"><img loading="lazy" src="assets/7297d63a-west_20260831T205433Z_831_860.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.38</strong> animal
+          <span class="dim">2026-08-31 20:54:33 UTC</span>
+          <span class="dim">125&times;176px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/a32d913e-west_20260831T202612Z_475_886.jpg"><img loading="lazy" src="assets/a32d913e-west_20260831T202612Z_475_886.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.35</strong> animal
+          <span class="dim">2026-08-31 20:26:12 UTC</span>
+          <span class="dim">217&times;79px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/0e155015-west_20260831T032405Z_757_315.jpg"><img loading="lazy" src="assets/0e155015-west_20260831T032405Z_757_315.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.29</strong> animal
+          <span class="dim">2026-08-31 03:24:05 UTC</span>
+          <span class="dim">85&times;161px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/d43bd0db-west_20260831T182843Z_895_595.jpg"><img loading="lazy" src="assets/d43bd0db-west_20260831T182843Z_895_595.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.27</strong> animal
+          <span class="dim">2026-08-31 18:28:43 UTC</span>
+          <span class="dim">61&times;49px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/6fe17154-west_20260831T200859Z_4_973.jpg"><img loading="lazy" src="assets/6fe17154-west_20260831T200859Z_4_973.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-08-31 20:08:59 UTC</span>
+          <span class="dim">196&times;71px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/ab8a684b-west_20260831T160355Z_909_601.jpg"><img loading="lazy" src="assets/ab8a684b-west_20260831T160355Z_909_601.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.24</strong> animal
+          <span class="dim">2026-08-31 16:03:55 UTC</span>
+          <span class="dim">46&times;44px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/c131a928-west_20260831T050617Z_6_958.jpg"><img loading="lazy" src="assets/c131a928-west_20260831T050617Z_6_958.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> animal
+          <span class="dim">2026-08-31 05:06:17 UTC</span>
+          <span class="dim">135&times;85px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/2a9892d0-west_20260831T155751Z_899_828.jpg"><img loading="lazy" src="assets/2a9892d0-west_20260831T155751Z_899_828.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-08-31 15:57:51 UTC</span>
+          <span class="dim">46&times;109px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/ae0dcc55-west_20260831T205433Z_829_861.jpg"><img loading="lazy" src="assets/ae0dcc55-west_20260831T205433Z_829_861.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> person
+          <span class="dim">2026-08-31 20:54:33 UTC</span>
+          <span class="dim">125&times;176px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>West, 2026-09-01</h3>
+    <p class="quiet">11 candidates from 265 raw detections
+    over 1,359 frames. 540 frames were too dark to carry
+    information, at this run's own measured split of 86.0 luma.
+    253 suppressed as fixed furniture, 1 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/5479d7c1-west_20260901T193646Z_561_815.jpg"><img loading="lazy" src="assets/5479d7c1-west_20260901T193646Z_561_815.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.66</strong> animal
+          <span class="dim">2026-09-01 19:36:46 UTC</span>
+          <span class="dim">184&times;135px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/0fcf8f87-west_20260901T170255Z_199_905.jpg"><img loading="lazy" src="assets/0fcf8f87-west_20260901T170255Z_199_905.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.59</strong> vehicle
+          <span class="dim">2026-09-01 17:02:55 UTC</span>
+          <span class="dim">257&times;139px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/485ec41b-west_20260901T003116Z_0_459.jpg"><img loading="lazy" src="assets/485ec41b-west_20260901T003116Z_0_459.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.37</strong> animal
+          <span class="dim">2026-09-01 00:31:16 UTC</span>
+          <span class="dim">53&times;577px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/ba54580a-west_20260901T032631Z_1886_536.jpg"><img loading="lazy" src="assets/ba54580a-west_20260901T032631Z_1886_536.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.28</strong> animal
+          <span class="dim">2026-09-01 03:26:31 UTC</span>
+          <span class="dim">33&times;507px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/be5054a4-west_20260901T211558Z_74_933.jpg"><img loading="lazy" src="assets/be5054a4-west_20260901T211558Z_74_933.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.26</strong> animal
+          <span class="dim">2026-09-01 21:15:58 UTC</span>
+          <span class="dim">448&times;110px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/48a78f20-west_20260901T180942Z_1840_807.jpg"><img loading="lazy" src="assets/48a78f20-west_20260901T180942Z_1840_807.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.24</strong> animal
+          <span class="dim">2026-09-01 18:09:42 UTC</span>
+          <span class="dim">80&times;233px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b10a2e8c-west_20260901T192940Z_259_879.jpg"><img loading="lazy" src="assets/b10a2e8c-west_20260901T192940Z_259_879.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.23</strong> vehicle
+          <span class="dim">2026-09-01 19:29:40 UTC</span>
+          <span class="dim">237&times;165px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/2ef1811f-west_20260901T212305Z_77_948.jpg"><img loading="lazy" src="assets/2ef1811f-west_20260901T212305Z_77_948.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.23</strong> animal
+          <span class="dim">2026-09-01 21:23:05 UTC</span>
+          <span class="dim">422&times;96px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/d89be21e-west_20260901T200507Z_272_887.jpg"><img loading="lazy" src="assets/d89be21e-west_20260901T200507Z_272_887.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.22</strong> animal
+          <span class="dim">2026-09-01 20:05:07 UTC</span>
+          <span class="dim">40&times;104px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/e22357b7-west_20260901T193847Z_547_503.jpg"><img loading="lazy" src="assets/e22357b7-west_20260901T193847Z_547_503.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> vehicle
+          <span class="dim">2026-09-01 19:38:47 UTC</span>
+          <span class="dim">116&times;91px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/1c8e786f-west_20260901T125655Z_1840_807.jpg"><img loading="lazy" src="assets/1c8e786f-west_20260901T125655Z_1840_807.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.20</strong> animal
+          <span class="dim">2026-09-01 12:56:55 UTC</span>
+          <span class="dim">80&times;235px</span>
+        </figcaption>
+      </figure></div>
+  </section>
+  <section class="run">
+    <h3>West, 2026-09-02</h3>
+    <p class="quiet">23 candidates from 214 raw detections
+    over 1,347 frames. 547 frames were too dark to carry
+    information, at this run's own measured split of 81.0 luma.
+    187 suppressed as fixed furniture, 4 above the treeline.</p>
+    <div class="dets">
+      <figure class="det">
+        <a href="assets/43c5a679-west_20260902T225820Z_240_820.jpg"><img loading="lazy" src="assets/43c5a679-west_20260902T225820Z_240_820.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.80</strong> vehicle
+          <span class="dim">2026-09-02 22:58:20 UTC</span>
+          <span class="dim">319&times;224px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/30c76390-west_20260902T193146Z_877_927.jpg"><img loading="lazy" src="assets/30c76390-west_20260902T193146Z_877_927.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.72</strong> animal
+          <span class="dim">2026-09-02 19:31:46 UTC</span>
+          <span class="dim">92&times;117px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/657d301e-west_20260902T152243Z_285_834.jpg"><img loading="lazy" src="assets/657d301e-west_20260902T152243Z_285_834.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.58</strong> vehicle
+          <span class="dim">2026-09-02 15:22:43 UTC</span>
+          <span class="dim">277&times;210px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/3f95fb75-west_20260902T013553Z_6_888.jpg"><img loading="lazy" src="assets/3f95fb75-west_20260902T013553Z_6_888.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.54</strong> animal
+          <span class="dim">2026-09-02 01:35:53 UTC</span>
+          <span class="dim">121&times;156px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/297e92dd-west_20260902T202628Z_901_839.jpg"><img loading="lazy" src="assets/297e92dd-west_20260902T202628Z_901_839.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.52</strong> animal
+          <span class="dim">2026-09-02 20:26:28 UTC</span>
+          <span class="dim">66&times;164px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/4ebdd7e0-west_20260902T173318Z_952_965.jpg"><img loading="lazy" src="assets/4ebdd7e0-west_20260902T173318Z_952_965.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.45</strong> animal
+          <span class="dim">2026-09-02 17:33:18 UTC</span>
+          <span class="dim">70&times;79px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/0be17a91-west_20260902T020916Z_967_302.jpg"><img loading="lazy" src="assets/0be17a91-west_20260902T020916Z_967_302.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.45</strong> animal
+          <span class="dim">2026-09-02 02:09:16 UTC</span>
+          <span class="dim">417&times;732px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/57de9892-west_20260902T012949Z_1467_170.jpg"><img loading="lazy" src="assets/57de9892-west_20260902T012949Z_1467_170.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.45</strong> animal
+          <span class="dim">2026-09-02 01:29:49 UTC</span>
+          <span class="dim">159&times;584px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/5e4f5226-west_20260902T190325Z_534_804.jpg"><img loading="lazy" src="assets/5e4f5226-west_20260902T190325Z_534_804.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.41</strong> vehicle
+          <span class="dim">2026-09-02 19:03:25 UTC</span>
+          <span class="dim">173&times;122px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/e72b0ed9-west_20260902T205549Z_640_785.jpg"><img loading="lazy" src="assets/e72b0ed9-west_20260902T205549Z_640_785.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.41</strong> animal
+          <span class="dim">2026-09-02 20:55:49 UTC</span>
+          <span class="dim">121&times;126px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/7d795c2d-west_20260902T022526Z_646_648.jpg"><img loading="lazy" src="assets/7d795c2d-west_20260902T022526Z_646_648.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.39</strong> animal
+          <span class="dim">2026-09-02 02:25:26 UTC</span>
+          <span class="dim">111&times;195px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/db716db8-west_20260902T002911Z_1097_781.jpg"><img loading="lazy" src="assets/db716db8-west_20260902T002911Z_1097_781.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.38</strong> animal
+          <span class="dim">2026-09-02 00:29:11 UTC</span>
+          <span class="dim">37&times;87px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/a33b7a3f-west_20260902T022526Z_496_785.jpg"><img loading="lazy" src="assets/a33b7a3f-west_20260902T022526Z_496_785.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.37</strong> animal
+          <span class="dim">2026-09-02 02:25:26 UTC</span>
+          <span class="dim">146&times;130px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/3e902bb4-west_20260902T013452Z_996_415.jpg"><img loading="lazy" src="assets/3e902bb4-west_20260902T013452Z_996_415.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.35</strong> animal
+          <span class="dim">2026-09-02 01:34:52 UTC</span>
+          <span class="dim">381&times;337px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/38e47765-west_20260902T171302Z_880_920.jpg"><img loading="lazy" src="assets/38e47765-west_20260902T171302Z_880_920.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.31</strong> animal
+          <span class="dim">2026-09-02 17:13:02 UTC</span>
+          <span class="dim">120&times;124px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/0dd3c079-west_20260902T011540Z_1483_177.jpg"><img loading="lazy" src="assets/0dd3c079-west_20260902T011540Z_1483_177.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.30</strong> animal
+          <span class="dim">2026-09-02 01:15:40 UTC</span>
+          <span class="dim">234&times;580px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f9bebc28-west_20260902T024942Z_481_952.jpg"><img loading="lazy" src="assets/f9bebc28-west_20260902T024942Z_481_952.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.28</strong> animal
+          <span class="dim">2026-09-02 02:49:42 UTC</span>
+          <span class="dim">194&times;92px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/1ab8a7cf-west_20260902T191333Z_946_925.jpg"><img loading="lazy" src="assets/1ab8a7cf-west_20260902T191333Z_946_925.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-09-02 19:13:33 UTC</span>
+          <span class="dim">40&times;116px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/68982e61-west_20260902T124250Z_842_666.jpg"><img loading="lazy" src="assets/68982e61-west_20260902T124250Z_842_666.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-09-02 12:42:50 UTC</span>
+          <span class="dim">364&times;375px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/5e1e0448-west_20260902T160514Z_838_950.jpg"><img loading="lazy" src="assets/5e1e0448-west_20260902T160514Z_838_950.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.25</strong> animal
+          <span class="dim">2026-09-02 16:05:14 UTC</span>
+          <span class="dim">53&times;94px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f6e5b888-west_20260902T005930Z_1152_308.jpg"><img loading="lazy" src="assets/f6e5b888-west_20260902T005930Z_1152_308.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.23</strong> animal
+          <span class="dim">2026-09-02 00:59:30 UTC</span>
+          <span class="dim">376&times;699px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/f911c6b6-west_20260902T015910Z_457_706.jpg"><img loading="lazy" src="assets/f911c6b6-west_20260902T015910Z_457_706.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-09-02 01:59:10 UTC</span>
+          <span class="dim">109&times;189px</span>
+        </figcaption>
+      </figure>
+      <figure class="det">
+        <a href="assets/b31e9537-west_20260902T021117Z_450_384.jpg"><img loading="lazy" src="assets/b31e9537-west_20260902T021117Z_450_384.jpg" alt="candidate crop"></a>
+        <figcaption>
+          <strong>0.21</strong> animal
+          <span class="dim">2026-09-02 02:11:17 UTC</span>
+          <span class="dim">98&times;195px</span>
+        </figcaption>
+      </figure></div>
+  </section>
 </main>
 <p class="ai-disclosure">These pages, the code that produced them and this prose are written with AI coding agents under human direction, and reviewed before publication. <a href="../../METHODS.md">How these reports are produced</a>.</p>
 </body>
