@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T19:28:17+00:00",
+  "generated_at": "2026-09-08T20:37:11+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -10,8 +10,8 @@
     "reports": 14,
     "featured": 15,
     "reviewed": 5,
-    "usable_hours": 1606.3,
-    "days_covered": 36
+    "usable_hours": 1815.3,
+    "days_covered": 39
   },
   "featured_findings": [
     {
@@ -82,7 +82,7 @@
     },
     {
       "title": "Orcasound Lab SRKW encounter signal",
-      "summary": "A ten-minute Southern Resident bout at Orcasound Lab on 2026-08-26, 21:24 to 21:35 UTC. Fifteen consecutive 30-second windows are published, every one of them classified Southern Resident at 0.99 or above. The window shown here is the densest, with 13 positive segments.",
+      "summary": "A ten-minute Southern Resident bout at Orcasound Lab on 2026-08-26, 21:24 to 21:35 UTC. Fifteen consecutive 30-second windows are published, every one of them classified Southern Resident at 0.99 or above. The window shown here is the densest, with 13 positive segments. 29 of 30 windows in the local encounter cluster called SRKW above the site floor.",
       "domain": "hydrophone",
       "review_status": "classification above site floor",
       "report_id": "hydrophones-2026-08-24-to-2026-08-26",
@@ -93,7 +93,7 @@
     },
     {
       "title": "First calls of the Orcasound Lab encounter",
-      "summary": "The opening window of the 2026-08-26 encounter at 21:24:44 UTC, three positive segments. The bout builds from here.",
+      "summary": "The opening window of the 2026-08-26 encounter at 21:24:44 UTC, three positive segments. The bout builds from here. Ecotype 1.00 Southern Resident, OrcaHello 0.97.",
       "domain": "hydrophone",
       "review_status": "classification above site floor",
       "report_id": "hydrophones-2026-08-24-to-2026-08-26",
@@ -104,7 +104,7 @@
     },
     {
       "title": "Last calls of the Orcasound Lab encounter",
-      "summary": "The closing window at 21:34:45 UTC, ten minutes after the first. Nothing above the site floor follows it that day.",
+      "summary": "The closing window at 21:34:45 UTC, ten minutes after the first. Nothing above the site floor follows it that day. Ecotype 1.00 Southern Resident, OrcaHello 0.93.",
       "domain": "hydrophone",
       "review_status": "classification above site floor",
       "report_id": "hydrophones-2026-08-24-to-2026-08-26",
@@ -261,7 +261,7 @@
         "orca",
         "Southern Resident killer whale"
       ],
-      "coverage": "25,079 windows analysed",
+      "coverage": "209 hours usable, 3 days",
       "review_status": "classification above site floor",
       "models": [
         {

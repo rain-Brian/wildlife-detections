@@ -16,6 +16,31 @@
         "precision": "approximate",
         "water": "Haro Strait, west side of San Juan Island"
       }
+    },
+    {
+      "feed": "orcasound",
+      "camera": "bush_point",
+      "label": "Orcasound Bush Point",
+      "kind": "hydrophone",
+      "location": {
+        "lat": 48.03,
+        "lon": -122.61,
+        "precision": "approximate",
+        "water": "Admiralty Inlet, off Whidbey Island"
+      }
+    },
+    {
+      "feed": "orcasound",
+      "camera": "north_sjc",
+      "label": "Orcasound North San Juan Channel",
+      "kind": "hydrophone",
+      "location": {
+        "lat": 48.62,
+        "lon": -123.09,
+        "water": "north San Juan Channel",
+        "precision": "approximate",
+        "source": "Orcasound publishes no lat/lon for this node and names Reuben Tarte County Park as the nearest public access. These are the park's coordinates, not the hydrophone's; the node sits offshore of it in north San Juan Channel at roughly 11.5 m."
+      }
     }
   ],
   "models": [
@@ -41,9 +66,9 @@
     "srkw-3day-20260826"
   ],
   "window": {
-    "start_utc": null,
-    "end_utc": null,
-    "usable_hours": null
+    "start_utc": "2026-08-24",
+    "end_utc": "2026-08-26",
+    "usable_hours": 209.0
   },
   "counts": {
     "assets_bundled": 15,
@@ -59,9 +84,41 @@
     "featured_full_window_count": 15,
     "featured_fallback_clip_count": 0,
     "encounter_windows_published": 15,
-    "reviewable": false
+    "reviewable": false,
+    "windows_by_camera": {
+      "bush_point": 8306,
+      "north_sjc": 8275,
+      "orcasound_lab": 8498
+    },
+    "days_covered": 3,
+    "source_paths_unparsable": 0,
+    "contaminant_screening": "Bush Point 4816 Hz resonator: rejected. The page reports each node's detections against the audio it recorded and what remains once the 4,816 Hz resonance is rejected; quality.gates records 'resonance rejection shown'. Identified 2026-08-27."
   },
   "rights": [
+    {
+      "feed": "orcasound/bush_point",
+      "holder": "Orcasound",
+      "terms": "CC BY-NC-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "source_url": "https://live.orcasound.net/listen/bush-point",
+      "attribution": "Orcasound",
+      "attribution_url": "https://www.orcasound.net",
+      "derivatives_license": "CC-BY-NC-SA-4.0",
+      "commercial_use": "permission_required",
+      "verified_on": "2026-08-31"
+    },
+    {
+      "feed": "orcasound/north_sjc",
+      "holder": "Orcasound",
+      "terms": "CC BY-NC-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "source_url": "https://live.orcasound.net/listen/north-sjc",
+      "attribution": "Orcasound",
+      "attribution_url": "https://www.orcasound.net",
+      "derivatives_license": "CC-BY-NC-SA-4.0",
+      "commercial_use": "permission_required",
+      "verified_on": "2026-08-31"
+    },
     {
       "feed": "orcasound/orcasound_lab",
       "holder": "Orcasound",
@@ -86,11 +143,10 @@
         "Southern Resident killer whale"
       ],
       "review_status": "classification above site floor",
-      "summary": "A ten-minute Southern Resident bout at Orcasound Lab on 2026-08-26, 21:24 to 21:35 UTC. Fifteen consecutive 30-second windows are published, every one of them classified Southern Resident at 0.99 or above. The window shown here is the densest, with 13 positive segments.",
+      "summary": "A ten-minute Southern Resident bout at Orcasound Lab on 2026-08-26, 21:24 to 21:35 UTC. Fifteen consecutive 30-second windows are published, every one of them classified Southern Resident at 0.99 or above. The window shown here is the densest, with 13 positive segments. 29 of 30 windows in the local encounter cluster called SRKW above the site floor.",
       "source": "Orcasound Lab hydrophone",
       "timestamp": "2026-08-26T21:24:44Z to 2026-08-26T21:34:45Z",
       "model": "OrcaHello plus Salish Sea ecotype classifier",
-      "confidence": "29 of 30 windows in the local encounter cluster called SRKW above the site floor.",
       "media": [
         "assets/4a48e305-audio016f958eac91.mp3",
         "assets/7baa1e62-audioc4ab25acdecc.mp3",
@@ -121,11 +177,11 @@
         "Southern Resident killer whale"
       ],
       "review_status": "classification above site floor",
-      "summary": "The opening window of the 2026-08-26 encounter at 21:24:44 UTC, three positive segments. The bout builds from here.",
+      "summary": "The opening window of the 2026-08-26 encounter at 21:24:44 UTC, three positive segments. The bout builds from here. Ecotype 1.00 Southern Resident, OrcaHello 0.97.",
       "source": "Orcasound Lab hydrophone",
       "timestamp": "2026-08-26T21:24:44Z",
       "model": "OrcaHello plus Salish Sea ecotype classifier",
-      "confidence": "Ecotype 1.00 Southern Resident, OrcaHello 0.97.",
+      "confidence": 0.971325,
       "media": [
         "assets/7baa1e62-audioc4ab25acdecc.mp3"
       ],
@@ -141,11 +197,11 @@
         "Southern Resident killer whale"
       ],
       "review_status": "classification above site floor",
-      "summary": "The closing window at 21:34:45 UTC, ten minutes after the first. Nothing above the site floor follows it that day.",
+      "summary": "The closing window at 21:34:45 UTC, ten minutes after the first. Nothing above the site floor follows it that day. Ecotype 1.00 Southern Resident, OrcaHello 0.93.",
       "source": "Orcasound Lab hydrophone",
       "timestamp": "2026-08-26T21:34:45Z",
       "model": "OrcaHello plus Salish Sea ecotype classifier",
-      "confidence": "Ecotype 1.00 Southern Resident, OrcaHello 0.93.",
+      "confidence": 0.931657,
       "media": [
         "assets/ec44709f-audiof26ced7b7503.mp3"
       ],
