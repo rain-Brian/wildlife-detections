@@ -2,7 +2,7 @@
   "report_id": "orcasound-hydrophones-2026-08-28-to-2026-09-02",
   "title": "Orcasound hydrophones, 2026-08-28 to 2026-09-02",
   "schema_version": 1,
-  "generated_at": "2026-09-08T20:52:41+00:00",
+  "generated_at": "2026-09-08T23:08:51+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -47,18 +47,18 @@
     {
       "model_name": "orcahello-srkw",
       "model_version": "orcahello-srkw-detector-v1",
-      "code_commit": null,
-      "license": null,
-      "lineage": null,
-      "caveat": null
+      "code_commit": "effbb1c0cdf210eec182736eaa4c2dec5bdfb024",
+      "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+      "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+      "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
     },
     {
       "model_name": "ecotype-classifier",
       "model_version": "Palmer-et-al-2026-derived",
-      "code_commit": null,
-      "license": null,
-      "lineage": null,
-      "caveat": null
+      "code_commit": "effbb1c0cdf210eec182736eaa4c2dec5bdfb024",
+      "license": "Unresolved; no recorded licence or retrieval URL",
+      "lineage": "Palmer et al. 2026",
+      "caveat": "Reports which population a call is more consistent with. It is a comparison, not a determination."
     }
   ],
   "floors": [],
@@ -89,7 +89,7 @@
   },
   "counts": {
     "assets_bundled": 12,
-    "assets_bytes": 2288220,
+    "assets_bytes": 1877148,
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
