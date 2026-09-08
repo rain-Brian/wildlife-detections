@@ -4,51 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marine Review Decision Layer</title>
-<style>
-  body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7f8; color: #17202a; }
-  header { position: sticky; top: 0; z-index: 2; background: rgba(255,255,255,.96); border-bottom: 1px solid #d7dde4; padding: 14px 22px; }
-  main { max-width: 1440px; margin: 0 auto; padding: 22px; }
-  h1 { margin: 0 0 4px; font-size: 22px; }
-  h2 { margin: 0 0 4px; font-size: 17px; }
-  h3 { margin: 0 0 8px; color: #536170; font-size: 13px; text-transform: uppercase; }
-  p { margin: 0; color: #657180; }
-  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .metric, .card { background: white; border: 1px solid #d7dde4; border-radius: 8px; }
-  .metric { padding: 12px; }
-  .metric strong { display: block; font-size: 24px; }
-  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-  button { border: 1px solid #c9d1d9; background: white; border-radius: 6px; padding: 7px 10px; cursor: pointer; }
-  button.active { background: #0f1720; color: white; }
-  .card { padding: 16px; margin-bottom: 18px; }
-  .card-head { display: flex; justify-content: space-between; gap: 14px; border-bottom: 1px solid #eef1f4; padding-bottom: 10px; margin-bottom: 14px; }
-  .media { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
-  .media.solo { grid-template-columns: minmax(0, 760px); }
-  video, .hero, .det img { width: 100%; border: 1px solid #d7dde4; border-radius: 6px; background: #111; }
-  .thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
-  .striph { margin: 14px 0 8px; }
-  .det { margin: 0; border: 1px solid #d7dde4; border-radius: 6px; overflow: hidden; background: #fafbfc; }
-  .det img { display: block; aspect-ratio: 16 / 9; object-fit: cover; border: 0; border-radius: 0; }
-  figcaption { padding: 7px 8px; font-size: 12px; color: #536170; }
-  .hidden { display: none !important; }
-  .note { background: #fff8e6; border: 1px solid #e6d9ac; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; }
-  .note p { margin: 0 0 6px; }
-  .note p:last-child { margin: 0; }
-  .quiet { color: #657180; font-size: 13px; line-height: 1.5; }
-  .verified { background: white; border: 1px solid #d7dde4; border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; }
-  .verified h2 { margin: 0 0 4px; font-size: 18px; }
-  .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 14px; }
-  .ver { margin: 0; border: 1px solid #d7dde4; border-radius: 8px; overflow: hidden; background: #fafbfc; border-top: 4px solid #b6bec7; }
-  .ver.ok { border-top-color: #2f8f4e; }
-  .ver.no { border-top-color: #b4483c; }
-  .ver img { display: block; width: 100%; }
-  .ver figcaption { padding: 10px 12px; font-size: 13px; color: #17202a; }
-  .ver .tag { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #536170; border: 1px solid #d7dde4; border-radius: 4px; padding: 1px 6px; margin-left: 4px; vertical-align: 1px; }
-  .ver.ok .tag { color: #2f8f4e; border-color: #a9d5b8; }
-  .ver.no .tag { color: #b4483c; border-color: #e3b6b0; }
-  .ver .q { display: block; margin-top: 6px; color: #657180; font-size: 12.5px; line-height: 1.5; }
-  .ver .src { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #93a0ad; }
-  @media (max-width: 900px) { .metrics, .media { grid-template-columns: 1fr; } .card-head { display: block; } }
-</style>
 <style>/* Review layer. Scoped under wr- so it cannot collide with a report's own CSS,
    and it defines its own colours rather than borrowing the page's tokens,
    because it is injected into pages built by five different generators. */
@@ -114,8 +69,9 @@ body.wr-active { padding-bottom: 4.5rem; }
   font: inherit; resize: vertical;
 }
 @media print { #wr-bar, #wr-note { display: none !important; } }
-</style></head>
-<body>
+</style><link rel="stylesheet" href="../../assets/site.css?v=5ac031fd">
+</head>
+<body class="family-sheet layout-flow">
 <header>
   <h1>Marine Review Decision Layer</h1>
   <p>Fused YOLO-Fish + YOLO-World decisions. Seal candidates first; raw model labels preserved in CSV/JSON.</p>
@@ -146,7 +102,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="c90287818153ee0a">
               <div class="card-head">
                 <div>
-                  <h2>1. mast_center_aquarium_20260810T190244.ts</h2>
+                  <h2>1. mast_center_aquarium_20260810T190244.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:02:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:02:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:02:44 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 10 · fish: 56 · suppressed_part: 2</p>
                 </div>
                 
@@ -163,7 +119,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="88c18c45200334e4">
               <div class="card-head">
                 <div>
-                  <h2>2. mast_center_aquarium_20260810T190342.ts</h2>
+                  <h2>2. mast_center_aquarium_20260810T190342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:03:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:03:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:03:42 UTC</span></time></p>
                   <p>seal_candidate: 14 · marine_mammal_candidate: 6 · unknown_large_animal: 1 · fish: 41 · suppressed_part: 29</p>
                 </div>
                 
@@ -180,7 +136,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="125b1fb6047d9064">
               <div class="card-head">
                 <div>
-                  <h2>3. mast_center_aquarium_20260810T190444.ts</h2>
+                  <h2>3. mast_center_aquarium_20260810T190444.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:04:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:04:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:04:44 UTC</span></time></p>
                   <p>seal_candidate: 28 · marine_mammal_candidate: 28 · unknown_large_animal: 4 · fish: 118 · suppressed_part: 50</p>
                 </div>
                 
@@ -197,7 +153,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="2d9f6c9ba3a30180">
               <div class="card-head">
                 <div>
-                  <h2>4. mast_center_aquarium_20260810T191743.ts</h2>
+                  <h2>4. mast_center_aquarium_20260810T191743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:17:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:17:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:17:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 7 · unknown_large_animal: 1 · fish: 58 · suppressed_part: 2</p>
                 </div>
                 
@@ -214,7 +170,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="198da28cc1e29175">
               <div class="card-head">
                 <div>
-                  <h2>5. mast_center_aquarium_20260810T192443.ts</h2>
+                  <h2>5. mast_center_aquarium_20260810T192443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:24:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:24:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:24:43 UTC</span></time></p>
                   <p>seal_candidate: 2 · marine_mammal_candidate: 17 · fish: 24 · suppressed_part: 5</p>
                 </div>
                 
@@ -231,7 +187,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="66e962f8257290f5">
               <div class="card-head">
                 <div>
-                  <h2>6. mast_center_aquarium_20260810T192643.ts</h2>
+                  <h2>6. mast_center_aquarium_20260810T192643.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:26:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:26:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:26:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 56 · fish: 86 · suppressed_part: 2</p>
                 </div>
                 
@@ -248,7 +204,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="e312bc6929604eda">
               <div class="card-head">
                 <div>
-                  <h2>7. mast_center_aquarium_20260810T192743.ts</h2>
+                  <h2>7. mast_center_aquarium_20260810T192743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:27:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:27:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:27:43 UTC</span></time></p>
                   <p>seal_candidate: 2 · marine_mammal_candidate: 41 · fish: 95 · suppressed_part: 5</p>
                 </div>
                 
@@ -265,7 +221,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="a55c993e8d4ace69">
               <div class="card-head">
                 <div>
-                  <h2>8. mast_center_aquarium_20260810T192841.ts</h2>
+                  <h2>8. mast_center_aquarium_20260810T192841.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:28:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:28:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:28:41 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 21 · fish: 54 · suppressed_part: 1</p>
                 </div>
                 
@@ -282,7 +238,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="a81453c386e6eeb0">
               <div class="card-head">
                 <div>
-                  <h2>9. mast_center_aquarium_20260810T192943.ts</h2>
+                  <h2>9. mast_center_aquarium_20260810T192943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:29:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:29:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:29:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 1 · fish: 14 · suppressed_part: 2</p>
                 </div>
                 
@@ -299,7 +255,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="a63e8f64db45fdcd">
               <div class="card-head">
                 <div>
-                  <h2>10. mast_center_aquarium_20260810T193043.ts</h2>
+                  <h2>10. mast_center_aquarium_20260810T193043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:30:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:30:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:30:43 UTC</span></time></p>
                   <p>seal_candidate: 2 · marine_mammal_candidate: 2 · unknown_large_animal: 1 · fish: 7 · suppressed_part: 4</p>
                 </div>
                 
@@ -316,7 +272,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="f84ed8f4f31d32d0">
               <div class="card-head">
                 <div>
-                  <h2>11. mast_center_aquarium_20260810T193342.ts</h2>
+                  <h2>11. mast_center_aquarium_20260810T193342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:33:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:33:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:33:42 UTC</span></time></p>
                   <p>seal_candidate: 3 · marine_mammal_candidate: 5 · fish: 18 · suppressed_part: 6</p>
                 </div>
                 
@@ -333,7 +289,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="cd46b5430f0f9fd3">
               <div class="card-head">
                 <div>
-                  <h2>12. mast_center_aquarium_20260810T193443.ts</h2>
+                  <h2>12. mast_center_aquarium_20260810T193443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:34:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:34:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:34:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 9 · unknown_large_animal: 2 · fish: 43 · suppressed_part: 4</p>
                 </div>
                 
@@ -350,7 +306,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="042ed36d1f5940be">
               <div class="card-head">
                 <div>
-                  <h2>13. mast_center_aquarium_20260810T193642.ts</h2>
+                  <h2>13. mast_center_aquarium_20260810T193642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:36:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:36:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:36:42 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 2 · fish: 20 · suppressed_part: 1</p>
                 </div>
                 
@@ -367,7 +323,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="89ddbdf967d29ff8">
               <div class="card-head">
                 <div>
-                  <h2>14. mast_center_aquarium_20260810T193843.ts</h2>
+                  <h2>14. mast_center_aquarium_20260810T193843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:38:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:38:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:38:43 UTC</span></time></p>
                   <p>seal_candidate: 7 · marine_mammal_candidate: 2 · fish: 32 · suppressed_part: 14</p>
                 </div>
                 
@@ -384,7 +340,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish suppressed_part" data-detection-id="e0db9d114e7dd6bd">
               <div class="card-head">
                 <div>
-                  <h2>15. mast_center_aquarium_20260810T193943.ts</h2>
+                  <h2>15. mast_center_aquarium_20260810T193943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:39:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:39:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:39:43 UTC</span></time></p>
                   <p>seal_candidate: 5 · marine_mammal_candidate: 11 · fish: 51 · suppressed_part: 10</p>
                 </div>
                 
@@ -401,7 +357,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="ac42660bd8905a57">
               <div class="card-head">
                 <div>
-                  <h2>16. mast_center_aquarium_20260810T194344.ts</h2>
+                  <h2>16. mast_center_aquarium_20260810T194344.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:43:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:43:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:43:44 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 3 · unknown_large_animal: 3 · fish: 31 · suppressed_part: 1</p>
                 </div>
                 
@@ -418,7 +374,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="57adc2de992d71ab">
               <div class="card-head">
                 <div>
-                  <h2>17. mast_center_aquarium_20260810T194842.ts</h2>
+                  <h2>17. mast_center_aquarium_20260810T194842.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:48:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:48:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:48:42 UTC</span></time></p>
                   <p>seal_candidate: 6 · marine_mammal_candidate: 8 · unknown_large_animal: 3 · fish: 51 · suppressed_part: 11</p>
                 </div>
                 
@@ -435,7 +391,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="b40b26d126339f2d">
               <div class="card-head">
                 <div>
-                  <h2>18. mast_center_aquarium_20260810T195044.ts</h2>
+                  <h2>18. mast_center_aquarium_20260810T195044.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:50:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:50:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:50:44 UTC</span></time></p>
                   <p>seal_candidate: 2 · marine_mammal_candidate: 3 · unknown_large_animal: 1 · fish: 43 · suppressed_part: 4</p>
                 </div>
                 
@@ -452,7 +408,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate unknown_large_animal fish suppressed_part" data-detection-id="2f5b8304a7e51a31">
               <div class="card-head">
                 <div>
-                  <h2>19. mast_center_aquarium_20260810T201041.ts</h2>
+                  <h2>19. mast_center_aquarium_20260810T201041.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:10:41Z"><span class="stamp-local">Mon 10 Aug 2026, 1:10:41 pm PDT</span><span class="stamp-utc">2026-08-10 20:10:41 UTC</span></time></p>
                   <p>seal_candidate: 3 · marine_mammal_candidate: 5 · unknown_large_animal: 5 · fish: 24 · suppressed_part: 5</p>
                 </div>
                 
@@ -469,7 +425,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="93bc863efbfb7885">
               <div class="card-head">
                 <div>
-                  <h2>20. mast_center_aquarium_20260810T190644.ts</h2>
+                  <h2>20. mast_center_aquarium_20260810T190644.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:06:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:06:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:06:44 UTC</span></time></p>
                   <p>marine_mammal_candidate: 3 · fish: 17</p>
                 </div>
                 
@@ -486,7 +442,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="338a1b1b7cac2277">
               <div class="card-head">
                 <div>
-                  <h2>21. mast_center_aquarium_20260810T190943.ts</h2>
+                  <h2>21. mast_center_aquarium_20260810T190943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:09:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:09:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:09:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 5</p>
                 </div>
                 
@@ -503,7 +459,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="b3e254901a808c03">
               <div class="card-head">
                 <div>
-                  <h2>22. mast_center_aquarium_20260810T191039.ts</h2>
+                  <h2>22. mast_center_aquarium_20260810T191039.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:10:39Z"><span class="stamp-local">Mon 10 Aug 2026, 12:10:39 pm PDT</span><span class="stamp-utc">2026-08-10 19:10:39 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · unknown_large_animal: 2 · fish: 10</p>
                 </div>
                 
@@ -520,7 +476,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="0db939cc0b4adc1b">
               <div class="card-head">
                 <div>
-                  <h2>23. mast_center_aquarium_20260810T191243.ts</h2>
+                  <h2>23. mast_center_aquarium_20260810T191243.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:12:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:12:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:12:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 1</p>
                 </div>
                 
@@ -537,7 +493,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="0361e6c592a21ddd">
               <div class="card-head">
                 <div>
-                  <h2>24. mast_center_aquarium_20260810T191343.ts</h2>
+                  <h2>24. mast_center_aquarium_20260810T191343.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:13:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:13:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:13:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 6 · unknown_large_animal: 3 · fish: 10</p>
                 </div>
                 
@@ -554,7 +510,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate" data-detection-id="069deb8a22ef6ff0">
               <div class="card-head">
                 <div>
-                  <h2>25. mast_center_aquarium_20260810T191442.ts</h2>
+                  <h2>25. mast_center_aquarium_20260810T191442.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:14:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:14:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:14:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2</p>
                 </div>
                 
@@ -571,7 +527,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="5fa0d9040bbf5455">
               <div class="card-head">
                 <div>
-                  <h2>26. mast_center_aquarium_20260810T191843.ts</h2>
+                  <h2>26. mast_center_aquarium_20260810T191843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:18:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:18:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:18:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 3 · fish: 3</p>
                 </div>
                 
@@ -588,7 +544,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="4303bcf9ba18425a">
               <div class="card-head">
                 <div>
-                  <h2>27. mast_center_aquarium_20260810T192044.ts</h2>
+                  <h2>27. mast_center_aquarium_20260810T192044.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:20:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:20:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:20:44 UTC</span></time></p>
                   <p>marine_mammal_candidate: 7 · fish: 35</p>
                 </div>
                 
@@ -605,7 +561,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="4608406a1a109212">
               <div class="card-head">
                 <div>
-                  <h2>28. mast_center_aquarium_20260810T192342.ts</h2>
+                  <h2>28. mast_center_aquarium_20260810T192342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:23:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:23:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:23:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 3 · unknown_large_animal: 1 · fish: 16</p>
                 </div>
                 
@@ -622,7 +578,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="ae1241e07c9adbba">
               <div class="card-head">
                 <div>
-                  <h2>29. mast_center_aquarium_20260810T192543.ts</h2>
+                  <h2>29. mast_center_aquarium_20260810T192543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:25:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:25:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:25:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 37 · fish: 73</p>
                 </div>
                 
@@ -639,7 +595,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="8f737c94806131c1">
               <div class="card-head">
                 <div>
-                  <h2>30. mast_center_aquarium_20260810T193242.ts</h2>
+                  <h2>30. mast_center_aquarium_20260810T193242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:32:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:32:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:32:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 9 · fish: 24</p>
                 </div>
                 
@@ -656,7 +612,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="e93b8f872831383f">
               <div class="card-head">
                 <div>
-                  <h2>31. mast_center_aquarium_20260810T193543.ts</h2>
+                  <h2>31. mast_center_aquarium_20260810T193543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:35:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:35:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:35:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 18 · fish: 71</p>
                 </div>
                 
@@ -673,7 +629,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="14517b5c5d69852f">
               <div class="card-head">
                 <div>
-                  <h2>32. mast_center_aquarium_20260810T194144.ts</h2>
+                  <h2>32. mast_center_aquarium_20260810T194144.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:41:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:41:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:41:44 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · unknown_large_animal: 2 · fish: 14</p>
                 </div>
                 
@@ -690,7 +646,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="8779f79fd85e19dc">
               <div class="card-head">
                 <div>
-                  <h2>33. mast_center_aquarium_20260810T194543.ts</h2>
+                  <h2>33. mast_center_aquarium_20260810T194543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:45:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:45:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:45:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · fish: 3</p>
                 </div>
                 
@@ -707,7 +663,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="7444533d8620cbfd">
               <div class="card-head">
                 <div>
-                  <h2>34. mast_center_aquarium_20260810T194642.ts</h2>
+                  <h2>34. mast_center_aquarium_20260810T194642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:46:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:46:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:46:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 4 · fish: 21</p>
                 </div>
                 
@@ -724,7 +680,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="4289c9bfce0e23f9">
               <div class="card-head">
                 <div>
-                  <h2>35. mast_center_aquarium_20260810T195141.ts</h2>
+                  <h2>35. mast_center_aquarium_20260810T195141.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:51:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:51:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:51:41 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 3</p>
                 </div>
                 
@@ -741,7 +697,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="273a7009efeaff26">
               <div class="card-head">
                 <div>
-                  <h2>36. mast_center_aquarium_20260810T195243.ts</h2>
+                  <h2>36. mast_center_aquarium_20260810T195243.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:52:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:52:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:52:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 10</p>
                 </div>
                 
@@ -758,7 +714,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="e5404c5d6e3db36c">
               <div class="card-head">
                 <div>
-                  <h2>37. mast_center_aquarium_20260810T195339.ts</h2>
+                  <h2>37. mast_center_aquarium_20260810T195339.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:53:39Z"><span class="stamp-local">Mon 10 Aug 2026, 12:53:39 pm PDT</span><span class="stamp-utc">2026-08-10 19:53:39 UTC</span></time></p>
                   <p>marine_mammal_candidate: 4 · fish: 31</p>
                 </div>
                 
@@ -775,7 +731,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="2c42a5911dccafbc">
               <div class="card-head">
                 <div>
-                  <h2>38. mast_center_aquarium_20260810T195542.ts</h2>
+                  <h2>38. mast_center_aquarium_20260810T195542.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:55:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:55:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:55:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · unknown_large_animal: 2 · fish: 8</p>
                 </div>
                 
@@ -792,7 +748,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="785b7fa528f3a47b">
               <div class="card-head">
                 <div>
-                  <h2>39. mast_center_aquarium_20260810T200142.ts</h2>
+                  <h2>39. mast_center_aquarium_20260810T200142.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:01:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:01:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:01:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · unknown_large_animal: 1 · fish: 19</p>
                 </div>
                 
@@ -809,7 +765,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="7ee9df4a31e08ac9">
               <div class="card-head">
                 <div>
-                  <h2>40. mast_center_aquarium_20260810T200943.ts</h2>
+                  <h2>40. mast_center_aquarium_20260810T200943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:09:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:09:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:09:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 5 · unknown_large_animal: 1 · fish: 18</p>
                 </div>
                 
@@ -826,7 +782,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate unknown_large_animal fish" data-detection-id="3aaa6c7a8b03f772">
               <div class="card-head">
                 <div>
-                  <h2>41. mast_center_aquarium_20260810T201744.ts</h2>
+                  <h2>41. mast_center_aquarium_20260810T201744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:17:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:17:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:17:44 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · unknown_large_animal: 2 · fish: 4</p>
                 </div>
                 
@@ -843,7 +799,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish" data-detection-id="49e907e982d10958">
               <div class="card-head">
                 <div>
-                  <h2>42. mast_center_aquarium_20260810T202443.ts</h2>
+                  <h2>42. mast_center_aquarium_20260810T202443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:24:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:24:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:24:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · fish: 2</p>
                 </div>
                 
@@ -860,7 +816,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="unknown_large_animal fish" data-detection-id="5ad964c11a9fee2d">
               <div class="card-head">
                 <div>
-                  <h2>43. mast_center_aquarium_20260810T190543.ts</h2>
+                  <h2>43. mast_center_aquarium_20260810T190543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:05:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:05:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:05:43 UTC</span></time></p>
                   <p>unknown_large_animal: 2 · fish: 15</p>
                 </div>
                 
@@ -877,7 +833,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="unknown_large_animal fish" data-detection-id="f3fb66802da1cf7d">
               <div class="card-head">
                 <div>
-                  <h2>44. mast_center_aquarium_20260810T194443.ts</h2>
+                  <h2>44. mast_center_aquarium_20260810T194443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:44:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:44:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:44:43 UTC</span></time></p>
                   <p>unknown_large_animal: 1 · fish: 2</p>
                 </div>
                 
@@ -894,7 +850,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="unknown_large_animal fish" data-detection-id="dbf619fbe9698b87">
               <div class="card-head">
                 <div>
-                  <h2>45. mast_center_aquarium_20260810T201242.ts</h2>
+                  <h2>45. mast_center_aquarium_20260810T201242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:12:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:12:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:12:42 UTC</span></time></p>
                   <p>unknown_large_animal: 2 · fish: 1</p>
                 </div>
                 
@@ -911,7 +867,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>46. mast_center_aquarium_20260810T190043.ts</h2>
+                  <h2>46. mast_center_aquarium_20260810T190043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:00:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:00:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:00:43 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -928,7 +884,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>47. mast_center_aquarium_20260810T190142.ts</h2>
+                  <h2>47. mast_center_aquarium_20260810T190142.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:01:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:01:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:01:42 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -945,7 +901,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>48. mast_center_aquarium_20260810T191544.ts</h2>
+                  <h2>48. mast_center_aquarium_20260810T191544.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:15:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:15:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:15:44 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -962,7 +918,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>49. mast_center_aquarium_20260810T191643.ts</h2>
+                  <h2>49. mast_center_aquarium_20260810T191643.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:16:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:16:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:16:43 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -979,7 +935,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>50. mast_center_aquarium_20260810T191941.ts</h2>
+                  <h2>50. mast_center_aquarium_20260810T191941.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:19:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:19:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:19:41 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -996,7 +952,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>51. mast_center_aquarium_20260810T192240.ts</h2>
+                  <h2>51. mast_center_aquarium_20260810T192240.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:22:40Z"><span class="stamp-local">Mon 10 Aug 2026, 12:22:40 pm PDT</span><span class="stamp-utc">2026-08-10 19:22:40 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1013,7 +969,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>52. mast_center_aquarium_20260810T193143.ts</h2>
+                  <h2>52. mast_center_aquarium_20260810T193143.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:31:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:31:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:31:43 UTC</span></time></p>
                   <p>fish: 7</p>
                 </div>
                 
@@ -1030,7 +986,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>53. mast_center_aquarium_20260810T193743.ts</h2>
+                  <h2>53. mast_center_aquarium_20260810T193743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:37:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:37:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:37:43 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -1047,7 +1003,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>54. mast_center_aquarium_20260810T194043.ts</h2>
+                  <h2>54. mast_center_aquarium_20260810T194043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:40:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:40:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:40:43 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -1064,7 +1020,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>55. mast_center_aquarium_20260810T194244.ts</h2>
+                  <h2>55. mast_center_aquarium_20260810T194244.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:42:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:42:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:42:44 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1081,7 +1037,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>56. mast_center_aquarium_20260810T194744.ts</h2>
+                  <h2>56. mast_center_aquarium_20260810T194744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:47:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:47:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:47:44 UTC</span></time></p>
                   <p>fish: 6</p>
                 </div>
                 
@@ -1098,7 +1054,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>57. mast_center_aquarium_20260810T194943.ts</h2>
+                  <h2>57. mast_center_aquarium_20260810T194943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:49:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:49:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:49:43 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1115,7 +1071,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>58. mast_center_aquarium_20260810T195441.ts</h2>
+                  <h2>58. mast_center_aquarium_20260810T195441.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:54:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:54:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:54:41 UTC</span></time></p>
                   <p>fish: 12</p>
                 </div>
                 
@@ -1132,7 +1088,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>59. mast_center_aquarium_20260810T195643.ts</h2>
+                  <h2>59. mast_center_aquarium_20260810T195643.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:56:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:56:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:56:43 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1149,7 +1105,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>60. mast_center_aquarium_20260810T195744.ts</h2>
+                  <h2>60. mast_center_aquarium_20260810T195744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:57:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:57:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:57:44 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1166,7 +1122,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>61. mast_center_aquarium_20260810T195842.ts</h2>
+                  <h2>61. mast_center_aquarium_20260810T195842.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:58:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:58:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:58:42 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1183,7 +1139,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>62. mast_center_aquarium_20260810T195944.ts</h2>
+                  <h2>62. mast_center_aquarium_20260810T195944.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:59:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:59:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:59:44 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1200,7 +1156,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>63. mast_center_aquarium_20260810T200043.ts</h2>
+                  <h2>63. mast_center_aquarium_20260810T200043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:00:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:00:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:00:43 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -1217,7 +1173,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>64. mast_center_aquarium_20260810T200244.ts</h2>
+                  <h2>64. mast_center_aquarium_20260810T200244.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:02:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:02:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:02:44 UTC</span></time></p>
                   <p>fish: 8</p>
                 </div>
                 
@@ -1234,7 +1190,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>65. mast_center_aquarium_20260810T200443.ts</h2>
+                  <h2>65. mast_center_aquarium_20260810T200443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:04:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:04:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:04:43 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1251,7 +1207,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>66. mast_center_aquarium_20260810T200543.ts</h2>
+                  <h2>66. mast_center_aquarium_20260810T200543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:05:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:05:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:05:43 UTC</span></time></p>
                   <p>fish: 11</p>
                 </div>
                 
@@ -1268,7 +1224,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>67. mast_center_aquarium_20260810T200743.ts</h2>
+                  <h2>67. mast_center_aquarium_20260810T200743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:07:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:07:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:07:43 UTC</span></time></p>
                   <p>fish: 4</p>
                 </div>
                 
@@ -1285,7 +1241,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>68. mast_center_aquarium_20260810T200844.ts</h2>
+                  <h2>68. mast_center_aquarium_20260810T200844.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:08:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:08:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:08:44 UTC</span></time></p>
                   <p>fish: 4</p>
                 </div>
                 
@@ -1302,7 +1258,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>69. mast_center_aquarium_20260810T201143.ts</h2>
+                  <h2>69. mast_center_aquarium_20260810T201143.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:11:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:11:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:11:43 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1319,7 +1275,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>70. mast_center_aquarium_20260810T201344.ts</h2>
+                  <h2>70. mast_center_aquarium_20260810T201344.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:13:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:13:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:13:44 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1336,7 +1292,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>71. mast_center_aquarium_20260810T201442.ts</h2>
+                  <h2>71. mast_center_aquarium_20260810T201442.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:14:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:14:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:14:42 UTC</span></time></p>
                   <p>fish: 6</p>
                 </div>
                 
@@ -1353,7 +1309,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>72. mast_center_aquarium_20260810T201544.ts</h2>
+                  <h2>72. mast_center_aquarium_20260810T201544.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:15:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:15:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:15:44 UTC</span></time></p>
                   <p>fish: 5</p>
                 </div>
                 
@@ -1370,7 +1326,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>73. mast_center_aquarium_20260810T201642.ts</h2>
+                  <h2>73. mast_center_aquarium_20260810T201642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:16:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:16:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:16:42 UTC</span></time></p>
                   <p>fish: 11</p>
                 </div>
                 
@@ -1387,7 +1343,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>74. mast_center_aquarium_20260810T201941.ts</h2>
+                  <h2>74. mast_center_aquarium_20260810T201941.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:19:41Z"><span class="stamp-local">Mon 10 Aug 2026, 1:19:41 pm PDT</span><span class="stamp-utc">2026-08-10 20:19:41 UTC</span></time></p>
                   <p>fish: 4</p>
                 </div>
                 
@@ -1404,7 +1360,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>75. mast_center_aquarium_20260810T202140.ts</h2>
+                  <h2>75. mast_center_aquarium_20260810T202140.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:21:40Z"><span class="stamp-local">Mon 10 Aug 2026, 1:21:40 pm PDT</span><span class="stamp-utc">2026-08-10 20:21:40 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1421,7 +1377,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>76. mast_center_aquarium_20260810T202242.ts</h2>
+                  <h2>76. mast_center_aquarium_20260810T202242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:22:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:22:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:22:42 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1438,7 +1394,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>77. mast_center_aquarium_20260810T202343.ts</h2>
+                  <h2>77. mast_center_aquarium_20260810T202343.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:23:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:23:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:23:43 UTC</span></time></p>
                   <p>fish: 4</p>
                 </div>
                 
@@ -1455,7 +1411,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>78. mast_center_aquarium_20260810T202540.ts</h2>
+                  <h2>78. mast_center_aquarium_20260810T202540.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:25:40Z"><span class="stamp-local">Mon 10 Aug 2026, 1:25:40 pm PDT</span><span class="stamp-utc">2026-08-10 20:25:40 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1472,7 +1428,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>79. mast_center_aquarium_20260810T202642.ts</h2>
+                  <h2>79. mast_center_aquarium_20260810T202642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:26:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:26:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:26:42 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1489,7 +1445,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>80. mast_center_aquarium_20260810T202843.ts</h2>
+                  <h2>80. mast_center_aquarium_20260810T202843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:28:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:28:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:28:43 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1506,7 +1462,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>81. mast_center_aquarium_20260810T202944.ts</h2>
+                  <h2>81. mast_center_aquarium_20260810T202944.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:29:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:29:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:29:44 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1523,7 +1479,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>82. mast_center_aquarium_20260810T203242.ts</h2>
+                  <h2>82. mast_center_aquarium_20260810T203242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:32:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:32:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:32:42 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1540,7 +1496,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>83. mast_center_aquarium_20260810T204644.ts</h2>
+                  <h2>83. mast_center_aquarium_20260810T204644.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:46:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:46:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:46:44 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -1557,7 +1513,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>84. mast_center_aquarium_20260810T204744.ts</h2>
+                  <h2>84. mast_center_aquarium_20260810T204744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:47:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:47:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:47:44 UTC</span></time></p>
                   <p>fish: 1</p>
                 </div>
                 
@@ -1574,7 +1530,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>85. mast_center_aquarium_20260810T204844.ts</h2>
+                  <h2>85. mast_center_aquarium_20260810T204844.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:48:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:48:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:48:44 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1591,7 +1547,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>86. mast_center_aquarium_20260810T204945.ts</h2>
+                  <h2>86. mast_center_aquarium_20260810T204945.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:49:45Z"><span class="stamp-local">Mon 10 Aug 2026, 1:49:45 pm PDT</span><span class="stamp-utc">2026-08-10 20:49:45 UTC</span></time></p>
                   <p>fish: 4</p>
                 </div>
                 

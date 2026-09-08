@@ -3,31 +3,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MaST Center video source quality, 2026-08-28 to 2026-09-01</title>
-<style>
-:root { color-scheme: light; --ink:#142129; --muted:#5f6f77; --line:#d8e0e3; --soft:#f2f7f6; --accent:#0b6f78; --warn:#9a6400; }
-body { margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif; color:var(--ink); background:white; }
-header { padding:36px max(24px,calc((100vw - 1040px)/2)); background:#eef7f5; border-bottom:1px solid var(--line); }
-main { max-width:1040px; margin:0 auto; padding:28px 24px 50px; }
-h1 { margin:0 0 10px; font-size:clamp(2rem,4vw,3.2rem); line-height:1.08; letter-spacing:0; }
-h2 { margin:34px 0 12px; font-size:1.35rem; }
-p { max-width:78ch; }
-.quiet { color:var(--muted); }
-.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:24px 0; }
-.stat { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fff; }
-.stat b { display:block; font-size:1.8rem; color:var(--accent); }
-table { width:100%; border-collapse:collapse; font-size:.94rem; }
-th,td { text-align:left; border-bottom:1px solid var(--line); padding:8px 10px; vertical-align:top; }
-th { background:var(--soft); }
-.warn { border-left:4px solid var(--warn); padding:12px 14px; background:#fff8e8; }
-.evidence-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin:18px 0 24px; }
-.clip { border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
-.clip video { display:block; width:100%; aspect-ratio:16 / 9; background:#111; }
-.clip div { padding:11px 12px 13px; }
-.clip h3 { margin:0 0 4px; font-size:1rem; }
-.clip p { margin:0; font-size:.92rem; }
-code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; }
-</style>
-<body>
+<link rel="stylesheet" href="../../assets/site.css?v=5ac031fd">
+<body class="family-report layout-flow">
 <header>
 <h1>MaST Center Video Source Quality</h1>
 <p class="quiet">Batch window: 2026-08-28 through 2026-09-01. Generated 2026-09-01T23:47:54Z.</p>
@@ -56,7 +33,7 @@ code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em;
 <div><h3>Later Blocked Batch Sample</h3><p class="quiet"><code>mast_center_aquarium_20260828T183638.ts</code>. About 60 seconds, video plus audio. This confirms the blocked-camera state persisted later on Aug. 28.</p></div>
 </article>
 </div>
-<table><thead><tr><th>Partition</th><th>Segments</th><th>First item</th><th>Last item</th><th>Quality note</th></tr></thead><tbody><tr><td>2026-08-27 spot-check context</td><td>811</td><td>mast_center_aquarium_20260827T000023</td><td>mast_center_aquarium_20260827T143843</td><td>Last sampled clip was visually usable; late frames showed aquarium scene and fish.</td></tr><tr><td>2026-08-28 batch start day</td><td>689</td><td>mast_center_aquarium_20260828T123220</td><td>mast_center_aquarium_20260828T235948</td><td>First sampled clip at 12:32 PDT was already water-blocked.</td></tr><tr><td>2026-08-29</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-30</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-31</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr></tbody></table>
+<table><thead><tr><th>Partition</th><th>Segments</th><th>First item</th><th>Last item</th><th>Quality note</th></tr></thead><tbody><tr><td>2026-08-27 spot-check context</td><td>811</td><td>mast_center_aquarium_20260827T000023<time class="stamp" datetime="2026-08-27T00:00:23Z"><span class="stamp-local">Wed 26 Aug 2026, 5:00:23 pm PDT</span><span class="stamp-utc">2026-08-27 00:00:23 UTC</span></time></td><td>mast_center_aquarium_20260827T143843<time class="stamp" datetime="2026-08-27T14:38:43Z"><span class="stamp-local">Thu 27 Aug 2026, 7:38:43 am PDT</span><span class="stamp-utc">2026-08-27 14:38:43 UTC</span></time></td><td>Last sampled clip was visually usable; late frames showed aquarium scene and fish.</td></tr><tr><td>2026-08-28 batch start day</td><td>689</td><td>mast_center_aquarium_20260828T123220<time class="stamp" datetime="2026-08-28T12:32:20Z"><span class="stamp-local">Fri 28 Aug 2026, 5:32:20 am PDT</span><span class="stamp-utc">2026-08-28 12:32:20 UTC</span></time></td><td>mast_center_aquarium_20260828T235948<time class="stamp" datetime="2026-08-28T23:59:48Z"><span class="stamp-local">Fri 28 Aug 2026, 4:59:48 pm PDT</span><span class="stamp-utc">2026-08-28 23:59:48 UTC</span></time></td><td>First sampled clip at 12:32 PDT was already water-blocked.</td></tr><tr><td>2026-08-29</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-30</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr><tr><td>2026-08-31</td><td>1,442</td><td>day partition</td><td>day partition</td><td>Blob sizes match the blocked-camera regime; treat as captured but poor source quality.</td></tr></tbody></table>
 <h2>Transition Bound</h2>
 <p>The last visually usable sampled clip was <code>mast_center_aquarium_20260827T143843</code>, labelled 2026-08-27 14:38 PDT in the video overlay. The first captured Friday clip checked was <code>mast_center_aquarium_20260828T123220</code>, labelled 2026-08-28 12:32 PDT, and was already water-blocked.</p>
 <p>No local laptop clips were found between those two timestamps, so the current bound for the transition is the capture gap between those samples. The blocked condition may have begun any time inside that interval.</p>

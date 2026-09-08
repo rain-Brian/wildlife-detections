@@ -4,48 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sunrise Mountain detection review</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-         background:#f5f7f8; color:#17202a; }
-  header { position:sticky; top:0; z-index:2; background:rgba(255,255,255,.97);
-            border-bottom:1px solid #d7dde4; padding:14px 22px; }
-  main { max-width:1440px; margin:0 auto; padding:22px; }
-  h1 { margin:0 0 4px; font-size:22px; }
-  h2 { margin:26px 0 10px; font-size:17px; }
-  h3 { margin:0 0 6px; color:#536170; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
-  p { margin:0; color:#657180; }
-  .sub { font-size:13px; }
-  .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:16px 0; }
-  .metric { background:#fff; border:1px solid #d7dde4; border-radius:8px; padding:12px; }
-  .big { font-size:26px; font-weight:600; }
-  .lede { background:#fff; border:1px solid #d7dde4; border-left:4px solid #8250df;
-           border-radius:8px; padding:14px 16px; margin:16px 0; }
-  .lede p { color:#17202a; }
-  .thumbs { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; }
-  figure.det { margin:0; background:#fff; border:1px solid #d7dde4; border-radius:8px; overflow:hidden; }
-  figure.det img { width:100%; height:170px; object-fit:cover; display:block; background:#222; }
-  figcaption { padding:8px 10px; font-size:12px; display:flex; flex-direction:column; gap:3px; }
-  .badge { align-self:flex-start; color:#fff; border-radius:999px; padding:1px 8px; font-size:11px; }
-  .dim { color:#8a94a0; word-break:break-all; }
-  table { border-collapse:collapse; width:100%; background:#fff; border:1px solid #d7dde4;
-           border-radius:8px; overflow:hidden; font-size:13px; }
-  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid #eef1f4; }
-  th { color:#536170; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
-  tr.static td { background:#faf7ff; }
-  code { font-size:12px; }
-  .empty { background:#fff; border:1px dashed #c6ced8; border-radius:8px; padding:22px; }
-  details { margin-top:8px; }
-  summary { cursor:pointer; color:#536170; font-size:13px; }
-  @media (prefers-color-scheme: dark) {
-    body { background:#0d1117; color:#e6edf3; }
-    header { background:rgba(13,17,23,.97); border-color:#30363d; }
-    .metric, figure.det, table, .lede, .empty { background:#161b22; border-color:#30363d; }
-    .lede p { color:#e6edf3; }
-    th, td { border-color:#21262d; }
-    tr.static td { background:#1c1428; }
-  }
-</style>
 <style>/* Review layer. Scoped under wr- so it cannot collide with a report's own CSS,
    and it defines its own colours rather than borrowing the page's tokens,
    because it is injected into pages built by five different generators. */
@@ -111,10 +69,11 @@ body.wr-active { padding-bottom: 4.5rem; }
   font: inherit; resize: vertical;
 }
 @media print { #wr-bar, #wr-note { display: none !important; } }
-</style></head>
-<body>
+</style><link rel="stylesheet" href="../../assets/site.css?v=5ac031fd">
+</head>
+<body class="family-sheet layout-flow">
 <header>
-  <h1>Sunrise Mountain &mdash; detection review</h1>
+  <h1>Sunrise Mountain &middot; detection review</h1>
   <p class="sub">MegaDetector V6 (MDV6-mit-yolov9-e, MIT weights) &middot; run sunrise-20260822-20260828 &middot;
      20260822T000050Z to 20260828T201753Z</p>
 </header>
@@ -126,127 +85,114 @@ body.wr-active { padding-bottom: 4.5rem; }
     <p>3576 of 9371 frames were too dark to carry information — this camera has no infrared illumination — and were never sent to the model. MegaDetector reported 3319 detections across the 5795 that were. Scene filtering set aside 3306 of them: 3306 were boxes that recur at fixed pixel coordinates on a camera that never moves, 0 fell in frames too dark to carry information, and 0 sat above the treeline where nothing terrestrial appears. 13 survived, across 5795 usable frames.</p>
   </div>
 
-  <h2>Candidates &mdash; 13</h2>
+  <h2>Candidates &middot; 13</h2>
   <p class="sub">Survived static-object, dark-frame and above-treeline filtering. These are
      the only crops worth a classifier's time.</p>
-  <div class="thumbs" style="margin-top:10px">
-        <figure class="det" data-verdict="candidate" data-detection-id="99c001605218b048">
-          <a href="assets/e26aeebb-sunrise_mountain_20260825T021626Z_640_892.jpg"><img loading="lazy" src="assets/e26aeebb-sunrise_mountain_20260825T021626Z_640_892.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.82</strong>
-            <span class="dim">sunrise_mountain_20260825T021626Z.jpg</span>
-            <span class="dim">121&times;152px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="24a40714452e7ff4">
-          <a href="assets/a69072cb-sunrise_mountain_20260826T161935Z_1361_745.jpg"><img loading="lazy" src="assets/a69072cb-sunrise_mountain_20260826T161935Z_1361_745.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.60</strong>
-            <span class="dim">sunrise_mountain_20260826T161935Z.jpg</span>
-            <span class="dim">57&times;169px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="d4034f240eea5d19">
+  <div class="days"><details class="day"><summary>Sat 22 Aug 2026<span class="n">4 detections</span><span class="peak">peak 0.51</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="candidate" data-detection-id="d4034f240eea5d19">
           <a href="assets/a7ba40ae-sunrise_mountain_20260823T033120Z_1312_728.jpg"><img loading="lazy" src="assets/a7ba40ae-sunrise_mountain_20260823T033120Z_1312_728.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#1a7f37">candidate</span>
             <strong>0.51</strong>
-            <span class="dim">sunrise_mountain_20260823T033120Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T033120Z.jpg</span><time class="stamp" datetime="2026-08-23T03:31:20Z"><span class="stamp-local">Sat 22 Aug 2026, 8:31:20 pm PDT</span><span class="stamp-utc">2026-08-23 03:31:20 UTC</span></time>
             <span class="dim">156&times;193px</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="bd68dfe309aa48bc">
-          <a href="assets/1e41cfdc-sunrise_mountain_20260826T141600Z_1141_519.jpg"><img loading="lazy" src="assets/1e41cfdc-sunrise_mountain_20260826T141600Z_1141_519.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.49</strong>
-            <span class="dim">sunrise_mountain_20260826T141600Z.jpg</span>
-            <span class="dim">73&times;137px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="7e76a3319a90be09">
-          <a href="assets/3ddfccaa-sunrise_mountain_20260823T145046Z_853_313.jpg"><img loading="lazy" src="assets/3ddfccaa-sunrise_mountain_20260823T145046Z_853_313.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.45</strong>
-            <span class="dim">sunrise_mountain_20260823T145046Z.jpg</span>
-            <span class="dim">84&times;396px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="703281dfe5f5f21d">
-          <a href="assets/51f2669f-sunrise_mountain_20260826T142003Z_1149_516.jpg"><img loading="lazy" src="assets/51f2669f-sunrise_mountain_20260826T142003Z_1149_516.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.41</strong>
-            <span class="dim">sunrise_mountain_20260826T142003Z.jpg</span>
-            <span class="dim">52&times;112px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="f232e564c20bf680">
-          <a href="assets/9de6e3fe-sunrise_mountain_20260825T142705Z_1113_363.jpg"><img loading="lazy" src="assets/9de6e3fe-sunrise_mountain_20260825T142705Z_1113_363.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.39</strong>
-            <span class="dim">sunrise_mountain_20260825T142705Z.jpg</span>
-            <span class="dim">79&times;265px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="0317d193a414d915">
-          <a href="assets/e3cb0b85-sunrise_mountain_20260825T142605Z_1115_361.jpg"><img loading="lazy" src="assets/e3cb0b85-sunrise_mountain_20260825T142605Z_1115_361.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.25</strong>
-            <span class="dim">sunrise_mountain_20260825T142605Z.jpg</span>
-            <span class="dim">77&times;267px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="aa85f0b585c95d10">
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="aa85f0b585c95d10">
           <a href="assets/1d9db404-sunrise_mountain_20260822T152544Z_762_369.jpg"><img loading="lazy" src="assets/1d9db404-sunrise_mountain_20260822T152544Z_762_369.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#1a7f37">candidate</span>
             <strong>0.24</strong>
-            <span class="dim">sunrise_mountain_20260822T152544Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T152544Z.jpg</span><time class="stamp" datetime="2026-08-22T15:25:44Z"><span class="stamp-local">Sat 22 Aug 2026, 8:25:44 am PDT</span><span class="stamp-utc">2026-08-22 15:25:44 UTC</span></time>
             <span class="dim">163&times;167px</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="371a09d5b05f3a42">
-          <a href="assets/b79140fe-sunrise_mountain_20260826T145027Z_680_388.jpg"><img loading="lazy" src="assets/b79140fe-sunrise_mountain_20260826T145027Z_680_388.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.21</strong>
-            <span class="dim">sunrise_mountain_20260826T145027Z.jpg</span>
-            <span class="dim">118&times;289px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="0d77d2e98da9ae3b">
-          <a href="assets/26005036-sunrise_mountain_20260824T142334Z_1129_527.jpg"><img loading="lazy" src="assets/26005036-sunrise_mountain_20260824T142334Z_1129_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#1a7f37">candidate</span>
-            <strong>0.21</strong>
-            <span class="dim">sunrise_mountain_20260824T142334Z.jpg</span>
-            <span class="dim">72&times;156px</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="03a10d7181597a3e">
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="03a10d7181597a3e">
           <a href="assets/a90dc533-sunrise_mountain_20260822T141656Z_1129_486.jpg"><img loading="lazy" src="assets/a90dc533-sunrise_mountain_20260822T141656Z_1129_486.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#1a7f37">candidate</span>
             <strong>0.21</strong>
-            <span class="dim">sunrise_mountain_20260822T141656Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T141656Z.jpg</span><time class="stamp" datetime="2026-08-22T14:16:56Z"><span class="stamp-local">Sat 22 Aug 2026, 7:16:56 am PDT</span><span class="stamp-utc">2026-08-22 14:16:56 UTC</span></time>
             <span class="dim">61&times;191px</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="candidate" data-detection-id="9e52ef7ad5f5eea9">
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="9e52ef7ad5f5eea9">
           <a href="assets/10a38f9a-sunrise_mountain_20260822T164941Z_718_358.jpg"><img loading="lazy" src="assets/10a38f9a-sunrise_mountain_20260822T164941Z_718_358.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#1a7f37">candidate</span>
             <strong>0.20</strong>
-            <span class="dim">sunrise_mountain_20260822T164941Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T164941Z.jpg</span><time class="stamp" datetime="2026-08-22T16:49:41Z"><span class="stamp-local">Sat 22 Aug 2026, 9:49:41 am PDT</span><span class="stamp-utc">2026-08-22 16:49:41 UTC</span></time>
             <span class="dim">208&times;187px</span>
           </figcaption>
-        </figure></div>
+        </figure></div></div></details><details class="day"><summary>Sun 23 Aug 2026<span class="n">1 detection</span><span class="peak">peak 0.45</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="candidate" data-detection-id="7e76a3319a90be09">
+          <a href="assets/3ddfccaa-sunrise_mountain_20260823T145046Z_853_313.jpg"><img loading="lazy" src="assets/3ddfccaa-sunrise_mountain_20260823T145046Z_853_313.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.45</strong>
+            <span class="dim">sunrise_mountain_20260823T145046Z.jpg</span><time class="stamp" datetime="2026-08-23T14:50:46Z"><span class="stamp-local">Sun 23 Aug 2026, 7:50:46 am PDT</span><span class="stamp-utc">2026-08-23 14:50:46 UTC</span></time>
+            <span class="dim">84&times;396px</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Mon 24 Aug 2026<span class="n">2 detections</span><span class="peak">peak 0.82</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="candidate" data-detection-id="99c001605218b048">
+          <a href="assets/e26aeebb-sunrise_mountain_20260825T021626Z_640_892.jpg"><img loading="lazy" src="assets/e26aeebb-sunrise_mountain_20260825T021626Z_640_892.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.82</strong>
+            <span class="dim">sunrise_mountain_20260825T021626Z.jpg</span><time class="stamp" datetime="2026-08-25T02:16:26Z"><span class="stamp-local">Mon 24 Aug 2026, 7:16:26 pm PDT</span><span class="stamp-utc">2026-08-25 02:16:26 UTC</span></time>
+            <span class="dim">121&times;152px</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="0d77d2e98da9ae3b">
+          <a href="assets/26005036-sunrise_mountain_20260824T142334Z_1129_527.jpg"><img loading="lazy" src="assets/26005036-sunrise_mountain_20260824T142334Z_1129_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.21</strong>
+            <span class="dim">sunrise_mountain_20260824T142334Z.jpg</span><time class="stamp" datetime="2026-08-24T14:23:34Z"><span class="stamp-local">Mon 24 Aug 2026, 7:23:34 am PDT</span><span class="stamp-utc">2026-08-24 14:23:34 UTC</span></time>
+            <span class="dim">72&times;156px</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Tue 25 Aug 2026<span class="n">2 detections</span><span class="peak">peak 0.39</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="candidate" data-detection-id="f232e564c20bf680">
+          <a href="assets/9de6e3fe-sunrise_mountain_20260825T142705Z_1113_363.jpg"><img loading="lazy" src="assets/9de6e3fe-sunrise_mountain_20260825T142705Z_1113_363.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.39</strong>
+            <span class="dim">sunrise_mountain_20260825T142705Z.jpg</span><time class="stamp" datetime="2026-08-25T14:27:05Z"><span class="stamp-local">Tue 25 Aug 2026, 7:27:05 am PDT</span><span class="stamp-utc">2026-08-25 14:27:05 UTC</span></time>
+            <span class="dim">79&times;265px</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="0317d193a414d915">
+          <a href="assets/e3cb0b85-sunrise_mountain_20260825T142605Z_1115_361.jpg"><img loading="lazy" src="assets/e3cb0b85-sunrise_mountain_20260825T142605Z_1115_361.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.25</strong>
+            <span class="dim">sunrise_mountain_20260825T142605Z.jpg</span><time class="stamp" datetime="2026-08-25T14:26:05Z"><span class="stamp-local">Tue 25 Aug 2026, 7:26:05 am PDT</span><span class="stamp-utc">2026-08-25 14:26:05 UTC</span></time>
+            <span class="dim">77&times;267px</span>
+          </figcaption>
+        </figure></div></div></details><details class="day" open><summary>Wed 26 Aug 2026<span class="n">4 detections</span><span class="peak">peak 0.60</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="candidate" data-detection-id="24a40714452e7ff4">
+          <a href="assets/a69072cb-sunrise_mountain_20260826T161935Z_1361_745.jpg"><img loading="lazy" src="assets/a69072cb-sunrise_mountain_20260826T161935Z_1361_745.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.60</strong>
+            <span class="dim">sunrise_mountain_20260826T161935Z.jpg</span><time class="stamp" datetime="2026-08-26T16:19:35Z"><span class="stamp-local">Wed 26 Aug 2026, 9:19:35 am PDT</span><span class="stamp-utc">2026-08-26 16:19:35 UTC</span></time>
+            <span class="dim">57&times;169px</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="bd68dfe309aa48bc">
+          <a href="assets/1e41cfdc-sunrise_mountain_20260826T141600Z_1141_519.jpg"><img loading="lazy" src="assets/1e41cfdc-sunrise_mountain_20260826T141600Z_1141_519.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.49</strong>
+            <span class="dim">sunrise_mountain_20260826T141600Z.jpg</span><time class="stamp" datetime="2026-08-26T14:16:00Z"><span class="stamp-local">Wed 26 Aug 2026, 7:16:00 am PDT</span><span class="stamp-utc">2026-08-26 14:16:00 UTC</span></time>
+            <span class="dim">73&times;137px</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="703281dfe5f5f21d">
+          <a href="assets/51f2669f-sunrise_mountain_20260826T142003Z_1149_516.jpg"><img loading="lazy" src="assets/51f2669f-sunrise_mountain_20260826T142003Z_1149_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.41</strong>
+            <span class="dim">sunrise_mountain_20260826T142003Z.jpg</span><time class="stamp" datetime="2026-08-26T14:20:03Z"><span class="stamp-local">Wed 26 Aug 2026, 7:20:03 am PDT</span><span class="stamp-utc">2026-08-26 14:20:03 UTC</span></time>
+            <span class="dim">52&times;112px</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="candidate" data-detection-id="371a09d5b05f3a42">
+          <a href="assets/b79140fe-sunrise_mountain_20260826T145027Z_680_388.jpg"><img loading="lazy" src="assets/b79140fe-sunrise_mountain_20260826T145027Z_680_388.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#1a7f37">candidate</span>
+            <strong>0.21</strong>
+            <span class="dim">sunrise_mountain_20260826T145027Z.jpg</span><time class="stamp" datetime="2026-08-26T14:50:27Z"><span class="stamp-local">Wed 26 Aug 2026, 7:50:27 am PDT</span><span class="stamp-utc">2026-08-26 14:50:27 UTC</span></time>
+            <span class="dim">118&times;289px</span>
+          </figcaption>
+        </figure></div></div></details><button class="expand-all" type="button" data-expand-all>Expand all days</button></div>
 
   <h2>Recurring locations</h2>
   <p class="sub">The camera never moves, so a box that keeps landing on the same pixels is
@@ -376,1092 +322,972 @@ body.wr-active { padding-bottom: 4.5rem; }
         </tr>
   </table>
 
-  <h2>Suppressed &mdash; 3306</h2>
+  <h2>Suppressed &middot; 3306</h2>
   <p class="sub">Kept and labelled rather than dropped, so the cost of the filtering stays
      auditable and a real animal caught in a suppressed cluster can still be found.</p>
   <details open>
     <summary>Show suppressed detections (first 120)</summary>
-    <div class="thumbs" style="margin-top:10px">
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/29ec0cee-sunrise_mountain_20260823T134502Z_1749_531.jpg"><img loading="lazy" src="assets/29ec0cee-sunrise_mountain_20260823T134502Z_1749_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.93</strong>
-            <span class="dim">sunrise_mountain_20260823T134502Z.jpg</span>
-            <span class="dim">171&times;506px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/f5e62ed5-sunrise_mountain_20260828T201451Z_1751_525.jpg"><img loading="lazy" src="assets/f5e62ed5-sunrise_mountain_20260828T201451Z_1751_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.91</strong>
-            <span class="dim">sunrise_mountain_20260828T201451Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ac1a3eba-sunrise_mountain_20260823T134301Z_1750_528.jpg"><img loading="lazy" src="assets/ac1a3eba-sunrise_mountain_20260823T134301Z_1750_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.91</strong>
-            <span class="dim">sunrise_mountain_20260823T134301Z.jpg</span>
-            <span class="dim">170&times;509px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/69138ea3-sunrise_mountain_20260823T021406Z_1752_529.jpg"><img loading="lazy" src="assets/69138ea3-sunrise_mountain_20260823T021406Z_1752_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.91</strong>
-            <span class="dim">sunrise_mountain_20260823T021406Z.jpg</span>
-            <span class="dim">168&times;512px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/fa3e5bd3-sunrise_mountain_20260823T134200Z_1750_528.jpg"><img loading="lazy" src="assets/fa3e5bd3-sunrise_mountain_20260823T134200Z_1750_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.91</strong>
-            <span class="dim">sunrise_mountain_20260823T134200Z.jpg</span>
-            <span class="dim">170&times;509px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/5d67fcf2-sunrise_mountain_20260827T012652Z_1752_528.jpg"><img loading="lazy" src="assets/5d67fcf2-sunrise_mountain_20260827T012652Z_1752_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.90</strong>
-            <span class="dim">sunrise_mountain_20260827T012652Z.jpg</span>
-            <span class="dim">168&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/b7726186-sunrise_mountain_20260823T020903Z_1751_531.jpg"><img loading="lazy" src="assets/b7726186-sunrise_mountain_20260823T020903Z_1751_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.90</strong>
-            <span class="dim">sunrise_mountain_20260823T020903Z.jpg</span>
-            <span class="dim">169&times;512px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/d0c83dc4-sunrise_mountain_20260827T203116Z_1751_533.jpg"><img loading="lazy" src="assets/d0c83dc4-sunrise_mountain_20260827T203116Z_1751_533.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.90</strong>
-            <span class="dim">sunrise_mountain_20260827T203116Z.jpg</span>
-            <span class="dim">169&times;511px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/72a578e2-sunrise_mountain_20260827T032918Z_1751_533.jpg"><img loading="lazy" src="assets/72a578e2-sunrise_mountain_20260827T032918Z_1751_533.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.90</strong>
-            <span class="dim">sunrise_mountain_20260827T032918Z.jpg</span>
-            <span class="dim">169&times;508px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3e8cf8a1-sunrise_mountain_20260822T214159Z_1752_529.jpg"><img loading="lazy" src="assets/3e8cf8a1-sunrise_mountain_20260822T214159Z_1752_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260822T214159Z.jpg</span>
-            <span class="dim">168&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/f02e55c6-sunrise_mountain_20260823T014548Z_1751_529.jpg"><img loading="lazy" src="assets/f02e55c6-sunrise_mountain_20260823T014548Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260823T014548Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/86a3a185-sunrise_mountain_20260828T201149Z_1751_524.jpg"><img loading="lazy" src="assets/86a3a185-sunrise_mountain_20260828T201149Z_1751_524.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260828T201149Z.jpg</span>
-            <span class="dim">169&times;518px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/37e8fd6c-sunrise_mountain_20260827T204024Z_1751_528.jpg"><img loading="lazy" src="assets/37e8fd6c-sunrise_mountain_20260827T204024Z_1751_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260827T204024Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/673c4611-sunrise_mountain_20260823T134703Z_1750_524.jpg"><img loading="lazy" src="assets/673c4611-sunrise_mountain_20260823T134703Z_1750_524.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260823T134703Z.jpg</span>
-            <span class="dim">170&times;511px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/db66c06a-sunrise_mountain_20260823T012535Z_1752_516.jpg"><img loading="lazy" src="assets/db66c06a-sunrise_mountain_20260823T012535Z_1752_516.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260823T012535Z.jpg</span>
-            <span class="dim">168&times;527px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/077e6f9e-sunrise_mountain_20260823T014850Z_1751_525.jpg"><img loading="lazy" src="assets/077e6f9e-sunrise_mountain_20260823T014850Z_1751_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260823T014850Z.jpg</span>
-            <span class="dim">169&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/5483579e-sunrise_mountain_20260828T201350Z_1751_527.jpg"><img loading="lazy" src="assets/5483579e-sunrise_mountain_20260828T201350Z_1751_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.89</strong>
-            <span class="dim">sunrise_mountain_20260828T201350Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/0f5c4382-sunrise_mountain_20260823T012736Z_1751_516.jpg"><img loading="lazy" src="assets/0f5c4382-sunrise_mountain_20260823T012736Z_1751_516.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T012736Z.jpg</span>
-            <span class="dim">169&times;528px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/412f161f-sunrise_mountain_20260827T203721Z_1751_528.jpg"><img loading="lazy" src="assets/412f161f-sunrise_mountain_20260827T203721Z_1751_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260827T203721Z.jpg</span>
-            <span class="dim">169&times;516px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/af5ca501-sunrise_mountain_20260827T211449Z_1751_532.jpg"><img loading="lazy" src="assets/af5ca501-sunrise_mountain_20260827T211449Z_1751_532.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260827T211449Z.jpg</span>
-            <span class="dim">169&times;508px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/bbbceb47-sunrise_mountain_20260828T201552Z_1751_519.jpg"><img loading="lazy" src="assets/bbbceb47-sunrise_mountain_20260828T201552Z_1751_519.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260828T201552Z.jpg</span>
-            <span class="dim">169&times;524px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/66c3914d-sunrise_mountain_20260823T014749Z_1751_529.jpg"><img loading="lazy" src="assets/66c3914d-sunrise_mountain_20260823T014749Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T014749Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/975de797-sunrise_mountain_20260823T020058Z_1752_538.jpg"><img loading="lazy" src="assets/975de797-sunrise_mountain_20260823T020058Z_1752_538.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T020058Z.jpg</span>
-            <span class="dim">168&times;504px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/46e7a2f6-sunrise_mountain_20260822T133424Z_1751_529.jpg"><img loading="lazy" src="assets/46e7a2f6-sunrise_mountain_20260822T133424Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260822T133424Z.jpg</span>
-            <span class="dim">169&times;509px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/a301eaf1-sunrise_mountain_20260827T203923Z_1751_529.jpg"><img loading="lazy" src="assets/a301eaf1-sunrise_mountain_20260827T203923Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260827T203923Z.jpg</span>
-            <span class="dim">169&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3337fe68-sunrise_mountain_20260828T004219Z_1751_528.jpg"><img loading="lazy" src="assets/3337fe68-sunrise_mountain_20260828T004219Z_1751_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260828T004219Z.jpg</span>
-            <span class="dim">169&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/e87d8bae-sunrise_mountain_20260823T033523Z_1751_537.jpg"><img loading="lazy" src="assets/e87d8bae-sunrise_mountain_20260823T033523Z_1751_537.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T033523Z.jpg</span>
-            <span class="dim">168&times;500px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/8cde68fe-sunrise_mountain_20260827T203418Z_1751_530.jpg"><img loading="lazy" src="assets/8cde68fe-sunrise_mountain_20260827T203418Z_1751_530.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260827T203418Z.jpg</span>
-            <span class="dim">169&times;514px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/965ddcd2-sunrise_mountain_20260823T015857Z_1751_529.jpg"><img loading="lazy" src="assets/965ddcd2-sunrise_mountain_20260823T015857Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T015857Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/81d7661f-sunrise_mountain_20260827T203217Z_1751_530.jpg"><img loading="lazy" src="assets/81d7661f-sunrise_mountain_20260827T203217Z_1751_530.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260827T203217Z.jpg</span>
-            <span class="dim">169&times;514px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3d404627-sunrise_mountain_20260823T020601Z_1751_526.jpg"><img loading="lazy" src="assets/3d404627-sunrise_mountain_20260823T020601Z_1751_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T020601Z.jpg</span>
-            <span class="dim">169&times;518px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3c853d9b-sunrise_mountain_20260823T024453Z_1751_527.jpg"><img loading="lazy" src="assets/3c853d9b-sunrise_mountain_20260823T024453Z_1751_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T024453Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/32a0944a-sunrise_mountain_20260828T200947Z_1751_522.jpg"><img loading="lazy" src="assets/32a0944a-sunrise_mountain_20260828T200947Z_1751_522.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260828T200947Z.jpg</span>
-            <span class="dim">169&times;520px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/fc7c9662-sunrise_mountain_20260825T033020Z_1751_530.jpg"><img loading="lazy" src="assets/fc7c9662-sunrise_mountain_20260825T033020Z_1751_530.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260825T033020Z.jpg</span>
-            <span class="dim">169&times;507px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ac12e728-sunrise_mountain_20260823T032416Z_1750_532.jpg"><img loading="lazy" src="assets/ac12e728-sunrise_mountain_20260823T032416Z_1750_532.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.88</strong>
-            <span class="dim">sunrise_mountain_20260823T032416Z.jpg</span>
-            <span class="dim">170&times;510px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ca6b7cab-sunrise_mountain_20260822T213756Z_1752_524.jpg"><img loading="lazy" src="assets/ca6b7cab-sunrise_mountain_20260822T213756Z_1752_524.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260822T213756Z.jpg</span>
-            <span class="dim">168&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/d417fed6-sunrise_mountain_20260823T014045Z_1751_527.jpg"><img loading="lazy" src="assets/d417fed6-sunrise_mountain_20260823T014045Z_1751_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T014045Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/27bc9f75-sunrise_mountain_20260823T133758Z_1750_531.jpg"><img loading="lazy" src="assets/27bc9f75-sunrise_mountain_20260823T133758Z_1750_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T133758Z.jpg</span>
-            <span class="dim">170&times;505px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/83b544cd-sunrise_mountain_20260823T010319Z_1752_527.jpg"><img loading="lazy" src="assets/83b544cd-sunrise_mountain_20260823T010319Z_1752_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T010319Z.jpg</span>
-            <span class="dim">168&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/8b4d6636-sunrise_mountain_20260825T233828Z_1752_531.jpg"><img loading="lazy" src="assets/8b4d6636-sunrise_mountain_20260825T233828Z_1752_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260825T233828Z.jpg</span>
-            <span class="dim">168&times;511px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/62ed7015-sunrise_mountain_20260828T201753Z_1752_514.jpg"><img loading="lazy" src="assets/62ed7015-sunrise_mountain_20260828T201753Z_1752_514.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260828T201753Z.jpg</span>
-            <span class="dim">168&times;528px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/337b1576-sunrise_mountain_20260826T001755Z_1753_526.jpg"><img loading="lazy" src="assets/337b1576-sunrise_mountain_20260826T001755Z_1753_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260826T001755Z.jpg</span>
-            <span class="dim">167&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/8685fcf7-sunrise_mountain_20260823T032919Z_1749_534.jpg"><img loading="lazy" src="assets/8685fcf7-sunrise_mountain_20260823T032919Z_1749_534.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T032919Z.jpg</span>
-            <span class="dim">171&times;509px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/de4c49f9-sunrise_mountain_20260825T033423Z_1751_527.jpg"><img loading="lazy" src="assets/de4c49f9-sunrise_mountain_20260825T033423Z_1751_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260825T033423Z.jpg</span>
-            <span class="dim">169&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/a3e07128-sunrise_mountain_20260822T133726Z_1751_530.jpg"><img loading="lazy" src="assets/a3e07128-sunrise_mountain_20260822T133726Z_1751_530.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260822T133726Z.jpg</span>
-            <span class="dim">169&times;510px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/331286e6-sunrise_mountain_20260823T015253Z_1750_528.jpg"><img loading="lazy" src="assets/331286e6-sunrise_mountain_20260823T015253Z_1750_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T015253Z.jpg</span>
-            <span class="dim">170&times;516px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/89f9a7a7-sunrise_mountain_20260823T022541Z_1751_526.jpg"><img loading="lazy" src="assets/89f9a7a7-sunrise_mountain_20260823T022541Z_1751_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T022541Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/8ef225bf-sunrise_mountain_20260823T021204Z_1752_528.jpg"><img loading="lazy" src="assets/8ef225bf-sunrise_mountain_20260823T021204Z_1752_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T021204Z.jpg</span>
-            <span class="dim">168&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/cfeeb018-sunrise_mountain_20260825T201143Z_1751_533.jpg"><img loading="lazy" src="assets/cfeeb018-sunrise_mountain_20260825T201143Z_1751_533.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260825T201143Z.jpg</span>
-            <span class="dim">169&times;511px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/165dbee8-sunrise_mountain_20260823T144744Z_1751_512.jpg"><img loading="lazy" src="assets/165dbee8-sunrise_mountain_20260823T144744Z_1751_512.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T144744Z.jpg</span>
-            <span class="dim">169&times;528px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/6555c14f-sunrise_mountain_20260827T203822Z_1751_526.jpg"><img loading="lazy" src="assets/6555c14f-sunrise_mountain_20260827T203822Z_1751_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260827T203822Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/255bb347-sunrise_mountain_20260823T152407Z_1750_530.jpg"><img loading="lazy" src="assets/255bb347-sunrise_mountain_20260823T152407Z_1750_530.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T152407Z.jpg</span>
-            <span class="dim">170&times;508px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/2c0789e4-sunrise_mountain_20260823T012837Z_1751_520.jpg"><img loading="lazy" src="assets/2c0789e4-sunrise_mountain_20260823T012837Z_1751_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T012837Z.jpg</span>
-            <span class="dim">169&times;524px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/a4979dd9-sunrise_mountain_20260823T024654Z_1751_524.jpg"><img loading="lazy" src="assets/a4979dd9-sunrise_mountain_20260823T024654Z_1751_524.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260823T024654Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/b73db34f-sunrise_mountain_20260827T203620Z_1751_529.jpg"><img loading="lazy" src="assets/b73db34f-sunrise_mountain_20260827T203620Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.87</strong>
-            <span class="dim">sunrise_mountain_20260827T203620Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/d94a915c-sunrise_mountain_20260823T015454Z_1751_525.jpg"><img loading="lazy" src="assets/d94a915c-sunrise_mountain_20260823T015454Z_1751_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T015454Z.jpg</span>
-            <span class="dim">169&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/7d37ac47-sunrise_mountain_20260823T013340Z_1751_525.jpg"><img loading="lazy" src="assets/7d37ac47-sunrise_mountain_20260823T013340Z_1751_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T013340Z.jpg</span>
-            <span class="dim">169&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/dc52f561-sunrise_mountain_20260826T002058Z_1753_527.jpg"><img loading="lazy" src="assets/dc52f561-sunrise_mountain_20260826T002058Z_1753_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260826T002058Z.jpg</span>
-            <span class="dim">167&times;514px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ca63d110-sunrise_mountain_20260825T233626Z_1752_530.jpg"><img loading="lazy" src="assets/ca63d110-sunrise_mountain_20260825T233626Z_1752_530.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260825T233626Z.jpg</span>
-            <span class="dim">168&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/52b94275-sunrise_mountain_20260822T204216Z_1751_525.jpg"><img loading="lazy" src="assets/52b94275-sunrise_mountain_20260822T204216Z_1751_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T204216Z.jpg</span>
-            <span class="dim">169&times;516px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/29f563d1-sunrise_mountain_20260823T021708Z_1751_520.jpg"><img loading="lazy" src="assets/29f563d1-sunrise_mountain_20260823T021708Z_1751_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T021708Z.jpg</span>
-            <span class="dim">169&times;524px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/de34c825-sunrise_mountain_20260822T205021Z_1752_524.jpg"><img loading="lazy" src="assets/de34c825-sunrise_mountain_20260822T205021Z_1752_524.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T205021Z.jpg</span>
-            <span class="dim">168&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/945cbb80-sunrise_mountain_20260824T033301Z_1752_531.jpg"><img loading="lazy" src="assets/945cbb80-sunrise_mountain_20260824T033301Z_1752_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260824T033301Z.jpg</span>
-            <span class="dim">168&times;511px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/cc2a91b1-sunrise_mountain_20260827T132210Z_1750_535.jpg"><img loading="lazy" src="assets/cc2a91b1-sunrise_mountain_20260827T132210Z_1750_535.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260827T132210Z.jpg</span>
-            <span class="dim">170&times;498px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/d51ab810-sunrise_mountain_20260828T033023Z_1750_536.jpg"><img loading="lazy" src="assets/d51ab810-sunrise_mountain_20260828T033023Z_1750_536.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260828T033023Z.jpg</span>
-            <span class="dim">170&times;505px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/7d8a30d3-sunrise_mountain_20260822T203914Z_1752_520.jpg"><img loading="lazy" src="assets/7d8a30d3-sunrise_mountain_20260822T203914Z_1752_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T203914Z.jpg</span>
-            <span class="dim">168&times;523px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/a2453fd5-sunrise_mountain_20260823T000440Z_1751_526.jpg"><img loading="lazy" src="assets/a2453fd5-sunrise_mountain_20260823T000440Z_1751_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T000440Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/732d3d19-sunrise_mountain_20260823T024554Z_1751_522.jpg"><img loading="lazy" src="assets/732d3d19-sunrise_mountain_20260823T024554Z_1751_522.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T024554Z.jpg</span>
-            <span class="dim">169&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/57020959-sunrise_mountain_20260827T211852Z_1751_531.jpg"><img loading="lazy" src="assets/57020959-sunrise_mountain_20260827T211852Z_1751_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260827T211852Z.jpg</span>
-            <span class="dim">169&times;509px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+    <div class="days"><details class="day"><summary>Fri 21 Aug 2026<span class="n">5 detections</span><span class="peak">peak 0.86</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
           <a href="assets/698aa4e9-sunrise_mountain_20260822T002811Z_1751_522.jpg"><img loading="lazy" src="assets/698aa4e9-sunrise_mountain_20260822T002811Z_1751_522.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T002811Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T002811Z.jpg</span><time class="stamp" datetime="2026-08-22T00:28:11Z"><span class="stamp-local">Fri 21 Aug 2026, 5:28:11 pm PDT</span><span class="stamp-utc">2026-08-22 00:28:11 UTC</span></time>
             <span class="dim">169&times;518px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/87f4aed3-sunrise_mountain_20260822T002711Z_1750_522.jpg"><img loading="lazy" src="assets/87f4aed3-sunrise_mountain_20260822T002711Z_1750_522.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T002711Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T002711Z.jpg</span><time class="stamp" datetime="2026-08-22T00:27:11Z"><span class="stamp-local">Fri 21 Aug 2026, 5:27:11 pm PDT</span><span class="stamp-utc">2026-08-22 00:27:11 UTC</span></time>
             <span class="dim">170&times;518px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/61794fbc-sunrise_mountain_20260823T012032Z_1751_509.jpg"><img loading="lazy" src="assets/61794fbc-sunrise_mountain_20260823T012032Z_1751_509.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T012032Z.jpg</span>
-            <span class="dim">169&times;532px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/83de14a6-sunrise_mountain_20260823T022642Z_1751_526.jpg"><img loading="lazy" src="assets/83de14a6-sunrise_mountain_20260823T022642Z_1751_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T022642Z.jpg</span>
-            <span class="dim">169&times;518px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/722e0d65-sunrise_mountain_20260826T001957Z_1751_520.jpg"><img loading="lazy" src="assets/722e0d65-sunrise_mountain_20260826T001957Z_1751_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260826T001957Z.jpg</span>
-            <span class="dim">169&times;524px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/4619cd99-sunrise_mountain_20260823T021506Z_1752_520.jpg"><img loading="lazy" src="assets/4619cd99-sunrise_mountain_20260823T021506Z_1752_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T021506Z.jpg</span>
-            <span class="dim">168&times;522px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/9e8f6afa-sunrise_mountain_20260825T235439Z_1752_525.jpg"><img loading="lazy" src="assets/9e8f6afa-sunrise_mountain_20260825T235439Z_1752_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260825T235439Z.jpg</span>
-            <span class="dim">168&times;518px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/caf10c1c-sunrise_mountain_20260823T022138Z_1752_527.jpg"><img loading="lazy" src="assets/caf10c1c-sunrise_mountain_20260823T022138Z_1752_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T022138Z.jpg</span>
-            <span class="dim">168&times;510px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/d2f2e2de-sunrise_mountain_20260827T131404Z_1750_534.jpg"><img loading="lazy" src="assets/d2f2e2de-sunrise_mountain_20260827T131404Z_1750_534.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260827T131404Z.jpg</span>
-            <span class="dim">170&times;502px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/16347203-sunrise_mountain_20260823T013944Z_1752_532.jpg"><img loading="lazy" src="assets/16347203-sunrise_mountain_20260823T013944Z_1752_532.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T013944Z.jpg</span>
-            <span class="dim">168&times;512px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3fa3d8d2-sunrise_mountain_20260823T015353Z_1751_526.jpg"><img loading="lazy" src="assets/3fa3d8d2-sunrise_mountain_20260823T015353Z_1751_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T015353Z.jpg</span>
-            <span class="dim">169&times;518px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/06cdc6ad-sunrise_mountain_20260822T213151Z_1752_527.jpg"><img loading="lazy" src="assets/06cdc6ad-sunrise_mountain_20260822T213151Z_1752_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T213151Z.jpg</span>
-            <span class="dim">168&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3d73224c-sunrise_mountain_20260823T014951Z_1751_525.jpg"><img loading="lazy" src="assets/3d73224c-sunrise_mountain_20260823T014951Z_1751_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T014951Z.jpg</span>
-            <span class="dim">169&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/5ec29c7b-sunrise_mountain_20260823T020802Z_1752_527.jpg"><img loading="lazy" src="assets/5ec29c7b-sunrise_mountain_20260823T020802Z_1752_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T020802Z.jpg</span>
-            <span class="dim">168&times;516px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/72bdb6ea-sunrise_mountain_20260826T004213Z_1752_520.jpg"><img loading="lazy" src="assets/72bdb6ea-sunrise_mountain_20260826T004213Z_1752_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260826T004213Z.jpg</span>
-            <span class="dim">168&times;524px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/e2534fe8-sunrise_mountain_20260823T011931Z_1751_514.jpg"><img loading="lazy" src="assets/e2534fe8-sunrise_mountain_20260823T011931Z_1751_514.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T011931Z.jpg</span>
-            <span class="dim">169&times;528px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/0fd1ca69-sunrise_mountain_20260823T014347Z_1751_531.jpg"><img loading="lazy" src="assets/0fd1ca69-sunrise_mountain_20260823T014347Z_1751_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T014347Z.jpg</span>
-            <span class="dim">169&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/950432cc-sunrise_mountain_20260823T133858Z_1750_526.jpg"><img loading="lazy" src="assets/950432cc-sunrise_mountain_20260823T133858Z_1750_526.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T133858Z.jpg</span>
-            <span class="dim">170&times;514px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/cf91833f-sunrise_mountain_20260823T134603Z_1749_520.jpg"><img loading="lazy" src="assets/cf91833f-sunrise_mountain_20260823T134603Z_1749_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260823T134603Z.jpg</span>
-            <span class="dim">171&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/99e9b3d2-sunrise_mountain_20260822T215106Z_1752_529.jpg"><img loading="lazy" src="assets/99e9b3d2-sunrise_mountain_20260822T215106Z_1752_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260822T215106Z.jpg</span>
-            <span class="dim">168&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/c729be69-sunrise_mountain_20260827T203015Z_1751_533.jpg"><img loading="lazy" src="assets/c729be69-sunrise_mountain_20260827T203015Z_1751_533.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.86</strong>
-            <span class="dim">sunrise_mountain_20260827T203015Z.jpg</span>
-            <span class="dim">169&times;511px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/d254ecea-sunrise_mountain_20260822T010743Z_1751_524.jpg"><img loading="lazy" src="assets/d254ecea-sunrise_mountain_20260822T010743Z_1751_524.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T010743Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T010743Z.jpg</span><time class="stamp" datetime="2026-08-22T01:07:43Z"><span class="stamp-local">Fri 21 Aug 2026, 6:07:43 pm PDT</span><span class="stamp-utc">2026-08-22 01:07:43 UTC</span></time>
             <span class="dim">169&times;518px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ea6c1bc7-sunrise_mountain_20260823T005715Z_1751_527.jpg"><img loading="lazy" src="assets/ea6c1bc7-sunrise_mountain_20260823T005715Z_1751_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260823T005715Z.jpg</span>
-            <span class="dim">169&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/a17b7d41-sunrise_mountain_20260822T224746Z_1752_525.jpg"><img loading="lazy" src="assets/a17b7d41-sunrise_mountain_20260822T224746Z_1752_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T224746Z.jpg</span>
-            <span class="dim">168&times;516px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/80cb050e-sunrise_mountain_20260827T011847Z_1752_522.jpg"><img loading="lazy" src="assets/80cb050e-sunrise_mountain_20260827T011847Z_1752_522.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T011847Z.jpg</span>
-            <span class="dim">168&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/c48dad10-sunrise_mountain_20260827T014404Z_1752_520.jpg"><img loading="lazy" src="assets/c48dad10-sunrise_mountain_20260827T014404Z_1752_520.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T014404Z.jpg</span>
-            <span class="dim">168&times;524px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/18d9d08d-sunrise_mountain_20260823T022010Z_1751_529.jpg"><img loading="lazy" src="assets/18d9d08d-sunrise_mountain_20260823T022010Z_1751_529.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260823T022010Z.jpg</span>
-            <span class="dim">169&times;515px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/1abe06b6-sunrise_mountain_20260823T012434Z_1752_511.jpg"><img loading="lazy" src="assets/1abe06b6-sunrise_mountain_20260823T012434Z_1752_511.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260823T012434Z.jpg</span>
-            <span class="dim">168&times;533px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/1f9bede1-sunrise_mountain_20260826T001655Z_1753_523.jpg"><img loading="lazy" src="assets/1f9bede1-sunrise_mountain_20260826T001655Z_1753_523.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260826T001655Z.jpg</span>
-            <span class="dim">167&times;520px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/88647c07-sunrise_mountain_20260827T220019Z_1750_531.jpg"><img loading="lazy" src="assets/88647c07-sunrise_mountain_20260827T220019Z_1750_531.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T220019Z.jpg</span>
-            <span class="dim">170&times;510px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ae4ccacf-sunrise_mountain_20260822T213655Z_1752_528.jpg"><img loading="lazy" src="assets/ae4ccacf-sunrise_mountain_20260822T213655Z_1752_528.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T213655Z.jpg</span>
-            <span class="dim">168&times;516px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ebe0b0bc-sunrise_mountain_20260826T000043Z_1754_525.jpg"><img loading="lazy" src="assets/ebe0b0bc-sunrise_mountain_20260826T000043Z_1754_525.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260826T000043Z.jpg</span>
-            <span class="dim">166&times;517px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/7b8edeb7-sunrise_mountain_20260827T012551Z_1752_522.jpg"><img loading="lazy" src="assets/7b8edeb7-sunrise_mountain_20260827T012551Z_1752_522.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T012551Z.jpg</span>
-            <span class="dim">168&times;522px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/93d3035b-sunrise_mountain_20260822T204115Z_1751_523.jpg"><img loading="lazy" src="assets/93d3035b-sunrise_mountain_20260822T204115Z_1751_523.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T204115Z.jpg</span>
-            <span class="dim">169&times;519px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/3ae76775-sunrise_mountain_20260827T211148Z_1751_532.jpg"><img loading="lazy" src="assets/3ae76775-sunrise_mountain_20260827T211148Z_1751_532.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T211148Z.jpg</span>
-            <span class="dim">169&times;508px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/f655e7d2-sunrise_mountain_20260827T014504Z_1752_522.jpg"><img loading="lazy" src="assets/f655e7d2-sunrise_mountain_20260827T014504Z_1752_522.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T014504Z.jpg</span>
-            <span class="dim">168&times;522px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/ab417ce3-sunrise_mountain_20260823T013038Z_1752_516.jpg"><img loading="lazy" src="assets/ab417ce3-sunrise_mountain_20260823T013038Z_1752_516.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260823T013038Z.jpg</span>
-            <span class="dim">168&times;527px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/8d7f4313-sunrise_mountain_20260822T125859Z_1749_527.jpg"><img loading="lazy" src="assets/8d7f4313-sunrise_mountain_20260822T125859Z_1749_527.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T125859Z.jpg</span>
-            <span class="dim">171&times;513px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/630b6123-sunrise_mountain_20260822T002912Z_1750_522.jpg"><img loading="lazy" src="assets/630b6123-sunrise_mountain_20260822T002912Z_1750_522.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T002912Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T002912Z.jpg</span><time class="stamp" datetime="2026-08-22T00:29:12Z"><span class="stamp-local">Fri 21 Aug 2026, 5:29:12 pm PDT</span><span class="stamp-utc">2026-08-22 00:29:12 UTC</span></time>
             <span class="dim">170&times;518px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/c127acec-sunrise_mountain_20260827T032414Z_1752_533.jpg"><img loading="lazy" src="assets/c127acec-sunrise_mountain_20260827T032414Z_1752_533.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260827T032414Z.jpg</span>
-            <span class="dim">168&times;509px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/645ac646-sunrise_mountain_20260822T002610Z_1750_518.jpg"><img loading="lazy" src="assets/645ac646-sunrise_mountain_20260822T002610Z_1750_518.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260822T002610Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260822T002610Z.jpg</span><time class="stamp" datetime="2026-08-22T00:26:10Z"><span class="stamp-local">Fri 21 Aug 2026, 5:26:10 pm PDT</span><span class="stamp-utc">2026-08-22 00:26:10 UTC</span></time>
             <span class="dim">170&times;521px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/d77cef2a-sunrise_mountain_20260828T201048Z_1751_517.jpg"><img loading="lazy" src="assets/d77cef2a-sunrise_mountain_20260828T201048Z_1751_517.jpg" alt="detection crop"></a>
+        </figure></div></div></details><details class="day" open><summary>Sat 22 Aug 2026<span class="n">61 detections</span><span class="peak">peak 0.91</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/69138ea3-sunrise_mountain_20260823T021406Z_1752_529.jpg"><img loading="lazy" src="assets/69138ea3-sunrise_mountain_20260823T021406Z_1752_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260823T021406Z.jpg</span><time class="stamp" datetime="2026-08-23T02:14:06Z"><span class="stamp-local">Sat 22 Aug 2026, 7:14:06 pm PDT</span><span class="stamp-utc">2026-08-23 02:14:06 UTC</span></time>
+            <span class="dim">168&times;512px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/b7726186-sunrise_mountain_20260823T020903Z_1751_531.jpg"><img loading="lazy" src="assets/b7726186-sunrise_mountain_20260823T020903Z_1751_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260823T020903Z.jpg</span><time class="stamp" datetime="2026-08-23T02:09:03Z"><span class="stamp-local">Sat 22 Aug 2026, 7:09:03 pm PDT</span><span class="stamp-utc">2026-08-23 02:09:03 UTC</span></time>
+            <span class="dim">169&times;512px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3e8cf8a1-sunrise_mountain_20260822T214159Z_1752_529.jpg"><img loading="lazy" src="assets/3e8cf8a1-sunrise_mountain_20260822T214159Z_1752_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260822T214159Z.jpg</span><time class="stamp" datetime="2026-08-22T21:41:59Z"><span class="stamp-local">Sat 22 Aug 2026, 2:41:59 pm PDT</span><span class="stamp-utc">2026-08-22 21:41:59 UTC</span></time>
+            <span class="dim">168&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/f02e55c6-sunrise_mountain_20260823T014548Z_1751_529.jpg"><img loading="lazy" src="assets/f02e55c6-sunrise_mountain_20260823T014548Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T014548Z.jpg</span><time class="stamp" datetime="2026-08-23T01:45:48Z"><span class="stamp-local">Sat 22 Aug 2026, 6:45:48 pm PDT</span><span class="stamp-utc">2026-08-23 01:45:48 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/db66c06a-sunrise_mountain_20260823T012535Z_1752_516.jpg"><img loading="lazy" src="assets/db66c06a-sunrise_mountain_20260823T012535Z_1752_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T012535Z.jpg</span><time class="stamp" datetime="2026-08-23T01:25:35Z"><span class="stamp-local">Sat 22 Aug 2026, 6:25:35 pm PDT</span><span class="stamp-utc">2026-08-23 01:25:35 UTC</span></time>
+            <span class="dim">168&times;527px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/077e6f9e-sunrise_mountain_20260823T014850Z_1751_525.jpg"><img loading="lazy" src="assets/077e6f9e-sunrise_mountain_20260823T014850Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T014850Z.jpg</span><time class="stamp" datetime="2026-08-23T01:48:50Z"><span class="stamp-local">Sat 22 Aug 2026, 6:48:50 pm PDT</span><span class="stamp-utc">2026-08-23 01:48:50 UTC</span></time>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/0f5c4382-sunrise_mountain_20260823T012736Z_1751_516.jpg"><img loading="lazy" src="assets/0f5c4382-sunrise_mountain_20260823T012736Z_1751_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T012736Z.jpg</span><time class="stamp" datetime="2026-08-23T01:27:36Z"><span class="stamp-local">Sat 22 Aug 2026, 6:27:36 pm PDT</span><span class="stamp-utc">2026-08-23 01:27:36 UTC</span></time>
+            <span class="dim">169&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/66c3914d-sunrise_mountain_20260823T014749Z_1751_529.jpg"><img loading="lazy" src="assets/66c3914d-sunrise_mountain_20260823T014749Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T014749Z.jpg</span><time class="stamp" datetime="2026-08-23T01:47:49Z"><span class="stamp-local">Sat 22 Aug 2026, 6:47:49 pm PDT</span><span class="stamp-utc">2026-08-23 01:47:49 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/975de797-sunrise_mountain_20260823T020058Z_1752_538.jpg"><img loading="lazy" src="assets/975de797-sunrise_mountain_20260823T020058Z_1752_538.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T020058Z.jpg</span><time class="stamp" datetime="2026-08-23T02:00:58Z"><span class="stamp-local">Sat 22 Aug 2026, 7:00:58 pm PDT</span><span class="stamp-utc">2026-08-23 02:00:58 UTC</span></time>
+            <span class="dim">168&times;504px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/46e7a2f6-sunrise_mountain_20260822T133424Z_1751_529.jpg"><img loading="lazy" src="assets/46e7a2f6-sunrise_mountain_20260822T133424Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260822T133424Z.jpg</span><time class="stamp" datetime="2026-08-22T13:34:24Z"><span class="stamp-local">Sat 22 Aug 2026, 6:34:24 am PDT</span><span class="stamp-utc">2026-08-22 13:34:24 UTC</span></time>
+            <span class="dim">169&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/e87d8bae-sunrise_mountain_20260823T033523Z_1751_537.jpg"><img loading="lazy" src="assets/e87d8bae-sunrise_mountain_20260823T033523Z_1751_537.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T033523Z.jpg</span><time class="stamp" datetime="2026-08-23T03:35:23Z"><span class="stamp-local">Sat 22 Aug 2026, 8:35:23 pm PDT</span><span class="stamp-utc">2026-08-23 03:35:23 UTC</span></time>
+            <span class="dim">168&times;500px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/965ddcd2-sunrise_mountain_20260823T015857Z_1751_529.jpg"><img loading="lazy" src="assets/965ddcd2-sunrise_mountain_20260823T015857Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T015857Z.jpg</span><time class="stamp" datetime="2026-08-23T01:58:57Z"><span class="stamp-local">Sat 22 Aug 2026, 6:58:57 pm PDT</span><span class="stamp-utc">2026-08-23 01:58:57 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3d404627-sunrise_mountain_20260823T020601Z_1751_526.jpg"><img loading="lazy" src="assets/3d404627-sunrise_mountain_20260823T020601Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T020601Z.jpg</span><time class="stamp" datetime="2026-08-23T02:06:01Z"><span class="stamp-local">Sat 22 Aug 2026, 7:06:01 pm PDT</span><span class="stamp-utc">2026-08-23 02:06:01 UTC</span></time>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3c853d9b-sunrise_mountain_20260823T024453Z_1751_527.jpg"><img loading="lazy" src="assets/3c853d9b-sunrise_mountain_20260823T024453Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T024453Z.jpg</span><time class="stamp" datetime="2026-08-23T02:44:53Z"><span class="stamp-local">Sat 22 Aug 2026, 7:44:53 pm PDT</span><span class="stamp-utc">2026-08-23 02:44:53 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ac12e728-sunrise_mountain_20260823T032416Z_1750_532.jpg"><img loading="lazy" src="assets/ac12e728-sunrise_mountain_20260823T032416Z_1750_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260823T032416Z.jpg</span><time class="stamp" datetime="2026-08-23T03:24:16Z"><span class="stamp-local">Sat 22 Aug 2026, 8:24:16 pm PDT</span><span class="stamp-utc">2026-08-23 03:24:16 UTC</span></time>
+            <span class="dim">170&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ca6b7cab-sunrise_mountain_20260822T213756Z_1752_524.jpg"><img loading="lazy" src="assets/ca6b7cab-sunrise_mountain_20260822T213756Z_1752_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260822T213756Z.jpg</span><time class="stamp" datetime="2026-08-22T21:37:56Z"><span class="stamp-local">Sat 22 Aug 2026, 2:37:56 pm PDT</span><span class="stamp-utc">2026-08-22 21:37:56 UTC</span></time>
+            <span class="dim">168&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/d417fed6-sunrise_mountain_20260823T014045Z_1751_527.jpg"><img loading="lazy" src="assets/d417fed6-sunrise_mountain_20260823T014045Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T014045Z.jpg</span><time class="stamp" datetime="2026-08-23T01:40:45Z"><span class="stamp-local">Sat 22 Aug 2026, 6:40:45 pm PDT</span><span class="stamp-utc">2026-08-23 01:40:45 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/83b544cd-sunrise_mountain_20260823T010319Z_1752_527.jpg"><img loading="lazy" src="assets/83b544cd-sunrise_mountain_20260823T010319Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T010319Z.jpg</span><time class="stamp" datetime="2026-08-23T01:03:19Z"><span class="stamp-local">Sat 22 Aug 2026, 6:03:19 pm PDT</span><span class="stamp-utc">2026-08-23 01:03:19 UTC</span></time>
+            <span class="dim">168&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/8685fcf7-sunrise_mountain_20260823T032919Z_1749_534.jpg"><img loading="lazy" src="assets/8685fcf7-sunrise_mountain_20260823T032919Z_1749_534.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T032919Z.jpg</span><time class="stamp" datetime="2026-08-23T03:29:19Z"><span class="stamp-local">Sat 22 Aug 2026, 8:29:19 pm PDT</span><span class="stamp-utc">2026-08-23 03:29:19 UTC</span></time>
+            <span class="dim">171&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/a3e07128-sunrise_mountain_20260822T133726Z_1751_530.jpg"><img loading="lazy" src="assets/a3e07128-sunrise_mountain_20260822T133726Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260822T133726Z.jpg</span><time class="stamp" datetime="2026-08-22T13:37:26Z"><span class="stamp-local">Sat 22 Aug 2026, 6:37:26 am PDT</span><span class="stamp-utc">2026-08-22 13:37:26 UTC</span></time>
+            <span class="dim">169&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/331286e6-sunrise_mountain_20260823T015253Z_1750_528.jpg"><img loading="lazy" src="assets/331286e6-sunrise_mountain_20260823T015253Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T015253Z.jpg</span><time class="stamp" datetime="2026-08-23T01:52:53Z"><span class="stamp-local">Sat 22 Aug 2026, 6:52:53 pm PDT</span><span class="stamp-utc">2026-08-23 01:52:53 UTC</span></time>
+            <span class="dim">170&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/89f9a7a7-sunrise_mountain_20260823T022541Z_1751_526.jpg"><img loading="lazy" src="assets/89f9a7a7-sunrise_mountain_20260823T022541Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T022541Z.jpg</span><time class="stamp" datetime="2026-08-23T02:25:41Z"><span class="stamp-local">Sat 22 Aug 2026, 7:25:41 pm PDT</span><span class="stamp-utc">2026-08-23 02:25:41 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/8ef225bf-sunrise_mountain_20260823T021204Z_1752_528.jpg"><img loading="lazy" src="assets/8ef225bf-sunrise_mountain_20260823T021204Z_1752_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T021204Z.jpg</span><time class="stamp" datetime="2026-08-23T02:12:04Z"><span class="stamp-local">Sat 22 Aug 2026, 7:12:04 pm PDT</span><span class="stamp-utc">2026-08-23 02:12:04 UTC</span></time>
+            <span class="dim">168&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/2c0789e4-sunrise_mountain_20260823T012837Z_1751_520.jpg"><img loading="lazy" src="assets/2c0789e4-sunrise_mountain_20260823T012837Z_1751_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T012837Z.jpg</span><time class="stamp" datetime="2026-08-23T01:28:37Z"><span class="stamp-local">Sat 22 Aug 2026, 6:28:37 pm PDT</span><span class="stamp-utc">2026-08-23 01:28:37 UTC</span></time>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/a4979dd9-sunrise_mountain_20260823T024654Z_1751_524.jpg"><img loading="lazy" src="assets/a4979dd9-sunrise_mountain_20260823T024654Z_1751_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T024654Z.jpg</span><time class="stamp" datetime="2026-08-23T02:46:54Z"><span class="stamp-local">Sat 22 Aug 2026, 7:46:54 pm PDT</span><span class="stamp-utc">2026-08-23 02:46:54 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/d94a915c-sunrise_mountain_20260823T015454Z_1751_525.jpg"><img loading="lazy" src="assets/d94a915c-sunrise_mountain_20260823T015454Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T015454Z.jpg</span><time class="stamp" datetime="2026-08-23T01:54:54Z"><span class="stamp-local">Sat 22 Aug 2026, 6:54:54 pm PDT</span><span class="stamp-utc">2026-08-23 01:54:54 UTC</span></time>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/7d37ac47-sunrise_mountain_20260823T013340Z_1751_525.jpg"><img loading="lazy" src="assets/7d37ac47-sunrise_mountain_20260823T013340Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T013340Z.jpg</span><time class="stamp" datetime="2026-08-23T01:33:40Z"><span class="stamp-local">Sat 22 Aug 2026, 6:33:40 pm PDT</span><span class="stamp-utc">2026-08-23 01:33:40 UTC</span></time>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/52b94275-sunrise_mountain_20260822T204216Z_1751_525.jpg"><img loading="lazy" src="assets/52b94275-sunrise_mountain_20260822T204216Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T204216Z.jpg</span><time class="stamp" datetime="2026-08-22T20:42:16Z"><span class="stamp-local">Sat 22 Aug 2026, 1:42:16 pm PDT</span><span class="stamp-utc">2026-08-22 20:42:16 UTC</span></time>
+            <span class="dim">169&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/29f563d1-sunrise_mountain_20260823T021708Z_1751_520.jpg"><img loading="lazy" src="assets/29f563d1-sunrise_mountain_20260823T021708Z_1751_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T021708Z.jpg</span><time class="stamp" datetime="2026-08-23T02:17:08Z"><span class="stamp-local">Sat 22 Aug 2026, 7:17:08 pm PDT</span><span class="stamp-utc">2026-08-23 02:17:08 UTC</span></time>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/de34c825-sunrise_mountain_20260822T205021Z_1752_524.jpg"><img loading="lazy" src="assets/de34c825-sunrise_mountain_20260822T205021Z_1752_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T205021Z.jpg</span><time class="stamp" datetime="2026-08-22T20:50:21Z"><span class="stamp-local">Sat 22 Aug 2026, 1:50:21 pm PDT</span><span class="stamp-utc">2026-08-22 20:50:21 UTC</span></time>
+            <span class="dim">168&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/7d8a30d3-sunrise_mountain_20260822T203914Z_1752_520.jpg"><img loading="lazy" src="assets/7d8a30d3-sunrise_mountain_20260822T203914Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T203914Z.jpg</span><time class="stamp" datetime="2026-08-22T20:39:14Z"><span class="stamp-local">Sat 22 Aug 2026, 1:39:14 pm PDT</span><span class="stamp-utc">2026-08-22 20:39:14 UTC</span></time>
+            <span class="dim">168&times;523px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/a2453fd5-sunrise_mountain_20260823T000440Z_1751_526.jpg"><img loading="lazy" src="assets/a2453fd5-sunrise_mountain_20260823T000440Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T000440Z.jpg</span><time class="stamp" datetime="2026-08-23T00:04:40Z"><span class="stamp-local">Sat 22 Aug 2026, 5:04:40 pm PDT</span><span class="stamp-utc">2026-08-23 00:04:40 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/732d3d19-sunrise_mountain_20260823T024554Z_1751_522.jpg"><img loading="lazy" src="assets/732d3d19-sunrise_mountain_20260823T024554Z_1751_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T024554Z.jpg</span><time class="stamp" datetime="2026-08-23T02:45:54Z"><span class="stamp-local">Sat 22 Aug 2026, 7:45:54 pm PDT</span><span class="stamp-utc">2026-08-23 02:45:54 UTC</span></time>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/61794fbc-sunrise_mountain_20260823T012032Z_1751_509.jpg"><img loading="lazy" src="assets/61794fbc-sunrise_mountain_20260823T012032Z_1751_509.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T012032Z.jpg</span><time class="stamp" datetime="2026-08-23T01:20:32Z"><span class="stamp-local">Sat 22 Aug 2026, 6:20:32 pm PDT</span><span class="stamp-utc">2026-08-23 01:20:32 UTC</span></time>
+            <span class="dim">169&times;532px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/83de14a6-sunrise_mountain_20260823T022642Z_1751_526.jpg"><img loading="lazy" src="assets/83de14a6-sunrise_mountain_20260823T022642Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T022642Z.jpg</span><time class="stamp" datetime="2026-08-23T02:26:42Z"><span class="stamp-local">Sat 22 Aug 2026, 7:26:42 pm PDT</span><span class="stamp-utc">2026-08-23 02:26:42 UTC</span></time>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/4619cd99-sunrise_mountain_20260823T021506Z_1752_520.jpg"><img loading="lazy" src="assets/4619cd99-sunrise_mountain_20260823T021506Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T021506Z.jpg</span><time class="stamp" datetime="2026-08-23T02:15:06Z"><span class="stamp-local">Sat 22 Aug 2026, 7:15:06 pm PDT</span><span class="stamp-utc">2026-08-23 02:15:06 UTC</span></time>
+            <span class="dim">168&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/caf10c1c-sunrise_mountain_20260823T022138Z_1752_527.jpg"><img loading="lazy" src="assets/caf10c1c-sunrise_mountain_20260823T022138Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T022138Z.jpg</span><time class="stamp" datetime="2026-08-23T02:21:38Z"><span class="stamp-local">Sat 22 Aug 2026, 7:21:38 pm PDT</span><span class="stamp-utc">2026-08-23 02:21:38 UTC</span></time>
+            <span class="dim">168&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/16347203-sunrise_mountain_20260823T013944Z_1752_532.jpg"><img loading="lazy" src="assets/16347203-sunrise_mountain_20260823T013944Z_1752_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T013944Z.jpg</span><time class="stamp" datetime="2026-08-23T01:39:44Z"><span class="stamp-local">Sat 22 Aug 2026, 6:39:44 pm PDT</span><span class="stamp-utc">2026-08-23 01:39:44 UTC</span></time>
+            <span class="dim">168&times;512px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3fa3d8d2-sunrise_mountain_20260823T015353Z_1751_526.jpg"><img loading="lazy" src="assets/3fa3d8d2-sunrise_mountain_20260823T015353Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T015353Z.jpg</span><time class="stamp" datetime="2026-08-23T01:53:53Z"><span class="stamp-local">Sat 22 Aug 2026, 6:53:53 pm PDT</span><span class="stamp-utc">2026-08-23 01:53:53 UTC</span></time>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/06cdc6ad-sunrise_mountain_20260822T213151Z_1752_527.jpg"><img loading="lazy" src="assets/06cdc6ad-sunrise_mountain_20260822T213151Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T213151Z.jpg</span><time class="stamp" datetime="2026-08-22T21:31:51Z"><span class="stamp-local">Sat 22 Aug 2026, 2:31:51 pm PDT</span><span class="stamp-utc">2026-08-22 21:31:51 UTC</span></time>
+            <span class="dim">168&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3d73224c-sunrise_mountain_20260823T014951Z_1751_525.jpg"><img loading="lazy" src="assets/3d73224c-sunrise_mountain_20260823T014951Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T014951Z.jpg</span><time class="stamp" datetime="2026-08-23T01:49:51Z"><span class="stamp-local">Sat 22 Aug 2026, 6:49:51 pm PDT</span><span class="stamp-utc">2026-08-23 01:49:51 UTC</span></time>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/5ec29c7b-sunrise_mountain_20260823T020802Z_1752_527.jpg"><img loading="lazy" src="assets/5ec29c7b-sunrise_mountain_20260823T020802Z_1752_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T020802Z.jpg</span><time class="stamp" datetime="2026-08-23T02:08:02Z"><span class="stamp-local">Sat 22 Aug 2026, 7:08:02 pm PDT</span><span class="stamp-utc">2026-08-23 02:08:02 UTC</span></time>
+            <span class="dim">168&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/e2534fe8-sunrise_mountain_20260823T011931Z_1751_514.jpg"><img loading="lazy" src="assets/e2534fe8-sunrise_mountain_20260823T011931Z_1751_514.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T011931Z.jpg</span><time class="stamp" datetime="2026-08-23T01:19:31Z"><span class="stamp-local">Sat 22 Aug 2026, 6:19:31 pm PDT</span><span class="stamp-utc">2026-08-23 01:19:31 UTC</span></time>
+            <span class="dim">169&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/0fd1ca69-sunrise_mountain_20260823T014347Z_1751_531.jpg"><img loading="lazy" src="assets/0fd1ca69-sunrise_mountain_20260823T014347Z_1751_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T014347Z.jpg</span><time class="stamp" datetime="2026-08-23T01:43:47Z"><span class="stamp-local">Sat 22 Aug 2026, 6:43:47 pm PDT</span><span class="stamp-utc">2026-08-23 01:43:47 UTC</span></time>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/99e9b3d2-sunrise_mountain_20260822T215106Z_1752_529.jpg"><img loading="lazy" src="assets/99e9b3d2-sunrise_mountain_20260822T215106Z_1752_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260822T215106Z.jpg</span><time class="stamp" datetime="2026-08-22T21:51:06Z"><span class="stamp-local">Sat 22 Aug 2026, 2:51:06 pm PDT</span><span class="stamp-utc">2026-08-22 21:51:06 UTC</span></time>
+            <span class="dim">168&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ea6c1bc7-sunrise_mountain_20260823T005715Z_1751_527.jpg"><img loading="lazy" src="assets/ea6c1bc7-sunrise_mountain_20260823T005715Z_1751_527.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260828T201048Z.jpg</span>
-            <span class="dim">169&times;526px · same box in 2755 frames</span>
+            <span class="dim">sunrise_mountain_20260823T005715Z.jpg</span><time class="stamp" datetime="2026-08-23T00:57:15Z"><span class="stamp-local">Sat 22 Aug 2026, 5:57:15 pm PDT</span><span class="stamp-utc">2026-08-23 00:57:15 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/a17b7d41-sunrise_mountain_20260822T224746Z_1752_525.jpg"><img loading="lazy" src="assets/a17b7d41-sunrise_mountain_20260822T224746Z_1752_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T224746Z.jpg</span><time class="stamp" datetime="2026-08-22T22:47:46Z"><span class="stamp-local">Sat 22 Aug 2026, 3:47:46 pm PDT</span><span class="stamp-utc">2026-08-22 22:47:46 UTC</span></time>
+            <span class="dim">168&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/18d9d08d-sunrise_mountain_20260823T022010Z_1751_529.jpg"><img loading="lazy" src="assets/18d9d08d-sunrise_mountain_20260823T022010Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T022010Z.jpg</span><time class="stamp" datetime="2026-08-23T02:20:10Z"><span class="stamp-local">Sat 22 Aug 2026, 7:20:10 pm PDT</span><span class="stamp-utc">2026-08-23 02:20:10 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/1abe06b6-sunrise_mountain_20260823T012434Z_1752_511.jpg"><img loading="lazy" src="assets/1abe06b6-sunrise_mountain_20260823T012434Z_1752_511.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T012434Z.jpg</span><time class="stamp" datetime="2026-08-23T01:24:34Z"><span class="stamp-local">Sat 22 Aug 2026, 6:24:34 pm PDT</span><span class="stamp-utc">2026-08-23 01:24:34 UTC</span></time>
+            <span class="dim">168&times;533px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ae4ccacf-sunrise_mountain_20260822T213655Z_1752_528.jpg"><img loading="lazy" src="assets/ae4ccacf-sunrise_mountain_20260822T213655Z_1752_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T213655Z.jpg</span><time class="stamp" datetime="2026-08-22T21:36:55Z"><span class="stamp-local">Sat 22 Aug 2026, 2:36:55 pm PDT</span><span class="stamp-utc">2026-08-22 21:36:55 UTC</span></time>
+            <span class="dim">168&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/93d3035b-sunrise_mountain_20260822T204115Z_1751_523.jpg"><img loading="lazy" src="assets/93d3035b-sunrise_mountain_20260822T204115Z_1751_523.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T204115Z.jpg</span><time class="stamp" datetime="2026-08-22T20:41:15Z"><span class="stamp-local">Sat 22 Aug 2026, 1:41:15 pm PDT</span><span class="stamp-utc">2026-08-22 20:41:15 UTC</span></time>
+            <span class="dim">169&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ab417ce3-sunrise_mountain_20260823T013038Z_1752_516.jpg"><img loading="lazy" src="assets/ab417ce3-sunrise_mountain_20260823T013038Z_1752_516.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260823T013038Z.jpg</span><time class="stamp" datetime="2026-08-23T01:30:38Z"><span class="stamp-local">Sat 22 Aug 2026, 6:30:38 pm PDT</span><span class="stamp-utc">2026-08-23 01:30:38 UTC</span></time>
+            <span class="dim">168&times;527px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/8d7f4313-sunrise_mountain_20260822T125859Z_1749_527.jpg"><img loading="lazy" src="assets/8d7f4313-sunrise_mountain_20260822T125859Z_1749_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260822T125859Z.jpg</span><time class="stamp" datetime="2026-08-22T12:58:59Z"><span class="stamp-local">Sat 22 Aug 2026, 5:58:59 am PDT</span><span class="stamp-utc">2026-08-22 12:58:59 UTC</span></time>
+            <span class="dim">171&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/554d9c41-sunrise_mountain_20260823T001346Z_1752_512.jpg"><img loading="lazy" src="assets/554d9c41-sunrise_mountain_20260823T001346Z_1752_512.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260823T001346Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T001346Z.jpg</span><time class="stamp" datetime="2026-08-23T00:13:46Z"><span class="stamp-local">Sat 22 Aug 2026, 5:13:46 pm PDT</span><span class="stamp-utc">2026-08-23 00:13:46 UTC</span></time>
             <span class="dim">168&times;530px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/f2dcb184-sunrise_mountain_20260823T010521Z_1752_519.jpg"><img loading="lazy" src="assets/f2dcb184-sunrise_mountain_20260823T010521Z_1752_519.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.85</strong>
-            <span class="dim">sunrise_mountain_20260823T010521Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T010521Z.jpg</span><time class="stamp" datetime="2026-08-23T01:05:21Z"><span class="stamp-local">Sat 22 Aug 2026, 6:05:21 pm PDT</span><span class="stamp-utc">2026-08-23 01:05:21 UTC</span></time>
             <span class="dim">168&times;525px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/8a433b10-sunrise_mountain_20260823T001447Z_1752_511.jpg"><img loading="lazy" src="assets/8a433b10-sunrise_mountain_20260823T001447Z_1752_511.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260823T001447Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T001447Z.jpg</span><time class="stamp" datetime="2026-08-23T00:14:47Z"><span class="stamp-local">Sat 22 Aug 2026, 5:14:47 pm PDT</span><span class="stamp-utc">2026-08-23 00:14:47 UTC</span></time>
             <span class="dim">168&times;531px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/e5ef9745-sunrise_mountain_20260823T014447Z_1751_522.jpg"><img loading="lazy" src="assets/e5ef9745-sunrise_mountain_20260823T014447Z_1751_522.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260823T014447Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T014447Z.jpg</span><time class="stamp" datetime="2026-08-23T01:44:47Z"><span class="stamp-local">Sat 22 Aug 2026, 6:44:47 pm PDT</span><span class="stamp-utc">2026-08-23 01:44:47 UTC</span></time>
             <span class="dim">169&times;522px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/0b24af46-sunrise_mountain_20260823T013139Z_1751_524.jpg"><img loading="lazy" src="assets/0b24af46-sunrise_mountain_20260823T013139Z_1751_524.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260823T013139Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T013139Z.jpg</span><time class="stamp" datetime="2026-08-23T01:31:39Z"><span class="stamp-local">Sat 22 Aug 2026, 6:31:39 pm PDT</span><span class="stamp-utc">2026-08-23 01:31:39 UTC</span></time>
             <span class="dim">169&times;520px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/e45725f9-sunrise_mountain_20260823T021808Z_1751_518.jpg"><img loading="lazy" src="assets/e45725f9-sunrise_mountain_20260823T021808Z_1751_518.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260823T021808Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T021808Z.jpg</span><time class="stamp" datetime="2026-08-23T02:18:08Z"><span class="stamp-local">Sat 22 Aug 2026, 7:18:08 pm PDT</span><span class="stamp-utc">2026-08-23 02:18:08 UTC</span></time>
             <span class="dim">169&times;525px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/30e1faac-sunrise_mountain_20260823T032617Z_1750_528.jpg"><img loading="lazy" src="assets/30e1faac-sunrise_mountain_20260823T032617Z_1750_528.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260823T032617Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T032617Z.jpg</span><time class="stamp" datetime="2026-08-23T03:26:17Z"><span class="stamp-local">Sat 22 Aug 2026, 8:26:17 pm PDT</span><span class="stamp-utc">2026-08-23 03:26:17 UTC</span></time>
             <span class="dim">170&times;515px · same box in 2755 frames</span>
           </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
-          <a href="assets/9ce20e0f-sunrise_mountain_20260827T015411Z_1752_524.jpg"><img loading="lazy" src="assets/9ce20e0f-sunrise_mountain_20260827T015411Z_1752_524.jpg" alt="detection crop"></a>
-          <figcaption>
-            <span class="badge" style="background:#8250df">static object</span>
-            <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260827T015411Z.jpg</span>
-            <span class="dim">168&times;520px · same box in 2755 frames</span>
-          </figcaption>
-        </figure>
-        <figure class="det" data-verdict="static_object">
+        </figure><figure class="det" data-verdict="static_object">
           <a href="assets/8dbac29b-sunrise_mountain_20260823T024352Z_1751_529.jpg"><img loading="lazy" src="assets/8dbac29b-sunrise_mountain_20260823T024352Z_1751_529.jpg" alt="detection crop"></a>
           <figcaption>
             <span class="badge" style="background:#8250df">static object</span>
             <strong>0.84</strong>
-            <span class="dim">sunrise_mountain_20260823T024352Z.jpg</span>
+            <span class="dim">sunrise_mountain_20260823T024352Z.jpg</span><time class="stamp" datetime="2026-08-23T02:43:52Z"><span class="stamp-local">Sat 22 Aug 2026, 7:43:52 pm PDT</span><span class="stamp-utc">2026-08-23 02:43:52 UTC</span></time>
             <span class="dim">169&times;513px · same box in 2755 frames</span>
           </figcaption>
-        </figure></div>
+        </figure></div></div></details><details class="day"><summary>Sun 23 Aug 2026<span class="n">10 detections</span><span class="peak">peak 0.93</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/29ec0cee-sunrise_mountain_20260823T134502Z_1749_531.jpg"><img loading="lazy" src="assets/29ec0cee-sunrise_mountain_20260823T134502Z_1749_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.93</strong>
+            <span class="dim">sunrise_mountain_20260823T134502Z.jpg</span><time class="stamp" datetime="2026-08-23T13:45:02Z"><span class="stamp-local">Sun 23 Aug 2026, 6:45:02 am PDT</span><span class="stamp-utc">2026-08-23 13:45:02 UTC</span></time>
+            <span class="dim">171&times;506px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ac1a3eba-sunrise_mountain_20260823T134301Z_1750_528.jpg"><img loading="lazy" src="assets/ac1a3eba-sunrise_mountain_20260823T134301Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260823T134301Z.jpg</span><time class="stamp" datetime="2026-08-23T13:43:01Z"><span class="stamp-local">Sun 23 Aug 2026, 6:43:01 am PDT</span><span class="stamp-utc">2026-08-23 13:43:01 UTC</span></time>
+            <span class="dim">170&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/fa3e5bd3-sunrise_mountain_20260823T134200Z_1750_528.jpg"><img loading="lazy" src="assets/fa3e5bd3-sunrise_mountain_20260823T134200Z_1750_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260823T134200Z.jpg</span><time class="stamp" datetime="2026-08-23T13:42:00Z"><span class="stamp-local">Sun 23 Aug 2026, 6:42:00 am PDT</span><span class="stamp-utc">2026-08-23 13:42:00 UTC</span></time>
+            <span class="dim">170&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/673c4611-sunrise_mountain_20260823T134703Z_1750_524.jpg"><img loading="lazy" src="assets/673c4611-sunrise_mountain_20260823T134703Z_1750_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260823T134703Z.jpg</span><time class="stamp" datetime="2026-08-23T13:47:03Z"><span class="stamp-local">Sun 23 Aug 2026, 6:47:03 am PDT</span><span class="stamp-utc">2026-08-23 13:47:03 UTC</span></time>
+            <span class="dim">170&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/27bc9f75-sunrise_mountain_20260823T133758Z_1750_531.jpg"><img loading="lazy" src="assets/27bc9f75-sunrise_mountain_20260823T133758Z_1750_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T133758Z.jpg</span><time class="stamp" datetime="2026-08-23T13:37:58Z"><span class="stamp-local">Sun 23 Aug 2026, 6:37:58 am PDT</span><span class="stamp-utc">2026-08-23 13:37:58 UTC</span></time>
+            <span class="dim">170&times;505px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/165dbee8-sunrise_mountain_20260823T144744Z_1751_512.jpg"><img loading="lazy" src="assets/165dbee8-sunrise_mountain_20260823T144744Z_1751_512.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T144744Z.jpg</span><time class="stamp" datetime="2026-08-23T14:47:44Z"><span class="stamp-local">Sun 23 Aug 2026, 7:47:44 am PDT</span><span class="stamp-utc">2026-08-23 14:47:44 UTC</span></time>
+            <span class="dim">169&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/255bb347-sunrise_mountain_20260823T152407Z_1750_530.jpg"><img loading="lazy" src="assets/255bb347-sunrise_mountain_20260823T152407Z_1750_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260823T152407Z.jpg</span><time class="stamp" datetime="2026-08-23T15:24:07Z"><span class="stamp-local">Sun 23 Aug 2026, 8:24:07 am PDT</span><span class="stamp-utc">2026-08-23 15:24:07 UTC</span></time>
+            <span class="dim">170&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/945cbb80-sunrise_mountain_20260824T033301Z_1752_531.jpg"><img loading="lazy" src="assets/945cbb80-sunrise_mountain_20260824T033301Z_1752_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260824T033301Z.jpg</span><time class="stamp" datetime="2026-08-24T03:33:01Z"><span class="stamp-local">Sun 23 Aug 2026, 8:33:01 pm PDT</span><span class="stamp-utc">2026-08-24 03:33:01 UTC</span></time>
+            <span class="dim">168&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/950432cc-sunrise_mountain_20260823T133858Z_1750_526.jpg"><img loading="lazy" src="assets/950432cc-sunrise_mountain_20260823T133858Z_1750_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T133858Z.jpg</span><time class="stamp" datetime="2026-08-23T13:38:58Z"><span class="stamp-local">Sun 23 Aug 2026, 6:38:58 am PDT</span><span class="stamp-utc">2026-08-23 13:38:58 UTC</span></time>
+            <span class="dim">170&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/cf91833f-sunrise_mountain_20260823T134603Z_1749_520.jpg"><img loading="lazy" src="assets/cf91833f-sunrise_mountain_20260823T134603Z_1749_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260823T134603Z.jpg</span><time class="stamp" datetime="2026-08-23T13:46:03Z"><span class="stamp-local">Sun 23 Aug 2026, 6:46:03 am PDT</span><span class="stamp-utc">2026-08-23 13:46:03 UTC</span></time>
+            <span class="dim">171&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Mon 24 Aug 2026<span class="n">2 detections</span><span class="peak">peak 0.88</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/fc7c9662-sunrise_mountain_20260825T033020Z_1751_530.jpg"><img loading="lazy" src="assets/fc7c9662-sunrise_mountain_20260825T033020Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260825T033020Z.jpg</span><time class="stamp" datetime="2026-08-25T03:30:20Z"><span class="stamp-local">Mon 24 Aug 2026, 8:30:20 pm PDT</span><span class="stamp-utc">2026-08-25 03:30:20 UTC</span></time>
+            <span class="dim">169&times;507px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/de4c49f9-sunrise_mountain_20260825T033423Z_1751_527.jpg"><img loading="lazy" src="assets/de4c49f9-sunrise_mountain_20260825T033423Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260825T033423Z.jpg</span><time class="stamp" datetime="2026-08-25T03:34:23Z"><span class="stamp-local">Mon 24 Aug 2026, 8:34:23 pm PDT</span><span class="stamp-utc">2026-08-25 03:34:23 UTC</span></time>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Tue 25 Aug 2026<span class="n">10 detections</span><span class="peak">peak 0.87</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/8b4d6636-sunrise_mountain_20260825T233828Z_1752_531.jpg"><img loading="lazy" src="assets/8b4d6636-sunrise_mountain_20260825T233828Z_1752_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260825T233828Z.jpg</span><time class="stamp" datetime="2026-08-25T23:38:28Z"><span class="stamp-local">Tue 25 Aug 2026, 4:38:28 pm PDT</span><span class="stamp-utc">2026-08-25 23:38:28 UTC</span></time>
+            <span class="dim">168&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/337b1576-sunrise_mountain_20260826T001755Z_1753_526.jpg"><img loading="lazy" src="assets/337b1576-sunrise_mountain_20260826T001755Z_1753_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260826T001755Z.jpg</span><time class="stamp" datetime="2026-08-26T00:17:55Z"><span class="stamp-local">Tue 25 Aug 2026, 5:17:55 pm PDT</span><span class="stamp-utc">2026-08-26 00:17:55 UTC</span></time>
+            <span class="dim">167&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/cfeeb018-sunrise_mountain_20260825T201143Z_1751_533.jpg"><img loading="lazy" src="assets/cfeeb018-sunrise_mountain_20260825T201143Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260825T201143Z.jpg</span><time class="stamp" datetime="2026-08-25T20:11:43Z"><span class="stamp-local">Tue 25 Aug 2026, 1:11:43 pm PDT</span><span class="stamp-utc">2026-08-25 20:11:43 UTC</span></time>
+            <span class="dim">169&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/dc52f561-sunrise_mountain_20260826T002058Z_1753_527.jpg"><img loading="lazy" src="assets/dc52f561-sunrise_mountain_20260826T002058Z_1753_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260826T002058Z.jpg</span><time class="stamp" datetime="2026-08-26T00:20:58Z"><span class="stamp-local">Tue 25 Aug 2026, 5:20:58 pm PDT</span><span class="stamp-utc">2026-08-26 00:20:58 UTC</span></time>
+            <span class="dim">167&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ca63d110-sunrise_mountain_20260825T233626Z_1752_530.jpg"><img loading="lazy" src="assets/ca63d110-sunrise_mountain_20260825T233626Z_1752_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260825T233626Z.jpg</span><time class="stamp" datetime="2026-08-25T23:36:26Z"><span class="stamp-local">Tue 25 Aug 2026, 4:36:26 pm PDT</span><span class="stamp-utc">2026-08-25 23:36:26 UTC</span></time>
+            <span class="dim">168&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/722e0d65-sunrise_mountain_20260826T001957Z_1751_520.jpg"><img loading="lazy" src="assets/722e0d65-sunrise_mountain_20260826T001957Z_1751_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260826T001957Z.jpg</span><time class="stamp" datetime="2026-08-26T00:19:57Z"><span class="stamp-local">Tue 25 Aug 2026, 5:19:57 pm PDT</span><span class="stamp-utc">2026-08-26 00:19:57 UTC</span></time>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/9e8f6afa-sunrise_mountain_20260825T235439Z_1752_525.jpg"><img loading="lazy" src="assets/9e8f6afa-sunrise_mountain_20260825T235439Z_1752_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260825T235439Z.jpg</span><time class="stamp" datetime="2026-08-25T23:54:39Z"><span class="stamp-local">Tue 25 Aug 2026, 4:54:39 pm PDT</span><span class="stamp-utc">2026-08-25 23:54:39 UTC</span></time>
+            <span class="dim">168&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/72bdb6ea-sunrise_mountain_20260826T004213Z_1752_520.jpg"><img loading="lazy" src="assets/72bdb6ea-sunrise_mountain_20260826T004213Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260826T004213Z.jpg</span><time class="stamp" datetime="2026-08-26T00:42:13Z"><span class="stamp-local">Tue 25 Aug 2026, 5:42:13 pm PDT</span><span class="stamp-utc">2026-08-26 00:42:13 UTC</span></time>
+            <span class="dim">168&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/1f9bede1-sunrise_mountain_20260826T001655Z_1753_523.jpg"><img loading="lazy" src="assets/1f9bede1-sunrise_mountain_20260826T001655Z_1753_523.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260826T001655Z.jpg</span><time class="stamp" datetime="2026-08-26T00:16:55Z"><span class="stamp-local">Tue 25 Aug 2026, 5:16:55 pm PDT</span><span class="stamp-utc">2026-08-26 00:16:55 UTC</span></time>
+            <span class="dim">167&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/ebe0b0bc-sunrise_mountain_20260826T000043Z_1754_525.jpg"><img loading="lazy" src="assets/ebe0b0bc-sunrise_mountain_20260826T000043Z_1754_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260826T000043Z.jpg</span><time class="stamp" datetime="2026-08-26T00:00:43Z"><span class="stamp-local">Tue 25 Aug 2026, 5:00:43 pm PDT</span><span class="stamp-utc">2026-08-26 00:00:43 UTC</span></time>
+            <span class="dim">166&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Wed 26 Aug 2026<span class="n">8 detections</span><span class="peak">peak 0.90</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/5d67fcf2-sunrise_mountain_20260827T012652Z_1752_528.jpg"><img loading="lazy" src="assets/5d67fcf2-sunrise_mountain_20260827T012652Z_1752_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260827T012652Z.jpg</span><time class="stamp" datetime="2026-08-27T01:26:52Z"><span class="stamp-local">Wed 26 Aug 2026, 6:26:52 pm PDT</span><span class="stamp-utc">2026-08-27 01:26:52 UTC</span></time>
+            <span class="dim">168&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/72a578e2-sunrise_mountain_20260827T032918Z_1751_533.jpg"><img loading="lazy" src="assets/72a578e2-sunrise_mountain_20260827T032918Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260827T032918Z.jpg</span><time class="stamp" datetime="2026-08-27T03:29:18Z"><span class="stamp-local">Wed 26 Aug 2026, 8:29:18 pm PDT</span><span class="stamp-utc">2026-08-27 03:29:18 UTC</span></time>
+            <span class="dim">169&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/80cb050e-sunrise_mountain_20260827T011847Z_1752_522.jpg"><img loading="lazy" src="assets/80cb050e-sunrise_mountain_20260827T011847Z_1752_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T011847Z.jpg</span><time class="stamp" datetime="2026-08-27T01:18:47Z"><span class="stamp-local">Wed 26 Aug 2026, 6:18:47 pm PDT</span><span class="stamp-utc">2026-08-27 01:18:47 UTC</span></time>
+            <span class="dim">168&times;519px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/c48dad10-sunrise_mountain_20260827T014404Z_1752_520.jpg"><img loading="lazy" src="assets/c48dad10-sunrise_mountain_20260827T014404Z_1752_520.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T014404Z.jpg</span><time class="stamp" datetime="2026-08-27T01:44:04Z"><span class="stamp-local">Wed 26 Aug 2026, 6:44:04 pm PDT</span><span class="stamp-utc">2026-08-27 01:44:04 UTC</span></time>
+            <span class="dim">168&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/7b8edeb7-sunrise_mountain_20260827T012551Z_1752_522.jpg"><img loading="lazy" src="assets/7b8edeb7-sunrise_mountain_20260827T012551Z_1752_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T012551Z.jpg</span><time class="stamp" datetime="2026-08-27T01:25:51Z"><span class="stamp-local">Wed 26 Aug 2026, 6:25:51 pm PDT</span><span class="stamp-utc">2026-08-27 01:25:51 UTC</span></time>
+            <span class="dim">168&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/f655e7d2-sunrise_mountain_20260827T014504Z_1752_522.jpg"><img loading="lazy" src="assets/f655e7d2-sunrise_mountain_20260827T014504Z_1752_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T014504Z.jpg</span><time class="stamp" datetime="2026-08-27T01:45:04Z"><span class="stamp-local">Wed 26 Aug 2026, 6:45:04 pm PDT</span><span class="stamp-utc">2026-08-27 01:45:04 UTC</span></time>
+            <span class="dim">168&times;522px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/c127acec-sunrise_mountain_20260827T032414Z_1752_533.jpg"><img loading="lazy" src="assets/c127acec-sunrise_mountain_20260827T032414Z_1752_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T032414Z.jpg</span><time class="stamp" datetime="2026-08-27T03:24:14Z"><span class="stamp-local">Wed 26 Aug 2026, 8:24:14 pm PDT</span><span class="stamp-utc">2026-08-27 03:24:14 UTC</span></time>
+            <span class="dim">168&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/9ce20e0f-sunrise_mountain_20260827T015411Z_1752_524.jpg"><img loading="lazy" src="assets/9ce20e0f-sunrise_mountain_20260827T015411Z_1752_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.84</strong>
+            <span class="dim">sunrise_mountain_20260827T015411Z.jpg</span><time class="stamp" datetime="2026-08-27T01:54:11Z"><span class="stamp-local">Wed 26 Aug 2026, 6:54:11 pm PDT</span><span class="stamp-utc">2026-08-27 01:54:11 UTC</span></time>
+            <span class="dim">168&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Thu 27 Aug 2026<span class="n">17 detections</span><span class="peak">peak 0.90</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/d0c83dc4-sunrise_mountain_20260827T203116Z_1751_533.jpg"><img loading="lazy" src="assets/d0c83dc4-sunrise_mountain_20260827T203116Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.90</strong>
+            <span class="dim">sunrise_mountain_20260827T203116Z.jpg</span><time class="stamp" datetime="2026-08-27T20:31:16Z"><span class="stamp-local">Thu 27 Aug 2026, 1:31:16 pm PDT</span><span class="stamp-utc">2026-08-27 20:31:16 UTC</span></time>
+            <span class="dim">169&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/37e8fd6c-sunrise_mountain_20260827T204024Z_1751_528.jpg"><img loading="lazy" src="assets/37e8fd6c-sunrise_mountain_20260827T204024Z_1751_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260827T204024Z.jpg</span><time class="stamp" datetime="2026-08-27T20:40:24Z"><span class="stamp-local">Thu 27 Aug 2026, 1:40:24 pm PDT</span><span class="stamp-utc">2026-08-27 20:40:24 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/412f161f-sunrise_mountain_20260827T203721Z_1751_528.jpg"><img loading="lazy" src="assets/412f161f-sunrise_mountain_20260827T203721Z_1751_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203721Z.jpg</span><time class="stamp" datetime="2026-08-27T20:37:21Z"><span class="stamp-local">Thu 27 Aug 2026, 1:37:21 pm PDT</span><span class="stamp-utc">2026-08-27 20:37:21 UTC</span></time>
+            <span class="dim">169&times;516px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/af5ca501-sunrise_mountain_20260827T211449Z_1751_532.jpg"><img loading="lazy" src="assets/af5ca501-sunrise_mountain_20260827T211449Z_1751_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T211449Z.jpg</span><time class="stamp" datetime="2026-08-27T21:14:49Z"><span class="stamp-local">Thu 27 Aug 2026, 2:14:49 pm PDT</span><span class="stamp-utc">2026-08-27 21:14:49 UTC</span></time>
+            <span class="dim">169&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/a301eaf1-sunrise_mountain_20260827T203923Z_1751_529.jpg"><img loading="lazy" src="assets/a301eaf1-sunrise_mountain_20260827T203923Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203923Z.jpg</span><time class="stamp" datetime="2026-08-27T20:39:23Z"><span class="stamp-local">Thu 27 Aug 2026, 1:39:23 pm PDT</span><span class="stamp-utc">2026-08-27 20:39:23 UTC</span></time>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3337fe68-sunrise_mountain_20260828T004219Z_1751_528.jpg"><img loading="lazy" src="assets/3337fe68-sunrise_mountain_20260828T004219Z_1751_528.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260828T004219Z.jpg</span><time class="stamp" datetime="2026-08-28T00:42:19Z"><span class="stamp-local">Thu 27 Aug 2026, 5:42:19 pm PDT</span><span class="stamp-utc">2026-08-28 00:42:19 UTC</span></time>
+            <span class="dim">169&times;513px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/8cde68fe-sunrise_mountain_20260827T203418Z_1751_530.jpg"><img loading="lazy" src="assets/8cde68fe-sunrise_mountain_20260827T203418Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203418Z.jpg</span><time class="stamp" datetime="2026-08-27T20:34:18Z"><span class="stamp-local">Thu 27 Aug 2026, 1:34:18 pm PDT</span><span class="stamp-utc">2026-08-27 20:34:18 UTC</span></time>
+            <span class="dim">169&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/81d7661f-sunrise_mountain_20260827T203217Z_1751_530.jpg"><img loading="lazy" src="assets/81d7661f-sunrise_mountain_20260827T203217Z_1751_530.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260827T203217Z.jpg</span><time class="stamp" datetime="2026-08-27T20:32:17Z"><span class="stamp-local">Thu 27 Aug 2026, 1:32:17 pm PDT</span><span class="stamp-utc">2026-08-27 20:32:17 UTC</span></time>
+            <span class="dim">169&times;514px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/6555c14f-sunrise_mountain_20260827T203822Z_1751_526.jpg"><img loading="lazy" src="assets/6555c14f-sunrise_mountain_20260827T203822Z_1751_526.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260827T203822Z.jpg</span><time class="stamp" datetime="2026-08-27T20:38:22Z"><span class="stamp-local">Thu 27 Aug 2026, 1:38:22 pm PDT</span><span class="stamp-utc">2026-08-27 20:38:22 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/b73db34f-sunrise_mountain_20260827T203620Z_1751_529.jpg"><img loading="lazy" src="assets/b73db34f-sunrise_mountain_20260827T203620Z_1751_529.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260827T203620Z.jpg</span><time class="stamp" datetime="2026-08-27T20:36:20Z"><span class="stamp-local">Thu 27 Aug 2026, 1:36:20 pm PDT</span><span class="stamp-utc">2026-08-27 20:36:20 UTC</span></time>
+            <span class="dim">169&times;515px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/cc2a91b1-sunrise_mountain_20260827T132210Z_1750_535.jpg"><img loading="lazy" src="assets/cc2a91b1-sunrise_mountain_20260827T132210Z_1750_535.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T132210Z.jpg</span><time class="stamp" datetime="2026-08-27T13:22:10Z"><span class="stamp-local">Thu 27 Aug 2026, 6:22:10 am PDT</span><span class="stamp-utc">2026-08-27 13:22:10 UTC</span></time>
+            <span class="dim">170&times;498px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/d51ab810-sunrise_mountain_20260828T033023Z_1750_536.jpg"><img loading="lazy" src="assets/d51ab810-sunrise_mountain_20260828T033023Z_1750_536.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260828T033023Z.jpg</span><time class="stamp" datetime="2026-08-28T03:30:23Z"><span class="stamp-local">Thu 27 Aug 2026, 8:30:23 pm PDT</span><span class="stamp-utc">2026-08-28 03:30:23 UTC</span></time>
+            <span class="dim">170&times;505px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/57020959-sunrise_mountain_20260827T211852Z_1751_531.jpg"><img loading="lazy" src="assets/57020959-sunrise_mountain_20260827T211852Z_1751_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T211852Z.jpg</span><time class="stamp" datetime="2026-08-27T21:18:52Z"><span class="stamp-local">Thu 27 Aug 2026, 2:18:52 pm PDT</span><span class="stamp-utc">2026-08-27 21:18:52 UTC</span></time>
+            <span class="dim">169&times;509px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/d2f2e2de-sunrise_mountain_20260827T131404Z_1750_534.jpg"><img loading="lazy" src="assets/d2f2e2de-sunrise_mountain_20260827T131404Z_1750_534.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T131404Z.jpg</span><time class="stamp" datetime="2026-08-27T13:14:04Z"><span class="stamp-local">Thu 27 Aug 2026, 6:14:04 am PDT</span><span class="stamp-utc">2026-08-27 13:14:04 UTC</span></time>
+            <span class="dim">170&times;502px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/c729be69-sunrise_mountain_20260827T203015Z_1751_533.jpg"><img loading="lazy" src="assets/c729be69-sunrise_mountain_20260827T203015Z_1751_533.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.86</strong>
+            <span class="dim">sunrise_mountain_20260827T203015Z.jpg</span><time class="stamp" datetime="2026-08-27T20:30:15Z"><span class="stamp-local">Thu 27 Aug 2026, 1:30:15 pm PDT</span><span class="stamp-utc">2026-08-27 20:30:15 UTC</span></time>
+            <span class="dim">169&times;511px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/88647c07-sunrise_mountain_20260827T220019Z_1750_531.jpg"><img loading="lazy" src="assets/88647c07-sunrise_mountain_20260827T220019Z_1750_531.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T220019Z.jpg</span><time class="stamp" datetime="2026-08-27T22:00:19Z"><span class="stamp-local">Thu 27 Aug 2026, 3:00:19 pm PDT</span><span class="stamp-utc">2026-08-27 22:00:19 UTC</span></time>
+            <span class="dim">170&times;510px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/3ae76775-sunrise_mountain_20260827T211148Z_1751_532.jpg"><img loading="lazy" src="assets/3ae76775-sunrise_mountain_20260827T211148Z_1751_532.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260827T211148Z.jpg</span><time class="stamp" datetime="2026-08-27T21:11:48Z"><span class="stamp-local">Thu 27 Aug 2026, 2:11:48 pm PDT</span><span class="stamp-utc">2026-08-27 21:11:48 UTC</span></time>
+            <span class="dim">169&times;508px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div></div></details><details class="day"><summary>Fri 28 Aug 2026<span class="n">7 detections</span><span class="peak">peak 0.91</span></summary><div class="day-body"><div class="thumbs" style="margin-top:10px"><figure class="det" data-verdict="static_object">
+          <a href="assets/f5e62ed5-sunrise_mountain_20260828T201451Z_1751_525.jpg"><img loading="lazy" src="assets/f5e62ed5-sunrise_mountain_20260828T201451Z_1751_525.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.91</strong>
+            <span class="dim">sunrise_mountain_20260828T201451Z.jpg</span><time class="stamp" datetime="2026-08-28T20:14:51Z"><span class="stamp-local">Fri 28 Aug 2026, 1:14:51 pm PDT</span><span class="stamp-utc">2026-08-28 20:14:51 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/86a3a185-sunrise_mountain_20260828T201149Z_1751_524.jpg"><img loading="lazy" src="assets/86a3a185-sunrise_mountain_20260828T201149Z_1751_524.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260828T201149Z.jpg</span><time class="stamp" datetime="2026-08-28T20:11:49Z"><span class="stamp-local">Fri 28 Aug 2026, 1:11:49 pm PDT</span><span class="stamp-utc">2026-08-28 20:11:49 UTC</span></time>
+            <span class="dim">169&times;518px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/5483579e-sunrise_mountain_20260828T201350Z_1751_527.jpg"><img loading="lazy" src="assets/5483579e-sunrise_mountain_20260828T201350Z_1751_527.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.89</strong>
+            <span class="dim">sunrise_mountain_20260828T201350Z.jpg</span><time class="stamp" datetime="2026-08-28T20:13:50Z"><span class="stamp-local">Fri 28 Aug 2026, 1:13:50 pm PDT</span><span class="stamp-utc">2026-08-28 20:13:50 UTC</span></time>
+            <span class="dim">169&times;517px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/bbbceb47-sunrise_mountain_20260828T201552Z_1751_519.jpg"><img loading="lazy" src="assets/bbbceb47-sunrise_mountain_20260828T201552Z_1751_519.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260828T201552Z.jpg</span><time class="stamp" datetime="2026-08-28T20:15:52Z"><span class="stamp-local">Fri 28 Aug 2026, 1:15:52 pm PDT</span><span class="stamp-utc">2026-08-28 20:15:52 UTC</span></time>
+            <span class="dim">169&times;524px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/32a0944a-sunrise_mountain_20260828T200947Z_1751_522.jpg"><img loading="lazy" src="assets/32a0944a-sunrise_mountain_20260828T200947Z_1751_522.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.88</strong>
+            <span class="dim">sunrise_mountain_20260828T200947Z.jpg</span><time class="stamp" datetime="2026-08-28T20:09:47Z"><span class="stamp-local">Fri 28 Aug 2026, 1:09:47 pm PDT</span><span class="stamp-utc">2026-08-28 20:09:47 UTC</span></time>
+            <span class="dim">169&times;520px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/62ed7015-sunrise_mountain_20260828T201753Z_1752_514.jpg"><img loading="lazy" src="assets/62ed7015-sunrise_mountain_20260828T201753Z_1752_514.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.87</strong>
+            <span class="dim">sunrise_mountain_20260828T201753Z.jpg</span><time class="stamp" datetime="2026-08-28T20:17:53Z"><span class="stamp-local">Fri 28 Aug 2026, 1:17:53 pm PDT</span><span class="stamp-utc">2026-08-28 20:17:53 UTC</span></time>
+            <span class="dim">168&times;528px · same box in 2755 frames</span>
+          </figcaption>
+        </figure><figure class="det" data-verdict="static_object">
+          <a href="assets/d77cef2a-sunrise_mountain_20260828T201048Z_1751_517.jpg"><img loading="lazy" src="assets/d77cef2a-sunrise_mountain_20260828T201048Z_1751_517.jpg" alt="detection crop"></a>
+          <figcaption>
+            <span class="badge" style="background:#8250df">static object</span>
+            <strong>0.85</strong>
+            <span class="dim">sunrise_mountain_20260828T201048Z.jpg</span><time class="stamp" datetime="2026-08-28T20:10:48Z"><span class="stamp-local">Fri 28 Aug 2026, 1:10:48 pm PDT</span><span class="stamp-utc">2026-08-28 20:10:48 UTC</span></time>
+            <span class="dim">169&times;526px · same box in 2755 frames</span>
+          </figcaption>
+        </figure></div></div></details><button class="expand-all" type="button" data-expand-all>Expand all days</button></div>
   </details>
 </main>
 <div id="wr-root" data-report-id="sunrise-candidates-2026-08-22-to-2026-08-28" data-schema-version="1"></div><script>/* Review layer, phase 1.
@@ -1734,5 +1560,15 @@ body.wr-active { padding-bottom: 4.5rem; }
   focusCurrent();
   render();
 })();
-</script></body>
+</script><script>
+document.querySelectorAll("[data-expand-all]").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var days = button.parentNode.querySelectorAll("details.day");
+    var opening = Array.prototype.some.call(days, function (d) { return !d.open; });
+    days.forEach(function (d) { d.open = opening; });
+    button.textContent = opening ? "Collapse all days" : "Expand all days";
+  });
+});
+</script>
+</body>
 </html>

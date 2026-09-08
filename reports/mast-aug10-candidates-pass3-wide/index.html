@@ -4,51 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marine Review Decision Layer</title>
-<style>
-  body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7f8; color: #17202a; }
-  header { position: sticky; top: 0; z-index: 2; background: rgba(255,255,255,.96); border-bottom: 1px solid #d7dde4; padding: 14px 22px; }
-  main { max-width: 1440px; margin: 0 auto; padding: 22px; }
-  h1 { margin: 0 0 4px; font-size: 22px; }
-  h2 { margin: 0 0 4px; font-size: 17px; }
-  h3 { margin: 0 0 8px; color: #536170; font-size: 13px; text-transform: uppercase; }
-  p { margin: 0; color: #657180; }
-  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .metric, .card { background: white; border: 1px solid #d7dde4; border-radius: 8px; }
-  .metric { padding: 12px; }
-  .metric strong { display: block; font-size: 24px; }
-  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-  button { border: 1px solid #c9d1d9; background: white; border-radius: 6px; padding: 7px 10px; cursor: pointer; }
-  button.active { background: #0f1720; color: white; }
-  .card { padding: 16px; margin-bottom: 18px; }
-  .card-head { display: flex; justify-content: space-between; gap: 14px; border-bottom: 1px solid #eef1f4; padding-bottom: 10px; margin-bottom: 14px; }
-  .media { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
-  .media.solo { grid-template-columns: minmax(0, 760px); }
-  video, .hero, .det img { width: 100%; border: 1px solid #d7dde4; border-radius: 6px; background: #111; }
-  .thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
-  .striph { margin: 14px 0 8px; }
-  .det { margin: 0; border: 1px solid #d7dde4; border-radius: 6px; overflow: hidden; background: #fafbfc; }
-  .det img { display: block; aspect-ratio: 16 / 9; object-fit: cover; border: 0; border-radius: 0; }
-  figcaption { padding: 7px 8px; font-size: 12px; color: #536170; }
-  .hidden { display: none !important; }
-  .note { background: #fff8e6; border: 1px solid #e6d9ac; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; }
-  .note p { margin: 0 0 6px; }
-  .note p:last-child { margin: 0; }
-  .quiet { color: #657180; font-size: 13px; line-height: 1.5; }
-  .verified { background: white; border: 1px solid #d7dde4; border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; }
-  .verified h2 { margin: 0 0 4px; font-size: 18px; }
-  .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 14px; }
-  .ver { margin: 0; border: 1px solid #d7dde4; border-radius: 8px; overflow: hidden; background: #fafbfc; border-top: 4px solid #b6bec7; }
-  .ver.ok { border-top-color: #2f8f4e; }
-  .ver.no { border-top-color: #b4483c; }
-  .ver img { display: block; width: 100%; }
-  .ver figcaption { padding: 10px 12px; font-size: 13px; color: #17202a; }
-  .ver .tag { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #536170; border: 1px solid #d7dde4; border-radius: 4px; padding: 1px 6px; margin-left: 4px; vertical-align: 1px; }
-  .ver.ok .tag { color: #2f8f4e; border-color: #a9d5b8; }
-  .ver.no .tag { color: #b4483c; border-color: #e3b6b0; }
-  .ver .q { display: block; margin-top: 6px; color: #657180; font-size: 12.5px; line-height: 1.5; }
-  .ver .src { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #93a0ad; }
-  @media (max-width: 900px) { .metrics, .media { grid-template-columns: 1fr; } .card-head { display: block; } }
-</style>
 <style>/* Review layer. Scoped under wr- so it cannot collide with a report's own CSS,
    and it defines its own colours rather than borrowing the page's tokens,
    because it is injected into pages built by five different generators. */
@@ -114,8 +69,9 @@ body.wr-active { padding-bottom: 4.5rem; }
   font: inherit; resize: vertical;
 }
 @media print { #wr-bar, #wr-note { display: none !important; } }
-</style></head>
-<body>
+</style><link rel="stylesheet" href="../../assets/site.css?v=5ac031fd">
+</head>
+<body class="family-sheet layout-flow">
 <header>
   <h1>Marine Review Decision Layer</h1>
   <p>Fused YOLO-Fish + YOLO-World decisions. Seal candidates first; raw model labels preserved in CSV/JSON.</p>
@@ -146,7 +102,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part other_taxon_candidate distractor" data-detection-id="08652838bd131d86">
               <div class="card-head">
                 <div>
-                  <h2>1. mast_center_aquarium_20260810T190342.ts</h2>
+                  <h2>1. mast_center_aquarium_20260810T190342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:03:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:03:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:03:42 UTC</span></time></p>
                   <p>seal_candidate: 13 · marine_mammal_candidate: 4 · fish: 65 · fish_world_marine_conflict: 25 · model_conflict_suppressed: 3 · suppressed_part: 24 · other_taxon_candidate: 1 · distractor: 1</p>
                 </div>
                 
@@ -163,7 +119,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part" data-detection-id="bd27e5f5c1b316bf">
               <div class="card-head">
                 <div>
-                  <h2>2. mast_center_aquarium_20260810T190444.ts</h2>
+                  <h2>2. mast_center_aquarium_20260810T190444.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:04:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:04:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:04:44 UTC</span></time></p>
                   <p>seal_candidate: 12 · marine_mammal_candidate: 5 · fish: 145 · fish_world_marine_conflict: 46 · model_conflict_suppressed: 11 · suppressed_part: 26</p>
                 </div>
                 
@@ -180,7 +136,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part other_taxon_candidate" data-detection-id="a2c5d0146e93f753">
               <div class="card-head">
                 <div>
-                  <h2>3. mast_center_aquarium_20260810T192743.ts</h2>
+                  <h2>3. mast_center_aquarium_20260810T192743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:27:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:27:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:27:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 2 · fish: 110 · fish_world_marine_conflict: 60 · model_conflict_suppressed: 9 · suppressed_part: 4 · other_taxon_candidate: 5</p>
                 </div>
                 
@@ -197,7 +153,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part" data-detection-id="77fbcff6920bc9a6">
               <div class="card-head">
                 <div>
-                  <h2>4. mast_center_aquarium_20260810T192943.ts</h2>
+                  <h2>4. mast_center_aquarium_20260810T192943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:29:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:29:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:29:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 1 · fish: 31 · fish_world_marine_conflict: 19 · model_conflict_suppressed: 2 · suppressed_part: 3</p>
                 </div>
                 
@@ -214,7 +170,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict suppressed_part" data-detection-id="83f5e07c9b88768b">
               <div class="card-head">
                 <div>
-                  <h2>5. mast_center_aquarium_20260810T193043.ts</h2>
+                  <h2>5. mast_center_aquarium_20260810T193043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:30:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:30:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:30:43 UTC</span></time></p>
                   <p>seal_candidate: 2 · marine_mammal_candidate: 4 · fish: 22 · fish_world_marine_conflict: 10 · suppressed_part: 5</p>
                 </div>
                 
@@ -231,7 +187,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part other_taxon_candidate distractor" data-detection-id="51d499a4c2f3026d">
               <div class="card-head">
                 <div>
-                  <h2>6. mast_center_aquarium_20260810T193443.ts</h2>
+                  <h2>6. mast_center_aquarium_20260810T193443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:34:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:34:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:34:43 UTC</span></time></p>
                   <p>seal_candidate: 4 · marine_mammal_candidate: 1 · fish: 49 · fish_world_marine_conflict: 19 · model_conflict_suppressed: 4 · suppressed_part: 11 · other_taxon_candidate: 4 · distractor: 16</p>
                 </div>
                 
@@ -248,7 +204,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part distractor other_taxon_candidate" data-detection-id="047c376ecdb02ac2">
               <div class="card-head">
                 <div>
-                  <h2>7. mast_center_aquarium_20260810T193543.ts</h2>
+                  <h2>7. mast_center_aquarium_20260810T193543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:35:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:35:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:35:43 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 3 · fish: 101 · fish_world_marine_conflict: 41 · model_conflict_suppressed: 9 · suppressed_part: 3 · distractor: 21 · other_taxon_candidate: 17</p>
                 </div>
                 
@@ -265,7 +221,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part" data-detection-id="e0a65e30006919d6">
               <div class="card-head">
                 <div>
-                  <h2>8. mast_center_aquarium_20260810T195044.ts</h2>
+                  <h2>8. mast_center_aquarium_20260810T195044.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:50:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:50:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:50:44 UTC</span></time></p>
                   <p>seal_candidate: 1 · fish: 81 · fish_world_marine_conflict: 15 · model_conflict_suppressed: 1 · suppressed_part: 2</p>
                 </div>
                 
@@ -282,7 +238,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="seal_candidate marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed suppressed_part distractor" data-detection-id="b626075bea4909e1">
               <div class="card-head">
                 <div>
-                  <h2>9. mast_center_aquarium_20260810T201041.ts</h2>
+                  <h2>9. mast_center_aquarium_20260810T201041.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:10:41Z"><span class="stamp-local">Mon 10 Aug 2026, 1:10:41 pm PDT</span><span class="stamp-utc">2026-08-10 20:10:41 UTC</span></time></p>
                   <p>seal_candidate: 1 · marine_mammal_candidate: 1 · fish: 39 · fish_world_marine_conflict: 18 · model_conflict_suppressed: 1 · suppressed_part: 3 · distractor: 18</p>
                 </div>
                 
@@ -299,7 +255,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed distractor other_taxon_candidate" data-detection-id="c5d1894746891883">
               <div class="card-head">
                 <div>
-                  <h2>10. mast_center_aquarium_20260810T191039.ts</h2>
+                  <h2>10. mast_center_aquarium_20260810T191039.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:10:39Z"><span class="stamp-local">Mon 10 Aug 2026, 12:10:39 pm PDT</span><span class="stamp-utc">2026-08-10 19:10:39 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · fish: 19 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 10 · distractor: 1 · other_taxon_candidate: 2</p>
                 </div>
                 
@@ -316,7 +272,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed distractor" data-detection-id="03488b91d07e0acd">
               <div class="card-head">
                 <div>
-                  <h2>11. mast_center_aquarium_20260810T191343.ts</h2>
+                  <h2>11. mast_center_aquarium_20260810T191343.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:13:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:13:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:13:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 18 · fish_world_marine_conflict: 5 · model_conflict_suppressed: 5 · distractor: 1</p>
                 </div>
                 
@@ -333,7 +289,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate" data-detection-id="193c325bc113bc7d">
               <div class="card-head">
                 <div>
-                  <h2>12. mast_center_aquarium_20260810T192543.ts</h2>
+                  <h2>12. mast_center_aquarium_20260810T192543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:25:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:25:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:25:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · fish: 82 · fish_world_marine_conflict: 50 · model_conflict_suppressed: 6 · other_taxon_candidate: 5</p>
                 </div>
                 
@@ -350,7 +306,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate distractor" data-detection-id="f72352f9590887a5">
               <div class="card-head">
                 <div>
-                  <h2>13. mast_center_aquarium_20260810T194344.ts</h2>
+                  <h2>13. mast_center_aquarium_20260810T194344.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:43:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:43:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:43:44 UTC</span></time></p>
                   <p>marine_mammal_candidate: 3 · fish: 32 · fish_world_marine_conflict: 17 · model_conflict_suppressed: 9 · other_taxon_candidate: 1 · distractor: 1</p>
                 </div>
                 
@@ -367,7 +323,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed distractor other_taxon_candidate" data-detection-id="32c7701000f0d200">
               <div class="card-head">
                 <div>
-                  <h2>14. mast_center_aquarium_20260810T195542.ts</h2>
+                  <h2>14. mast_center_aquarium_20260810T195542.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:55:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:55:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:55:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 34 · fish_world_marine_conflict: 3 · model_conflict_suppressed: 5 · distractor: 1 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -384,7 +340,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict" data-detection-id="aa51fa78c54ad4a9">
               <div class="card-head">
                 <div>
-                  <h2>15. mast_center_aquarium_20260810T200142.ts</h2>
+                  <h2>15. mast_center_aquarium_20260810T200142.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:01:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:01:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:01:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · fish: 29 · fish_world_marine_conflict: 3</p>
                 </div>
                 
@@ -401,7 +357,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict" data-detection-id="edc06c25d438cd29">
               <div class="card-head">
                 <div>
-                  <h2>16. mast_center_aquarium_20260810T200244.ts</h2>
+                  <h2>16. mast_center_aquarium_20260810T200244.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:02:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:02:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:02:44 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 20 · fish_world_marine_conflict: 2</p>
                 </div>
                 
@@ -418,7 +374,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed distractor" data-detection-id="2831d253a30f94e3">
               <div class="card-head">
                 <div>
-                  <h2>17. mast_center_aquarium_20260810T200943.ts</h2>
+                  <h2>17. mast_center_aquarium_20260810T200943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:09:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:09:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:09:43 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 30 · fish_world_marine_conflict: 8 · model_conflict_suppressed: 12 · distractor: 16</p>
                 </div>
                 
@@ -435,7 +391,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed distractor" data-detection-id="e6ca94f4d976b7e7">
               <div class="card-head">
                 <div>
-                  <h2>18. mast_center_aquarium_20260810T201242.ts</h2>
+                  <h2>18. mast_center_aquarium_20260810T201242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:12:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:12:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:12:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 5 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 1 · distractor: 20</p>
                 </div>
                 
@@ -452,7 +408,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish fish_world_marine_conflict model_conflict_suppressed distractor" data-detection-id="c0f152e884b8d942">
               <div class="card-head">
                 <div>
-                  <h2>19. mast_center_aquarium_20260810T201442.ts</h2>
+                  <h2>19. mast_center_aquarium_20260810T201442.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:14:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:14:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:14:42 UTC</span></time></p>
                   <p>marine_mammal_candidate: 1 · fish: 13 · fish_world_marine_conflict: 4 · model_conflict_suppressed: 5 · distractor: 4</p>
                 </div>
                 
@@ -469,7 +425,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="marine_mammal_candidate fish model_conflict_suppressed distractor" data-detection-id="779c908c39508bc5">
               <div class="card-head">
                 <div>
-                  <h2>20. mast_center_aquarium_20260810T201941.ts</h2>
+                  <h2>20. mast_center_aquarium_20260810T201941.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:19:41Z"><span class="stamp-local">Mon 10 Aug 2026, 1:19:41 pm PDT</span><span class="stamp-utc">2026-08-10 20:19:41 UTC</span></time></p>
                   <p>marine_mammal_candidate: 2 · fish: 26 · model_conflict_suppressed: 3 · distractor: 3</p>
                 </div>
                 
@@ -486,7 +442,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>21. mast_center_aquarium_20260810T190043.ts</h2>
+                  <h2>21. mast_center_aquarium_20260810T190043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:00:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:00:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:00:43 UTC</span></time></p>
                   <p>fish: 12 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -503,7 +459,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>22. mast_center_aquarium_20260810T190142.ts</h2>
+                  <h2>22. mast_center_aquarium_20260810T190142.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:01:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:01:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:01:42 UTC</span></time></p>
                   <p>fish: 3 · distractor: 1</p>
                 </div>
                 
@@ -520,7 +476,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate" data-detection-id="230ac7ade91bbb8f">
               <div class="card-head">
                 <div>
-                  <h2>23. mast_center_aquarium_20260810T190244.ts</h2>
+                  <h2>23. mast_center_aquarium_20260810T190244.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:02:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:02:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:02:44 UTC</span></time></p>
                   <p>fish: 76 · fish_world_marine_conflict: 44 · model_conflict_suppressed: 10 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -537,7 +493,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate" data-detection-id="8766348a96ca0a3c">
               <div class="card-head">
                 <div>
-                  <h2>24. mast_center_aquarium_20260810T190543.ts</h2>
+                  <h2>24. mast_center_aquarium_20260810T190543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:05:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:05:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:05:43 UTC</span></time></p>
                   <p>fish: 30 · fish_world_marine_conflict: 10 · model_conflict_suppressed: 5 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -554,7 +510,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict">
               <div class="card-head">
                 <div>
-                  <h2>25. mast_center_aquarium_20260810T190644.ts</h2>
+                  <h2>25. mast_center_aquarium_20260810T190644.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:06:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:06:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:06:44 UTC</span></time></p>
                   <p>fish: 33 · fish_world_marine_conflict: 13</p>
                 </div>
                 
@@ -571,7 +527,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>26. mast_center_aquarium_20260810T190740.ts</h2>
+                  <h2>26. mast_center_aquarium_20260810T190740.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:07:40Z"><span class="stamp-local">Mon 10 Aug 2026, 12:07:40 pm PDT</span><span class="stamp-utc">2026-08-10 19:07:40 UTC</span></time></p>
                   <p>fish: 6 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 1 · distractor: 1</p>
                 </div>
                 
@@ -588,7 +544,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>27. mast_center_aquarium_20260810T190943.ts</h2>
+                  <h2>27. mast_center_aquarium_20260810T190943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:09:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:09:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:09:43 UTC</span></time></p>
                   <p>fish: 5 · fish_world_marine_conflict: 2 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -605,7 +561,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>28. mast_center_aquarium_20260810T191141.ts</h2>
+                  <h2>28. mast_center_aquarium_20260810T191141.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:11:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:11:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:11:41 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -622,7 +578,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish other_taxon_candidate" data-detection-id="37c00c3bdb56d533">
               <div class="card-head">
                 <div>
-                  <h2>29. mast_center_aquarium_20260810T191243.ts</h2>
+                  <h2>29. mast_center_aquarium_20260810T191243.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:12:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:12:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:12:43 UTC</span></time></p>
                   <p>fish: 7 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -639,7 +595,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed other_taxon_candidate" data-detection-id="1f5447ee18703d01">
               <div class="card-head">
                 <div>
-                  <h2>30. mast_center_aquarium_20260810T191442.ts</h2>
+                  <h2>30. mast_center_aquarium_20260810T191442.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:14:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:14:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:14:42 UTC</span></time></p>
                   <p>fish: 2 · model_conflict_suppressed: 1 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -656,7 +612,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed other_taxon_candidate" data-detection-id="5fb24894b5768294">
               <div class="card-head">
                 <div>
-                  <h2>31. mast_center_aquarium_20260810T191544.ts</h2>
+                  <h2>31. mast_center_aquarium_20260810T191544.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:15:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:15:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:15:44 UTC</span></time></p>
                   <p>fish: 6 · model_conflict_suppressed: 1 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -673,7 +629,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>32. mast_center_aquarium_20260810T191643.ts</h2>
+                  <h2>32. mast_center_aquarium_20260810T191643.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:16:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:16:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:16:43 UTC</span></time></p>
                   <p>fish: 5</p>
                 </div>
                 
@@ -690,7 +646,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>33. mast_center_aquarium_20260810T191743.ts</h2>
+                  <h2>33. mast_center_aquarium_20260810T191743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:17:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:17:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:17:43 UTC</span></time></p>
                   <p>fish: 86 · fish_world_marine_conflict: 16 · model_conflict_suppressed: 2</p>
                 </div>
                 
@@ -707,7 +663,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>34. mast_center_aquarium_20260810T191843.ts</h2>
+                  <h2>34. mast_center_aquarium_20260810T191843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:18:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:18:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:18:43 UTC</span></time></p>
                   <p>fish: 9 · fish_world_marine_conflict: 2 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -724,7 +680,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>35. mast_center_aquarium_20260810T191941.ts</h2>
+                  <h2>35. mast_center_aquarium_20260810T191941.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:19:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:19:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:19:41 UTC</span></time></p>
                   <p>fish: 5</p>
                 </div>
                 
@@ -741,7 +697,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict">
               <div class="card-head">
                 <div>
-                  <h2>36. mast_center_aquarium_20260810T192044.ts</h2>
+                  <h2>36. mast_center_aquarium_20260810T192044.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:20:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:20:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:20:44 UTC</span></time></p>
                   <p>fish: 58 · fish_world_marine_conflict: 11</p>
                 </div>
                 
@@ -758,7 +714,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish other_taxon_candidate" data-detection-id="4baf44ffd6541fc1">
               <div class="card-head">
                 <div>
-                  <h2>37. mast_center_aquarium_20260810T192143.ts</h2>
+                  <h2>37. mast_center_aquarium_20260810T192143.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:21:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:21:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:21:43 UTC</span></time></p>
                   <p>fish: 2 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -775,7 +731,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>38. mast_center_aquarium_20260810T192240.ts</h2>
+                  <h2>38. mast_center_aquarium_20260810T192240.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:22:40Z"><span class="stamp-local">Mon 10 Aug 2026, 12:22:40 pm PDT</span><span class="stamp-utc">2026-08-10 19:22:40 UTC</span></time></p>
                   <p>fish: 4</p>
                 </div>
                 
@@ -792,7 +748,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate" data-detection-id="8fdcfaa877e6e5c4">
               <div class="card-head">
                 <div>
-                  <h2>39. mast_center_aquarium_20260810T192342.ts</h2>
+                  <h2>39. mast_center_aquarium_20260810T192342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:23:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:23:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:23:42 UTC</span></time></p>
                   <p>fish: 22 · fish_world_marine_conflict: 4 · model_conflict_suppressed: 3 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -809,7 +765,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate distractor" data-detection-id="722ab482a12691c2">
               <div class="card-head">
                 <div>
-                  <h2>40. mast_center_aquarium_20260810T192443.ts</h2>
+                  <h2>40. mast_center_aquarium_20260810T192443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:24:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:24:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:24:43 UTC</span></time></p>
                   <p>fish: 36 · fish_world_marine_conflict: 22 · model_conflict_suppressed: 9 · other_taxon_candidate: 4 · distractor: 2</p>
                 </div>
                 
@@ -826,7 +782,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor other_taxon_candidate" data-detection-id="07a495e418c5fbf7">
               <div class="card-head">
                 <div>
-                  <h2>41. mast_center_aquarium_20260810T192643.ts</h2>
+                  <h2>41. mast_center_aquarium_20260810T192643.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:26:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:26:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:26:43 UTC</span></time></p>
                   <p>fish: 86 · fish_world_marine_conflict: 58 · model_conflict_suppressed: 16 · distractor: 1 · other_taxon_candidate: 12</p>
                 </div>
                 
@@ -843,7 +799,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate" data-detection-id="55e745a9e622404b">
               <div class="card-head">
                 <div>
-                  <h2>42. mast_center_aquarium_20260810T192841.ts</h2>
+                  <h2>42. mast_center_aquarium_20260810T192841.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:28:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:28:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:28:41 UTC</span></time></p>
                   <p>fish: 78 · fish_world_marine_conflict: 42 · model_conflict_suppressed: 3 · other_taxon_candidate: 3</p>
                 </div>
                 
@@ -860,7 +816,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>43. mast_center_aquarium_20260810T193143.ts</h2>
+                  <h2>43. mast_center_aquarium_20260810T193143.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:31:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:31:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:31:43 UTC</span></time></p>
                   <p>fish: 10 · distractor: 1</p>
                 </div>
                 
@@ -877,7 +833,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor other_taxon_candidate" data-detection-id="71efac009f2d411a">
               <div class="card-head">
                 <div>
-                  <h2>44. mast_center_aquarium_20260810T193242.ts</h2>
+                  <h2>44. mast_center_aquarium_20260810T193242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:32:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:32:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:32:42 UTC</span></time></p>
                   <p>fish: 32 · fish_world_marine_conflict: 6 · model_conflict_suppressed: 6 · distractor: 9 · other_taxon_candidate: 9</p>
                 </div>
                 
@@ -894,7 +850,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>45. mast_center_aquarium_20260810T193342.ts</h2>
+                  <h2>45. mast_center_aquarium_20260810T193342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:33:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:33:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:33:42 UTC</span></time></p>
                   <p>fish: 32 · fish_world_marine_conflict: 14 · model_conflict_suppressed: 2 · distractor: 18</p>
                 </div>
                 
@@ -911,7 +867,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>46. mast_center_aquarium_20260810T193642.ts</h2>
+                  <h2>46. mast_center_aquarium_20260810T193642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:36:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:36:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:36:42 UTC</span></time></p>
                   <p>fish: 32 · fish_world_marine_conflict: 8 · model_conflict_suppressed: 8 · distractor: 11</p>
                 </div>
                 
@@ -928,7 +884,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>47. mast_center_aquarium_20260810T193743.ts</h2>
+                  <h2>47. mast_center_aquarium_20260810T193743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:37:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:37:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:37:43 UTC</span></time></p>
                   <p>fish: 6 · fish_world_marine_conflict: 3 · model_conflict_suppressed: 3 · distractor: 6</p>
                 </div>
                 
@@ -945,7 +901,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>48. mast_center_aquarium_20260810T193843.ts</h2>
+                  <h2>48. mast_center_aquarium_20260810T193843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:38:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:38:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:38:43 UTC</span></time></p>
                   <p>fish: 65 · fish_world_marine_conflict: 41 · model_conflict_suppressed: 2 · distractor: 7</p>
                 </div>
                 
@@ -962,7 +918,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>49. mast_center_aquarium_20260810T193943.ts</h2>
+                  <h2>49. mast_center_aquarium_20260810T193943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:39:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:39:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:39:43 UTC</span></time></p>
                   <p>fish: 70 · fish_world_marine_conflict: 37 · model_conflict_suppressed: 1 · distractor: 9</p>
                 </div>
                 
@@ -979,7 +935,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>50. mast_center_aquarium_20260810T194043.ts</h2>
+                  <h2>50. mast_center_aquarium_20260810T194043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:40:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:40:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:40:43 UTC</span></time></p>
                   <p>fish: 8 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 4 · distractor: 4</p>
                 </div>
                 
@@ -996,7 +952,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>51. mast_center_aquarium_20260810T194144.ts</h2>
+                  <h2>51. mast_center_aquarium_20260810T194144.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:41:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:41:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:41:44 UTC</span></time></p>
                   <p>fish: 18 · fish_world_marine_conflict: 3 · model_conflict_suppressed: 2 · distractor: 3</p>
                 </div>
                 
@@ -1013,7 +969,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict distractor">
               <div class="card-head">
                 <div>
-                  <h2>52. mast_center_aquarium_20260810T194244.ts</h2>
+                  <h2>52. mast_center_aquarium_20260810T194244.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:42:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:42:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:42:44 UTC</span></time></p>
                   <p>fish: 8 · fish_world_marine_conflict: 1 · distractor: 10</p>
                 </div>
                 
@@ -1030,7 +986,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>53. mast_center_aquarium_20260810T194443.ts</h2>
+                  <h2>53. mast_center_aquarium_20260810T194443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:44:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:44:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:44:43 UTC</span></time></p>
                   <p>fish: 6 · model_conflict_suppressed: 2 · distractor: 2</p>
                 </div>
                 
@@ -1047,7 +1003,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed other_taxon_candidate" data-detection-id="4d00a9b9f1a72f65">
               <div class="card-head">
                 <div>
-                  <h2>54. mast_center_aquarium_20260810T194543.ts</h2>
+                  <h2>54. mast_center_aquarium_20260810T194543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:45:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:45:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:45:43 UTC</span></time></p>
                   <p>fish: 4 · model_conflict_suppressed: 2 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -1064,7 +1020,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor other_taxon_candidate" data-detection-id="afcc03b374473906">
               <div class="card-head">
                 <div>
-                  <h2>55. mast_center_aquarium_20260810T194642.ts</h2>
+                  <h2>55. mast_center_aquarium_20260810T194642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:46:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:46:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:46:42 UTC</span></time></p>
                   <p>fish: 42 · fish_world_marine_conflict: 13 · model_conflict_suppressed: 2 · distractor: 1 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -1081,7 +1037,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>56. mast_center_aquarium_20260810T194744.ts</h2>
+                  <h2>56. mast_center_aquarium_20260810T194744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:47:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:47:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:47:44 UTC</span></time></p>
                   <p>fish: 14 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -1098,7 +1054,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed other_taxon_candidate" data-detection-id="a882295a0b86e8ad">
               <div class="card-head">
                 <div>
-                  <h2>57. mast_center_aquarium_20260810T194842.ts</h2>
+                  <h2>57. mast_center_aquarium_20260810T194842.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:48:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:48:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:48:42 UTC</span></time></p>
                   <p>fish: 88 · fish_world_marine_conflict: 23 · model_conflict_suppressed: 2 · other_taxon_candidate: 2</p>
                 </div>
                 
@@ -1115,7 +1071,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict">
               <div class="card-head">
                 <div>
-                  <h2>58. mast_center_aquarium_20260810T194943.ts</h2>
+                  <h2>58. mast_center_aquarium_20260810T194943.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:49:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:49:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:49:43 UTC</span></time></p>
                   <p>fish: 12 · fish_world_marine_conflict: 1</p>
                 </div>
                 
@@ -1132,7 +1088,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict">
               <div class="card-head">
                 <div>
-                  <h2>59. mast_center_aquarium_20260810T195141.ts</h2>
+                  <h2>59. mast_center_aquarium_20260810T195141.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:51:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:51:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:51:41 UTC</span></time></p>
                   <p>fish: 4 · fish_world_marine_conflict: 1</p>
                 </div>
                 
@@ -1149,7 +1105,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>60. mast_center_aquarium_20260810T195243.ts</h2>
+                  <h2>60. mast_center_aquarium_20260810T195243.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:52:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:52:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:52:43 UTC</span></time></p>
                   <p>fish: 9 · distractor: 1</p>
                 </div>
                 
@@ -1166,7 +1122,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict distractor">
               <div class="card-head">
                 <div>
-                  <h2>61. mast_center_aquarium_20260810T195339.ts</h2>
+                  <h2>61. mast_center_aquarium_20260810T195339.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:53:39Z"><span class="stamp-local">Mon 10 Aug 2026, 12:53:39 pm PDT</span><span class="stamp-utc">2026-08-10 19:53:39 UTC</span></time></p>
                   <p>fish: 46 · fish_world_marine_conflict: 10 · distractor: 3</p>
                 </div>
                 
@@ -1183,7 +1139,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>62. mast_center_aquarium_20260810T195441.ts</h2>
+                  <h2>62. mast_center_aquarium_20260810T195441.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:54:41Z"><span class="stamp-local">Mon 10 Aug 2026, 12:54:41 pm PDT</span><span class="stamp-utc">2026-08-10 19:54:41 UTC</span></time></p>
                   <p>fish: 26 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 3</p>
                 </div>
                 
@@ -1200,7 +1156,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>63. mast_center_aquarium_20260810T195643.ts</h2>
+                  <h2>63. mast_center_aquarium_20260810T195643.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:56:43Z"><span class="stamp-local">Mon 10 Aug 2026, 12:56:43 pm PDT</span><span class="stamp-utc">2026-08-10 19:56:43 UTC</span></time></p>
                   <p>fish: 9</p>
                 </div>
                 
@@ -1217,7 +1173,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>64. mast_center_aquarium_20260810T195744.ts</h2>
+                  <h2>64. mast_center_aquarium_20260810T195744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:57:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:57:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:57:44 UTC</span></time></p>
                   <p>fish: 4 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 1 · distractor: 1</p>
                 </div>
                 
@@ -1234,7 +1190,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>65. mast_center_aquarium_20260810T195842.ts</h2>
+                  <h2>65. mast_center_aquarium_20260810T195842.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:58:42Z"><span class="stamp-local">Mon 10 Aug 2026, 12:58:42 pm PDT</span><span class="stamp-utc">2026-08-10 19:58:42 UTC</span></time></p>
                   <p>fish: 10 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -1251,7 +1207,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>66. mast_center_aquarium_20260810T195944.ts</h2>
+                  <h2>66. mast_center_aquarium_20260810T195944.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T19:59:44Z"><span class="stamp-local">Mon 10 Aug 2026, 12:59:44 pm PDT</span><span class="stamp-utc">2026-08-10 19:59:44 UTC</span></time></p>
                   <p>fish: 12 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -1268,7 +1224,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>67. mast_center_aquarium_20260810T200043.ts</h2>
+                  <h2>67. mast_center_aquarium_20260810T200043.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:00:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:00:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:00:43 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1285,7 +1241,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>68. mast_center_aquarium_20260810T200342.ts</h2>
+                  <h2>68. mast_center_aquarium_20260810T200342.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:03:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:03:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:03:42 UTC</span></time></p>
                   <p>fish: 6 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -1302,7 +1258,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>69. mast_center_aquarium_20260810T200443.ts</h2>
+                  <h2>69. mast_center_aquarium_20260810T200443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:04:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:04:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:04:43 UTC</span></time></p>
                   <p>fish: 5</p>
                 </div>
                 
@@ -1319,7 +1275,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>70. mast_center_aquarium_20260810T200543.ts</h2>
+                  <h2>70. mast_center_aquarium_20260810T200543.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:05:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:05:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:05:43 UTC</span></time></p>
                   <p>fish: 26</p>
                 </div>
                 
@@ -1336,7 +1292,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>71. mast_center_aquarium_20260810T200644.ts</h2>
+                  <h2>71. mast_center_aquarium_20260810T200644.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:06:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:06:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:06:44 UTC</span></time></p>
                   <p>fish: 6 · distractor: 1</p>
                 </div>
                 
@@ -1353,7 +1309,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>72. mast_center_aquarium_20260810T200743.ts</h2>
+                  <h2>72. mast_center_aquarium_20260810T200743.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:07:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:07:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:07:43 UTC</span></time></p>
                   <p>fish: 18 · distractor: 2</p>
                 </div>
                 
@@ -1370,7 +1326,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>73. mast_center_aquarium_20260810T200844.ts</h2>
+                  <h2>73. mast_center_aquarium_20260810T200844.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:08:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:08:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:08:44 UTC</span></time></p>
                   <p>fish: 6 · distractor: 3</p>
                 </div>
                 
@@ -1387,7 +1343,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor other_taxon_candidate" data-detection-id="a88829807d22c3a5">
               <div class="card-head">
                 <div>
-                  <h2>74. mast_center_aquarium_20260810T201143.ts</h2>
+                  <h2>74. mast_center_aquarium_20260810T201143.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:11:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:11:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:11:43 UTC</span></time></p>
                   <p>fish: 36 · fish_world_marine_conflict: 11 · model_conflict_suppressed: 3 · distractor: 12 · other_taxon_candidate: 2</p>
                 </div>
                 
@@ -1404,7 +1360,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>75. mast_center_aquarium_20260810T201344.ts</h2>
+                  <h2>75. mast_center_aquarium_20260810T201344.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:13:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:13:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:13:44 UTC</span></time></p>
                   <p>fish: 19 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 2 · distractor: 17</p>
                 </div>
                 
@@ -1421,7 +1377,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish other_taxon_candidate" data-detection-id="e2852c3b6602a1c1">
               <div class="card-head">
                 <div>
-                  <h2>76. mast_center_aquarium_20260810T201544.ts</h2>
+                  <h2>76. mast_center_aquarium_20260810T201544.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:15:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:15:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:15:44 UTC</span></time></p>
                   <p>fish: 5 · other_taxon_candidate: 1</p>
                 </div>
                 
@@ -1438,7 +1394,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed distractor">
               <div class="card-head">
                 <div>
-                  <h2>77. mast_center_aquarium_20260810T201642.ts</h2>
+                  <h2>77. mast_center_aquarium_20260810T201642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:16:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:16:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:16:42 UTC</span></time></p>
                   <p>fish: 52 · model_conflict_suppressed: 12 · distractor: 2</p>
                 </div>
                 
@@ -1455,7 +1411,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict distractor">
               <div class="card-head">
                 <div>
-                  <h2>78. mast_center_aquarium_20260810T201744.ts</h2>
+                  <h2>78. mast_center_aquarium_20260810T201744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:17:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:17:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:17:44 UTC</span></time></p>
                   <p>fish: 11 · fish_world_marine_conflict: 6 · distractor: 5</p>
                 </div>
                 
@@ -1472,7 +1428,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict distractor">
               <div class="card-head">
                 <div>
-                  <h2>79. mast_center_aquarium_20260810T201843.ts</h2>
+                  <h2>79. mast_center_aquarium_20260810T201843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:18:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:18:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:18:43 UTC</span></time></p>
                   <p>fish: 3 · fish_world_marine_conflict: 1 · distractor: 3</p>
                 </div>
                 
@@ -1489,7 +1445,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>80. mast_center_aquarium_20260810T202044.ts</h2>
+                  <h2>80. mast_center_aquarium_20260810T202044.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:20:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:20:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:20:44 UTC</span></time></p>
                   <p>fish: 5 · distractor: 3</p>
                 </div>
                 
@@ -1506,7 +1462,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>81. mast_center_aquarium_20260810T202140.ts</h2>
+                  <h2>81. mast_center_aquarium_20260810T202140.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:21:40Z"><span class="stamp-local">Mon 10 Aug 2026, 1:21:40 pm PDT</span><span class="stamp-utc">2026-08-10 20:21:40 UTC</span></time></p>
                   <p>fish: 3 · distractor: 1</p>
                 </div>
                 
@@ -1523,7 +1479,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>82. mast_center_aquarium_20260810T202242.ts</h2>
+                  <h2>82. mast_center_aquarium_20260810T202242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:22:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:22:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:22:42 UTC</span></time></p>
                   <p>fish: 2 · distractor: 1</p>
                 </div>
                 
@@ -1540,7 +1496,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>83. mast_center_aquarium_20260810T202343.ts</h2>
+                  <h2>83. mast_center_aquarium_20260810T202343.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:23:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:23:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:23:43 UTC</span></time></p>
                   <p>fish: 6 · distractor: 1</p>
                 </div>
                 
@@ -1557,7 +1513,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>84. mast_center_aquarium_20260810T202443.ts</h2>
+                  <h2>84. mast_center_aquarium_20260810T202443.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:24:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:24:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:24:43 UTC</span></time></p>
                   <p>fish: 2</p>
                 </div>
                 
@@ -1574,7 +1530,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish fish_world_marine_conflict model_conflict_suppressed">
               <div class="card-head">
                 <div>
-                  <h2>85. mast_center_aquarium_20260810T202540.ts</h2>
+                  <h2>85. mast_center_aquarium_20260810T202540.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:25:40Z"><span class="stamp-local">Mon 10 Aug 2026, 1:25:40 pm PDT</span><span class="stamp-utc">2026-08-10 20:25:40 UTC</span></time></p>
                   <p>fish: 4 · fish_world_marine_conflict: 1 · model_conflict_suppressed: 1</p>
                 </div>
                 
@@ -1591,7 +1547,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>86. mast_center_aquarium_20260810T202642.ts</h2>
+                  <h2>86. mast_center_aquarium_20260810T202642.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:26:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:26:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:26:42 UTC</span></time></p>
                   <p>fish: 8 · distractor: 1</p>
                 </div>
                 
@@ -1608,7 +1564,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>87. mast_center_aquarium_20260810T202742.ts</h2>
+                  <h2>87. mast_center_aquarium_20260810T202742.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:27:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:27:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:27:42 UTC</span></time></p>
                   <p>fish: 3 · distractor: 1</p>
                 </div>
                 
@@ -1625,7 +1581,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>88. mast_center_aquarium_20260810T202843.ts</h2>
+                  <h2>88. mast_center_aquarium_20260810T202843.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:28:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:28:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:28:43 UTC</span></time></p>
                   <p>fish: 3 · distractor: 4</p>
                 </div>
                 
@@ -1642,7 +1598,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>89. mast_center_aquarium_20260810T202944.ts</h2>
+                  <h2>89. mast_center_aquarium_20260810T202944.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:29:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:29:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:29:44 UTC</span></time></p>
                   <p>fish: 7</p>
                 </div>
                 
@@ -1659,7 +1615,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>90. mast_center_aquarium_20260810T203044.ts</h2>
+                  <h2>90. mast_center_aquarium_20260810T203044.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:30:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:30:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:30:44 UTC</span></time></p>
                   <p>fish: 2 · distractor: 2</p>
                 </div>
                 
@@ -1676,7 +1632,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish">
               <div class="card-head">
                 <div>
-                  <h2>91. mast_center_aquarium_20260810T203143.ts</h2>
+                  <h2>91. mast_center_aquarium_20260810T203143.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:31:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:31:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:31:43 UTC</span></time></p>
                   <p>fish: 3</p>
                 </div>
                 
@@ -1693,7 +1649,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>92. mast_center_aquarium_20260810T203242.ts</h2>
+                  <h2>92. mast_center_aquarium_20260810T203242.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:32:42Z"><span class="stamp-local">Mon 10 Aug 2026, 1:32:42 pm PDT</span><span class="stamp-utc">2026-08-10 20:32:42 UTC</span></time></p>
                   <p>fish: 2 · distractor: 3</p>
                 </div>
                 
@@ -1710,7 +1666,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>93. mast_center_aquarium_20260810T203343.ts</h2>
+                  <h2>93. mast_center_aquarium_20260810T203343.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:33:43Z"><span class="stamp-local">Mon 10 Aug 2026, 1:33:43 pm PDT</span><span class="stamp-utc">2026-08-10 20:33:43 UTC</span></time></p>
                   <p>fish: 2 · distractor: 1</p>
                 </div>
                 
@@ -1727,7 +1683,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>94. mast_center_aquarium_20260810T204744.ts</h2>
+                  <h2>94. mast_center_aquarium_20260810T204744.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:47:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:47:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:47:44 UTC</span></time></p>
                   <p>fish: 2 · distractor: 1</p>
                 </div>
                 
@@ -1744,7 +1700,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>95. mast_center_aquarium_20260810T204844.ts</h2>
+                  <h2>95. mast_center_aquarium_20260810T204844.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:48:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:48:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:48:44 UTC</span></time></p>
                   <p>fish: 3 · distractor: 1</p>
                 </div>
                 
@@ -1761,7 +1717,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish model_conflict_suppressed other_taxon_candidate distractor" data-detection-id="54abb584376d0f3c">
               <div class="card-head">
                 <div>
-                  <h2>96. mast_center_aquarium_20260810T204945.ts</h2>
+                  <h2>96. mast_center_aquarium_20260810T204945.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:49:45Z"><span class="stamp-local">Mon 10 Aug 2026, 1:49:45 pm PDT</span><span class="stamp-utc">2026-08-10 20:49:45 UTC</span></time></p>
                   <p>fish: 30 · model_conflict_suppressed: 2 · other_taxon_candidate: 2 · distractor: 1</p>
                 </div>
                 
@@ -1778,7 +1734,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="fish distractor">
               <div class="card-head">
                 <div>
-                  <h2>97. mast_center_aquarium_20260810T205046.ts</h2>
+                  <h2>97. mast_center_aquarium_20260810T205046.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:50:46Z"><span class="stamp-local">Mon 10 Aug 2026, 1:50:46 pm PDT</span><span class="stamp-utc">2026-08-10 20:50:46 UTC</span></time></p>
                   <p>fish: 1 · distractor: 3</p>
                 </div>
                 
@@ -1795,7 +1751,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>98. mast_center_aquarium_20260810T204545.ts</h2>
+                  <h2>98. mast_center_aquarium_20260810T204545.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:45:45Z"><span class="stamp-local">Mon 10 Aug 2026, 1:45:45 pm PDT</span><span class="stamp-utc">2026-08-10 20:45:45 UTC</span></time></p>
                   <p>distractor: 1</p>
                 </div>
                 
@@ -1812,7 +1768,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>99. mast_center_aquarium_20260810T204644.ts</h2>
+                  <h2>99. mast_center_aquarium_20260810T204644.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:46:44Z"><span class="stamp-local">Mon 10 Aug 2026, 1:46:44 pm PDT</span><span class="stamp-utc">2026-08-10 20:46:44 UTC</span></time></p>
                   <p>distractor: 1</p>
                 </div>
                 
@@ -1829,7 +1785,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>100. mast_center_aquarium_20260810T205226.ts</h2>
+                  <h2>100. mast_center_aquarium_20260810T205226.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:52:26Z"><span class="stamp-local">Mon 10 Aug 2026, 1:52:26 pm PDT</span><span class="stamp-utc">2026-08-10 20:52:26 UTC</span></time></p>
                   <p>distractor: 1</p>
                 </div>
                 
@@ -1846,7 +1802,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>101. mast_center_aquarium_20260810T205322.ts</h2>
+                  <h2>101. mast_center_aquarium_20260810T205322.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:53:22Z"><span class="stamp-local">Mon 10 Aug 2026, 1:53:22 pm PDT</span><span class="stamp-utc">2026-08-10 20:53:22 UTC</span></time></p>
                   <p>distractor: 2</p>
                 </div>
                 
@@ -1863,7 +1819,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>102. mast_center_aquarium_20260810T205417.ts</h2>
+                  <h2>102. mast_center_aquarium_20260810T205417.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:54:17Z"><span class="stamp-local">Mon 10 Aug 2026, 1:54:17 pm PDT</span><span class="stamp-utc">2026-08-10 20:54:17 UTC</span></time></p>
                   <p>distractor: 1</p>
                 </div>
                 
@@ -1880,7 +1836,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>103. mast_center_aquarium_20260810T205521.ts</h2>
+                  <h2>103. mast_center_aquarium_20260810T205521.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:55:21Z"><span class="stamp-local">Mon 10 Aug 2026, 1:55:21 pm PDT</span><span class="stamp-utc">2026-08-10 20:55:21 UTC</span></time></p>
                   <p>distractor: 1</p>
                 </div>
                 
@@ -1897,7 +1853,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>104. mast_center_aquarium_20260810T205638.ts</h2>
+                  <h2>104. mast_center_aquarium_20260810T205638.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:56:38Z"><span class="stamp-local">Mon 10 Aug 2026, 1:56:38 pm PDT</span><span class="stamp-utc">2026-08-10 20:56:38 UTC</span></time></p>
                   <p>distractor: 4</p>
                 </div>
                 
@@ -1914,7 +1870,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>105. mast_center_aquarium_20260810T205734.ts</h2>
+                  <h2>105. mast_center_aquarium_20260810T205734.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:57:34Z"><span class="stamp-local">Mon 10 Aug 2026, 1:57:34 pm PDT</span><span class="stamp-utc">2026-08-10 20:57:34 UTC</span></time></p>
                   <p>distractor: 2</p>
                 </div>
                 
@@ -1931,7 +1887,7 @@ body.wr-active { padding-bottom: 4.5rem; }
             <article class="card" data-labels="distractor">
               <div class="card-head">
                 <div>
-                  <h2>106. mast_center_aquarium_20260810T205956.ts</h2>
+                  <h2>106. mast_center_aquarium_20260810T205956.ts</h2><p class="meta"><time class="stamp" datetime="2026-08-10T20:59:56Z"><span class="stamp-local">Mon 10 Aug 2026, 1:59:56 pm PDT</span><span class="stamp-utc">2026-08-10 20:59:56 UTC</span></time></p>
                   <p>distractor: 3</p>
                 </div>
                 
