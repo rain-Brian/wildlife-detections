@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T23:08:51+00:00",
+  "generated_at": "2026-09-10T21:25:38+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 12,
+    "reports": 17,
     "featured": 13,
     "reviewed": 5,
-    "usable_hours": 1487.7,
-    "days_covered": 33
+    "usable_hours": 1695.8,
+    "days_covered": 36
   },
   "featured_findings": [
     {
@@ -253,6 +253,106 @@
         {
           "model_name": "salish-sea-ecotype-classifier",
           "model_version": "unspecified",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-08",
+      "title": "NPS cameras, 2026-09-08",
+      "generated_at": "2026-09-10T21:20:30+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-06",
+      "title": "NPS cameras, 2026-09-06",
+      "generated_at": "2026-09-10T21:20:29+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-08",
+      "title": "Orcasound hydrophones, 2026-09-08",
+      "generated_at": "2026-09-10T21:18:23+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "71 hours usable, 1 day",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-07",
+      "title": "Orcasound hydrophones, 2026-09-07",
+      "generated_at": "2026-09-10T21:17:10+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "65 hours usable, 1 day",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": null,
+          "license": null,
+          "lineage": null,
+          "caveat": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-06",
+      "title": "Orcasound hydrophones, 2026-09-06",
+      "generated_at": "2026-09-10T21:16:29+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "71 hours usable, 1 day",
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
           "code_commit": null,
           "license": null,
           "lineage": null,

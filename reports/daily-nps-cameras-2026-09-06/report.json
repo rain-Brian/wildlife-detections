@@ -1,0 +1,97 @@
+{
+  "report_id": "daily-nps-cameras-2026-09-06",
+  "title": "NPS cameras, 2026-09-06",
+  "schema_version": 1,
+  "generated_at": "2026-09-10T21:20:29+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "nps",
+      "camera": "sunrise_mountain",
+      "label": "NPS Sunrise Mountain",
+      "kind": "fixed_camera",
+      "location": null
+    },
+    {
+      "feed": "nps",
+      "camera": "west",
+      "label": "NPS West",
+      "kind": "fixed_camera",
+      "location": null
+    }
+  ],
+  "models": [
+    {
+      "model_name": "megadetector-nps",
+      "model_version": "MegaDetectorV6MIT",
+      "code_commit": null,
+      "license": null,
+      "lineage": null,
+      "caveat": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "megadetector-nps-nps-20260906-sunrise_mountain-20260906",
+    "megadetector-nps-nps-20260906-west-20260906"
+  ],
+  "window": {
+    "start_utc": "2026-09-06",
+    "end_utc": "2026-09-06",
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 8,
+    "assets_bytes": 245364,
+    "assets_deduplicated": 8,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "windows_analysed": 0,
+    "frames_analysed": 2740,
+    "windows_by_camera": {
+      "sunrise_mountain": 1384,
+      "west": 1356
+    },
+    "days_covered": 1,
+    "source_paths_unparsable": 0,
+    "model_candidates": 8,
+    "camera_days": 2,
+    "positive_definition": "a MegaDetector box that survived the geometric scene filter as a candidate, not a frame and not an animal",
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "nps/sunrise_mountain",
+      "holder": "National Park Service, Mount Rainier National Park",
+      "terms": "US Government work, public domain (17 U.S.C. 105)",
+      "terms_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "source_url": "https://www.nps.gov/webcams-mora/SunriseMtn.jpg",
+      "attribution": "National Park Service, Mount Rainier National Park",
+      "attribution_url": "https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm",
+      "derivatives_license": null,
+      "commercial_use": "permitted",
+      "verified_on": "2026-08-31"
+    },
+    {
+      "feed": "nps/west",
+      "holder": "National Park Service, Mount Rainier National Park",
+      "terms": "US Government work, public domain (17 U.S.C. 105)",
+      "terms_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "source_url": "https://www.nps.gov/webcams-mora/west.jpg",
+      "attribution": "National Park Service, Mount Rainier National Park",
+      "attribution_url": "https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm",
+      "derivatives_license": null,
+      "commercial_use": "permitted",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [],
+  "taxonomy": [],
+  "review_status": "model candidate",
+  "series": {},
+  "evidence_assets": [],
+  "media_quality": {},
+  "model_refresh": {},
+  "quality": {},
+  "redaction_allowances": []
+}
