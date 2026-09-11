@@ -13,6 +13,12 @@
   --accent: #0d6b78;
   --warn-bg: #fff8e8; --warn-line: #f0e0bd; --warn-ink: #6f5a28;
   --good-bg: #eef7f0; --good-line: #cfe6d6; --good-ink: #2c5f3d;
+  --masthead-bg: #0e2a3a; --masthead-bg-2: #123b4f;
+  --masthead-ink: #f2f6f7; --masthead-muted: #a9c3cf; --masthead-accent: #6fd3e0;
+  --src-orcasound: #2a78d6; --src-youtube: #157f6d; --src-nps: #9a5b1b; --mark-ink: #ffffff;
+  --status-reviewed: var(--accent); --status-classification: var(--series-1);
+  --fs-xs: 11.5px; --fs-sm: 13px; --fs-base: 15.5px; --fs-md: 17px; --fs-lg: 21px;
+  --fs-xl: clamp(28px, 4.4vw, 38px);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -24,6 +30,9 @@
     --accent: #5bbcc9;
     --warn-bg: #2a2415; --warn-line: #4d4327; --warn-ink: #e0cf9f;
     --good-bg: #16241a; --good-line: #2b4433; --good-ink: #a6d3b4;
+    --masthead-bg: #0a1d29; --masthead-bg-2: #0f2a3a;
+    --masthead-ink: #eef3f5; --masthead-muted: #93adb9; --masthead-accent: #7fdbe6;
+    --src-orcasound: #3987e5; --src-youtube: #3fbfa8; --src-nps: #d29a5a; --mark-ink: #121211;
   }
 }
 :root[data-theme="dark"] {
@@ -35,6 +44,9 @@
   --accent: #5bbcc9;
   --warn-bg: #2a2415; --warn-line: #4d4327; --warn-ink: #e0cf9f;
   --good-bg: #16241a; --good-line: #2b4433; --good-ink: #a6d3b4;
+  --masthead-bg: #0a1d29; --masthead-bg-2: #0f2a3a;
+  --masthead-ink: #eef3f5; --masthead-muted: #93adb9; --masthead-accent: #7fdbe6;
+  --src-orcasound: #3987e5; --src-youtube: #3fbfa8; --src-nps: #d29a5a; --mark-ink: #121211;
 }
 
 /* ---------- base ---------- */
@@ -89,14 +101,14 @@ img, video { max-width: 100%; }
   font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
   color: var(--text-muted); margin: 0 0 14px; font-weight: 500;
 }
-h1 { margin: 0 0 14px; font-size: clamp(28px, 4.4vw, 38px); line-height: 1.12;
+h1 { margin: 0 0 14px; font-size: var(--fs-xl); line-height: 1.12;
   letter-spacing: -0.02em; font-weight: 650; }
 p.lede, .tagline { font-size: 17.5px; max-width: 64ch; color: var(--text-secondary);
   margin: 0; line-height: 1.55; }
 
 /* ---------- flow ---------- */
 h2 {
-  margin: 54px 0 4px; font-size: 21px; letter-spacing: -0.01em; font-weight: 620;
+  margin: 54px 0 4px; font-size: var(--fs-lg); letter-spacing: -0.01em; font-weight: 620;
   padding-top: 18px; border-top: 1px solid var(--line);
 }
 h3 { margin: 30px 0 6px; font-size: 15.5px; font-weight: 620; }
@@ -339,9 +351,82 @@ figure.det .badge { border: 0; padding: 2px 8px; color: #fff; font-weight: 600; 
 figure.det[data-verdict="candidate"] { border: 1px solid var(--line-strong); }
 figure.det[data-verdict="static_object"], figure.det[data-verdict="above_treeline"] { opacity: .72; }
 
-/* ---------- landing page ---------- */
-.family-landing .wrap { width: min(1120px, calc(100vw - 40px)); padding: 34px 0 54px; }
-.family-landing header { background: none; padding: 10px 0 24px; }
+/* ---------- source colour ---------- */
+.src-orcasound { --src: var(--src-orcasound); }
+.src-youtube { --src: var(--src-youtube); }
+.src-nps { --src: var(--src-nps); }
+
+/* ---------- site nav ---------- */
+/* One band on every page, restyle puts it there. Its inner container is
+   site-nav-inner, not wrap, because restyle reads the layout idiom off the
+   literal class="wrap"; the width follows the page family instead. */
+.site-nav {
+  background: var(--masthead-bg); color: var(--masthead-ink);
+  border-bottom: 1px solid var(--masthead-bg-2);
+}
+.site-nav-inner {
+  width: min(880px, calc(100vw - 44px)); margin: 0 auto; display: flex; gap: 22px;
+  align-items: stretch; overflow-x: auto; white-space: nowrap; scrollbar-width: none;
+  min-height: 44px; font-size: var(--fs-sm);
+}
+.site-nav-inner::-webkit-scrollbar { display: none; }
+.site-nav a {
+  color: var(--masthead-muted); text-decoration: none; display: inline-flex;
+  align-items: center; padding: 0 2px; border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+}
+.site-nav a:hover { color: var(--masthead-ink); }
+.site-nav a[aria-current="page"] { color: var(--masthead-ink); border-bottom-color: var(--src, var(--masthead-accent)); }
+.site-nav-home { font-weight: 650; color: var(--masthead-ink); margin-right: 6px; }
+.family-landing .site-nav-inner, .family-hub .site-nav-inner { width: min(1120px, calc(100vw - 40px)); }
+.family-sheet .site-nav-inner { width: min(1180px, calc(100vw - 44px)); }
+.layout-flow .site-nav-inner { width: auto; max-width: 1120px; padding: 0 20px; }
+.family-sheet.layout-flow .site-nav-inner { max-width: 1440px; }
+/* ---------- masthead band ---------- */
+/* header.masthead, not .masthead: `.layout-wrap header` above is 0,1,1 and a
+   bare class would lose to it. Dark in both themes, see the module docstring. */
+header.masthead {
+  background: linear-gradient(135deg, var(--masthead-bg) 0%, var(--masthead-bg-2) 100%);
+  color: var(--masthead-ink); border-bottom: 0; padding: 30px 0 26px;
+}
+header.masthead-hub { border-top: 4px solid var(--src, var(--masthead-accent)); }
+.masthead .kicker { color: var(--masthead-muted); margin: 0 0 10px; }
+.masthead .kicker a { color: inherit; text-decoration: none; }
+.masthead .kicker a:hover { text-decoration: underline; }
+.masthead h1 { color: var(--masthead-ink); margin: 0 0 10px; }
+.masthead .tagline, .masthead p.lede {
+  color: var(--masthead-muted); font-size: var(--fs-md); max-width: 70ch;
+}
+.masthead a { color: var(--masthead-accent); }
+.stat-row {
+  display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 20px 0 0;
+  font-size: var(--fs-sm); color: var(--masthead-muted); align-items: baseline;
+}
+.stat-row b {
+  font-size: 22px; color: var(--masthead-accent); font-weight: 650;
+  letter-spacing: -0.01em; margin-right: 3px; font-variant-numeric: tabular-nums;
+}
+.stat-row .stat-note { flex-basis: 100%; font-size: var(--fs-xs); opacity: .85; }
+
+/* ---------- landing page and hubs ---------- */
+.family-landing .wrap, .family-hub .wrap { width: min(1120px, calc(100vw - 40px)); }
+.family-landing > .wrap, .family-hub > .wrap { padding: 4px 0 54px; }
+
+/* A heading with its own one-line key beside it. The first section on the
+   page sits directly under the masthead band and needs no rule above it. */
+.section-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 4px 18px; margin: 44px 0 12px; padding-top: 18px; border-top: 1px solid var(--line);
+}
+.section-head h2 { margin: 0; padding: 0; border: 0; }
+.section-head .key { margin: 0; font-size: var(--fs-xs); color: var(--text-muted); max-width: none; }
+.section-head .key code { font-size: 11px; }
+section.featured .section-head { margin-top: 20px; padding-top: 0; border-top: 0; }
+.key-reviewed, .key-candidate {
+  display: inline-block; border-radius: 4px; padding: 0 6px; color: var(--text-secondary);
+}
+.key-reviewed { border: 2px solid var(--accent); }
+.key-candidate { border: 1px dashed var(--line-strong); }
 
 /* Facets, one labelled row per axis. The nine pills used to sit in one
    undifferentiated row mixing domain, review status and data quality, so no
@@ -361,6 +446,7 @@ figure.det[data-verdict="static_object"], figure.det[data-verdict="above_treelin
 .facet button.active { background: var(--accent); color: var(--surface-1); border-color: var(--accent); }
 .facet button .n { opacity: .65; font-size: 11.5px; margin-left: 5px; }
 
+/* ---------- featured findings ---------- */
 .findings { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
 .finding {
   background: var(--surface-1); border: 1px solid var(--line);
@@ -386,23 +472,127 @@ figure.det[data-verdict="static_object"], figure.det[data-verdict="above_treelin
   font-weight: 620;
 }
 
-.series-group { margin: 26px 0 0; }
-.series-group > h3 {
-  margin: 0 0 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--text-muted); border-bottom: 1px solid var(--line); padding-bottom: 7px;
+/* The strip: the leading findings in one row that scrolls sideways, so the
+   report list is a screen away instead of three. The cards are the same
+   markup as the grid, so reviewed stays solid and model output stays dashed;
+   the strip only hides the definition list and clamps the summary. */
+.featured-strip {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 2px 2px 8px; margin: 0 -2px; scrollbar-width: thin;
 }
-.sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.featured-strip > .finding { flex: 0 0 calc((100% - 48px) / 5); scroll-snap-align: start; min-width: 0; }
+.featured-strip .finding img, .featured-strip .finding video { aspect-ratio: 16 / 9; }
+.featured-strip .finding dl { display: none; }
+.featured-strip .finding h3 { font-size: var(--fs-sm); }
+.featured-strip .finding p {
+  font-size: 12.5px; display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.featured-strip .finding .tags span:nth-child(n+3) { display: none; }
+.featured-strip .finding audio { margin-top: 10px; }
+/* A finding with audio or no media at all gets a panel where the picture
+   would be, labelled with its domain, so the row keeps its rhythm. */
+.featured-strip .finding:not(:has(img, video))::before {
+  content: attr(data-domain); display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 16 / 9; letter-spacing: .1em; text-transform: uppercase;
+  font-size: var(--fs-xs); font-weight: 600; color: var(--masthead-accent);
+  background: linear-gradient(135deg, var(--masthead-bg) 0%, var(--masthead-bg-2) 100%);
+}
+.featured-more { margin: 2px 0 0; }
+.featured-more > summary {
+  cursor: pointer; font-size: var(--fs-sm); font-weight: 600; color: var(--accent);
+  padding: 6px 0; list-style: none;
+}
+.featured-more > summary::-webkit-details-marker { display: none; }
+.featured-more > summary::before {
+  content: "\25b8"; display: inline-block; margin-right: 8px; color: var(--text-muted);
+  font-size: 12px; transition: transform .12s;
+}
+.featured-more[open] > summary::before { transform: rotate(90deg); }
+.featured-more .facets { margin-top: 12px; }
+
+/* ---------- the report list ---------- */
+.list-filter { margin: 0 0 14px; }
+.report-list { display: grid; gap: 22px; }
+h3.month {
+  margin: 0 0 6px; font-size: var(--fs-xs); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 600;
+}
+ol.rows {
+  list-style: none; margin: 0; padding: 0; max-width: none; color: inherit;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface-1); overflow: hidden;
+}
+.report-row {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  align-items: center; gap: 6px 14px; margin: 0; padding: 10px 14px 10px 11px;
+  border-left: 3px solid var(--src, var(--line-strong)); border-bottom: 1px solid var(--line);
+}
+ol.rows > .report-row:last-child { border-bottom: 0; }
+.report-row:hover { background: var(--surface-2); }
+.row-main { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.row-title {
+  font-size: var(--fs-base); font-weight: 620; color: var(--text-primary);
+  text-decoration: none; line-height: 1.3;
+}
+.row-title:hover { color: var(--accent); text-decoration: underline; }
+.row-meta {
+  font-size: var(--fs-xs); color: var(--text-muted);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.series-mark { font-size: var(--fs-xs); color: var(--text-muted); }
+.row-when {
+  font-size: var(--fs-sm); color: var(--text-primary); font-weight: 560;
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+/* A date that was read from the title rather than the manifest window. */
+.row-when.is-inferred {
+  text-decoration: underline dotted var(--text-muted); text-underline-offset: 3px; cursor: help;
+}
+.row-published { font-size: var(--fs-xs); color: var(--text-muted); white-space: nowrap; }
+
+.source-mark {
+  display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+  width: 24px; height: 24px; border-radius: 6px; background: var(--src, var(--line-strong));
+  /* Dark ink on the dark-mode fills: white fell to 2.3:1 on the green. */
+  color: var(--mark-ink); font-size: var(--fs-xs); font-weight: 700; line-height: 1;
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Review status as a pill. Reviewed is the one filled pill on the page, the
+   same claim the solid card border makes in the featured strip. */
+.status-chip {
+  display: inline-block; font-size: var(--fs-xs); line-height: 1.3; border-radius: 999px;
+  padding: 3px 10px; border: 1px solid var(--line-strong); color: var(--text-secondary);
+  white-space: nowrap; font-weight: 560;
+}
+.status-reviewed {
+  background: var(--status-reviewed); border-color: var(--status-reviewed);
+  color: var(--surface-1); font-weight: 620;
+}
+.status-classification { border-color: var(--status-classification); color: var(--status-classification); }
+.status-gap { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn-ink); }
+.status-context { border-style: dashed; color: var(--text-muted); }
+.status-active { background: var(--good-bg); border-color: var(--good-line); color: var(--good-ink); }
+.status-inactive { border-style: dashed; color: var(--text-muted); }
+
+/* ---------- source summaries ---------- */
+.sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 12px; align-items: start; margin-bottom: 8px; }
-.source-card {
-  background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 16px;
+.source-summary {
+  background: var(--surface-1); border: 1px solid var(--line);
+  border-top: 3px solid var(--src, var(--line-strong)); border-radius: 10px; padding: 16px;
 }
-.source-card h3 { margin: 0 0 8px; font-size: 16px; }
-.source-card .meta { margin-bottom: 10px; }
-.report-cards { display: grid; gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); align-items: start; }
-.report-card { background: var(--surface-1); border: 1px solid var(--line);
-  border-radius: 10px; padding: 16px; }
-.report-card h3 { margin: 0 0 8px; font-size: 15.5px; line-height: 1.3; }
+.source-summary h3 { margin: 0 0 8px; font-size: var(--fs-md); display: flex; align-items: center; gap: 8px; }
+.source-summary h3 a { color: var(--text-primary); text-decoration: none; }
+.source-summary h3 a:hover { color: var(--accent); text-decoration: underline; }
+.source-summary p { font-size: var(--fs-sm); }
+.source-summary .meta { margin-bottom: 6px; }
+.source-summary .caveat, .model-caveats .caveat { font-size: 12.5px; padding: 8px 11px; margin: 8px 0 0; }
+.model-caveats { margin: 0 0 14px; max-width: 78ch; }
+.model-caveats .caveat:first-child { margin-top: 0; }
 dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0; font-size: 13px; }
 dt { color: var(--text-muted); }
 dd { margin: 0; color: var(--text-secondary); }
@@ -459,12 +649,13 @@ p.note.warn { border-left: 4px solid var(--warn-line); background: none; padding
 /* ---------- hub pages ---------- */
 .family-hub .nodes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px; align-items: start; }
-.node { background: var(--surface-1); border: 1px solid var(--line); border-radius: 10px; padding: 14px 15px; }
+.node { background: var(--surface-1); border: 1px solid var(--line);
+  border-top: 3px solid var(--src, var(--line-strong)); border-radius: 10px; padding: 14px 15px; }
 .node h3 { margin: 0 0 4px; font-size: 14.5px; }
-.node .coords { font-size: 11.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.node .coords { font-size: 11.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; margin: 0; }
+.node .node-state { margin: 8px 0 0; font-size: var(--fs-xs); }
+.node .node-state .meta { display: inline; margin: 0 0 0 6px; }
 .node .floor { font-size: 12.5px; color: var(--text-secondary); margin-top: 8px; }
-.crumb { font-size: 12.5px; color: var(--text-muted); margin: 0 0 14px; }
-.crumb a { color: var(--text-secondary); }
 
 /* ---------- footer ---------- */
 footer { color: var(--text-muted); font-size: 12.5px; padding: 34px 0 46px;
@@ -481,16 +672,31 @@ footer code { font-size: 11.5px; }
 [data-tip] { cursor: default; }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .featured-strip > .finding { flex-basis: calc((100% - 24px) / 3); }
+}
 @media (max-width: 720px) {
   .find-head { display: block; }
   .tag { display: inline-block; margin-top: 8px; }
   .facet > .facet-label { min-width: 100%; }
   .day > summary .peak { margin-left: 0; }
+  .section-head { display: block; }
+  /* Rows fold to two lines: the title, then date, status and publish date. */
+  .report-row { grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: start; }
+  .report-row .source-mark { grid-row: 1 / span 2; margin-top: 2px; }
+  .report-row .row-when, .report-row .status-chip, .report-row .row-published {
+    grid-column: 2; justify-self: start;
+  }
+  .report-row .row-when { margin-top: 2px; }
+  .row-meta { white-space: normal; }
 }
 @media (max-width: 620px) {
   .hero { gap: 14px; }
-  .cards, .findings, .report-cards { grid-template-columns: 1fr; }
+  .cards, .findings { grid-template-columns: 1fr; }
   h2 { margin-top: 40px; }
+  .featured-strip > .finding { flex-basis: 72vw; }
+  .stat-row { gap: 2px 16px; }
+  .stat-row b { font-size: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
