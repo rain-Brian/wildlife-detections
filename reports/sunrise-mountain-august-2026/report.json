@@ -177,5 +177,10 @@
   "review": {
     "display_decision": "Public gallery includes visually reviewed bear and deer evidence plus supporting context. High-confidence people, maintenance, and hiker false positives are withheld from the wildlife gallery.",
     "bear_status": "A visually reviewed black bear pair is featured from 2026-08-21T19:02:59Z."
+  },
+  "superseded_by": {
+    "report_id": "sunrise-mountain-2026-08-06-to-2026-09-10",
+    "reason": "It came from a detector reading each frame at 640 by 640 pixels, which missed animals such as the black bears of 21 August. Every frame from 6 August to 10 September 2026 has been reprocessed at 1,280 pixels and classified by species.",
+    "recorded_utc": "2026-09-11T22:44:20Z"
   }
 }

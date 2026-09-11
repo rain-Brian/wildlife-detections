@@ -1,0 +1,212 @@
+{
+  "report_id": "sunrise-mountain-2026-08-06-to-2026-09-10",
+  "title": "Sunrise Mountain wildlife, 6 August to 10 September 2026",
+  "schema_version": 1,
+  "generated_at": "2026-09-11T22:44:20+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "nps",
+      "camera": "sunrise_mountain",
+      "label": "NPS Sunrise Mountain",
+      "kind": "fixed_camera",
+      "location": {
+        "lat": 46.9145,
+        "lon": -121.6425,
+        "precision": "approximate",
+        "place": "Sunrise developed area, Mount Rainier National Park, Washington",
+        "country": "USA",
+        "admin1_region": "WA"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "megadetector-nps",
+      "model_version": "MDV6-mit-yolov9-e (1280 input)",
+      "code_commit": "ed253e84252cea5b9cd77922e89f60f94578a60d",
+      "license": "MIT",
+      "lineage": "microsoft/MegaDetector",
+      "caveat": "Detects that an animal is present, not which species it is."
+    },
+    {
+      "model_name": "speciesnet",
+      "model_version": "v4.0.3a",
+      "code_commit": "ed253e84252cea5b9cd77922e89f60f94578a60d",
+      "license": "Apache-2.0",
+      "lineage": "google/cameratrapai, PyTorch v4.0.3a",
+      "caveat": "Names the species in a MegaDetector box. At Sunrise its white-tailed deer labels are black-tailed deer, and an unnamed \"animal\" is usually a person crouching."
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260806",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260807",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260808",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260809",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260810",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260811",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260812",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260813",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260814",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260815",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260816",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260817",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260818",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260819",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260820",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260821",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260822",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260823",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260824",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260825",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260826",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260827",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260828",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260829",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260830",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260831",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260901",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260902",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260903",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260904",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260905",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260906",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260907",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260908",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260909",
+    "megadetector-nps-nps-backfill-20260910b-sunrise_mountain-20260910"
+  ],
+  "window": {
+    "start_utc": "2026-08-06",
+    "end_utc": "2026-09-10",
+    "usable_hours": null
+  },
+  "counts": {
+    "assets_bundled": 53,
+    "assets_bytes": 1227728,
+    "assets_deduplicated": 53,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "windows_analysed": 0,
+    "frames_analysed": 46494,
+    "windows_by_camera": {
+      "sunrise_mountain": 46494
+    },
+    "days_covered": 36,
+    "source_paths_unparsable": 0,
+    "source_frames": 46494,
+    "dark_frames_skipped": 17693,
+    "raw_model_detections": 85454,
+    "suppressed_static": 84215,
+    "model_candidates": 1028,
+    "classified_wildlife_candidates": 53,
+    "wildlife_sightings": 19,
+    "routed_people": 475,
+    "routed_unnamed_animal": 59,
+    "routed_nothing": 440,
+    "routed_vehicle": 0,
+    "excluded_by_hand": 1,
+    "camera_days": 36,
+    "sighting_gap_minutes": 30,
+    "positive_definition": "raw_model_detections counts MegaDetector boxes at a 1280 input before the scene filter. model_candidates counts the boxes that survived it. classified_wildlife_candidates counts candidates SpeciesNet named as a species, after exclusions made by hand; wildlife_sightings groups those crops into sightings separated by more than 30 minutes. None is reviewed.",
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "nps/sunrise_mountain",
+      "holder": "National Park Service, Mount Rainier National Park",
+      "terms": "US Government work, public domain (17 U.S.C. 105)",
+      "terms_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "source_url": "https://www.nps.gov/webcams-mora/SunriseMtn.jpg",
+      "attribution": "National Park Service, Mount Rainier National Park",
+      "attribution_url": "https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm",
+      "derivatives_license": null,
+      "commercial_use": "permitted",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [
+    {
+      "title": "Black bear at Sunrise Mountain",
+      "summary": "SpeciesNet labelled this american black bear at 0.97 on 2026-08-21 19:02:59 UTC; MegaDetector drew the box at 0.88. Unreviewed model output.",
+      "domain": "land",
+      "taxonomy": "terrestrial_mammal",
+      "review_status": "model candidate",
+      "rank": 0,
+      "source": "NPS Sunrise Mountain webcam",
+      "evidence": "classified crop from the source frame",
+      "media": {
+        "src": "reports/sunrise-mountain-2026-08-06-to-2026-09-10/assets/ee980847-sunrise_mountain_20260821T190259Z_1215_865.jpg"
+      }
+    },
+    {
+      "title": "Deer at Sunrise Mountain",
+      "summary": "SpeciesNet labelled this mule deer at 1.00 on 2026-08-21 14:17:19 UTC; MegaDetector drew the box at 0.88. Unreviewed model output.",
+      "domain": "land",
+      "taxonomy": "terrestrial_mammal",
+      "review_status": "model candidate",
+      "rank": 1,
+      "source": "NPS Sunrise Mountain webcam",
+      "evidence": "classified crop from the source frame",
+      "media": {
+        "src": "reports/sunrise-mountain-2026-08-06-to-2026-09-10/assets/b5826940-sunrise_mountain_20260821T141719Z_643_899.jpg"
+      }
+    },
+    {
+      "title": "Elk at Sunrise Mountain",
+      "summary": "SpeciesNet labelled this cervus species at 0.96 on 2026-09-04 14:40:39 UTC; MegaDetector drew the box at 0.87. Unreviewed model output.",
+      "domain": "land",
+      "taxonomy": "terrestrial_mammal",
+      "review_status": "model candidate",
+      "rank": 2,
+      "source": "NPS Sunrise Mountain webcam",
+      "evidence": "classified crop from the source frame",
+      "media": {
+        "src": "reports/sunrise-mountain-2026-08-06-to-2026-09-10/assets/52a3f687-sunrise_mountain_20260904T144039Z_1045_679.jpg"
+      }
+    }
+  ],
+  "taxonomy": [
+    "land",
+    "terrestrial_mammal"
+  ],
+  "review_status": "model candidate",
+  "series": {},
+  "evidence_assets": [
+    {
+      "kind": "image",
+      "path": "assets/ee980847-sunrise_mountain_20260821T190259Z_1215_865.jpg",
+      "featured": true
+    },
+    {
+      "kind": "image",
+      "path": "assets/b5826940-sunrise_mountain_20260821T141719Z_643_899.jpg",
+      "featured": true
+    },
+    {
+      "kind": "image",
+      "path": "assets/52a3f687-sunrise_mountain_20260904T144039Z_1045_679.jpg",
+      "featured": true
+    }
+  ],
+  "media_quality": {},
+  "model_refresh": {},
+  "quality": {
+    "selection_rule": "named species only, routed on the SpeciesNet label; people, unnamed animals, vehicles and empty or fixed-object crops are counted and not shown",
+    "manual_exclusions": [
+      {
+        "frame": "sunrise_mountain_20260814T185139Z.jpg",
+        "species": "red fox",
+        "box": [
+          648,
+          700,
+          690,
+          750
+        ],
+        "reason": "The crop shows a person at work in the meadow, not a fox."
+      }
+    ]
+  },
+  "redaction_allowances": []
+}
