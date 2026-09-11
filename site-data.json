@@ -1,30 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T21:54:55+00:00",
+  "generated_at": "2026-09-11T22:44:20+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 21,
-    "featured": 13,
+    "reports": 22,
+    "featured": 16,
     "reviewed": 5,
     "usable_hours": 1835.2,
-    "days_covered": 38
+    "days_covered": 41
   },
   "featured_findings": [
-    {
-      "title": "Black bears at Sunrise Mountain",
-      "summary": "A larger bear and smaller bear are visible together in the lower meadow on 2026-08-21 after source-window review.",
-      "domain": "land",
-      "review_status": "human reviewed",
-      "report_id": "sunrise-mountain-august-2026",
-      "report_title": "Sunrise Mountain, August 2026",
-      "media": {
-        "src": "reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg"
-      }
-    },
     {
       "title": "Harbour seal, reviewed",
       "summary": "Hind flippers are visible in the reviewed frame; this is the confirmed marine mammal example from the run.",
@@ -34,17 +23,6 @@
       "report_title": "MaST Center aquarium, marine review, August 2026",
       "media": {
         "src": "reports/mast-aquarium-2026-08/assets/82a00d46-harbor_seal_real.mp4"
-      }
-    },
-    {
-      "title": "Deer at Sunrise Mountain",
-      "summary": "MegaDetector surfaced the frame; the deer label comes from human review of the full-frame context.",
-      "domain": "land",
-      "review_status": "human reviewed",
-      "report_id": "sunrise-mountain-august-2026",
-      "report_title": "Sunrise Mountain, August 2026",
-      "media": {
-        "src": "reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg"
       }
     },
     {
@@ -59,6 +37,17 @@
       }
     },
     {
+      "title": "Black bears at Sunrise Mountain",
+      "summary": "A larger bear and smaller bear are visible together in the lower meadow on 2026-08-21 after source-window review.",
+      "domain": "land",
+      "review_status": "human reviewed",
+      "report_id": "sunrise-mountain-august-2026",
+      "report_title": "Sunrise Mountain, August 2026",
+      "media": {
+        "src": "reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260821T190259Z_bears_annotated.jpg"
+      }
+    },
+    {
       "title": "Large fish, reviewed false marine-mammal label",
       "summary": "A visible fish with dorsal fin was labeled harbor seal by the open-vocabulary pass.",
       "domain": "underwater video",
@@ -67,6 +56,17 @@
       "report_title": "MaST Center aquarium, marine review, August 2026",
       "media": {
         "src": "reports/mast-aquarium-2026-08/assets/de044d69-large_fish.mp4"
+      }
+    },
+    {
+      "title": "Deer at Sunrise Mountain",
+      "summary": "MegaDetector surfaced the frame; the deer label comes from human review of the full-frame context.",
+      "domain": "land",
+      "review_status": "human reviewed",
+      "report_id": "sunrise-mountain-august-2026",
+      "report_title": "Sunrise Mountain, August 2026",
+      "media": {
+        "src": "reports/sunrise-mountain-august-2026/assets/sunrise_mountain_20260825T021626Z_deer_annotated.jpg"
       }
     },
     {
@@ -111,6 +111,39 @@
       "report_title": "Salish Sea hydrophones, August 2026",
       "media": {
         "src": "reports/hydrophones-2026-08/assets/53d7e985-audioace0c20a4149.mp3"
+      }
+    },
+    {
+      "title": "Black bear at Sunrise Mountain",
+      "summary": "SpeciesNet labelled this american black bear at 0.97 on 2026-08-21 19:02:59 UTC; MegaDetector drew the box at 0.88. Unreviewed model output.",
+      "domain": "land",
+      "review_status": "model candidate",
+      "report_id": "sunrise-mountain-2026-08-06-to-2026-09-10",
+      "report_title": "Sunrise Mountain wildlife, 6 August to 10 September 2026",
+      "media": {
+        "src": "reports/sunrise-mountain-2026-08-06-to-2026-09-10/assets/ee980847-sunrise_mountain_20260821T190259Z_1215_865.jpg"
+      }
+    },
+    {
+      "title": "Deer at Sunrise Mountain",
+      "summary": "SpeciesNet labelled this mule deer at 1.00 on 2026-08-21 14:17:19 UTC; MegaDetector drew the box at 0.88. Unreviewed model output.",
+      "domain": "land",
+      "review_status": "model candidate",
+      "report_id": "sunrise-mountain-2026-08-06-to-2026-09-10",
+      "report_title": "Sunrise Mountain wildlife, 6 August to 10 September 2026",
+      "media": {
+        "src": "reports/sunrise-mountain-2026-08-06-to-2026-09-10/assets/b5826940-sunrise_mountain_20260821T141719Z_643_899.jpg"
+      }
+    },
+    {
+      "title": "Elk at Sunrise Mountain",
+      "summary": "SpeciesNet labelled this cervus species at 0.96 on 2026-09-04 14:40:39 UTC; MegaDetector drew the box at 0.87. Unreviewed model output.",
+      "domain": "land",
+      "review_status": "model candidate",
+      "report_id": "sunrise-mountain-2026-08-06-to-2026-09-10",
+      "report_title": "Sunrise Mountain wildlife, 6 August to 10 September 2026",
+      "media": {
+        "src": "reports/sunrise-mountain-2026-08-06-to-2026-09-10/assets/52a3f687-sunrise_mountain_20260904T144039Z_1045_679.jpg"
       }
     },
     {
@@ -204,6 +237,40 @@
           "license": "MIT",
           "lineage": "microsoft/MegaDetector",
           "caveat": "Detects that an animal is present, not which species it is."
+        }
+      ]
+    },
+    {
+      "report_id": "sunrise-mountain-2026-08-06-to-2026-09-10",
+      "title": "Sunrise Mountain wildlife, 6 August to 10 September 2026",
+      "generated_at": "2026-09-11T22:44:20+00:00",
+      "domains": [
+        "land",
+        "terrestrial_mammal"
+      ],
+      "coverage": "46,494 source frames",
+      "period": {
+        "start": "2026-08-06",
+        "end": "2026-09-10",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MDV6-mit-yolov9-e (1280 input)",
+          "code_commit": "ed253e84252cea5b9cd77922e89f60f94578a60d",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is."
+        },
+        {
+          "model_name": "speciesnet",
+          "model_version": "v4.0.3a",
+          "code_commit": "ed253e84252cea5b9cd77922e89f60f94578a60d",
+          "license": "Apache-2.0",
+          "lineage": "google/cameratrapai, PyTorch v4.0.3a",
+          "caveat": "Names the species in a MegaDetector box. At Sunrise its white-tailed deer labels are black-tailed deer, and an unnamed \"animal\" is usually a person crouching."
         }
       ]
     },
