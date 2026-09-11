@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T02:35:14+00:00",
+  "generated_at": "2026-09-11T21:54:55+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 17,
+    "reports": 21,
     "featured": 13,
     "reviewed": 5,
-    "usable_hours": 1695.8,
-    "days_covered": 36
+    "usable_hours": 1835.2,
+    "days_covered": 38
   },
   "featured_findings": [
     {
@@ -157,6 +157,106 @@
     }
   ],
   "reports": [
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-10",
+      "title": "Orcasound hydrophones, 2026-09-10",
+      "generated_at": "2026-09-11T21:54:54+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "71 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-10",
+        "end": "2026-09-10",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "b4be2812594360870dca65bba72a67e952fe0697",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-10",
+      "title": "NPS cameras, 2026-09-10",
+      "generated_at": "2026-09-11T21:54:55+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-10",
+        "end": "2026-09-10",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "b4be2812594360870dca65bba72a67e952fe0697",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is."
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-09",
+      "title": "Orcasound hydrophones, 2026-09-09",
+      "generated_at": "2026-09-11T21:54:13+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "68 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-09",
+        "end": "2026-09-09",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "b4be2812594360870dca65bba72a67e952fe0697",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-09",
+      "title": "NPS cameras, 2026-09-09",
+      "generated_at": "2026-09-11T21:54:54+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-09",
+        "end": "2026-09-09",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "b4be2812594360870dca65bba72a67e952fe0697",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is."
+        }
+      ]
+    },
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-08",
       "title": "Orcasound hydrophones, 2026-09-08",
