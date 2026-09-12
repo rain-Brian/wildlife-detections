@@ -2,7 +2,7 @@
   "report_id": "daily-orcasound-hydrophones-2026-09-08",
   "title": "Orcasound hydrophones, 2026-09-08",
   "schema_version": 1,
-  "generated_at": "2026-09-10T21:18:23+00:00",
+  "generated_at": "2026-09-12T00:30:55+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -47,10 +47,10 @@
     {
       "model_name": "orcahello-srkw",
       "model_version": "OrcaHello",
-      "code_commit": null,
-      "license": null,
-      "lineage": null,
-      "caveat": null
+      "code_commit": "f5a6fceb12a2fa074e7ea023b9bacebb5ff4771b",
+      "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+      "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+      "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
     }
   ],
   "floors": [],

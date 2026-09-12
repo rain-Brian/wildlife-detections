@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T22:44:20+00:00",
+  "generated_at": "2026-09-12T00:31:49+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -193,7 +193,7 @@
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-10",
       "title": "Orcasound hydrophones, 2026-09-10",
-      "generated_at": "2026-09-11T21:54:54+00:00",
+      "generated_at": "2026-09-12T00:31:49+00:00",
       "domains": [
         "hydrophone"
       ],
@@ -208,7 +208,7 @@
         {
           "model_name": "orcahello-srkw",
           "model_version": "OrcaHello",
-          "code_commit": "b4be2812594360870dca65bba72a67e952fe0697",
+          "code_commit": "f5a6fceb12a2fa074e7ea023b9bacebb5ff4771b",
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
@@ -277,7 +277,7 @@
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-09",
       "title": "Orcasound hydrophones, 2026-09-09",
-      "generated_at": "2026-09-11T21:54:13+00:00",
+      "generated_at": "2026-09-12T00:31:19+00:00",
       "domains": [
         "hydrophone"
       ],
@@ -292,7 +292,7 @@
         {
           "model_name": "orcahello-srkw",
           "model_version": "OrcaHello",
-          "code_commit": "b4be2812594360870dca65bba72a67e952fe0697",
+          "code_commit": "f5a6fceb12a2fa074e7ea023b9bacebb5ff4771b",
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
@@ -327,7 +327,7 @@
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-08",
       "title": "Orcasound hydrophones, 2026-09-08",
-      "generated_at": "2026-09-10T21:18:23+00:00",
+      "generated_at": "2026-09-12T00:30:55+00:00",
       "domains": [
         "hydrophone"
       ],
@@ -342,10 +342,10 @@
         {
           "model_name": "orcahello-srkw",
           "model_version": "OrcaHello",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
+          "code_commit": "f5a6fceb12a2fa074e7ea023b9bacebb5ff4771b",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
         }
       ]
     },
@@ -377,7 +377,7 @@
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-07",
       "title": "Orcasound hydrophones, 2026-09-07",
-      "generated_at": "2026-09-10T21:17:10+00:00",
+      "generated_at": "2026-09-12T00:30:03+00:00",
       "domains": [
         "hydrophone"
       ],
@@ -392,17 +392,17 @@
         {
           "model_name": "orcahello-srkw",
           "model_version": "OrcaHello",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
+          "code_commit": "f5a6fceb12a2fa074e7ea023b9bacebb5ff4771b",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
         }
       ]
     },
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-06",
       "title": "Orcasound hydrophones, 2026-09-06",
-      "generated_at": "2026-09-10T21:16:29+00:00",
+      "generated_at": "2026-09-12T00:29:22+00:00",
       "domains": [
         "hydrophone"
       ],
@@ -417,10 +417,10 @@
         {
           "model_name": "orcahello-srkw",
           "model_version": "OrcaHello",
-          "code_commit": null,
-          "license": null,
-          "lineage": null,
-          "caveat": null
+          "code_commit": "f5a6fceb12a2fa074e7ea023b9bacebb5ff4771b",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type."
         }
       ]
     },
