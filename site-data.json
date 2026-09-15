@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-14T22:55:26+00:00",
+  "generated_at": "2026-09-15T19:40:40+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
@@ -218,7 +218,7 @@
     {
       "report_id": "daily-nps-cameras-2026-09-13",
       "title": "NPS cameras, 2026-09-13",
-      "generated_at": "2026-09-14T19:11:59+00:00",
+      "generated_at": "2026-09-15T19:40:40+00:00",
       "domains": [
         "land"
       ],
@@ -233,10 +233,12 @@
         {
           "model_name": "megadetector-nps",
           "model_version": "MegaDetectorV6MIT",
-          "code_commit": "6c3434795f257200c721a22973b776524c46475a",
+          "code_commit": "8395c0ad78f0a5957ac01b79c1e319f13b10ea1c",
           "license": "MIT",
           "lineage": "microsoft/MegaDetector",
-          "caveat": "Detects that an animal is present, not which species it is."
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
         }
       ]
     },
