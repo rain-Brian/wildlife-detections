@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-15T21:40:07+00:00",
+  "generated_at": "2026-09-19T21:19:28+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 22,
+    "reports": 23,
     "featured": 16,
     "reviewed": 5,
     "usable_hours": 2120.6,
-    "days_covered": 44
+    "days_covered": 45
   },
   "featured_findings": [
     {
@@ -190,6 +190,33 @@
     }
   ],
   "reports": [
+    {
+      "report_id": "daily-nps-cameras-2026-09-16",
+      "title": "NPS cameras, 2026-09-16",
+      "generated_at": "2026-09-19T21:19:25+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-16",
+        "end": "2026-09-16",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "34219fec5c84f8eab735142d61f87bd252ea051b",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-13",
       "title": "Orcasound hydrophones, 2026-09-13",
