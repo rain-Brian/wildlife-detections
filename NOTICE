@@ -15,6 +15,15 @@ nps/west
   Source:      https://www.nps.gov/webcams-mora/west.jpg
   Attribution: National Park Service, Mount Rainier National Park (https://www.nps.gov/mora/learn/photosmultimedia/webcams.htm)
 
+orcasound/andrews_bay
+  Holder:      Orcasound
+  Terms:       CC BY-NC-SA 4.0
+  Terms URL:   https://creativecommons.org/licenses/by-nc-sa/4.0/
+  Source:      https://live.orcasound.net/listen/andrews-bay
+  Attribution: Orcasound (https://www.orcasound.net)
+  Derived work must be licensed: CC-BY-NC-SA-4.0
+  Commercial use: permission_required
+
 orcasound/bush_point
   Holder:      Orcasound
   Terms:       CC BY-NC-SA 4.0
@@ -38,6 +47,24 @@ orcasound/orcasound_lab
   Terms:       CC BY-NC-SA 4.0
   Terms URL:   https://creativecommons.org/licenses/by-nc-sa/4.0/
   Source:      https://live.orcasound.net/listen/orcasound-lab
+  Attribution: Orcasound (https://www.orcasound.net)
+  Derived work must be licensed: CC-BY-NC-SA-4.0
+  Commercial use: permission_required
+
+orcasound/port_townsend
+  Holder:      Orcasound
+  Terms:       CC BY-NC-SA 4.0
+  Terms URL:   https://creativecommons.org/licenses/by-nc-sa/4.0/
+  Source:      https://live.orcasound.net/listen/port-townsend
+  Attribution: Orcasound (https://www.orcasound.net)
+  Derived work must be licensed: CC-BY-NC-SA-4.0
+  Commercial use: permission_required
+
+orcasound/sunset_bay
+  Holder:      Orcasound
+  Terms:       CC BY-NC-SA 4.0
+  Terms URL:   https://creativecommons.org/licenses/by-nc-sa/4.0/
+  Source:      https://live.orcasound.net/listen/sunset-bay
   Attribution: Orcasound (https://www.orcasound.net)
   Derived work must be licensed: CC-BY-NC-SA-4.0
   Commercial use: permission_required
