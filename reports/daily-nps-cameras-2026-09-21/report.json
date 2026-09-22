@@ -2,7 +2,7 @@
   "report_id": "daily-nps-cameras-2026-09-21",
   "title": "NPS cameras, 2026-09-21",
   "schema_version": 2,
-  "generated_at": "2026-09-22T10:49:58+00:00",
+  "generated_at": "2026-09-22T22:24:21+00:00",
   "license": "CC-BY-4.0",
   "sites": [
     {
@@ -50,9 +50,9 @@
     "usable_hours": null
   },
   "counts": {
-    "assets_bundled": 374,
-    "assets_bytes": 9176589,
-    "assets_deduplicated": 374,
+    "assets_bundled": 370,
+    "assets_bytes": 9098877,
+    "assets_deduplicated": 370,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
     "windows_analysed": 0,
