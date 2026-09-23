@@ -1,8 +1,8 @@
 {
-  "report_id": "daily-orcasound-hydrophones-2026-09-17",
-  "title": "Orcasound hydrophones, 2026-09-17",
+  "report_id": "daily-orcasound-hydrophones-2026-09-22",
+  "title": "Orcasound hydrophones, 2026-09-22",
   "schema_version": 2,
-  "generated_at": "2026-09-23T01:34:15+00:00",
+  "generated_at": "2026-09-23T16:15:35+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -93,17 +93,17 @@
   ],
   "floors": [],
   "runs": [
-    "orcahello-srkw-orcasound-20260917-andrews_bay-20260917",
-    "orcahello-srkw-orcasound-20260917-bush_point-20260917",
-    "orcahello-srkw-orcasound-20260917-north_sjc-20260917",
-    "orcahello-srkw-orcasound-20260917-orcasound_lab-20260917",
-    "orcahello-srkw-orcasound-20260917-port_townsend-20260917",
-    "orcahello-srkw-orcasound-20260917-sunset_bay-20260917"
+    "orcahello-srkw-orcasound-20260922-andrews_bay-20260922",
+    "orcahello-srkw-orcasound-20260922-bush_point-20260922",
+    "orcahello-srkw-orcasound-20260922-north_sjc-20260922",
+    "orcahello-srkw-orcasound-20260922-orcasound_lab-20260922",
+    "orcahello-srkw-orcasound-20260922-port_townsend-20260922",
+    "orcahello-srkw-orcasound-20260922-sunset_bay-20260922"
   ],
   "window": {
-    "start_utc": "2026-09-17",
-    "end_utc": "2026-09-17",
-    "usable_hours": 136.1
+    "start_utc": "2026-09-22",
+    "end_utc": "2026-09-22",
+    "usable_hours": 135.9
   },
   "counts": {
     "assets_bundled": 0,
@@ -111,24 +111,24 @@
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
-    "windows_analysed": 16327,
+    "windows_analysed": 16314,
     "frames_analysed": 0,
     "windows_by_camera": {
-      "andrews_bay": 2134,
-      "bush_point": 2858,
-      "north_sjc": 2853,
-      "orcasound_lab": 2855,
-      "port_townsend": 2773,
-      "sunset_bay": 2854
+      "andrews_bay": 2445,
+      "bush_point": 2859,
+      "north_sjc": 2854,
+      "orcasound_lab": 2595,
+      "port_townsend": 2703,
+      "sunset_bay": 2858
     },
     "days_covered": 1,
     "source_paths_unparsable": 0,
-    "model_detections": 1177,
-    "resonator_rejected": 207,
-    "detections_after_screening": 970,
+    "model_detections": 1633,
+    "resonator_rejected": 863,
+    "detections_after_screening": 770,
     "detections_unmeasured": 0,
     "positive_definition": "model_detections counts OrcaHello detections gathered from the run summaries, one per detected window, not segments and not animals. detections_after_screening removes those measured as the Bush Point resonator. Neither is a species claim and neither has been reviewed.",
-    "contaminant_screening": "4816 Hz resonator: every detection was measured; 207 of 1,177 were rejected as the resonance and 0 could not be measured and are counted as not-resonance rather than clean.",
+    "contaminant_screening": "4816 Hz resonator: every detection was measured; 863 of 1,633 were rejected as the resonance and 0 could not be measured and are counted as not-resonance rather than clean.",
     "reviewable": false
   },
   "rights": [

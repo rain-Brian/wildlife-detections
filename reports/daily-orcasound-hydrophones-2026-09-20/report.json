@@ -2,7 +2,7 @@
   "report_id": "daily-orcasound-hydrophones-2026-09-20",
   "title": "Orcasound hydrophones, 2026-09-20",
   "schema_version": 2,
-  "generated_at": "2026-09-22T05:57:59+00:00",
+  "generated_at": "2026-09-23T05:24:32+00:00",
   "license": "CC-BY-NC-SA-4.0",
   "sites": [
     {
@@ -83,7 +83,7 @@
     {
       "model_name": "orcahello-srkw",
       "model_version": "OrcaHello",
-      "code_commit": "4ba0833cbf0eed856b226de777f007db6f994b74",
+      "code_commit": "9330ca97ac4b61531d5739d73eba8add69a70acc",
       "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
       "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
       "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
@@ -103,7 +103,7 @@
   "window": {
     "start_utc": "2026-09-20",
     "end_utc": "2026-09-20",
-    "usable_hours": 111.1
+    "usable_hours": 134.7
   },
   "counts": {
     "assets_bundled": 0,
@@ -111,23 +111,24 @@
     "assets_deduplicated": 0,
     "assets_missing": 0,
     "assets_dropped_for_budget": 0,
-    "windows_analysed": 13330,
+    "windows_analysed": 16161,
     "frames_analysed": 0,
     "windows_by_camera": {
       "andrews_bay": 2457,
       "bush_point": 2857,
       "north_sjc": 2855,
+      "orcasound_lab": 2831,
       "port_townsend": 2324,
       "sunset_bay": 2837
     },
     "days_covered": 1,
     "source_paths_unparsable": 0,
-    "model_detections": 1298,
+    "model_detections": 1301,
     "resonator_rejected": 434,
-    "detections_after_screening": 864,
+    "detections_after_screening": 867,
     "detections_unmeasured": 0,
     "positive_definition": "model_detections counts OrcaHello detections gathered from the run summaries, one per detected window, not segments and not animals. detections_after_screening removes those measured as the Bush Point resonator. Neither is a species claim and neither has been reviewed.",
-    "contaminant_screening": "4816 Hz resonator: every detection was measured; 434 of 1,298 were rejected as the resonance and 0 could not be measured and are counted as not-resonance rather than clean.",
+    "contaminant_screening": "4816 Hz resonator: every detection was measured; 434 of 1,301 were rejected as the resonance and 0 could not be measured and are counted as not-resonance rather than clean.",
     "reviewable": false
   },
   "rights": [
