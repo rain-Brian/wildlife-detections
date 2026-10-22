@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T16:15:37+00:00",
+  "generated_at": "2026-10-22T21:26:46+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 39,
+    "reports": 49,
     "featured": 16,
     "reviewed": 5,
-    "usable_hours": 3156.1,
-    "days_covered": 53
+    "usable_hours": 3377.4,
+    "days_covered": 61
   },
   "featured_findings": [
     {
@@ -190,6 +190,276 @@
     }
   ],
   "reports": [
+    {
+      "report_id": "daily-nps-cameras-2026-10-21",
+      "title": "NPS cameras, 2026-10-21",
+      "generated_at": "2026-10-22T21:26:46+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-20",
+      "title": "Orcasound hydrophones, 2026-10-20",
+      "generated_at": "2026-10-22T20:41:43+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "109 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-20",
+      "title": "NPS cameras, 2026-10-20",
+      "generated_at": "2026-10-22T16:38:15+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-19",
+      "title": "NPS cameras, 2026-10-19",
+      "generated_at": "2026-10-22T14:07:22+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-19",
+        "end": "2026-10-19",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-18",
+      "title": "NPS cameras, 2026-10-18",
+      "generated_at": "2026-10-22T11:34:54+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-17",
+      "title": "NPS cameras, 2026-10-17",
+      "generated_at": "2026-10-22T08:43:01+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-17",
+        "end": "2026-10-17",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-16",
+      "title": "NPS cameras, 2026-10-16",
+      "generated_at": "2026-10-22T05:48:43+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-16",
+        "end": "2026-10-16",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-12",
+      "title": "Orcasound hydrophones, 2026-10-12",
+      "generated_at": "2026-10-22T18:35:23+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "113 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-12",
+      "title": "NPS cameras, 2026-10-12",
+      "generated_at": "2026-10-22T03:13:17+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-12",
+        "end": "2026-10-12",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-11",
+      "title": "NPS cameras, 2026-10-11",
+      "generated_at": "2026-10-22T00:18:27+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-11",
+        "end": "2026-10-11",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
     {
       "report_id": "daily-orcasound-hydrophones-2026-09-22",
       "title": "Orcasound hydrophones, 2026-09-22",
