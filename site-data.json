@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T03:03:58+00:00",
+  "generated_at": "2026-10-31T02:19:29+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 66,
+    "reports": 71,
     "featured": 16,
     "reviewed": 5,
-    "usable_hours": 4767.0,
-    "days_covered": 67
+    "usable_hours": 5464.0,
+    "days_covered": 72
   },
   "featured_findings": [
     {
@@ -190,6 +190,114 @@
     }
   ],
   "reports": [
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-30",
+      "title": "Orcasound hydrophones, 2026-10-30",
+      "generated_at": "2026-10-31T02:19:28+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-30",
+        "end": "2026-10-30",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-29",
+      "title": "Orcasound hydrophones, 2026-10-29",
+      "generated_at": "2026-10-30T02:23:46+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-29",
+        "end": "2026-10-29",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-28",
+      "title": "Orcasound hydrophones, 2026-10-28",
+      "generated_at": "2026-10-29T02:10:47+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-28",
+        "end": "2026-10-28",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-27",
+      "title": "Orcasound hydrophones, 2026-10-27",
+      "generated_at": "2026-10-28T03:36:19+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-27",
+        "end": "2026-10-27",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
     {
       "report_id": "daily-orcasound-hydrophones-2026-10-26",
       "title": "Orcasound hydrophones, 2026-10-26",
@@ -862,6 +970,33 @@
           "caveat": "Detects that an animal is present, not which species it is.",
           "input_size": 1280,
           "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-24",
+      "title": "Orcasound hydrophones, 2026-09-24",
+      "generated_at": "2026-10-28T01:11:17+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-24",
+        "end": "2026-09-24",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
         }
       ]
     },
