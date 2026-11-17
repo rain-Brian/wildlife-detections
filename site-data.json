@@ -1,19 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T03:03:58+00:00",
+  "generated_at": "2026-11-17T06:53:05+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 66,
-    "featured": 16,
-    "reviewed": 5,
-    "usable_hours": 4767.0,
-    "days_covered": 67
+    "reports": 138,
+    "featured": 17,
+    "reviewed": 6,
+    "usable_hours": 10916.5,
+    "days_covered": 105
   },
   "featured_findings": [
+    {
+      "title": "A harbor seal on the seabed, with fish overhead. The seal is unboxed: YOLO-Fish detects fish only.",
+      "summary": null,
+      "domain": "marine",
+      "review_status": "human reviewed",
+      "report_id": "daily-mast-aquarium-2026-10-21",
+      "report_title": "MaST aquarium, 2026-10-21",
+      "media": {
+        "src": "reports/daily-mast-aquarium-2026-10-21/assets/746f5580-mast_center_aquarium_20261021T115443.frame-000600.jpg"
+      }
+    },
     {
       "title": "Harbour seal, reviewed",
       "summary": "Hind flippers are visible in the reviewed frame; this is the confirmed marine mammal example from the run.",
@@ -191,6 +202,789 @@
   ],
   "reports": [
     {
+      "report_id": "daily-orcasound-hydrophones-2026-11-16",
+      "title": "Orcasound hydrophones, 2026-11-16",
+      "generated_at": "2026-11-17T02:05:16+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "127 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-16",
+        "end": "2026-11-16",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-15",
+      "title": "Orcasound hydrophones, 2026-11-15",
+      "generated_at": "2026-11-16T02:09:23+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "122 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-15",
+        "end": "2026-11-15",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-14",
+      "title": "Orcasound hydrophones, 2026-11-14",
+      "generated_at": "2026-11-15T02:41:14+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "122 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-14",
+        "end": "2026-11-14",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-13",
+      "title": "Orcasound hydrophones, 2026-11-13",
+      "generated_at": "2026-11-14T02:12:01+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "135 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-13",
+        "end": "2026-11-13",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-12",
+      "title": "Orcasound hydrophones, 2026-11-12",
+      "generated_at": "2026-11-13T02:15:52+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "124 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-12",
+        "end": "2026-11-12",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-11",
+      "title": "Orcasound hydrophones, 2026-11-11",
+      "generated_at": "2026-11-12T02:21:03+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "138 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-11",
+        "end": "2026-11-11",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-10",
+      "title": "Orcasound hydrophones, 2026-11-10",
+      "generated_at": "2026-11-11T02:11:17+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "137 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-10",
+        "end": "2026-11-10",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-09",
+      "title": "Orcasound hydrophones, 2026-11-09",
+      "generated_at": "2026-11-10T02:16:08+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "128 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-09",
+        "end": "2026-11-09",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-08",
+      "title": "Orcasound hydrophones, 2026-11-08",
+      "generated_at": "2026-11-09T10:26:07+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "120 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-08",
+        "end": "2026-11-08",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-07",
+      "title": "Orcasound hydrophones, 2026-11-07",
+      "generated_at": "2026-11-09T08:19:08+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "131 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-07",
+        "end": "2026-11-07",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-06",
+      "title": "Orcasound hydrophones, 2026-11-06",
+      "generated_at": "2026-11-09T06:13:21+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "135 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-06",
+        "end": "2026-11-06",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-05",
+      "title": "Orcasound hydrophones, 2026-11-05",
+      "generated_at": "2026-11-17T06:35:03+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "138 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-05",
+        "end": "2026-11-05",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-04",
+      "title": "Orcasound hydrophones, 2026-11-04",
+      "generated_at": "2026-11-17T04:30:23+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "138 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-04",
+        "end": "2026-11-04",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-03",
+      "title": "Orcasound hydrophones, 2026-11-03",
+      "generated_at": "2026-11-09T03:56:33+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-03",
+        "end": "2026-11-03",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-02",
+      "title": "Orcasound hydrophones, 2026-11-02",
+      "generated_at": "2026-11-09T01:23:06+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "138 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-02",
+        "end": "2026-11-02",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-11-02",
+      "title": "MaST aquarium, 2026-11-02",
+      "generated_at": "2026-11-17T06:53:05+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-02",
+        "end": "2026-11-02",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-01",
+      "title": "Orcasound hydrophones, 2026-11-01",
+      "generated_at": "2026-11-08T22:57:05+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-01",
+        "end": "2026-11-01",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-11-01",
+      "title": "MaST aquarium, 2026-11-01",
+      "generated_at": "2026-11-17T06:51:47+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "74 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-01",
+        "end": "2026-11-01",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-31",
+      "title": "Orcasound hydrophones, 2026-10-31",
+      "generated_at": "2026-11-08T20:25:27+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-31",
+        "end": "2026-10-31",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-31",
+      "title": "MaST aquarium, 2026-10-31",
+      "generated_at": "2026-11-17T06:50:40+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-31",
+        "end": "2026-10-31",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-30",
+      "title": "Orcasound hydrophones, 2026-10-30",
+      "generated_at": "2026-10-31T02:19:28+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-30",
+        "end": "2026-10-30",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-30",
+      "title": "MaST aquarium, 2026-10-30",
+      "generated_at": "2026-11-17T06:49:39+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-30",
+        "end": "2026-10-30",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-29",
+      "title": "Orcasound hydrophones, 2026-10-29",
+      "generated_at": "2026-10-30T02:23:46+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-29",
+        "end": "2026-10-29",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-29",
+      "title": "MaST aquarium, 2026-10-29",
+      "generated_at": "2026-11-17T06:48:37+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-29",
+        "end": "2026-10-29",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-28",
+      "title": "Orcasound hydrophones, 2026-10-28",
+      "generated_at": "2026-10-29T02:10:47+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-28",
+        "end": "2026-10-28",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-28",
+      "title": "MaST aquarium, 2026-10-28",
+      "generated_at": "2026-11-17T06:47:34+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-28",
+        "end": "2026-10-28",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-27",
+      "title": "Orcasound hydrophones, 2026-10-27",
+      "generated_at": "2026-10-28T03:36:19+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-27",
+        "end": "2026-10-27",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-27",
+      "title": "MaST aquarium, 2026-10-27",
+      "generated_at": "2026-11-17T06:46:34+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "70 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-27",
+        "end": "2026-10-27",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-27",
+      "title": "NPS cameras, 2026-10-27",
+      "generated_at": "2026-11-08T17:55:34+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-27",
+        "end": "2026-10-27",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
       "report_id": "daily-orcasound-hydrophones-2026-10-26",
       "title": "Orcasound hydrophones, 2026-10-26",
       "generated_at": "2026-10-27T03:03:57+00:00",
@@ -212,6 +1006,33 @@
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-26",
+      "title": "MaST aquarium, 2026-10-26",
+      "generated_at": "2026-11-17T06:45:31+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-26",
+        "end": "2026-10-26",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
           "input_size": null,
           "det_conf_thres": null
         }
@@ -272,6 +1093,33 @@
       ]
     },
     {
+      "report_id": "daily-mast-aquarium-2026-10-25",
+      "title": "MaST aquarium, 2026-10-25",
+      "generated_at": "2026-11-17T06:44:30+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-25",
+        "end": "2026-10-25",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-nps-cameras-2026-10-25",
       "title": "NPS cameras, 2026-10-25",
       "generated_at": "2026-10-26T00:41:29+00:00",
@@ -320,6 +1168,33 @@
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-24",
+      "title": "MaST aquarium, 2026-10-24",
+      "generated_at": "2026-11-17T06:43:33+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-24",
+        "end": "2026-10-24",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
           "input_size": null,
           "det_conf_thres": null
         }
@@ -380,6 +1255,33 @@
       ]
     },
     {
+      "report_id": "daily-mast-aquarium-2026-10-23",
+      "title": "MaST aquarium, 2026-10-23",
+      "generated_at": "2026-11-17T06:42:32+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-23",
+        "end": "2026-10-23",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-nps-cameras-2026-10-23",
       "title": "NPS cameras, 2026-10-23",
       "generated_at": "2026-10-25T00:50:28+00:00",
@@ -428,6 +1330,33 @@
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-22",
+      "title": "MaST aquarium, 2026-10-22",
+      "generated_at": "2026-11-17T06:41:21+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-22",
+        "end": "2026-10-22",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
           "input_size": null,
           "det_conf_thres": null
         }
@@ -488,6 +1417,33 @@
       ]
     },
     {
+      "report_id": "daily-mast-aquarium-2026-10-21",
+      "title": "MaST aquarium, 2026-10-21",
+      "generated_at": "2026-11-17T06:40:22+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-nps-cameras-2026-10-21",
       "title": "NPS cameras, 2026-10-21",
       "generated_at": "2026-10-22T21:26:46+00:00",
@@ -542,6 +1498,33 @@
       ]
     },
     {
+      "report_id": "daily-mast-aquarium-2026-10-20",
+      "title": "MaST aquarium, 2026-10-20",
+      "generated_at": "2026-11-17T06:39:24+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "72 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "0c8198f2e970cb477c5bce6c7397fcbadb2b4d05",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-nps-cameras-2026-10-20",
       "title": "NPS cameras, 2026-10-20",
       "generated_at": "2026-10-22T16:38:15+00:00",
@@ -590,6 +1573,33 @@
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-10-19",
+      "title": "MaST aquarium, 2026-10-19",
+      "generated_at": "2026-11-17T06:38:16+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "45 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-19",
+        "end": "2026-10-19",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "0c8198f2e970cb477c5bce6c7397fcbadb2b4d05",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
           "input_size": null,
           "det_conf_thres": null
         }
@@ -839,6 +1849,33 @@
       ]
     },
     {
+      "report_id": "daily-orcasound-hydrophones-2026-10-11",
+      "title": "Orcasound hydrophones, 2026-10-11",
+      "generated_at": "2026-11-08T17:15:10+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "112 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-11",
+        "end": "2026-10-11",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-nps-cameras-2026-10-11",
       "title": "NPS cameras, 2026-10-11",
       "generated_at": "2026-10-22T00:18:27+00:00",
@@ -857,6 +1894,924 @@
           "model_name": "megadetector-nps",
           "model_version": "MegaDetectorV6MIT",
           "code_commit": "7d406501fb36a993e668d05b563ea0b78177ac7f",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-10",
+      "title": "Orcasound hydrophones, 2026-10-10",
+      "generated_at": "2026-11-08T14:24:35+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "113 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-10",
+        "end": "2026-10-10",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-10",
+      "title": "NPS cameras, 2026-10-10",
+      "generated_at": "2026-11-08T15:08:50+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-10",
+        "end": "2026-10-10",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-09",
+      "title": "Orcasound hydrophones, 2026-10-09",
+      "generated_at": "2026-11-08T07:35:44+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "114 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-09",
+        "end": "2026-10-09",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-09",
+      "title": "NPS cameras, 2026-10-09",
+      "generated_at": "2026-11-08T08:19:34+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-09",
+        "end": "2026-10-09",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-08",
+      "title": "Orcasound hydrophones, 2026-10-08",
+      "generated_at": "2026-11-08T00:38:11+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "104 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-08",
+        "end": "2026-10-08",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-08",
+      "title": "NPS cameras, 2026-10-08",
+      "generated_at": "2026-11-08T01:23:14+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-08",
+        "end": "2026-10-08",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-07",
+      "title": "Orcasound hydrophones, 2026-10-07",
+      "generated_at": "2026-11-07T17:59:03+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "94 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-07",
+        "end": "2026-10-07",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-07",
+      "title": "NPS cameras, 2026-10-07",
+      "generated_at": "2026-11-07T18:45:10+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-07",
+        "end": "2026-10-07",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-06",
+      "title": "Orcasound hydrophones, 2026-10-06",
+      "generated_at": "2026-11-07T11:15:19+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "118 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-06",
+        "end": "2026-10-06",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-06",
+      "title": "NPS cameras, 2026-10-06",
+      "generated_at": "2026-11-07T12:01:02+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-06",
+        "end": "2026-10-06",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-05",
+      "title": "Orcasound hydrophones, 2026-10-05",
+      "generated_at": "2026-11-07T04:01:20+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "133 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-05",
+        "end": "2026-10-05",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-05",
+      "title": "NPS cameras, 2026-10-05",
+      "generated_at": "2026-11-07T04:48:04+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-05",
+        "end": "2026-10-05",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-04",
+      "title": "Orcasound hydrophones, 2026-10-04",
+      "generated_at": "2026-11-06T20:19:44+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "135 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-04",
+        "end": "2026-10-04",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-04",
+      "title": "NPS cameras, 2026-10-04",
+      "generated_at": "2026-11-06T21:10:36+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-04",
+        "end": "2026-10-04",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-03",
+      "title": "Orcasound hydrophones, 2026-10-03",
+      "generated_at": "2026-11-06T13:47:15+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "136 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-03",
+        "end": "2026-10-03",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-03",
+      "title": "NPS cameras, 2026-10-03",
+      "generated_at": "2026-11-06T14:36:48+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-03",
+        "end": "2026-10-03",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-02",
+      "title": "Orcasound hydrophones, 2026-10-02",
+      "generated_at": "2026-11-06T07:01:32+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "138 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-02",
+        "end": "2026-10-02",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-02",
+      "title": "NPS cameras, 2026-10-02",
+      "generated_at": "2026-11-06T07:47:32+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-02",
+        "end": "2026-10-02",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-10-01",
+      "title": "Orcasound hydrophones, 2026-10-01",
+      "generated_at": "2026-11-06T00:53:12+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-10-01",
+        "end": "2026-10-01",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-10-01",
+      "title": "NPS cameras, 2026-10-01",
+      "generated_at": "2026-11-06T01:41:02+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-10-01",
+        "end": "2026-10-01",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-30",
+      "title": "Orcasound hydrophones, 2026-09-30",
+      "generated_at": "2026-11-05T17:40:19+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-30",
+        "end": "2026-09-30",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-30",
+      "title": "NPS cameras, 2026-09-30",
+      "generated_at": "2026-11-05T18:12:03+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-30",
+        "end": "2026-09-30",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-29",
+      "title": "Orcasound hydrophones, 2026-09-29",
+      "generated_at": "2026-11-05T08:21:43+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "138 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-29",
+        "end": "2026-09-29",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-29",
+      "title": "NPS cameras, 2026-09-29",
+      "generated_at": "2026-11-05T09:07:12+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-29",
+        "end": "2026-09-29",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-28",
+      "title": "Orcasound hydrophones, 2026-09-28",
+      "generated_at": "2026-11-05T00:38:07+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "133 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-28",
+        "end": "2026-09-28",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-28",
+      "title": "NPS cameras, 2026-09-28",
+      "generated_at": "2026-11-05T01:30:25+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-28",
+        "end": "2026-09-28",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "0367843b5df43a12da19018dab651dd3c2c2b288",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-27",
+      "title": "Orcasound hydrophones, 2026-09-27",
+      "generated_at": "2026-11-04T17:28:22+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "125 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-27",
+        "end": "2026-09-27",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "0c8198f2e970cb477c5bce6c7397fcbadb2b4d05",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-27",
+      "title": "NPS cameras, 2026-09-27",
+      "generated_at": "2026-11-04T18:17:42+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-27",
+        "end": "2026-09-27",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "0c8198f2e970cb477c5bce6c7397fcbadb2b4d05",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-26",
+      "title": "Orcasound hydrophones, 2026-09-26",
+      "generated_at": "2026-11-04T09:00:20+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-26",
+        "end": "2026-09-26",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "0c8198f2e970cb477c5bce6c7397fcbadb2b4d05",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-26",
+      "title": "NPS cameras, 2026-09-26",
+      "generated_at": "2026-11-04T09:48:09+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-26",
+        "end": "2026-09-26",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "0c8198f2e970cb477c5bce6c7397fcbadb2b4d05",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-25",
+      "title": "Orcasound hydrophones, 2026-09-25",
+      "generated_at": "2026-11-03T22:02:37+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "139 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-25",
+        "end": "2026-09-25",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "9b5a47f926fbe28a37c3ff20748303b9bd7ae0e1",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-25",
+      "title": "NPS cameras, 2026-09-25",
+      "generated_at": "2026-11-03T22:38:04+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-25",
+        "end": "2026-09-25",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "9b5a47f926fbe28a37c3ff20748303b9bd7ae0e1",
+          "license": "MIT",
+          "lineage": "microsoft/MegaDetector",
+          "caveat": "Detects that an animal is present, not which species it is.",
+          "input_size": 1280,
+          "det_conf_thres": 0.2
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-09-24",
+      "title": "Orcasound hydrophones, 2026-09-24",
+      "generated_at": "2026-10-28T01:11:17+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "140 hours usable, 1 day",
+      "period": {
+        "start": "2026-09-24",
+        "end": "2026-09-24",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "e2260624d0c47eb431675899f925e549cfc61a4d",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-nps-cameras-2026-09-24",
+      "title": "NPS cameras, 2026-09-24",
+      "generated_at": "2026-11-03T19:20:04+00:00",
+      "domains": [
+        "land"
+      ],
+      "coverage": "1 day covered",
+      "period": {
+        "start": "2026-09-24",
+        "end": "2026-09-24",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "megadetector-nps",
+          "model_version": "MegaDetectorV6MIT",
+          "code_commit": "9b5a47f926fbe28a37c3ff20748303b9bd7ae0e1",
           "license": "MIT",
           "lineage": "microsoft/MegaDetector",
           "caveat": "Detects that an animal is present, not which species it is.",
