@@ -1,0 +1,93 @@
+{
+  "report_id": "daily-mast-aquarium-2026-10-29",
+  "title": "MaST aquarium, 2026-10-29",
+  "schema_version": 2,
+  "generated_at": "2026-11-17T06:48:37+00:00",
+  "license": "CC-BY-4.0",
+  "sites": [
+    {
+      "feed": "youtube",
+      "camera": "mast_center_aquarium",
+      "label": "MaST Center Aquarium",
+      "kind": "underwater_camera",
+      "location": {
+        "lat": 47.35,
+        "lon": -122.32,
+        "precision": "approximate"
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_name": "yolo-fish",
+      "model_version": "YOLO-Fish merge_yolo-fish-2",
+      "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+      "license": "GPL-3.0 (YOLO-Fish)",
+      "lineage": "tamim662/YOLO-Fish @ 368658a",
+      "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+      "input_size": null,
+      "det_conf_thres": null
+    }
+  ],
+  "floors": [],
+  "runs": [
+    "yolo-fish-mast-20261029-mast_center_aquarium-20261029"
+  ],
+  "window": {
+    "start_utc": "2026-10-29",
+    "end_utc": "2026-10-29",
+    "usable_hours": 72.0
+  },
+  "counts": {
+    "assets_bundled": 60,
+    "assets_bytes": 4958242,
+    "assets_deduplicated": 60,
+    "assets_missing": 0,
+    "assets_dropped_for_budget": 0,
+    "windows_analysed": 8637,
+    "frames_analysed": 0,
+    "windows_by_camera": {
+      "mast_center_aquarium": 8637
+    },
+    "days_covered": 1,
+    "source_paths_unparsable": 0,
+    "model_candidates": 44233,
+    "frames_with_candidates": 5304,
+    "static_overlay_set_aside": 5153,
+    "set_aside_station_logo": 5153,
+    "set_aside_fixed_structure": 0,
+    "set_aside_repeated_pixels": 0,
+    "structure_boxes_kept_as_fish": 0,
+    "frames_not_redrawn": 0,
+    "reviewer_picks": 0,
+    "frames_sampled": 8637,
+    "segments_read": 1440,
+    "decode_failures": 0,
+    "runs_without_coverage": 0,
+    "positive_definition": "model_candidates counts YOLO-Fish boxes labelled fish that were not set aside: boxes mostly inside the burned-in station logo, large boxes that recur around one centre at about one size and look like the rest of their group (fixed structure), and boxes on near-identical pixels in at least a quarter of the day's segments. It counts boxes, not fish: one fish can be boxed on several sampled frames. None has been reviewed.",
+    "reviewable": false
+  },
+  "rights": [
+    {
+      "feed": "youtube/mast_center_aquarium",
+      "holder": "Highline College, MaST Center Aquarium",
+      "terms": "YouTube Standard Licence; all rights reserved by the channel owner",
+      "terms_url": "https://www.youtube.com/static?template=terms",
+      "source_url": "https://www.youtube.com/@highlinemastcenteraquarium/live",
+      "attribution": "MaST Center Aquarium, Highline College",
+      "attribution_url": "https://mast.highline.edu/",
+      "derivatives_license": null,
+      "commercial_use": "unknown",
+      "verified_on": "2026-08-31"
+    }
+  ],
+  "featured_findings": [],
+  "taxonomy": [],
+  "review_status": "model candidate",
+  "series": {},
+  "evidence_assets": [],
+  "media_quality": {},
+  "model_refresh": {},
+  "quality": {},
+  "redaction_allowances": []
+}
