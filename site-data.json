@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-17T06:53:05+00:00",
+  "generated_at": "2026-11-19T07:40:32+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 138,
+    "reports": 144,
     "featured": 17,
     "reviewed": 6,
-    "usable_hours": 10916.5,
-    "days_covered": 105
+    "usable_hours": 11188.0,
+    "days_covered": 107
   },
   "featured_findings": [
     {
@@ -202,6 +202,87 @@
   ],
   "reports": [
     {
+      "report_id": "daily-orcasound-hydrophones-2026-11-18",
+      "title": "Orcasound hydrophones, 2026-11-18",
+      "generated_at": "2026-11-19T07:40:31+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "135 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-18",
+        "end": "2026-11-18",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-17",
+      "title": "Orcasound hydrophones, 2026-11-17",
+      "generated_at": "2026-11-18T01:49:09+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "137 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-17",
+        "end": "2026-11-17",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-11-17",
+      "title": "MaST aquarium, 2026-11-17",
+      "generated_at": "2026-11-18T00:13:41+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "0 hours usable",
+      "period": {
+        "start": "2026-11-17",
+        "end": "2026-11-17",
+        "source": "window"
+      },
+      "review_status": "source quality gap",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-orcasound-hydrophones-2026-11-16",
       "title": "Orcasound hydrophones, 2026-11-16",
       "generated_at": "2026-11-17T02:05:16+00:00",
@@ -223,6 +304,33 @@
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-11-16",
+      "title": "MaST aquarium, 2026-11-16",
+      "generated_at": "2026-11-17T18:11:39+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "0 hours usable",
+      "period": {
+        "start": "2026-11-16",
+        "end": "2026-11-16",
+        "source": "window"
+      },
+      "review_status": "source quality gap",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
           "input_size": null,
           "det_conf_thres": null
         }
@@ -256,6 +364,33 @@
       ]
     },
     {
+      "report_id": "daily-mast-aquarium-2026-11-15",
+      "title": "MaST aquarium, 2026-11-15",
+      "generated_at": "2026-11-17T18:10:48+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "0 hours usable",
+      "period": {
+        "start": "2026-11-15",
+        "end": "2026-11-15",
+        "source": "window"
+      },
+      "review_status": "source quality gap",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
       "report_id": "daily-orcasound-hydrophones-2026-11-14",
       "title": "Orcasound hydrophones, 2026-11-14",
       "generated_at": "2026-11-15T02:41:14+00:00",
@@ -277,6 +412,33 @@
           "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
           "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
           "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
+    {
+      "report_id": "daily-mast-aquarium-2026-11-14",
+      "title": "MaST aquarium, 2026-11-14",
+      "generated_at": "2026-11-17T18:09:31+00:00",
+      "domains": [
+        "underwater video"
+      ],
+      "coverage": "0 hours usable",
+      "period": {
+        "start": "2026-11-14",
+        "end": "2026-11-14",
+        "source": "window"
+      },
+      "review_status": "source quality gap",
+      "models": [
+        {
+          "model_name": "yolo-fish",
+          "model_version": "YOLO-Fish merge_yolo-fish-2",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "GPL-3.0 (YOLO-Fish)",
+          "lineage": "tamim662/YOLO-Fish @ 368658a",
+          "caveat": "Marine mammal labels are review candidates from open-vocabulary prompts, not confirmed species.",
           "input_size": null,
           "det_conf_thres": null
         }
