@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T07:40:32+00:00",
+  "generated_at": "2026-11-20T05:14:40+00:00",
   "site": {
     "name": "Cascadia Listening Post",
     "url": "https://rain-Brian.github.io/wildlife-detections/",
     "tagline": "Wildlife detection from public hydrophones, underwater video and mountain cameras in Cascadia, including what is unreviewed and where the models were wrong."
   },
   "metrics": {
-    "reports": 144,
+    "reports": 145,
     "featured": 17,
     "reviewed": 6,
-    "usable_hours": 11188.0,
-    "days_covered": 107
+    "usable_hours": 11319.3,
+    "days_covered": 108
   },
   "featured_findings": [
     {
@@ -201,6 +201,33 @@
     }
   ],
   "reports": [
+    {
+      "report_id": "daily-orcasound-hydrophones-2026-11-19",
+      "title": "Orcasound hydrophones, 2026-11-19",
+      "generated_at": "2026-11-20T05:14:38+00:00",
+      "domains": [
+        "hydrophone"
+      ],
+      "coverage": "131 hours usable, 1 day",
+      "period": {
+        "start": "2026-11-19",
+        "end": "2026-11-19",
+        "source": "window"
+      },
+      "review_status": "model candidate",
+      "models": [
+        {
+          "model_name": "orcahello-srkw",
+          "model_version": "OrcaHello",
+          "code_commit": "bc17dd5e2776c058dc30d21b7623e47d88d1d5ca",
+          "license": "OrcaHello RAIL licence, conservation-oriented use restrictions",
+          "lineage": "orcasound/aifororcas-livesystem @ 55946b5",
+          "caveat": "Binary call-presence detector. It does not identify pod, individual, or call type.",
+          "input_size": null,
+          "det_conf_thres": null
+        }
+      ]
+    },
     {
       "report_id": "daily-orcasound-hydrophones-2026-11-18",
       "title": "Orcasound hydrophones, 2026-11-18",
